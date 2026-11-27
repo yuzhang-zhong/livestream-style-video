@@ -51,6 +51,7 @@ const textFiles = [
   "LICENSE",
   "CHANGELOG.md",
   "package.json",
+  "plugin.json",
   "agents/openai.yaml",
   ".claude-plugin/plugin.json",
   ".claude-plugin/marketplace.json",
@@ -149,6 +150,7 @@ if (!verMatch) fail("SKILL.md metadata.version must be a three-part semver strin
 const skillVersion = verMatch[1];
 
 const pkg = JSON.parse(readUtf8("package.json"));
+const rootPlugin = JSON.parse(readUtf8("plugin.json"));
 const claudePlugin = JSON.parse(readUtf8(".claude-plugin/plugin.json"));
 const cursorPlugin = JSON.parse(readUtf8(".cursor-plugin/plugin.json"));
 const marketplace = JSON.parse(readUtf8(".claude-plugin/marketplace.json"));
@@ -160,6 +162,7 @@ if (!changelogMatch) fail("CHANGELOG.md must include a ## x.y.z version heading"
 const versions = new Set([
   skillVersion,
   pkg.version,
+  rootPlugin.version,
   claudePlugin.version,
   cursorPlugin.version,
   changelogMatch[1]
@@ -172,6 +175,7 @@ const canonicalDesc =
   "Agent Skill to map any visual style or storyline into authentic 9:16 livestream camera perspectives, clean-plate I2V/T2V prompts, detachable HUDs, and local MP4 previews.";
 for (const [label, desc] of [
   ["package.json", pkg.description],
+  ["plugin.json", rootPlugin.description],
   [".claude-plugin/plugin.json", claudePlugin.description],
   [".cursor-plugin/plugin.json", cursorPlugin.description],
   [".claude-plugin/marketplace.json", marketplace.plugins?.[0]?.description]
