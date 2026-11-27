@@ -3,8 +3,10 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { auditLocalDiscovery } from "../scripts/discovery_audit.mjs";
+import { normalizeRelativePath } from "../scripts/sync_skill_bundle.mjs";
 
 import {
   RIG_PROFILES,
@@ -202,29 +204,58 @@ test("render_preview computes exact timing, synthesizes live WAV audio, and rend
 
   // End-to-end CLI render smoke test on custom_livestream_spec.json into temp directory
   const tmpOut = fs.mkdtempSync(path.join(os.tmpdir(), "live-pov-test-"));
+  const hasFfmpeg = spawnSync("ffmpeg", ["-version"], { stdio: "ignore" }).status === 0;
   try {
-    execFileSync(
-      process.execPath,
-      [
-        path.join(ROOT, "scripts", "render_preview.mjs"),
-        "--spec",
-        path.join(ROOT, "templates", "custom_livestream_spec.json"),
-        "--out-dir",
-        tmpOut,
-        "--platform",
-        "x",
-        "--workers",
-        "2",
-        "--force"
-      ],
-      { cwd: ROOT, stdio: "pipe" }
-    );
-    assert.ok(fs.existsSync(path.join(tmpOut, "shot_01.png")));
-    assert.ok(fs.existsSync(path.join(tmpOut, "ferris_ramen_stall_live.gif")));
-    assert.ok(fs.existsSync(path.join(tmpOut, "ferris_ramen_stall_live.mp4")));
+    if (hasFfmpeg) {
+      execFileSync(
+        process.execPath,
+        [
+          path.join(ROOT, "scripts", "render_preview.mjs"),
+          "--spec",
+          path.join(ROOT, "templates", "custom_livestream_spec.json"),
+          "--out-dir",
+          tmpOut,
+          "--platform",
+          "x",
+          "--workers",
+          "2",
+          "--force"
+        ],
+        { cwd: ROOT, stdio: "pipe" }
+      );
+      assert.ok(fs.existsSync(path.join(tmpOut, "shot_01.png")));
+      assert.ok(fs.existsSync(path.join(tmpOut, "ferris_ramen_stall_live.gif")));
+      assert.ok(fs.existsSync(path.join(tmpOut, "ferris_ramen_stall_live.mp4")));
+    } else {
+      execFileSync(
+        process.execPath,
+        [
+          path.join(ROOT, "scripts", "render_preview.mjs"),
+          "--spec",
+          path.join(ROOT, "templates", "custom_livestream_spec.json"),
+          "--raw-dir",
+          tmpOut,
+          "--shard",
+          "0/1000",
+          "--force"
+        ],
+        { cwd: ROOT, stdio: "pipe" }
+      );
+      const png = fs.readFileSync(path.join(tmpOut, "setup_0deg.png"));
+      assert.deepEqual([...png.subarray(0, 8)], [137, 80, 78, 71, 13, 10, 26, 10]);
+      assert.ok(png.length > 1_000);
+    }
   } finally {
     fs.rmSync(tmpOut, { recursive: true, force: true });
   }
+});
+
+test("discovery audit verifies 32+ multi-model queries, required paths, and install surfaces", () => {
+  const report = auditLocalDiscovery(ROOT);
+  assert.equal(report.expectedSkill, "livestream-style-video");
+  assert.ok(report.checks.length >= 38);
+  assert.equal(report.passed, true, JSON.stringify(report.checks.filter((c) => !c.passed)));
+  assert.equal(normalizeRelativePath("agents\\openai.yaml"), "agents/openai.yaml");
 });
 
 test("CLI formatters support all 10 languages plus zh-en bilingual mode", () => {

@@ -4,11 +4,11 @@
 
 An Agent Skill (`SKILL.md` + reference playbooks + offline CLI tools) for Claude Code, Cursor, GitHub Copilot, and Codex to map any visual style or storyline into `9:16` livestream-perspective shorts, compile clean-plate video prompts, overlay mainstream room HUDs, and render `720p` HD previews locally.
 
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](skills/livestream-style-video/SKILL.md)
 [![Node.js 18+ for the CLI](https://img.shields.io/badge/Node.js-18%2B-268354?style=flat-square)](#skill-workflow-and-quick-start)
 [![MIT license](https://img.shields.io/badge/License-MIT-2563eb?style=flat-square)](LICENSE)
 
-**[HD Video examples](#video-examples)** · [Cast rigs & live HUDs](#scene-boards-and-shot-pacing) · [Skill workflow & quick start](#skill-workflow-and-quick-start) · [Skill guide](SKILL.md)
+**[HD Video examples](#video-examples)** · [Cast rigs & live HUDs](#scene-boards-and-shot-pacing) · [Skill workflow & quick start](#skill-workflow-and-quick-start) · [Skill guide](skills/livestream-style-video/SKILL.md)
 
 **English** · [简体中文](README.zh-CN.md) · [繁體中文](docs/i18n/README.zh-TW.md) · [日本語](docs/i18n/README.ja.md) · [한국어](docs/i18n/README.ko.md) · [Español](docs/i18n/README.es.md) · [Français](docs/i18n/README.fr.md) · [Deutsch](docs/i18n/README.de.md) · [Português](docs/i18n/README.pt-BR.md) · [Русский](docs/i18n/README.ru.md)
 
@@ -95,9 +95,14 @@ To layer interactive overlays onto any external `.mp4` or OBS scene, open [`stud
 
 ### Install as an Agent Skill
 
-Clone this skill into your agent host's skills directory. Once installed, the agent reads [`SKILL.md`](SKILL.md), loads the relevant camera/HUD guides from [`references/`](references/), and runs the Node.js scripts automatically when you ask for a livestream-perspective short. This path is for Codex; use `~/.copilot/skills/livestream-style-video` for GitHub Copilot, or your configured skills folder in Claude Code and Cursor.
+Clone this skill into your agent host's skills directory. Once installed, the agent reads [`SKILL.md`](skills/livestream-style-video/SKILL.md), loads the relevant camera/HUD guides from [`references/`](references/), and runs the Node.js scripts automatically when you ask for a livestream-perspective short. This path is for Codex; use `~/.copilot/skills/livestream-style-video` for GitHub Copilot, or your configured skills folder in Claude Code and Cursor.
 
 ```bash
+# Install via GitHub CLI or Vercel Skills CLI (Claude Code, Copilot, Codex, Cursor, Gemini CLI)
+gh skill install yuzhang-zhong/livestream-style-video livestream-style-video
+npx skills add https://github.com/yuzhang-zhong/livestream-style-video --skill livestream-style-video
+
+# Or clone directly into your agent's skills directory
 git clone https://github.com/yuzhang-zhong/livestream-style-video.git ~/.codex/skills/livestream-style-video
 ```
 
@@ -129,7 +134,7 @@ Prompting `"a livestream video with comments"` directly in video diffusion model
 
 | Skill component | Output |
 | --- | --- |
-| [`SKILL.md`](SKILL.md) | Main Agent Skill entry point defining the 6 production modes (`Rig-Spec`, `Plot-to-Live`, `Prompt-Compile`, `Platform-HUD`, `Rescue`, `Render`) and 8 livestream invariants. |
+| [`SKILL.md`](skills/livestream-style-video/SKILL.md) | Main Agent Skill entry point defining the 6 production modes (`Rig-Spec`, `Plot-to-Live`, `Prompt-Compile`, `Platform-HUD`, `Rescue`, `Render`) and 8 livestream invariants. |
 | [`shot_compiler.mjs`](scripts/shot_compiler.mjs) | Compiles `--plot "<any story>"`, `--spec <episode.json>`, or 8 built-in templates into non-repeating 15s / 30s / 45s 9:16 clean-plate prompts + HUD timelines (`local3d`, Kling, Seedance, Hailuo, Wan, Sora, Veo, Runway). |
 | [`rig_spec.mjs`](scripts/rig_spec.mjs) | Locks 8 physical camera rigs × 8 orthogonal visual styles (`duolingo-mascot`, `opensource-mascot`, `roblox-blocky`, `voxel-sandbox`, `anime-vtuber`, `stylized-3d`, `cinematic-genre-adapt`, `realistic-irl`) and a [3-state setup sheet](assets/showcase/rig_setup_sheet.en.png) prompt. |
 | [`hud_presets.mjs`](scripts/hud_presets.mjs) | `1080×1920` safe zones, comment styles, 2-slot gift combos, shopping/Q&A popups, PK bars, and heart palettes for `douyin`, `kuaishou`, `instagram`, `x`, `tiktok`, and `clean`. |
@@ -138,6 +143,24 @@ Prompting `"a livestream video with comments"` directly in video diffusion model
 | [`studio/index.html`](studio/index.html) | Browser / OBS interactive HUD studio with 4 live `<canvas>` character rigs, MP4 plate loader, popup triggers, and `#00FF00` chroma-key export. |
 
 [Camera rigs and optics](references/camera-rigs-and-optics.md) · [Style adapters matrix](references/style-adapters-matrix.md) · [Plot-to-livestream beats](references/plot-to-livestream-beats.md) · [Platform UI REA ledger](references/platform-ui-rea-ledger.md) · [Model prompt playbook](references/model-prompt-playbook.md) · [Drift fixes](references/rescue-and-anti-drift.md) · [8 story templates](references/viral-livestream-archetypes.md)
+
+## FAQ & Multi-Model Search Guide
+
+<details>
+<summary>Why do Sora, Kling, Seedance, Wan, or Runway produce garbled alien comments or third-person crane shots on livestream prompts?</summary>
+
+Video diffusion models treat `"TikTok/Douyin livestream"` as a pixel-texture cue, melting unreadable alien glyphs into the frame or drifting to detached third-person Hollywood crane shots. `livestream-style-video` enforces **Clean-Plate Diffusion + Post-HUD Layer Separation**: external models render 100% UI-free raw camera optics (`desktop-webcam`, `handheld-selfie-irl`, `pip-facecam-rig`, `overhead-showcase-rig` `[AF-C]` palm focus, `pk-cohost-split`) with `0°` lens eye-contact and `15°` chat-read glances, while `render_preview.mjs` and [`studio/index.html`](studio/index.html) composite crisp, trademark-free **Douyin, Kuaishou, TikTok Live, Instagram Live, or X/Periscope** overlays, gift combos, and `#00FF00` chroma-key HTML5 plates—making it a zero-API-key, MIT-licensed open-source alternative to watermarked CapCut fake-live templates.
+
+</details>
+
+<details>
+<summary>Which AI coding agents, art styles, and video models are supported?</summary>
+
+- **Agents**: Installable via `gh skill install` and `npx skills add` across **Claude Code, GitHub Copilot, OpenAI Codex, Cursor, Gemini CLI, and Pi** (`plugin.json` Agent Plugins v1.0.0).
+- **8 Styles × 8 Rigs**: Photorealistic IRL, `anime-vtuber`, `roblox-blocky` (fingerless R6/R15), `voxel-sandbox` (`8×8×8` Minecraft-style), `duolingo-mascot`, `opensource-mascot` (`Linux Tux`, `Ferris`, `Godot`), `stylized-3d`, and cross-genre wuxia/horror/sci-fi adaptations.
+- **Video Engines**: Local zero-API-key `720×1280` H.264 MP4 + WAV audio + 256-color GIF renderer (`Node.js 18+`), plus calibrated I2V/T2V prompt packs for **Kling, Seedance/Jimeng, Hailuo, Wan, Sora, Veo, and Runway**.
+
+</details>
 
 ## Languages
 

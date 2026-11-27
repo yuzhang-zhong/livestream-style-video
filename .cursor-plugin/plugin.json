@@ -3,10 +3,35 @@
   "description": "Agent Skill to map any visual style or storyline into authentic 9:16 livestream camera perspectives, clean-plate I2V/T2V prompts, detachable HUDs, and local MP4 previews.",
   "version": "2.0.0",
   "author": {
-    "name": "yuzhang-zhong"
+    "name": "yuzhang-zhong",
+    "url": "https://github.com/yuzhang-zhong"
   },
   "homepage": "https://github.com/yuzhang-zhong/livestream-style-video",
   "repository": "https://github.com/yuzhang-zhong/livestream-style-video",
   "license": "MIT",
-  "keywords": ["livestream", "pov", "ai-video", "roblox", "storyboard", "prompt-engineering"]
+  "keywords": [
+    "agent-skill",
+    "agent-skills",
+    "claude-skill",
+    "copilot-skill",
+    "codex-skill",
+    "cursor-skill",
+    "livestream",
+    "livestream-video",
+    "pov-video",
+    "streamer-pov",
+    "ai-video",
+    "video-generation",
+    "image-to-video",
+    "text-to-video",
+    "short-video",
+    "storyboard",
+    "obs-overlay",
+    "danmaku",
+    "tiktok-live",
+    "douyin"
+  ],
+  "skills": [
+    "./skills/livestream-style-video"
+  ]
 }

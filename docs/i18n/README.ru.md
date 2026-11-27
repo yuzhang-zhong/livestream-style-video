@@ -4,11 +4,11 @@
 
 **Agent Skill** (`SKILL.md` + справочные руководства + CLI-инструменты без зависимостей) для Claude Code, Cursor, GitHub Copilot и Codex: переводит любой визуальный стиль и сюжет в вертикальные (`9:16`) короткие видео с ракурсом прямого эфира, компилирует чистые промпты без искажённого текста, накладывает реконструированные интерфейсы стримов и рендерит локальные превью.
 
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../skills/livestream-style-video/SKILL.md)
 [![Node.js 18+ для CLI](https://img.shields.io/badge/Node.js-18%2B-268354?style=flat-square)](#рабочий-процесс-и-быстрый-старт)
 [![Лицензия MIT](https://img.shields.io/badge/License-MIT-2563eb?style=flat-square)](../../LICENSE)
 
-**[Примеры видео](#примеры-видео)** · [Раскадровки и HUD](#раскадровки-и-ритм-планов) · [Пайплайн и старт](#рабочий-процесс-и-быстрый-старт) · [Руководство Skill](../../SKILL.md)
+**[Примеры видео](#примеры-видео)** · [Раскадровки и HUD](#раскадровки-и-ритм-планов) · [Пайплайн и старт](#рабочий-процесс-и-быстрый-старт) · [Руководство Skill](../../skills/livestream-style-video/SKILL.md)
 
 [English](../../README.md) · [简体中文](../../README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Português](README.pt-BR.md) · **Русский**
 
@@ -104,7 +104,7 @@ node scripts/drift_check.mjs --pack templates/custom_livestream_spec.json --engi
 
 | Компонент Skill | Результат |
 | --- | --- |
-| [`SKILL.md`](../../SKILL.md) | Точка входа, описывающая 6 режимов работы и 8 инвариантов прямого эфира. |
+| [`SKILL.md`](../../skills/livestream-style-video/SKILL.md) | Точка входа, описывающая 6 режимов работы и 8 инвариантов прямого эфира. |
 | [`shot_compiler.mjs`](../../scripts/shot_compiler.mjs) | Компилирует `--plot`, `--spec` или 8 шаблонов в чистые промпты 9:16 (15s / 30s / 45s) и таймлайны HUD. |
 | [`rig_spec.mjs`](../../scripts/rig_spec.mjs) | Фиксирует 8 креплений камеры × 6 стилей и генерирует промпт [листа настройки в 3 состояниях](../../assets/showcase/rig_setup_sheet.en.png). |
 | [`hud_presets.mjs`](../../scripts/hud_presets.mjs) | Безопасные зоны `1080×1920`, стили чата, комбо подарков, полосы PK и палитры сердечек. |

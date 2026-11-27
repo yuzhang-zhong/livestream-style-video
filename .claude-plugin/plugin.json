@@ -9,6 +9,29 @@
   "homepage": "https://github.com/yuzhang-zhong/livestream-style-video",
   "repository": "https://github.com/yuzhang-zhong/livestream-style-video",
   "license": "MIT",
-  "keywords": ["livestream", "pov", "ai-video", "roblox", "storyboard", "prompt-engineering", "kling", "seedance", "wan", "sora"],
-  "skills": ["./"]
+  "keywords": [
+    "agent-skill",
+    "agent-skills",
+    "claude-skill",
+    "copilot-skill",
+    "codex-skill",
+    "cursor-skill",
+    "livestream",
+    "livestream-video",
+    "pov-video",
+    "streamer-pov",
+    "ai-video",
+    "video-generation",
+    "image-to-video",
+    "text-to-video",
+    "short-video",
+    "storyboard",
+    "obs-overlay",
+    "danmaku",
+    "tiktok-live",
+    "douyin"
+  ],
+  "skills": [
+    "./skills/livestream-style-video"
+  ]
 }

@@ -4,11 +4,11 @@
 
 Une **Agent Skill** (`SKILL.md` + guides de référence + outils CLI sans dépendances) pour Claude Code, Cursor, GitHub Copilot et Codex permettant d'adapter tout style visuel ou scénario en courts verticaux (`9:16`) façon diffusion en direct, de compiler des prompts vidéo propres sans texte illisible, d'incruster des interfaces live grand public et de prévisualiser les plans localement.
 
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../skills/livestream-style-video/SKILL.md)
 [![Node.js 18+ pour le CLI](https://img.shields.io/badge/Node.js-18%2B-268354?style=flat-square)](#flux-de-travail-et-démarrage-rapide)
 [![Licence MIT](https://img.shields.io/badge/License-MIT-2563eb?style=flat-square)](../../LICENSE)
 
-**[Exemples vidéo](#exemples-vidéo)** · [Planches et HUDs live](#planches-de-scènes-et-rythme) · [Flux et démarrage rapide](#flux-de-travail-et-démarrage-rapide) · [Guide Skill](../../SKILL.md)
+**[Exemples vidéo](#exemples-vidéo)** · [Planches et HUDs live](#planches-de-scènes-et-rythme) · [Flux et démarrage rapide](#flux-de-travail-et-démarrage-rapide) · [Guide Skill](../../skills/livestream-style-video/SKILL.md)
 
 [English](../../README.md) · [简体中文](../../README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · **Français** · [Deutsch](README.de.md) · [Português](README.pt-BR.md) · [Русский](README.ru.md)
 
@@ -104,7 +104,7 @@ Demander directement des commentaires incrustés à un modèle vidéo provoque d
 
 | Composant Skill | Sortie |
 | --- | --- |
-| [`SKILL.md`](../../SKILL.md) | Point d'entrée définissant les 6 modes de production et les 8 invariants livestream. |
+| [`SKILL.md`](../../skills/livestream-style-video/SKILL.md) | Point d'entrée définissant les 6 modes de production et les 8 invariants livestream. |
 | [`shot_compiler.mjs`](../../scripts/shot_compiler.mjs) | Compile `--plot`, `--spec` ou 8 modèles en prompts propres 9:16 (15s / 30s / 45s) et chronologies HUD. |
 | [`rig_spec.mjs`](../../scripts/rig_spec.mjs) | Verrouille 8 supports caméra × 6 styles visuels et génère la [planche 3 états](../../assets/showcase/rig_setup_sheet.en.png). |
 | [`hud_presets.mjs`](../../scripts/hud_presets.mjs) | Zones sûres `1080×1920`, styles de chat, combos cadeaux, barres PK et palettes de cœurs. |

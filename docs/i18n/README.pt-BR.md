@@ -4,11 +4,11 @@
 
 Uma **Agent Skill** (`SKILL.md` + guias de referência + ferramentas CLI sem dependências) para Claude Code, Cursor, GitHub Copilot e Codex que adapta qualquer estilo visual ou enredo em vídeos curtos verticais (`9:16`) com perspectiva de live, compila prompts limpos sem texto embaralhado, sobrepõe interfaces de transmissão e renderiza prévias localmente.
 
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../skills/livestream-style-video/SKILL.md)
 [![Node.js 18+ para CLI](https://img.shields.io/badge/Node.js-18%2B-268354?style=flat-square)](#fluxo-de-trabalho-e-início-rápido)
 [![Licença MIT](https://img.shields.io/badge/License-MIT-2563eb?style=flat-square)](../../LICENSE)
 
-**[Exemplos em vídeo](#exemplos-em-vídeo)** · [Pranchas e HUDs ao vivo](#pranchas-de-cenas-e-ritmo-de-cortes) · [Fluxo e início rápido](#fluxo-de-trabalho-e-início-rápido) · [Guia da Skill](../../SKILL.md)
+**[Exemplos em vídeo](#exemplos-em-vídeo)** · [Pranchas e HUDs ao vivo](#pranchas-de-cenas-e-ritmo-de-cortes) · [Fluxo e início rápido](#fluxo-de-trabalho-e-início-rápido) · [Guia da Skill](../../skills/livestream-style-video/SKILL.md)
 
 [English](../../README.md) · [简体中文](../../README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · **Português** · [Русский](README.ru.md)
 
@@ -104,7 +104,7 @@ Pedir comentários de live diretamente ao modelo de vídeo gera planos de cinema
 
 | Componente | Saída |
 | --- | --- |
-| [`SKILL.md`](../../SKILL.md) | Entrada principal definindo os 6 modos de produção e 8 invariantes de live. |
+| [`SKILL.md`](../../skills/livestream-style-video/SKILL.md) | Entrada principal definindo os 6 modos de produção e 8 invariantes de live. |
 | [`shot_compiler.mjs`](../../scripts/shot_compiler.mjs) | Compila `--plot`, `--spec` ou 8 modelos em prompts limpos 9:16 (15s / 30s / 45s) e linhas do tempo HUD. |
 | [`rig_spec.mjs`](../../scripts/rig_spec.mjs) | Trava 8 câmeras × 6 estilos visuais e gera a [prancha de referência em 3 estados](../../assets/showcase/rig_setup_sheet.en.png). |
 | [`hud_presets.mjs`](../../scripts/hud_presets.mjs) | Zonas seguras `1080×1920`, estilos de chat, combos de presentes, barras PK e paletas de corações. |

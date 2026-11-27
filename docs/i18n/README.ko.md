@@ -4,11 +4,11 @@
 
 Claude Code, Cursor, GitHub Copilot, Codex용 **Agent Skill**(`SKILL.md` + 레퍼런스 가이드 + 무의존성 CLI 도구): 어떤 화풍과 줄거리든 9:16 세로형 라이브 방송 시점 4컷 스토리보드로 변환하고, 깨진 글자 없는 클린 플레이트 프롬프트 컴파일, 주요 라이브 플랫폼 HUD 오버레이 및 로컬 3D 프리뷰를 수행합니다.
 
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../skills/livestream-style-video/SKILL.md)
 [![Node.js 18+ for CLI](https://img.shields.io/badge/Node.js-18%2B-268354?style=flat-square)](#skill-워크플로-및-빠른-시작)
 [![MIT License](https://img.shields.io/badge/License-MIT-2563eb?style=flat-square)](../../LICENSE)
 
-**[비디오 예시](#비디오-예시)** · [씬 보드 & 라이브 HUD](#씬-보드-및-컷-호흡) · [워크플로 및 설치](#skill-워크플로-및-빠른-시작) · [Skill 가이드](../../SKILL.md)
+**[비디오 예시](#비디오-예시)** · [씬 보드 & 라이브 HUD](#씬-보드-및-컷-호흡) · [워크플로 및 설치](#skill-워크플로-및-빠른-시작) · [Skill 가이드](../../skills/livestream-style-video/SKILL.md)
 
 [English](../../README.md) · [简体中文](../../README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md) · **한국어** · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Português](README.pt-BR.md) · [Русский](README.ru.md)
 
@@ -104,7 +104,7 @@ node scripts/drift_check.mjs --pack templates/custom_livestream_spec.json --engi
 
 | Skill 컴포넌트 | 출력 |
 | --- | --- |
-| [`SKILL.md`](../../SKILL.md) | 6가지 제작 모드와 8가지 라이브 시점 불변 규칙을 정의하는 메인 진입점. |
+| [`SKILL.md`](../../skills/livestream-style-video/SKILL.md) | 6가지 제작 모드와 8가지 라이브 시점 불변 규칙을 정의하는 메인 진입점. |
 | [`shot_compiler.mjs`](../../scripts/shot_compiler.mjs) | `--plot`, `--spec`, 8종 템플릿을 15s / 30s / 45s 9:16 클린 플레이트 프롬프트 및 HUD 타임라인으로 컴파일. |
 | [`rig_spec.mjs`](../../scripts/rig_spec.mjs) | 8종 물리 카메라 리그 × 6종 화풍 팩 고정 및 [3상태 셋업 시트](../../assets/showcase/rig_setup_sheet.en.png) 프롬프트 생성. |
 | [`hud_presets.mjs`](../../scripts/hud_presets.mjs) | 5대 플랫폼 `1080×1920` 안전 영역, 댓글 스타일, 선물 콤보, PK 바, 하트 색상표. |

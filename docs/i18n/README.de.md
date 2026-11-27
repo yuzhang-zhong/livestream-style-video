@@ -4,11 +4,11 @@
 
 Ein **Agent Skill** (`SKILL.md` + Referenzhandbücher + abhängigkeitsfreie CLI-Tools) für Claude Code, Cursor, GitHub Copilot und Codex, der beliebige visuelle Stile oder Handlungen in vertikale `9:16`-Livestream-Shorts übersetzt, saubere Video-Prompts ohne Textsalat kompiliert, rekonstruierte Live-HUDs einblendet und Schnitte lokal vorab rendert.
 
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../skills/livestream-style-video/SKILL.md)
 [![Node.js 18+ für CLI](https://img.shields.io/badge/Node.js-18%2B-268354?style=flat-square)](#skill-workflow-und-schnellstart)
 [![MIT-Lizenz](https://img.shields.io/badge/License-MIT-2563eb?style=flat-square)](../../LICENSE)
 
-**[Video-Beispiele](#video-beispiele)** · [Szenenboards & Live-HUDs](#szenenboards-und-schnitt-timing) · [Workflow & Schnellstart](#skill-workflow-und-schnellstart) · [Skill-Handbuch](../../SKILL.md)
+**[Video-Beispiele](#video-beispiele)** · [Szenenboards & Live-HUDs](#szenenboards-und-schnitt-timing) · [Workflow & Schnellstart](#skill-workflow-und-schnellstart) · [Skill-Handbuch](../../skills/livestream-style-video/SKILL.md)
 
 [English](../../README.md) · [简体中文](../../README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Français](README.fr.md) · **Deutsch** · [Português](README.pt-BR.md) · [Русский](README.ru.md)
 
@@ -104,7 +104,7 @@ Generische Prompts mit „Live-Kommentaren“ erzeugen oft unbeteiligte Kamerakr
 
 | Skill-Komponente | Ausgabe |
 | --- | --- |
-| [`SKILL.md`](../../SKILL.md) | Haupteinstieg mit den 6 Produktionsmodi und 8 Livestream-Invarianten. |
+| [`SKILL.md`](../../skills/livestream-style-video/SKILL.md) | Haupteinstieg mit den 6 Produktionsmodi und 8 Livestream-Invarianten. |
 | [`shot_compiler.mjs`](../../scripts/shot_compiler.mjs) | Kompiliert `--plot`, `--spec` oder 8 Vorlagen in saubere 15s / 30s / 45s 9:16 Prompts + HUD-Zeitleisten. |
 | [`rig_spec.mjs`](../../scripts/rig_spec.mjs) | Fixiert 8 Kamerarigs × 6 visuelle Stile und erstellt den [3-Zustands-Setup-Bogen](../../assets/showcase/rig_setup_sheet.en.png). |
 | [`hud_presets.mjs`](../../scripts/hud_presets.mjs) | `1080×1920` Safe-Zones, Kommentar-Stile, Geschenk-Combos, PK-Balken und Herz-Paletten. |

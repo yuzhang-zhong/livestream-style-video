@@ -8,6 +8,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { BUNDLE_FILES, normalizeRelativePath } from "./sync_skill_bundle.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -37,7 +38,14 @@ function assertBinaryFile(relPath, minBytes = 1000) {
 }
 
 const textFiles = [
-  "SKILL.md",
+  "skills/livestream-style-video/SKILL.md",
+  "llms.txt",
+  "CITATION.cff",
+  "docs/discovery-evaluation.md",
+  "scripts/sync_skill_bundle.mjs",
+  "scripts/discovery_audit.mjs",
+  "tests/discovery_queries.json",
+  ".github/workflows/skill-validation.yml",
   "README.md",
   "README.zh-CN.md",
   "docs/i18n/README.zh-TW.md",
@@ -138,7 +146,7 @@ for (const rel of textFiles) readUtf8(rel);
 for (const rel of binaryFiles) assertBinaryFile(rel);
 
 // Validate SKILL.md frontmatter & semver sync
-const skillText = readUtf8("SKILL.md");
+const skillText = readUtf8("skills/livestream-style-video/SKILL.md");
 const fmMatch = skillText.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
 if (!fmMatch) fail("SKILL.md must begin with YAML frontmatter");
 const fm = fmMatch[1];
@@ -187,7 +195,7 @@ for (const [label, desc] of [
 
 // Validate relative links & UTF-8 cleanliness across all Markdown docs
 const docFilesToCheckLinks = [
-  "SKILL.md",
+  "skills/livestream-style-video/SKILL.md",
   "README.md",
   "README.zh-CN.md",
   "docs/i18n/README.zh-TW.md",
@@ -205,7 +213,7 @@ for (const docRel of docFilesToCheckLinks) {
   if (/\?\?\?|\uFFFD/.test(txt)) {
     fail(`Encoding corruption detected in ${docRel}`);
   }
-  if (docRel !== "SKILL.md" && txt.split(/\r?\n/).length < 95) {
+  if (docRel !== "skills/livestream-style-video/SKILL.md" && txt.split(/\r?\n/).length < 95) {
     fail(`Incomplete README detected in ${docRel} (must be >= 95 lines)`);
   }
   const baseDir = path.dirname(path.join(ROOT, docRel));
@@ -217,6 +225,22 @@ for (const docRel of docFilesToCheckLinks) {
     if (!fs.existsSync(resolved)) {
       fail(`Broken relative link in ${docRel}: '${target}' -> ${resolved}`);
     }
+  }
+}
+
+
+const bundleRoot = path.join(ROOT, "skills", "livestream-style-video");
+if (!fs.existsSync(bundleRoot)) {
+  fail("Missing installable Skill package: skills/livestream-style-video");
+}
+for (const relativePath of BUNDLE_FILES) {
+  const source = path.join(ROOT, relativePath);
+  const bundled = path.join(bundleRoot, relativePath);
+  if (!fs.existsSync(bundled)) {
+    fail(`Missing bundled file: skills/livestream-style-video/${relativePath}`);
+  }
+  if (relativePath !== "SKILL.md" && !fs.readFileSync(source).equals(fs.readFileSync(bundled))) {
+    fail(`Installable Skill package is stale: run npm run sync:skill (${relativePath})`);
   }
 }
 

@@ -2,7 +2,7 @@
 name: livestream-style-video
 description: |
   Agent Skill to map any visual style or storyline into authentic 9:16 livestream camera perspectives, clean-plate I2V/T2V prompts, detachable HUDs, and local MP4 previews.
-  Use when the user wants to generate AI livestream-perspective videos, streamer POV shorts, IRL selfie-stick/webcam/bodycam/unboxing/PK/PiP gameplay videos across any art style (photorealistic IRL, Roblox R6/blocky, anime/VTuber, 3D vinyl, voxel, or wuxia/sci-fi/horror plot adaptations), reconstruct Douyin (抖音), Kuaishou (快手), Instagram Live (Ins), X/Periscope, or TikTok Live room overlays/popups/danmaku/gift combos, or compile prompts for Kling (可灵), Seedance/Jimeng (即梦), Hailuo (海螺), Wan (通义万相), Sora, Veo, or Runway without burned-in gibberish UI text.
+  Use when generating AI livestream POV shorts, streamer webcam/selfie-stick/unboxing/bodycam/PiP gameplay/1v1 PK split-screen videos across any art style (photorealistic IRL, Roblox R6/R15, Minecraft 8x8 voxel, anime VTuber, Duolingo/open-source mascots, or wuxia/horror/sci-fi plots), fixing Sora/Kling/Seedance/Hailuo/Wan/Veo/Runway third-person cinema drift or burned-in gibberish TikTok/Douyin/Kuaishou/Instagram/X Live UI text, or rendering OBS green-screen HUD overlays (直播视角短视频、防乱码弹幕礼物小黄车边框、可灵/即梦纯净底片提示词).
 license: MIT
 metadata:
   version: "2.0.0"
@@ -121,4 +121,4 @@ To interactively layer **Douyin / Kuaishou / Instagram Live / X Live / TikTok Li
 - [`references/rescue-and-anti-drift.md`](references/rescue-and-anti-drift.md): 8-gate failure matrix and before/after prompt rescue patches.
 - [`references/viral-livestream-archetypes.md`](references/viral-livestream-archetypes.md): 8 reusable livestream short-video templates (5 General/Cross-Genre AI Video + 3 Roblox Livestream POV).
 - [`studio/index.html`](studio/index.html): Standalone interactive HTML5/OBS Multi-Platform Livestream Chrome, Popup & Heart FX Studio.
-- [`templates/`](templates/) & [`examples/`](examples/): Reusable templates and 8 complete rendered `.mp4` + `.gif` + prompt packages.
+- [`templates/`](templates/) & [`examples/`](https://github.com/yuzhang-zhong/livestream-style-video/tree/main/examples): Reusable templates and 8 complete rendered `.mp4` + `.gif` + prompt packages.

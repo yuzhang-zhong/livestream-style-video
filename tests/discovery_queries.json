@@ -1,0 +1,367 @@
+{
+  "expectedSkill": "livestream-style-video",
+  "repository": "yuzhang-zhong/livestream-style-video",
+  "queries": [
+    {
+      "id": "m1-exact-skill",
+      "method": "exact",
+      "query": "livestream-style-video Agent Skill",
+      "requiredTerms": [
+        "livestream-style-video",
+        "Agent Skill",
+        "9:16"
+      ]
+    },
+    {
+      "id": "m1-repo-slug",
+      "method": "exact",
+      "query": "yuzhang-zhong/livestream-style-video",
+      "requiredTerms": [
+        "yuzhang-zhong/livestream-style-video",
+        "SKILL.md"
+      ]
+    },
+    {
+      "id": "m1-cli-scripts",
+      "method": "exact",
+      "query": "rig_spec.mjs hud_presets.mjs shot_compiler.mjs",
+      "requiredTerms": [
+        "rig_spec.mjs",
+        "hud_presets.mjs",
+        "shot_compiler.mjs"
+      ]
+    },
+    {
+      "id": "m1-hud-studio",
+      "method": "exact",
+      "query": "live_hud_studio.js OBS Browser Source studio/index.html",
+      "requiredTerms": [
+        "studio/index.html",
+        "OBS Browser Source",
+        "live_hud_studio.js"
+      ]
+    },
+    {
+      "id": "m2-gibberish-ui-fix",
+      "method": "en-symptom",
+      "query": "how to stop Sora or Kling burning gibberish TikTok Live comments into AI video",
+      "requiredTerms": [
+        "gibberish",
+        "clean-plate",
+        "TikTok Live",
+        "Kling",
+        "Sora"
+      ]
+    },
+    {
+      "id": "m2-cinema-crane-drift",
+      "method": "en-symptom",
+      "query": "AI video prompt keeps shooting third-person Hollywood crane instead of streamer webcam POV",
+      "requiredTerms": [
+        "third-person",
+        "crane",
+        "desktop-webcam",
+        "fourth-wall"
+      ]
+    },
+    {
+      "id": "m2-pip-facecam-melt",
+      "method": "en-symptom",
+      "query": "gaming streamer corner PiP facecam melts in text-to-video generation",
+      "requiredTerms": [
+        "pip-facecam-rig",
+        "PiP",
+        "facecam",
+        "clean plates"
+      ]
+    },
+    {
+      "id": "m2-unboxing-autofocus",
+      "method": "en-symptom",
+      "query": "influencer palm behind product autofocus macro gesture AI video prompt",
+      "requiredTerms": [
+        "AF-C",
+        "palm",
+        "unboxing",
+        "overhead-showcase-rig"
+      ]
+    },
+    {
+      "id": "m3-zh-danmaku-garbled",
+      "method": "zh-colloquial",
+      "query": "Sora可灵即梦生成抖音直播间视频弹幕文字乱码融化怎么解决",
+      "requiredTerms": [
+        "弹幕乱码",
+        "抖音",
+        "可灵",
+        "即梦",
+        "纯净底片"
+      ]
+    },
+    {
+      "id": "m3-zh-wuxia-live",
+      "method": "zh-colloquial",
+      "query": "怎么用AI做古人御剑修仙开直播整活的9:16竖屏短视频",
+      "requiredTerms": [
+        "御剑",
+        "9:16",
+        "竖屏",
+        "直播"
+      ]
+    },
+    {
+      "id": "m3-zh-xiaohuangche-pk",
+      "method": "zh-colloquial",
+      "query": "抖音小黄车讲解卡快手穿云箭双人连麦PK血条直播边框合成工具",
+      "requiredTerms": [
+        "小黄车",
+        "穿云箭",
+        "PK",
+        "连击"
+      ]
+    },
+    {
+      "id": "m3-zh-pip-streamer",
+      "method": "zh-colloquial",
+      "query": "游戏主播右上角画中画小窗读弹幕眼神偏轴AI视频提示词",
+      "requiredTerms": [
+        "画中画",
+        "读弹幕",
+        "15°"
+      ]
+    },
+    {
+      "id": "m4-alt-capcut-overlay",
+      "method": "alternative",
+      "query": "open-source watermark-free alternative to CapCut fake TikTok Live and Instagram Live overlay templates",
+      "requiredTerms": [
+        "CapCut",
+        "watermark",
+        "TikTok Live",
+        "Instagram Live",
+        "MIT"
+      ]
+    },
+    {
+      "id": "m4-alt-jianying-zh",
+      "method": "alternative",
+      "query": "剪映直播间边框弹幕礼物绿幕素材免费开源平替",
+      "requiredTerms": [
+        "剪映",
+        "绿幕",
+        "开源平替"
+      ]
+    },
+    {
+      "id": "m4-obs-chroma-green",
+      "method": "alternative",
+      "query": "free #00FF00 green screen chroma key livestream chat and gift combo overlay HTML5",
+      "requiredTerms": [
+        "#00FF00",
+        "chroma-key",
+        "gift combo",
+        "HTML5"
+      ]
+    },
+    {
+      "id": "m4-no-api-key-local",
+      "method": "alternative",
+      "query": "render 9:16 livestream animatic MP4 and GIF offline with zero API keys",
+      "requiredTerms": [
+        "zero API keys",
+        "MP4",
+        "GIF",
+        "Node.js 18+"
+      ]
+    },
+    {
+      "id": "m5-multi-engine-prompts",
+      "method": "tech-stack",
+      "query": "compile I2V and T2V prompts for Kling Seedance Hailuo Wan Sora Veo Runway",
+      "requiredTerms": [
+        "Kling",
+        "Seedance",
+        "Hailuo",
+        "Wan",
+        "Sora",
+        "Veo",
+        "Runway"
+      ]
+    },
+    {
+      "id": "m5-periscope-hearts",
+      "method": "tech-stack",
+      "query": "X Periscope 6-color bezier rising hearts and safe-zone 1080x1920 HUD spec",
+      "requiredTerms": [
+        "Periscope",
+        "1080×1920",
+        "safe-zone",
+        "x"
+      ]
+    },
+    {
+      "id": "m5-8gate-drift-linter",
+      "method": "tech-stack",
+      "query": "8-gate Unicode-safe anti-drift prompt linter for livestream camera optics",
+      "requiredTerms": [
+        "8-gate",
+        "drift_check.mjs",
+        "ring-light"
+      ]
+    },
+    {
+      "id": "m5-wav-audio-720p",
+      "method": "tech-stack",
+      "query": "720x1280 H.264 MP4 renderer with synthesized WAV room audio and 256-color palettegen GIF",
+      "requiredTerms": [
+        "720×1280",
+        "H.264",
+        "WAV",
+        "256-color"
+      ]
+    },
+    {
+      "id": "m6-claude-copilot-install",
+      "method": "agent-ecosystem",
+      "query": "gh skill install livestream-style-video for Claude Code GitHub Copilot Cursor Codex",
+      "requiredTerms": [
+        "gh skill install yuzhang-zhong/livestream-style-video",
+        "Claude Code",
+        "GitHub Copilot",
+        "Cursor",
+        "Codex"
+      ]
+    },
+    {
+      "id": "m6-npx-skills-add",
+      "method": "agent-ecosystem",
+      "query": "npx skills add livestream-style-video agent-plugins v1.0.0",
+      "requiredTerms": [
+        "npx skills add https://github.com/yuzhang-zhong/livestream-style-video",
+        "plugin.json"
+      ]
+    },
+    {
+      "id": "m6-gemini-pi-package",
+      "method": "agent-ecosystem",
+      "query": "Gemini CLI and Pi skill package for 9:16 streamer POV storyboards",
+      "requiredTerms": [
+        "Gemini CLI",
+        "pi-package",
+        "storyboard"
+      ]
+    },
+    {
+      "id": "m6-freeform-plot-cli",
+      "method": "agent-ecosystem",
+      "query": "CLI tool to convert any freeform story plot into a 4-shot 15s or 8-shot 30s livestream script",
+      "requiredTerms": [
+        "--plot",
+        "15s",
+        "30s",
+        "4-shot"
+      ]
+    },
+    {
+      "id": "m7-llm-en-question",
+      "method": "conversational-llm",
+      "query": "What open-source GitHub skill turns any story or character style into a vertical TikTok or Douyin livestream POV video?",
+      "requiredTerms": [
+        "open-source",
+        "9:16",
+        "Douyin",
+        "TikTok",
+        "livestream"
+      ]
+    },
+    {
+      "id": "m7-llm-vtuber-question",
+      "method": "conversational-llm",
+      "query": "How do I generate anime VTuber or mascot livestream clips with eye-line chat glances and clean overlays?",
+      "requiredTerms": [
+        "anime-vtuber",
+        "15°",
+        "clean-plate"
+      ]
+    },
+    {
+      "id": "m7-llm-roblox-mc-live",
+      "method": "conversational-llm",
+      "query": "Can I create Roblox R6 Obby rage-quit or Minecraft 8x8 voxel livestream PK videos without five-finger drift?",
+      "requiredTerms": [
+        "roblox-blocky",
+        "voxel-sandbox",
+        "PK",
+        "fingerless"
+      ]
+    },
+    {
+      "id": "m7-llm-zh-recommend",
+      "method": "conversational-llm",
+      "query": "有没有支持 Claude Code 和 Copilot 的 AI 直播视角短视频分镜与直播间特效生成 Skill？",
+      "requiredTerms": [
+        "Agent Skill",
+        "Claude Code",
+        "GitHub Copilot",
+        "分镜"
+      ]
+    },
+    {
+      "id": "m8-duolingo-owl-cast",
+      "method": "persona-longtail",
+      "query": "Duolingo-inspired green owl mascot late-night streak check-in livestream short template",
+      "requiredTerms": [
+        "duolingo-mascot",
+        "streak",
+        "duolingo-owl-streak-cam"
+      ]
+    },
+    {
+      "id": "m8-tux-ferris-godot",
+      "method": "persona-longtail",
+      "query": "Linux Tux penguin Rust Ferris crab Godot Gear-Bot developer coding livestream webcam template",
+      "requiredTerms": [
+        "Linux Tux",
+        "Ferris",
+        "Godot",
+        "tux-ferris-code-webcam"
+      ]
+    },
+    {
+      "id": "m8-doors-horror-selfie",
+      "method": "persona-longtail",
+      "query": "handheld selfie-stick IRL horror corridor livestream POV with ring-light catchlights",
+      "requiredTerms": [
+        "handheld-selfie-irl",
+        "roblox-doors-irl-selfie",
+        "ring-light"
+      ]
+    },
+    {
+      "id": "m8-10-language-i18n",
+      "method": "persona-longtail",
+      "query": "multilingual 10-language AI video prompt compiler supporting zh-tw ja ko es fr de pt ru",
+      "requiredTerms": [
+        "zh-tw",
+        "ja",
+        "ko",
+        "es",
+        "fr",
+        "de",
+        "pt",
+        "ru"
+      ]
+    }
+  ],
+  "requiredPaths": [
+    "skills/livestream-style-video/SKILL.md",
+    "skills/livestream-style-video/scripts/render_preview.mjs",
+    "skills/livestream-style-video/studio/index.html",
+    "llms.txt",
+    "CITATION.cff"
+  ],
+  "requiredInstallCommands": [
+    "gh skill install yuzhang-zhong/livestream-style-video livestream-style-video",
+    "npx skills add https://github.com/yuzhang-zhong/livestream-style-video --skill livestream-style-video"
+  ]
+}

@@ -11,21 +11,25 @@
   "repository": "https://github.com/yuzhang-zhong/livestream-style-video",
   "license": "MIT",
   "keywords": [
+    "agent-skill",
+    "agent-skills",
+    "claude-skill",
+    "copilot-skill",
+    "codex-skill",
+    "cursor-skill",
     "livestream",
+    "livestream-video",
     "pov-video",
+    "streamer-pov",
     "ai-video",
     "video-generation",
-    "roblox",
-    "duolingo",
-    "voxel",
+    "image-to-video",
+    "text-to-video",
     "short-video",
     "storyboard",
-    "kling",
-    "seedance",
-    "hailuo",
-    "wan",
-    "sora",
-    "agent-skills"
-  ],
-  "skills": ["./"]
+    "obs-overlay",
+    "danmaku",
+    "tiktok-live",
+    "douyin"
+  ]
 }

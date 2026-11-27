@@ -4,11 +4,11 @@
 
 一套面向 Claude Code、Cursor、GitHub Copilot 与 Codex 的 **Agent Skill**（`SKILL.md` + 领域词库 + 零依赖命令行脚本）：把任意画风与剧情转译为 `9:16` 竖屏直播视角四镜分镜，编译无乱码的纯净视频生成提示词，复刻主流直播间边框特效，并在本地直出 `720p` 高清预演成片。
 
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](skills/livestream-style-video/SKILL.md)
 [![命令行需要 Node.js 18+](https://img.shields.io/badge/Node.js-18%2B-268354?style=flat-square)](#skill-工作流与安装使用)
 [![MIT 许可证](https://img.shields.io/badge/License-MIT-2563eb?style=flat-square)](LICENSE)
 
-**[高清短片示例](#短片示例)** · [跨画风角色与直播界面](#跨画风机位与多平台直播界面) · [Skill 工作流与安装](#skill-工作流与安装使用) · [Skill 指南](SKILL.md)
+**[高清短片示例](#短片示例)** · [跨画风角色与直播界面](#跨画风机位与多平台直播界面) · [Skill 工作流与安装](#skill-工作流与安装使用) · [Skill 指南](skills/livestream-style-video/SKILL.md)
 
 [English](README.md) · **简体中文** · [繁體中文](docs/i18n/README.zh-TW.md) · [日本語](docs/i18n/README.ja.md) · [한국어](docs/i18n/README.ko.md) · [Español](docs/i18n/README.es.md) · [Français](docs/i18n/README.fr.md) · [Deutsch](docs/i18n/README.de.md) · [Português](docs/i18n/README.pt-BR.md) · [Русский](docs/i18n/README.ru.md)
 
@@ -97,9 +97,14 @@
 
 ### 作为 Agent Skill 安装调用
 
-将本仓库克隆到宿主工具的 Skills 目录后，AI 编程助手会自动按需读取 [`SKILL.md`](SKILL.md) 与 [`references/`](references/) 参考手册并调用本地脚本。下方路径用于 Codex；GitHub Copilot 使用 `~/.copilot/skills/livestream-style-video`，Claude Code 与 Cursor 放入各自配置的 Skills 目录即可。
+将本仓库克隆到宿主工具的 Skills 目录后，AI 编程助手会自动按需读取 [`SKILL.md`](skills/livestream-style-video/SKILL.md) 与 [`references/`](references/) 参考手册并调用本地脚本。下方路径用于 Codex；GitHub Copilot 使用 `~/.copilot/skills/livestream-style-video`，Claude Code 与 Cursor 放入各自配置的 Skills 目录即可。
 
 ```bash
+# 使用 GitHub CLI 或 Skills CLI 一键安装（支持 Claude Code、GitHub Copilot、Codex、Cursor、Gemini CLI）
+gh skill install yuzhang-zhong/livestream-style-video livestream-style-video
+npx skills add https://github.com/yuzhang-zhong/livestream-style-video --skill livestream-style-video
+
+# 或手动克隆到宿主 Skills 目录
 git clone https://github.com/yuzhang-zhong/livestream-style-video.git ~/.codex/skills/livestream-style-video
 ```
 
@@ -131,7 +136,7 @@ node scripts/drift_check.mjs --pack templates/custom_livestream_spec.json --engi
 
 | Skill 组件 | 输出 |
 | --- | --- |
-| [`SKILL.md`](SKILL.md) | Agent Skill 主入口说明，定义 6 种工作模式（机位设定、剧情转直播、提示词编译、平台 HUD、翻车修复、本地渲染）与 8 项直播视角约束。 |
+| [`SKILL.md`](skills/livestream-style-video/SKILL.md) | Agent Skill 主入口说明，定义 6 种工作模式（机位设定、剧情转直播、提示词编译、平台 HUD、翻车修复、本地渲染）与 8 项直播视角约束。 |
 | [`shot_compiler.mjs`](scripts/shot_compiler.mjs) | 支持 `--plot "<任意剧情>"`、`--spec <episode.json>` 或 8 套内置模板，生成零重复的 15s / 30s / 45s 竖屏纯净底片提示词与 HUD 时间轴（`local3d`、可灵、即梦、海螺、万相、Sora、Veo、Runway）。 |
 | [`rig_spec.mjs`](scripts/rig_spec.mjs) | 锁定 8 种物理直播机位 × 8 类正交画风（`duolingo-mascot`、`opensource-mascot`、`roblox-blocky`、`voxel-sandbox`、`anime-vtuber`、`stylized-3d`、`cinematic-genre-adapt`、`realistic-irl`）与[直播间三态参考卡](assets/showcase/rig_setup_sheet.zh.png)。 |
 | [`hud_presets.mjs`](scripts/hud_presets.mjs) | 抖音、快手、Instagram Live、X、TikTok 与纯净模式的 `1080×1920` 安全区、弹幕样式、双槽礼物连击、小黄车/问答弹窗与飘心色板。 |
@@ -140,6 +145,15 @@ node scripts/drift_check.mjs --pack templates/custom_livestream_spec.json --engi
 | [`studio/index.html`](studio/index.html) | 独立浏览器 / OBS 交互式直播边框工作台，内置 4 套实时 `<canvas>` 角色机位预演、本地 MP4 导入、弹窗触发器与 `#00FF00` 绿幕导出。 |
 
 [八大机位与光学](references/camera-rigs-and-optics.md) · [跨画风适配矩阵](references/style-adapters-matrix.md) · [任意剧情转直播节奏](references/plot-to-livestream-beats.md) · [五大平台界面逆向台账](references/platform-ui-rea-ledger.md) · [各模型提示词](references/model-prompt-playbook.md) · [跑偏修复](references/rescue-and-anti-drift.md) · [8 套分镜模板](references/viral-livestream-archetypes.md)
+
+## 常见问题 · FAQ
+
+<details>
+<summary>为什么直接让 Sora、可灵（Kling）、即梦（Seedance）、海螺或通义万相生成直播间视频会出现弹幕乱码、小窗融化或电影空镜跑偏？</summary>
+
+视频扩散模型直接绘制直播间文字会把弹幕和礼物框烧成无法阅读的外星乱码，或退化为不看镜头的第三人称电影摇臂镜头。本工具采用**纯净底片（Clean-Plate）+ 后置 HUD 分层合成**：先锁定 8 大物理直播机位（桌面摄像头、自拍杆夜市/御剑、右上角画中画双轨 `two separate clean plates`、手掌挡背后 `[AF-C]` 微距开箱、双人 50/50 连麦 PK）与 `15°` 偏轴读弹幕眼神生成零文字底片，再用 `render_preview.mjs` 或浏览器/OBS 工作台 [`studio/index.html`](studio/index.html) 叠加高清**抖音小黄车讲解卡、快手穿云箭连击、TikTok/Instagram/X 飘心边框或 `#00FF00` 绿幕素材**，是剪映付费直播边框模板的免费开源（MIT）平替。
+
+</details>
 
 ## 语言
 

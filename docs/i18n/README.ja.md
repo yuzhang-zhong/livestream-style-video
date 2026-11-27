@@ -4,11 +4,11 @@
 
 Claude Code・Cursor・GitHub Copilot・Codex 向けの **Agent Skill**（`SKILL.md` + リファレンスガイド + 依存関係ゼロの CLI ツール）。あらゆる画風やストーリーを 9:16 縦型ライブ配信視点の 4 カット構成に変換し、文字化けゼロのクリーンプレートプロンプト生成、主要配信プラットフォーム枠の重ね合わせ、ローカル 3D プレビューを一貫して行います。
 
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../skills/livestream-style-video/SKILL.md)
 [![CLI は Node.js 18+ 対応](https://img.shields.io/badge/Node.js-18%2B-268354?style=flat-square)](#skill-ワークフローとクイックスタート)
 [![MIT License](https://img.shields.io/badge/License-MIT-2563eb?style=flat-square)](../../LICENSE)
 
-**[動画サンプル](#動画サンプル)** · [シーンボードと配信HUD](#シーンボードとカット割り) · [ワークフローと導入](#skill-ワークフローとクイックスタート) · [Skill ガイド](../../SKILL.md)
+**[動画サンプル](#動画サンプル)** · [シーンボードと配信HUD](#シーンボードとカット割り) · [ワークフローと導入](#skill-ワークフローとクイックスタート) · [Skill ガイド](../../skills/livestream-style-video/SKILL.md)
 
 [English](../../README.md) · [简体中文](../../README.zh-CN.md) · [繁體中文](README.zh-TW.md) · **日本語** · [한국어](README.ko.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Português](README.pt-BR.md) · [Русский](README.ru.md)
 
@@ -104,7 +104,7 @@ node scripts/drift_check.mjs --pack templates/custom_livestream_spec.json --engi
 
 | Skill コンポーネント | 出力内容 |
 | --- | --- |
-| [`SKILL.md`](../../SKILL.md) | 6 つの制作モードと 8 つのライブ配信ルールを定義するエントリガイド。 |
+| [`SKILL.md`](../../skills/livestream-style-video/SKILL.md) | 6 つの制作モードと 8 つのライブ配信ルールを定義するエントリガイド。 |
 | [`shot_compiler.mjs`](../../scripts/shot_compiler.mjs) | `--plot` 自由入力・`--spec`・8 種のテンプレートから 9:16 クリーンプレートプロンプトと HUD タイムラインを生成。 |
 | [`rig_spec.mjs`](../../scripts/rig_spec.mjs) | 8 種のカメラリグ × 6 種の画風ロックと [3状態セットアップシート](../../assets/showcase/rig_setup_sheet.en.png)プロンプトを生成。 |
 | [`hud_presets.mjs`](../../scripts/hud_presets.mjs) | 5 大配信枠の `1080×1920` セーフゾーン、コメント、ギフト連撃、PK ゲージ定義。 |

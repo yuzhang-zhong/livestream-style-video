@@ -1,0 +1,46 @@
+{
+  "name": "livestream-style-video-catalog",
+  "version": "2.0.0",
+  "rigs": [
+    "desktop-webcam",
+    "handheld-selfie-irl",
+    "pip-facecam-rig",
+    "overhead-showcase-rig",
+    "chest-head-pov",
+    "pk-cohost-split",
+    "cctv-obs-fixed",
+    "drone-follow-live"
+  ],
+  "styles": [
+    "duolingo-mascot",
+    "opensource-mascot",
+    "roblox-blocky",
+    "voxel-sandbox",
+    "anime-vtuber",
+    "stylized-3d",
+    "cinematic-genre-adapt",
+    "realistic-irl"
+  ],
+  "platforms": [
+    "douyin",
+    "kuaishou",
+    "instagram",
+    "x",
+    "tiktok",
+    "clean"
+  ],
+  "templates": {
+    "mascotAndOpenSourceIp": [
+      "duolingo-owl-streak-cam",
+      "duolingo-chill-night-market",
+      "tux-ferris-code-webcam",
+      "godot-bot-unboxing-af",
+      "voxel-wuxia-sword-live"
+    ],
+    "robloxLivestream": [
+      "roblox-obby-rage-pip",
+      "roblox-doors-irl-selfie",
+      "roblox-pet-hatch-pk"
+    ]
+  }
+}

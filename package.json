@@ -8,19 +8,37 @@
   "repository": "github:yuzhang-zhong/livestream-style-video",
   "keywords": [
     "agent-skill",
-    "codex-skill",
-    "copilot-skill",
+    "agent-skills",
     "claude-skill",
+    "copilot-skill",
+    "codex-skill",
+    "cursor-skill",
     "livestream",
+    "livestream-video",
     "pov-video",
+    "streamer-pov",
     "ai-video",
+    "video-generation",
+    "image-to-video",
+    "text-to-video",
+    "short-video",
+    "storyboard",
+    "obs-overlay",
+    "danmaku",
+    "tiktok-live",
+    "douyin",
+    "kuaishou",
+    "instagram-live",
+    "vtuber",
     "roblox",
+    "voxel",
     "kling",
     "seedance",
     "hailuo",
     "wan",
     "sora",
-    "short-video",
+    "veo",
+    "runway",
     "pi-package"
   ],
   "scripts": {
@@ -28,10 +46,16 @@
     "compile": "node scripts/shot_compiler.mjs",
     "check": "node scripts/drift_check.mjs",
     "render": "node scripts/render_preview.mjs",
+    "sync:skill": "node scripts/sync_skill_bundle.mjs",
+    "test:discovery": "node scripts/discovery_audit.mjs",
+    "test:discovery:remote": "node scripts/discovery_audit.mjs --remote",
     "validate": "node scripts/validate_skill.mjs",
     "test": "node --test tests/run_tests.mjs"
   },
   "pi": {
-    "skills": ["./"]
-  }
+    "skills": [
+      "./skills/livestream-style-video"
+    ]
+  },
+  "homepage": "https://github.com/yuzhang-zhong/livestream-style-video#install-as-an-agent-skill"
 }

@@ -4,11 +4,11 @@
 
 一套面向 Claude Code、Cursor、GitHub Copilot 與 Codex 的 **Agent Skill**（`SKILL.md` + 領域參考手冊 + 零依賴命令列腳本）：將任意畫風與劇情轉譯為 9:16 直式直播視角四鏡分鏡、逐鏡編譯無亂碼影片提示詞、復刻主流直播間邊框特效，並在本機離線預演動態成片。
 
-[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../SKILL.md)
+[![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](../../skills/livestream-style-video/SKILL.md)
 [![命令列需要 Node.js 18+](https://img.shields.io/badge/Node.js-18%2B-268354?style=flat-square)](#skill-工作流與安裝使用)
 [![MIT 授權條款](https://img.shields.io/badge/License-MIT-2563eb?style=flat-square)](../../LICENSE)
 
-**[短片範例](#短片範例)** · [分鏡與直播介面](#分鏡拆解與多平台直播表) · [Skill 工作流與安裝](#skill-工作流與安裝使用) · [Skill 指南](../../SKILL.md)
+**[短片範例](#短片範例)** · [分鏡與直播介面](#分鏡拆解與多平台直播表) · [Skill 工作流與安裝](#skill-工作流與安裝使用) · [Skill 指南](../../skills/livestream-style-video/SKILL.md)
 
 [English](../../README.md) · [简体中文](../../README.zh-CN.md) · **繁體中文** · [日本語](README.ja.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Português](README.pt-BR.md) · [Русский](README.ru.md)
 
@@ -70,7 +70,7 @@
 
 ### 作為 Agent Skill 安裝呼叫
 
-將本倉庫複製到宿主工具的 Skills 目錄後，AI 助手會自動按需讀取 [`SKILL.md`](../../SKILL.md) 與 [`references/`](../../references/) 參考手冊並呼叫本機腳本。下方路徑用於 Codex；GitHub Copilot 使用 `~/.copilot/skills/livestream-style-video`，Claude Code 與 Cursor 放入各自設定的 Skills 目錄即可。
+將本倉庫複製到宿主工具的 Skills 目錄後，AI 助手會自動按需讀取 [`SKILL.md`](../../skills/livestream-style-video/SKILL.md) 與 [`references/`](../../references/) 參考手冊並呼叫本機腳本。下方路徑用於 Codex；GitHub Copilot 使用 `~/.copilot/skills/livestream-style-video`，Claude Code 與 Cursor 放入各自設定的 Skills 目錄即可。
 
 ```bash
 git clone https://github.com/yuzhang-zhong/livestream-style-video.git ~/.codex/skills/livestream-style-video
@@ -104,7 +104,7 @@ node scripts/drift_check.mjs --pack templates/custom_livestream_spec.json --engi
 
 | Skill 組件 | 輸出內容 |
 | --- | --- |
-| [`SKILL.md`](../../SKILL.md) | Agent Skill 主入口，定義 6 種工作模式與 8 項直播視角約束。 |
+| [`SKILL.md`](../../skills/livestream-style-video/SKILL.md) | Agent Skill 主入口，定義 6 種工作模式與 8 項直播視角約束。 |
 | [`shot_compiler.mjs`](../../scripts/shot_compiler.mjs) | 支援 `--plot` 任意劇情、`--spec` 或 8 套內建模板，編譯 15s / 30s / 45s 純淨底片提示詞與 HUD 時間軸。 |
 | [`rig_spec.mjs`](../../scripts/rig_spec.mjs) | 鎖定 8 種物理機位 × 6 類正交畫風與[直播間三態參考卡](../../assets/showcase/rig_setup_sheet.zh.png)。 |
 | [`hud_presets.mjs`](../../scripts/hud_presets.mjs) | 五大直播平台 `1080×1920` 安全區、彈幕樣式、雙槽禮物連擊、小黃車/問答彈窗與飄心色板。 |
