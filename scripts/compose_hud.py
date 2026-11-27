@@ -2,7 +2,7 @@
 """
 compose_hud.py
 Cross-platform High-DPI Livestream Chrome, Interactive Popup, Bezier Heart Fountain,
-Contact Sheet, Showcase Atlas, GIF, and H.264+AAC MP4 Compositor for livestream-pov-video.
+Contact Sheet, Showcase Atlas, GIF, and H.264+AAC MP4 Compositor for livestream-style-video.
 
 Reads a JSON manifest emitted by scripts/render_preview.mjs and composites:
 - Multi-platform trademark-clean HUDs: douyin, kuaishou, instagram, x, tiktok, clean

@@ -4,7 +4,7 @@ Any third-person story—from burning midnight ramen to escaping a haunted hallw
 
 ## 1. Third-Person Narrative vs. Livestream Perspective Mapping
 
-| Story Element | Ordinary Short-Video / Movie Treatment | Livestream Perspective (`livestream-pov-video`) Treatment |
+| **Story Element** | **Ordinary Short-Video / Movie Treatment** | **Livestream Perspective (`livestream-style-video`) Treatment** |
 | --- | --- | --- |
 | **Opening** | Wide establishing shot of location | **Cold-Open Mid-Claim (`0–3.5s`)**: Already inside the rig, addressing `0°` lens ("家人们别刷屏说剧本，今天现场实测…") |
 | **Exposition** | Voiceover narration or subtitle | **Close-Up Lens Proof (`3.5–7.5s`)**: Bringing prop `18cm` to autofocus lens with flat palm behind, or tilting selfie cam down to prove no wires/tricks |

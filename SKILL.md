@@ -1,5 +1,5 @@
 ---
-name: livestream-pov-video
+name: livestream-style-video
 description: |
   Agent Skill to map any visual style or storyline into authentic 9:16 livestream camera perspectives, clean-plate I2V/T2V prompts, detachable HUDs, and local MP4 previews.
   Use when the user wants to generate AI livestream-perspective videos, streamer POV shorts, IRL selfie-stick/webcam/bodycam/unboxing/PK/PiP gameplay videos across any art style (photorealistic IRL, Roblox R6/blocky, anime/VTuber, 3D vinyl, voxel, or wuxia/sci-fi/horror plot adaptations), reconstruct Douyin (抖音), Kuaishou (快手), Instagram Live (Ins), X/Periscope, or TikTok Live room overlays/popups/danmaku/gift combos, or compile prompts for Kling (可灵), Seedance/Jimeng (即梦), Hailuo (海螺), Wan (通义万相), Sora, Veo, or Runway without burned-in gibberish UI text.
@@ -8,7 +8,7 @@ metadata:
   version: "1.1.0"
 ---
 
-# Livestream POV Video Skill (`livestream-pov-video`)
+# Livestream Style Video Skill (`livestream-style-video`)
 
 ## Core Objective / 核心目标
 

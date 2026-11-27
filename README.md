@@ -1,130 +1,117 @@
 <div align="center">
 
-<img src="assets/icon.svg" width="108" height="108" alt="Livestream POV Video Skill icon" />
+# Livestream Style Video Skill
 
-# Livestream POV Video Skill
-
-Turn any visual style or storyline into a 9:16 livestream camera perspective: lock physical webcam/selfie/POV rigs, compile clean-plate I2V/T2V prompts without gibberish UI text, and overlay reconstructed Douyin, Kuaishou, Instagram Live, X, or TikTok chrome locally.
+An Agent Skill (`SKILL.md` + reference playbooks + offline CLI tools) for Claude Code, Cursor, GitHub Copilot, and Codex to map any visual style or storyline into 9:16 livestream-perspective shorts, compile clean-plate video prompts, overlay mainstream room HUDs, and preview cuts locally.
 
 [![Agent Skill](https://img.shields.io/badge/Agent_Skill-SKILL.md-0f172a?style=flat-square)](SKILL.md)
-[![Node.js 18+ for CLI](https://img.shields.io/badge/Node.js-18%2B-268354?style=flat-square)](#install-and-quick-start)
-[![MIT License](https://img.shields.io/badge/License-MIT-2563eb?style=flat-square)](LICENSE)
+[![Node.js 18+ for the CLI](https://img.shields.io/badge/Node.js-18%2B-268354?style=flat-square)](#skill-workflow-and-quick-start)
+[![MIT license](https://img.shields.io/badge/License-MIT-2563eb?style=flat-square)](LICENSE)
 
-**[Video samples](#livestream-pov-samples)** · [Platform HUD matrix](#reconstructed-livestream-chrome-and-fx-rea) · [Camera rigs & anti-drift](#camera-rigs-and-clean-plate-workflow) · [Install & quick start](#install-and-quick-start) · [Skill guide](SKILL.md)
+**[Video examples](#video-examples)** · [Scene boards & live HUDs](#scene-boards-and-shot-pacing) · [Skill workflow & quick start](#skill-workflow-and-quick-start) · [Skill guide](SKILL.md)
 
 **English** · [简体中文](README.zh-CN.md) · [繁體中文](docs/i18n/README.zh-TW.md) · [日本語](docs/i18n/README.ja.md) · [한국어](docs/i18n/README.ko.md) · [Español](docs/i18n/README.es.md) · [Français](docs/i18n/README.fr.md) · [Deutsch](docs/i18n/README.de.md) · [Português](docs/i18n/README.pt-BR.md) · [Русский](docs/i18n/README.ru.md)
 
 </div>
 
-[![Synchronized 4-up 9:16 livestream POV preview reel: Night-market selfie skewer fail, Wuxia flying-sword commute live, Roblox Sky-Obby with corner PiP facecam, and Roblox 50/50 co-host PK mystery egg hatch](assets/showcase/livestream_pov_reel.gif)](assets/showcase/livestream_pov_reel.mp4)
+<a name="examples-and-local-3d-previews"></a>
 
-## Livestream POV samples
+## Video examples
 
-Each package maps a storyline into four single-action 9:16 live beats (`0–3.5s` hook, `3.5–7.5s` close-up proof, `7.5–11.5s` unscripted live twist, `11.5–15s` chat-flood reaction). The GIFs and H.264 MP4s below are deterministic local 3D + Post-HUD previews rendered by `scripts/render_preview.mjs` to check camera mounts, eye-lines, and safe zones before running external diffusion models (`Kling`, `Seedance`, `Hailuo`, `Wan`, `Sora`, `Veo`, `Runway`). Click any preview to open the MP4 with synthesized live room audio.
+When invoked in an AI coding agent, this skill translates any visual style or story plot into a 15-second, four-shot vertical (`9:16`) livestream package across eight built-in formats (five realistic & cross-genre AI video streams plus three Roblox blocky streams). The **MP4s** and GIFs below are offline 3D + Post-HUD animatics rendered by `scripts/render_preview.mjs` so you can verify physical camera mounts, `0°/15°` chat eye-lines, safe zones, and room overlays before spending credits in an external video model.
 
-### General & cross-genre AI video samples
+<p align="center">
+  <a href="examples/irl-night-market-selfie/assets/irl_night_market_selfie.mp4"><img src="examples/irl-night-market-selfie/assets/irl_night_market_selfie.gif" width="192" alt="Night-Market 18mm Selfie 9:16 animated preview" /></a>
+  <a href="examples/desk-unboxing-autofocus/assets/desk_unboxing_autofocus.mp4"><img src="examples/desk-unboxing-autofocus/assets/desk_unboxing_autofocus.gif" width="192" alt="Desk Unboxing AF-C 9:16 animated preview" /></a>
+  <a href="examples/midnight-corridor-fpv-live/assets/midnight_corridor_fpv_live.mp4"><img src="examples/midnight-corridor-fpv-live/assets/midnight_corridor_fpv_live.gif" width="192" alt="Midnight Corridor 16mm POV 9:16 animated preview" /></a>
+  <a href="examples/late-night-study-webcam/assets/late_night_study_webcam.mp4"><img src="examples/late-night-study-webcam/assets/late_night_study_webcam.gif" width="192" alt="Late-Night Study Webcam 9:16 animated preview" /></a>
+  <br />
+  <a href="examples/wuxia-sword-flight-live/assets/wuxia_sword_flight_live.mp4"><img src="examples/wuxia-sword-flight-live/assets/wuxia_sword_flight_live.gif" width="192" alt="Wuxia Flying-Sword Selfie 9:16 animated preview" /></a>
+  <a href="examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.mp4"><img src="examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.gif" width="192" alt="Roblox Sky-Obby PiP 9:16 animated preview" /></a>
+  <a href="examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.mp4"><img src="examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.gif" width="192" alt="Roblox DOORS Corridor Selfie 9:16 animated preview" /></a>
+  <a href="examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.mp4"><img src="examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.gif" width="192" alt="Roblox 50/50 Co-Host PK 9:16 animated preview" /></a>
+</p>
 
-| 01 · Night-Market Selfie (`Kling` · Douyin HUD) | 02 · Desk Autofocus Unboxing (`Seedance` · Kuaishou HUD) | 03 · Midnight Corridor POV (`Sora` · IG Live HUD) |
-| :---: | :---: | :---: |
-| [<img src="examples/irl-night-market-selfie/assets/irl_night_market_selfie.gif" width="230" alt="18mm handheld selfie preview at a neon night market" />](examples/irl-night-market-selfie/assets/irl_night_market_selfie.mp4) | [<img src="examples/desk-unboxing-autofocus/assets/desk_unboxing_autofocus.gif" width="230" alt="35mm desk-clamp unboxing preview with AF-C palm focus and spring pop" />](examples/desk-unboxing-autofocus/assets/desk_unboxing_autofocus.mp4) | [<img src="examples/midnight-corridor-fpv-live/assets/midnight_corridor_fpv_live.gif" width="230" alt="16mm first-person corridor exploration holding chat phone and flashlight" />](examples/midnight-corridor-fpv-live/assets/midnight_corridor_fpv_live.mp4) |
-| `18mm` arm's-length selfie + `20cm` chili skewer focus pull.<br>[MP4](examples/irl-night-market-selfie/assets/irl_night_market_selfie.mp4) · [Board](examples/irl-night-market-selfie/assets/storyboard_sheet.en.png) · [Prompts](examples/irl-night-market-selfie/) | `35mm` locked boom-left desk + `[AF-C]` palm focus + spring pop.<br>[MP4](examples/desk-unboxing-autofocus/assets/desk_unboxing_autofocus.mp4) · [Board](examples/desk-unboxing-autofocus/assets/storyboard_sheet.en.png) · [Prompts](examples/desk-unboxing-autofocus/) | `16mm` dual-hand chest POV (left chat phone + right flashlight).<br>[MP4](examples/midnight-corridor-fpv-live/assets/midnight_corridor_fpv_live.mp4) · [Board](examples/midnight-corridor-fpv-live/assets/storyboard_sheet.en.png) · [Prompts](examples/midnight-corridor-fpv-live/) |
+## Scene boards and shot pacing
 
-| 04 · Late-Night Study Webcam (`Wan` · X / Periscope HUD) | 05 · Wuxia Flying-Sword Commute (`Hailuo` · Genre Plot → Live) |
+Video diffusion models lose physical camera truth when a single 4–5 second clip chains multiple actions or switches mounts mid-shot. Each livestream short splits any plot into four single-action live beats (`0–3.5s` cold-open claim, `3.5–7.5s` close-up lens proof, `7.5–11.5s` unscripted live twist, and `11.5–15s` chat-flood reaction):
+
+| Shot 01 · Hook (`0–3.5s`) | Shot 02 · Proof (`3.5–7.5s`) | Shot 03 · Twist (`7.5–11.5s`) | Shot 04 · Payoff (`11.5–15s`) |
+| :---: | :---: | :---: | :---: |
+| <img src="examples/wuxia-sword-flight-live/assets/shot_01.png" width="196" alt="Shot 01: cloud-sea commute rant into 18mm selfie lens" /> | <img src="examples/wuxia-sword-flight-live/assets/shot_02.png" width="196" alt="Shot 02: camera tilts down to show glowing rune sword underfoot" /> | <img src="examples/wuxia-sword-flight-live/assets/shot_03.png" width="196" alt="Shot 03: red-crowned white crane photobombs shoulder causing turbulence" /> | <img src="examples/wuxia-sword-flight-live/assets/shot_04.png" width="196" alt="Shot 04: crooked hair-crown deadpan stare at laughing danmaku" /> |
+
+Four-shot contact sheets across six camera rigs and visual styles (general photorealistic IRL, genre plot adaptation, and Roblox blocky rigs):
+
+| 01 · Night-Market Selfie (`Kling` · `18mm` Gimbal & Douyin HUD) | 02 · Desk Autofocus Unboxing (`Seedance` · `[AF-C]` & Kuaishou HUD) |
 | :---: | :---: |
-| [<img src="examples/late-night-study-webcam/assets/late_night_study_webcam.gif" width="230" alt="24mm monitor-top webcam preview where a ginger cat leaps onto the keyboard" />](examples/late-night-study-webcam/assets/late_night_study_webcam.mp4) | [<img src="examples/wuxia-sword-flight-live/assets/wuxia_sword_flight_live.gif" width="230" alt="18mm jade-tablet selfie preview atop a flying sword above clouds with a photobombing crane" />](examples/wuxia-sword-flight-live/assets/wuxia_sword_flight_live.mp4) |
-| `24mm` monitor-top cam: ginger cat ears peek behind chair before hitting Enter.<br>[MP4](examples/late-night-study-webcam/assets/late_night_study_webcam.mp4) · [Board](examples/late-night-study-webcam/assets/storyboard_sheet.en.png) · [Prompts](examples/late-night-study-webcam/) | Adapts a fantasy/wuxia plot into an `18mm` cloud-sea selfie stream.<br>[MP4](examples/wuxia-sword-flight-live/assets/wuxia_sword_flight_live.mp4) · [Board](examples/wuxia-sword-flight-live/assets/storyboard_sheet.en.png) · [Prompts](examples/wuxia-sword-flight-live/) |
+| <a href="examples/irl-night-market-selfie/"><img src="examples/irl-night-market-selfie/assets/storyboard_sheet.en.png" width="410" alt="Night-Market Selfie 4-shot storyboard sheet" /></a> | <a href="examples/desk-unboxing-autofocus/"><img src="examples/desk-unboxing-autofocus/assets/storyboard_sheet.en.png" width="410" alt="Desk Unboxing Autofocus 4-shot storyboard sheet" /></a> |
+| **04 · Late-Night Study Webcam (`Wan` · `24mm` Monitor Cam & X HUD)** | **06 · Roblox Sky-Obby + PiP (`Hailuo` · Dual-Track & TikTok HUD)** |
+| <a href="examples/late-night-study-webcam/"><img src="examples/late-night-study-webcam/assets/storyboard_sheet.en.png" width="410" alt="Late-Night Study Webcam 4-shot storyboard sheet" /></a> | <a href="examples/roblox-obby-rage-pip/"><img src="examples/roblox-obby-rage-pip/assets/storyboard_sheet.en.png" width="410" alt="Roblox Sky-Obby PiP 4-shot storyboard sheet" /></a> |
+| **07 · Roblox DOORS Corridor Selfie (`Sora` · `18mm` Stick & IG HUD)** | **08 · Roblox 50/50 Egg PK (`Kling` · Dual Split & Kuaishou HUD)** |
+| <a href="examples/roblox-doors-irl-selfie/"><img src="examples/roblox-doors-irl-selfie/assets/storyboard_sheet.en.png" width="410" alt="Roblox DOORS Corridor Selfie 4-shot storyboard sheet" /></a> | <a href="examples/roblox-pet-hatch-pk/"><img src="examples/roblox-pet-hatch-pk/assets/storyboard_sheet.en.png" width="410" alt="Roblox 50/50 Co-Host PK 4-shot storyboard sheet" /></a> |
 
-### Roblox blocky livestream samples
-
-| 06 · Sky-Obby + Corner PiP (`Hailuo` · TikTok HUD) | 07 · DOORS Corridor Selfie (`Sora` · IG Live HUD) | 08 · 50/50 Co-Host Egg PK (`Kling` · Kuaishou HUD) |
-| :---: | :---: | :---: |
-| [<img src="examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.gif" width="230" alt="Roblox R6 Sky-Obby run paired with a synchronized corner streamer facecam" />](examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.mp4) | [<img src="examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.gif" width="230" alt="Roblox R6 avatar holding selfie stick in dim hotel corridor as white eyes appear behind" />](examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.mp4) | [<img src="examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.gif" width="230" alt="50/50 split-screen PK battle between Y2K streamer and Classic Noob hatching a mythic dragon" />](examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.mp4) |
-| Dual-track `R6` obby Killbrick fail + RGB headset desk-slam PiP.<br>[MP4](examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.mp4) · [Board](examples/roblox-obby-rage-pip/assets/storyboard_sheet.en.png) · [Prompts](examples/roblox-obby-rage-pip/) | `18mm` blocky selfie stick catches glowing eyes over left shoulder.<br>[MP4](examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.mp4) · [Board](examples/roblox-doors-irl-selfie/assets/storyboard_sheet.en.png) · [Prompts](examples/roblox-doors-irl-selfie/) | `50/50` locked dual webcam: starter egg hatches a Blocky Mythic Dragon.<br>[MP4](examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.mp4) · [Board](examples/roblox-pet-hatch-pk/assets/storyboard_sheet.en.png) · [Prompts](examples/roblox-pet-hatch-pk/) |
-
-## Reconstructed livestream chrome and FX (REA)
-
-Asking video diffusion models to render TikTok/Douyin comments or gift banners directly produces garbled text. This repository separates **clean-plate camera generation** from **post-composited platform chrome**, reconstructing five mainstream room layouts, popup state machines, and heart fountains from wire-protocol schemas, safe-zone specs, and REA static/browser verification ([`references/platform-ui-rea-ledger.md`](references/platform-ui-rea-ledger.md)):
+Five reconstructed mainstream livestream HUD presets (`douyin`, `kuaishou`, `instagram`, `x`, `tiktok`)—covering safe-zone headers, join ribbons, 2-slot gift combos, live shopping cards, frosted Q&A cards, `1v1 PK` tug-of-war bars, and Periscope 6-color heart fountains—are composited after clean-plate generation or tested live in [`studio/index.html`](studio/index.html) ([REA ledger](references/platform-ui-rea-ledger.md)):
 
 <p align="center">
-  <img src="assets/showcase/platform_hud_atlas.en.png" width="880" alt="Five reconstructed livestream HUD presets: Douyin live deal card, Kuaishou combo gift x28, Instagram Live borderless comments and Q&A card, X/Periscope dark glass with 6-color hearts, and TikTok Live Galaxy Rose x99" />
+  <img src="assets/showcase/platform_hud_atlas.en.png" width="830" alt="Five reconstructed livestream HUD presets: Douyin live deal card, Kuaishou SkyArrow combo, Instagram Live borderless comments and Q&A card, X/Periscope dark glass with 6-color hearts, and TikTok Live Galaxy Rose x99" />
 </p>
 
-Open [`studio/index.html`](studio/index.html) directly in a browser or OBS Browser Source to load any clean `.mp4` plate (or switch to `#00FF00` chroma-key mode for NLE compositing) and trigger live events interactively:
+## Skill workflow and quick start
 
 <p align="center">
-  <img src="assets/showcase/interactive_hud_studio.png" width="760" alt="Interactive Multi-Platform Livestream HUD Studio running in browser with Douyin gift combo, live shopping popup, PiP facecam, and event triggers" />
+  <img src="docs/pipeline.en.svg" width="860" alt="Five-step Livestream Style Video Skill workflow: Lock Rig and Style, Plot to Live Beats, Clean Plate and HUD, 8-Gate Drift Lint, and Local 3D plus HUD Preview" />
 </p>
-
-- **Douyin (`douyin`) & TikTok (`tiktok`)**: Rounded top-left host capsule, Top 3 coin gifter badges, `Chat_Feed_Stack` (`rgba(0,0,0,0.36)`, `22%` top alpha fade, `[Fan Lv.16]` tags), 2-slot mid-left `Gift_Combo` accumulator (`×66` bounce), and bottom-right Live Shopping deal card (`小黄车讲解卡`).
-- **Kuaishou (`kuaishou`)**: `1080×1920` safe-zone calibrated header (`340px` top / `620px` bottom), warm `#FF5000` accent, `点亮了红心` join feed, spammed danmaku combo badges (`×18`), and orange-vs-blue `PK` tug-of-war bar.
-- **Instagram Live (`instagram`)**: Story-ring avatar, rectangular `#E1306C` `LIVE` + viewer pill, borderless drop-shadow comment stream, inline `joined · Wave` notice, and frosted-glass **Live Q&A Question Card**.
-- **X / Periscope (`x`)**: Obsidian `#0F1419` chat cards with viewer-assigned left color bars and Periscope's 6-tint (`#fce473`, `#f68b39`, `#ed6c63`, `#847bb9`, `#97cd76`, `#35b1d1`) sinusoidal heart fountain.
-
-## Camera rigs and clean-plate workflow
-
-<p align="center">
-  <img src="docs/pipeline.en.svg" width="860" alt="Five-step Livestream POV workflow: Lock Rig and Style, Plot to Live Beats, Clean Plate and HUD, 8-Gate Drift Lint, and Local 3D plus HUD Preview" />
-</p>
-
-Eight physical camera mounts (`desktop-webcam`, `handheld-selfie-irl`, `pip-facecam-rig`, `overhead-showcase-rig`, `chest-head-pov`, `pk-cohost-split`, `cctv-obs-fixed`, `drone-follow-live`) pair orthogonally with six visual style packs (`realistic-irl`, `roblox-blocky`, `anime-vtuber`, `stylized-3d`, `voxel-sandbox`, `cinematic-genre-adapt`):
-
-<p align="center">
-  <img src="assets/showcase/camera_rigs_atlas.en.png" width="780" alt="Six livestream camera rigs across Realistic IRL, Wuxia genre adaptation, and Roblox R6 styles" />
-</p>
-
-Before running I2V/T2V, `scripts/drift_check.mjs` enforces 8 static gates—catching third-person cinema crane drift, burned-in gibberish UI requests, single-pass T2V PiP melt, action overload, and style anatomy leaks (such as human fingers or Lego studs on Roblox streamers):
-
-<p align="center">
-  <img src="assets/showcase/clean_vs_hud_drift_comparison.en.png" width="820" alt="Four-panel anti-drift comparison contrasting third-person cinema drift and burned-in gibberish UI against a clean raw camera plate and post-composited HUD" />
-</p>
-
-## Install and quick start
 
 ### Install as an Agent Skill
 
-Clone into your coding agent's skills directory (`~/.codex/skills/livestream-pov-video` for Codex, `~/.copilot/skills/livestream-pov-video` for GitHub Copilot, or your configured skills folder in Claude Code and Cursor):
+Clone this skill into your agent host's skills directory. Once installed, the agent reads [`SKILL.md`](SKILL.md), loads the relevant camera/HUD guides from [`references/`](references/), and runs the Node.js scripts automatically when you ask for a livestream-perspective short. This path is for Codex; use `~/.copilot/skills/livestream-style-video` for GitHub Copilot, or your configured skills folder in Claude Code and Cursor.
 
 ```bash
-git clone https://github.com/yuzhang-zhong/livestream-pov-video.git ~/.copilot/skills/livestream-pov-video
+git clone https://github.com/yuzhang-zhong/livestream-style-video.git ~/.codex/skills/livestream-style-video
 ```
 
-Invoke in chat with any plot and style:
+Trigger the `livestream-style-video` skill in your agent chat:
 
 ```text
-Use $livestream-pov-video to adapt "a medieval knight unboxing an enchanted sword at a dragon cave entrance when the dragon wakes up"
-into a 15-second 9:16 handheld selfie livestream with Douyin live shopping & gift combo overlays.
-Give me the rig setup card, 4-shot clean-plate Kling I2V prompts, and render a local preview MP4.
+Use $livestream-style-video to adapt "a medieval knight unboxing an enchanted sword at a dragon cave entrance when the dragon wakes up"
+into a 15-second 9:16 handheld selfie livestream with Douyin live shopping and gift combo overlays.
+Give me the camera rig lock, a 4-shot clean-plate storyboard, and Kling / Sora I2V prompts.
 ```
 
-### Run CLI tools directly
+### Run the skill's CLI tools directly
 
-All scripts run offline on Node.js 18+ using standard library modules only (`python3` + Pillow and `ffmpeg` enable anti-aliased CJK HUD compositing and H.264 MP4 export):
+Every helper script bundled inside the skill also runs standalone from the repository root on Node.js 18+ using only the standard library (no `npm install` or API keys; `python3` Pillow + `ffmpeg` enable anti-aliased CJK HUD compositing and H.264 MP4 encoding).
 
 ```bash
-node scripts/rig_spec.mjs --rig handheld-selfie-irl --style realistic-irl --host "Lin" --lang en --out out/rig_card.md
-node scripts/shot_compiler.mjs --plot "Ramen stall chef reading live chat at 2am when the broth pot boils over" --platform douyin --engine kling --json --out out/ramen_live.json
-node scripts/drift_check.mjs --pack out/ramen_live.json --engine kling --lang en
-node scripts/render_preview.mjs --spec out/ramen_live.json --out-dir out/assets --platform douyin --force
+node scripts/render_preview.mjs --spec templates/custom_livestream_spec.json --out-dir out/ramen-live --platform douyin --force
+node scripts/shot_compiler.mjs --plot "Ramen stall chef reading live chat at 2am when the broth pot boils over" --platform douyin --engine kling --lang en
+node scripts/drift_check.mjs --pack templates/custom_livestream_spec.json --engine kling --lang en
 ```
 
-## Components and reference guides
+## Skill scripts, anti-drift checks, and references
 
-| Component | Purpose |
+Prompting `"a livestream video with comments"` directly in video diffusion models triggers detached third-person crane shots, burned-in alien gibberish UI text, melted single-pass T2V corner facecams, or human fingers on blocky Roblox streamers. `drift_check.mjs` flags these failure modes across 8 gates before generation so external models render clean raw camera plates while `render_preview.mjs` and [`studio/index.html`](studio/index.html) composite crisp HUDs:
+
+<p align="center">
+  <img src="assets/showcase/clean_vs_hud_drift_comparison.en.png" width="760" alt="Four-panel anti-drift check comparing third-person cinema drift and burned-in gibberish UI against a clean raw camera plate and post-composited HUD" />
+</p>
+
+| Skill component | Output |
 | --- | --- |
-| [`SKILL.md`](SKILL.md) | Main Agent Skill entry point defining the 8 livestream POV invariants and 6 production modes. |
-| [`scripts/rig_spec.mjs`](scripts/rig_spec.mjs) | Locks camera optics, `0°/15°` eye-line, mic side, style geometry, and [3-state setup sheet](assets/showcase/rig_setup_sheet.en.png) prompts. |
-| [`scripts/shot_compiler.mjs`](scripts/shot_compiler.mjs) | Translates `--plot "<any story>"`, `--spec`, or 8 built-in templates into 15s/30s/45s clean-plate prompts + HUD timelines. |
-| [`scripts/hud_presets.mjs`](scripts/hud_presets.mjs) | Safe-zone metrics, comment styles, popup queues, and heart palettes for `douyin`, `kuaishou`, `instagram`, `x`, `tiktok`, and `clean`. |
-| [`scripts/drift_check.mjs`](scripts/drift_check.mjs) | 8-gate Unicode-safe linter blocking cinema drift, gibberish UI, PiP T2V melt, and Roblox/voxel anatomy leaks. |
-| [`scripts/render_preview.mjs`](scripts/render_preview.mjs) | Parallel 3D SDF raymarcher + multi-platform HUD compositor outputting `.mp4` (with WAV live audio), `.gif`, and contact sheets. |
-| [`studio/index.html`](studio/index.html) | Interactive browser/OBS overlay studio supporting local MP4 plates, popup triggers, PK tug-of-war, and `#00FF00` chroma-key export. |
+| [`SKILL.md`](SKILL.md) | Main Agent Skill entry point defining the 6 production modes (`Rig-Spec`, `Plot-to-Live`, `Prompt-Compile`, `Platform-HUD`, `Rescue`, `Render`) and 8 livestream invariants. |
+| [`shot_compiler.mjs`](scripts/shot_compiler.mjs) | Compiles `--plot "<any story>"`, `--spec <episode.json>`, or 8 built-in templates into non-repeating 15s / 30s / 45s 9:16 clean-plate prompts + HUD timelines (`local3d`, Kling, Seedance, Hailuo, Wan, Sora, Veo, Runway). |
+| [`rig_spec.mjs`](scripts/rig_spec.mjs) | Locks 8 physical camera rigs × 6 orthogonal visual styles (`realistic-irl`, `roblox-blocky`, `anime-vtuber`, `stylized-3d`, `voxel-sandbox`, `cinematic-genre-adapt`) and a [3-state setup sheet](assets/showcase/rig_setup_sheet.en.png) prompt. |
+| [`hud_presets.mjs`](scripts/hud_presets.mjs) | `1080×1920` safe zones, comment styles, 2-slot gift combos, shopping/Q&A popups, PK bars, and heart palettes for `douyin`, `kuaishou`, `instagram`, `x`, `tiktok`, and `clean`. |
+| [`drift_check.mjs`](scripts/drift_check.mjs) | 8-gate Unicode-safe linter (`--prompt` or `--pack`) catching cinema crane drift, gibberish UI text, passive eye-lines, T2V PiP melt, Roblox five-finger/Lego leaks, and action overload. |
+| [`render_preview.mjs`](scripts/render_preview.mjs) | Direct local 3D + Post-HUD `.mp4` / `.gif` / contact-sheet renderer (`--spec <episode.json> --out-dir <dir>`) with dual-track PiP, 50/50 PK split, and synthesized WAV live room audio. |
+| [`studio/index.html`](studio/index.html) | Browser / OBS interactive HUD studio with 3 live `<canvas>` camera previews, MP4 plate loader, popup triggers, and `#00FF00` chroma-key export ([preview](assets/showcase/interactive_hud_studio.png)). |
 
-[Camera rigs & optics](references/camera-rigs-and-optics.md) · [Style adapters matrix](references/style-adapters-matrix.md) · [Plot-to-livestream beats](references/plot-to-livestream-beats.md) · [REA platform UI ledger](references/platform-ui-rea-ledger.md) · [Model prompt playbook](references/model-prompt-playbook.md) · [Anti-drift rescue guide](references/rescue-and-anti-drift.md) · [8 livestream templates](references/viral-livestream-archetypes.md)
+[Camera rigs and optics](references/camera-rigs-and-optics.md) · [Style adapters matrix](references/style-adapters-matrix.md) · [Plot-to-livestream beats](references/plot-to-livestream-beats.md) · [Platform UI REA ledger](references/platform-ui-rea-ledger.md) · [Model prompt playbook](references/model-prompt-playbook.md) · [Drift fixes](references/rescue-and-anti-drift.md) · [8 story templates](references/viral-livestream-archetypes.md)
 
 ## Languages
 
-Agent responses and CLI `--lang` flags support `en`, `zh`, `zh-tw`, `ja`, `ko`, `es`, `fr`, `de`, `pt`, and `ru`.
+Agent Skill replies and CLI `--lang` output support `en`, `zh`, `zh-tw`, `ja`, `ko`, `es`, `fr`, `de`, `pt`, and `ru`.
 
 **English** · [简体中文](README.zh-CN.md) · [繁體中文](docs/i18n/README.zh-TW.md) · [日本語](docs/i18n/README.ja.md) · [한국어](docs/i18n/README.ko.md) · [Español](docs/i18n/README.es.md) · [Français](docs/i18n/README.fr.md) · [Deutsch](docs/i18n/README.de.md) · [Português](docs/i18n/README.pt-BR.md) · [Русский](docs/i18n/README.ru.md)
 
-[MIT License](LICENSE). Independent open-source Agent Skill using clean-room geometric UI reconstructions; not affiliated with or endorsed by ByteDance, Kuaishou, Meta, X Corp., or Roblox Corporation.
+[MIT License](LICENSE). Independent open-source Agent Skill; uses clean-room geometric UI reconstructions and is not affiliated with or endorsed by ByteDance, Kuaishou, Meta, X Corp., or Roblox Corporation.

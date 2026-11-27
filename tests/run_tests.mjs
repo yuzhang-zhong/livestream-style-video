@@ -234,5 +234,5 @@ test("validate_skill verifies all required files, manifests, media assets, and r
     cwd: ROOT,
     encoding: "utf8"
   });
-  assert.match(out, /livestream-pov-video v1\.1\.0 package is valid/);
+  assert.match(out, /livestream-style-video v1\.1\.0 package is valid/);
 });

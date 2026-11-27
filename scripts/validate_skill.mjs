@@ -2,7 +2,7 @@
 /**
  * validate_skill.mjs
  * Zero-dependency repository, manifest, relative-link, and media-asset validator
- * for livestream-pov-video.
+ * for livestream-style-video.
  */
 
 import fs from "node:fs";
@@ -141,8 +141,8 @@ const skillText = readUtf8("SKILL.md");
 const fmMatch = skillText.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
 if (!fmMatch) fail("SKILL.md must begin with YAML frontmatter");
 const fm = fmMatch[1];
-if (!/^name:\s*livestream-pov-video\s*$/m.test(fm)) {
-  fail("SKILL.md YAML frontmatter must declare name: livestream-pov-video");
+if (!/^name:\s*livestream-style-video\s*$/m.test(fm)) {
+  fail("SKILL.md YAML frontmatter must declare name: livestream-style-video");
 }
 const verMatch = fm.match(/^\s+version:\s*["']?([0-9]+\.[0-9]+\.[0-9]+)["']?\s*$/m);
 if (!verMatch) fail("SKILL.md metadata.version must be a three-part semver string");
@@ -201,6 +201,9 @@ for (const docRel of docFilesToCheckLinks) {
   if (/\?\?\?|\uFFFD/.test(txt)) {
     fail(`Encoding corruption detected in ${docRel}`);
   }
+  if (docRel !== "SKILL.md" && txt.split(/\r?\n/).length < 95) {
+    fail(`Incomplete README detected in ${docRel} (must be >= 95 lines)`);
+  }
   const baseDir = path.dirname(path.join(ROOT, docRel));
   const mdLinks = [...txt.matchAll(/\]\(([^)#\s]+)(?:#[^)]*)?\)/g)].map((m) => m[1]);
   const htmlLinks = [...txt.matchAll(/(?:src|href)="([^"#\s]+)(?:#[^"]*)?"/g)].map((m) => m[1]);
@@ -220,5 +223,5 @@ if (skillWords > 5500) {
 
 const totalChecked = textFiles.length + binaryFiles.length;
 console.log(
-  `livestream-pov-video v${skillVersion} package is valid (${totalChecked} files & all relative links verified, ${skillWords} words in SKILL.md)`
+  `livestream-style-video v${skillVersion} package is valid (${totalChecked} files & all relative links verified, ${skillWords} words in SKILL.md)`
 );
