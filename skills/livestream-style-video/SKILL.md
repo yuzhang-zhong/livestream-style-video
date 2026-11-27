@@ -5,7 +5,7 @@ description: |
   Use when generating AI livestream POV shorts, streamer webcam/selfie-stick/unboxing/bodycam/PiP gameplay/1v1 PK split-screen videos across any art style (photorealistic IRL, Roblox R6/R15, Minecraft 8x8 voxel, anime VTuber, Duolingo/open-source mascots, or wuxia/horror/sci-fi plots), fixing Sora/Kling/Seedance/Hailuo/Wan/Veo/Runway third-person cinema drift or burned-in gibberish TikTok/Douyin/Kuaishou/Instagram/X Live UI text, or rendering OBS green-screen HUD overlays (直播视角短视频、防乱码弹幕礼物小黄车边框、可灵/即梦纯净底片提示词).
 license: MIT
 metadata:
-  version: "2.0.0"
+  version: "2.0.1"
 ---
 
 # Livestream Style Video Skill (`livestream-style-video`)

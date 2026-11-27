@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.1
+
+- Packaged self-contained `skills/livestream-style-video/` Agent Skill bundle (`sync_skill_bundle.mjs`), `llms.txt`, `CITATION.cff`, HTML5 Studio Schema.org metadata, and 32-query multi-model discovery audit (`discovery_audit.mjs`).
+
 ## 2.0.0
 
 - Replaced all uncanny human-mannequin sample characters with charismatic, non-uncanny **Duolingo-inspired geometric mascots & flat-3D casts** (`LingoOwl`, `Lila`), **Open-Source Mascot IPs** (`Linux Tux`, `CC0 Rust Ferris the Crab`, `MIT Godot-inspired Gear-Bot`), **Crisp `8×8×8` Nearest-Neighbor Voxel Wuxia**, and **Sculpted-UGC Roblox R6** (`3D bangs`, `pigtails`, `backwards cap`, `Speed Coil`, `hoodie pockets`).

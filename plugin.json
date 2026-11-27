@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "livestream-style-video",
   "description": "Agent Skill to map any visual style or storyline into authentic 9:16 livestream camera perspectives, clean-plate I2V/T2V prompts, detachable HUDs, and local MP4 previews.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": {
     "name": "Yuzhang Zhong",
     "url": "https://github.com/yuzhang-zhong"

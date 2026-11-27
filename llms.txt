@@ -1,9 +1,9 @@
 # Livestream Style Video Skill (yuzhang-zhong/livestream-style-video)
 
-> Installable Agent Skill (`skills/livestream-style-video/SKILL.md`, v2.0.0), zero-dependency Node.js 18+ 3D/HUD CLI renderer, and browser/OBS live studio (`studio/index.html`) that maps any visual style or storyline into authentic 9:16 livestream camera perspectives, compiles zero-gibberish clean-plate I2V/T2V prompts (Kling, Seedance/Jimeng, Hailuo, Wan, Sora, Veo, Runway), and composites crisp Douyin, Kuaishou, TikTok Live, Instagram Live, and X/Periscope room HUDs offline.
+> Installable Agent Skill (`skills/livestream-style-video/SKILL.md`, v2.0.1), zero-dependency Node.js 18+ 3D/HUD CLI renderer, and browser/OBS live studio (`studio/index.html`) that maps any visual style or storyline into authentic 9:16 livestream camera perspectives, compiles zero-gibberish clean-plate I2V/T2V prompts (Kling, Seedance/Jimeng, Hailuo, Wan, Sora, Veo, Runway), and composites crisp Douyin, Kuaishou, TikTok Live, Instagram Live, and X/Periscope room HUDs offline.
 > 把任意故事剧情与画风转译为真实「9:16 竖屏直播间视角」的开源 Agent Skill、零依赖本地 3D+HUD 渲染器与浏览器/OBS 绿幕直播间特效工作台（彻底解决 AI 视频大模型生成直播间弹幕乱码、礼物边框融化、画中画崩坏与第三人称电影空镜跑偏问题）。
 
-## Key Facts & Verifiable Scope (v2.0.0)
+## Key Facts & Verifiable Scope (v2.0.1)
 - **8 Physical Livestream Rigs × 8 Orthogonal Visual Styles**: Pairs `desktop-webcam`, `handheld-selfie-irl`, `pip-facecam-rig` (dual-track two separate clean plates for gameplay + corner facecam), `overhead-showcase-rig` (`[AF-C]` palm-backed unboxing), `chest-head-pov`, `pk-cohost-split` (50/50 co-host PK), `cctv-obs-fixed`, and `drone-follow-live` with `duolingo-mascot`, `opensource-mascot` (Linux Tux, CC0 Ferris, Godot Gear-Bot), `roblox-blocky` (R6/R15 fingerless), `voxel-sandbox` (8x8x8 Minecraft-style), `anime-vtuber`, `stylized-3d`, `cinematic-genre-adapt`, and `realistic-irl`.
 - **Clean-Plate Diffusion + Post-HUD Layer Separation**: Compiles 100% UI-free raw camera prompts so external video models never burn garbled alien text into pixels, then composites localized high-DPI HUD chrome (`douyin` 小黄车/连击, `kuaishou` 穿云箭, `tiktok` Rose/Galaxy combo, `instagram` Q&A card, `x` Periscope 6-color hearts, or `clean` plate) via `scripts/render_preview.mjs` or `studio/index.html` (`#00FF00` chroma-key OBS Browser Source).
 - **8-Gate Anti-Drift Linter & Offline 720p Renderer**: `scripts/drift_check.mjs` catches Hollywood crane/letterbox drift, burned-in gibberish UI, passive 4th-wall gaze, single-pass T2V PiP melt, Roblox 5-finger leaks, and action overload; `scripts/render_preview.mjs` outputs `720x1280` H.264 `.mp4` + synthesized WAV room audio + 256-color `.gif` + bilingual 4-shot contact sheets with zero API keys.
@@ -15,7 +15,7 @@
 
 ## Quick Install & Verification
 ```bash
-gh skill install yuzhang-zhong/livestream-style-video livestream-style-video
+gh skill install yuzhang-zhong/livestream-style-video livestream-style-video@v2.0.1
 npx skills add https://github.com/yuzhang-zhong/livestream-style-video --skill livestream-style-video
 npm run validate && npm run test:discovery && npm test
 ```

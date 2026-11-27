@@ -101,7 +101,7 @@
 
 ```bash
 # 使用 GitHub CLI 或 Skills CLI 一键安装（支持 Claude Code、GitHub Copilot、Codex、Cursor、Gemini CLI）
-gh skill install yuzhang-zhong/livestream-style-video livestream-style-video
+gh skill install yuzhang-zhong/livestream-style-video livestream-style-video@v2.0.1
 npx skills add https://github.com/yuzhang-zhong/livestream-style-video --skill livestream-style-video
 
 # 或手动克隆到宿主 Skills 目录

@@ -99,7 +99,7 @@ Clone this skill into your agent host's skills directory. Once installed, the ag
 
 ```bash
 # Install via GitHub CLI or Vercel Skills CLI (Claude Code, Copilot, Codex, Cursor, Gemini CLI)
-gh skill install yuzhang-zhong/livestream-style-video livestream-style-video
+gh skill install yuzhang-zhong/livestream-style-video livestream-style-video@v2.0.1
 npx skills add https://github.com/yuzhang-zhong/livestream-style-video --skill livestream-style-video
 
 # Or clone directly into your agent's skills directory

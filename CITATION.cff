@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use or reference this project, please cite it using the metadata below."
 type: software
 title: "Livestream Style Video Skill: 9:16 Streamer POV Camera Rigs, Clean-Plate AI Video Prompts, Detachable Multi-Platform HUDs, and Local 3D/OBS Studio"
-version: "2.0.0"
+version: "2.0.1"
 date-released: "2026-11-27"
 authors:
   - family-names: "Zhong"
