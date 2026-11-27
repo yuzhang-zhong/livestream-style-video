@@ -55,6 +55,17 @@ def text_w(draw: ImageDraw.ImageDraw, txt: str, font) -> int:
         return len(txt) * 11
 
 
+def fit_text_px(draw: ImageDraw.ImageDraw, txt: str, font, max_px: int) -> str:
+    txt = str(txt or "")
+    if text_w(draw, txt, font) <= max_px:
+        return txt
+    ell = "…"
+    out = txt
+    while len(out) > 1 and text_w(draw, out + ell, font) > max_px:
+        out = out[:-1]
+    return out + ell
+
+
 def draw_close_x(draw: ImageDraw.ImageDraw, cx: float, cy: float, r: float, color=(255, 255, 255, 235), width: int = 2):
     draw.line([(cx - r, cy - r), (cx + r, cy + r)], fill=color, width=width)
     draw.line([(cx - r, cy + r), (cx + r, cy - r)], fill=color, width=width)
@@ -203,33 +214,36 @@ def overlay_platform_hud(
 
     else:
         # Douyin / Kuaishou / TikTok rounded host capsule + follow pill + top viewers + viewer count
-        fol_txt = "关注" if (is_zh and platform != "tiktok") else "Follow"
-        fol_w = text_w(d, fol_txt, f_xs) + int(16 * s)
-        cap_w = int(178 * s)
+        use_zh_ui = is_zh and platform != "tiktok"
+        fol_txt = "+ 关注" if (platform == "kuaishou" and use_zh_ui) else ("关注" if use_zh_ui else "+ Follow")
+        fol_w = text_w(d, fol_txt, f_xs) + int(14 * s)
+        sub_txt = (
+            "热力 9.8万" if (platform == "kuaishou" and use_zh_ui)
+            else ("本场赞 18.6万" if use_zh_ui else "Likes 42.1K")
+        )
+        disp_host = fit_text_px(d, host_name, f_sm, int(88 * s))
+        text_col_w = max(text_w(d, disp_host, f_sm), text_w(d, sub_txt, f_xs))
+        cap_w = min(int(196 * s), max(int(164 * s), int(38 * s) + text_col_w + fol_w + int(12 * s)))
         cap_h = int(34 * s)
         d.rounded_rectangle([pad_x, top_y, pad_x + cap_w, top_y + cap_h], radius=int(17 * s), fill=(0, 0, 0, 118))
         av_r = int(13 * s)
         d.ellipse([pad_x + int(4 * s), top_y + int(4 * s), pad_x + int(4 * s) + av_r * 2, top_y + int(4 * s) + av_r * 2], fill=(56, 189, 248, 255))
         d.text((pad_x + int(11 * s), top_y + int(7 * s)), host_name[:1].upper(), font=f_sm, fill=(15, 23, 42, 255))
 
-        disp_host = host_name[:7]
-        sub_txt = (
-            "热力 9.8万" if (platform == "kuaishou" and is_zh)
-            else ("本场赞 18万" if is_zh else "Likes 42K")
-        )
         d.text((pad_x + int(34 * s), top_y + int(3 * s)), disp_host, font=f_sm, fill=(255, 255, 255, 255))
         d.text((pad_x + int(34 * s), top_y + int(18 * s)), sub_txt, font=f_xs, fill=(203, 213, 225, 235))
 
         fx0 = pad_x + cap_w - fol_w - int(5 * s)
         d.rounded_rectangle([fx0, top_y + int(5 * s), fx0 + fol_w, top_y + cap_h - int(5 * s)], radius=int(12 * s), fill=pal["accent"])
-        d.text((fx0 + int(8 * s), top_y + int(8 * s)), fol_txt, font=f_xs, fill=(255, 255, 255, 255))
+        d.text((fx0 + int(7 * s), top_y + int(8 * s)), fol_txt, font=f_xs, fill=(255, 255, 255, 255))
 
         # Top-right viewer pill + 2 mini rank dots
         vp_w = text_w(d, viewer_str, f_xs) + int(16 * s)
         vx0 = w - pad_x - int(24 * s) - vp_w
         for gi, gcol in enumerate([(250, 204, 21, 245), (148, 163, 184, 245)]):
             gx = vx0 - int((2 - gi) * 20 * s)
-            d.ellipse([gx, top_y + int(7 * s), gx + int(18 * s), top_y + int(25 * s)], fill=gcol)
+            if gx > pad_x + cap_w + int(4 * s):
+                d.ellipse([gx, top_y + int(7 * s), gx + int(18 * s), top_y + int(25 * s)], fill=gcol)
         d.rounded_rectangle([vx0, top_y + int(5 * s), vx0 + vp_w, top_y + int(29 * s)], radius=int(12 * s), fill=(0, 0, 0, 118))
         d.text((vx0 + int(8 * s), top_y + int(9 * s)), viewer_str, font=f_xs, fill=(255, 255, 255, 255))
         cx_close = w - pad_x - int(10 * s)
@@ -240,8 +254,9 @@ def overlay_platform_hud(
         # Sub-rank chips row
         sub_y = top_y + cap_h + int(6 * s)
         chips = (
-            ["红心热力榜", "快币红包 00:45"] if (platform == "kuaishou" and is_zh)
-            else (["人气榜 No.3", "福袋 01:28"] if is_zh else ["Top #3", "Lucky Bag 01:28"])
+            ["红心热力榜", "快币红包 00:45"] if (platform == "kuaishou" and use_zh_ui)
+            else (["Weekly Rank #5", "Treasure 00:58"] if platform == "tiktok"
+            else (["人气榜 No.3", "福袋 01:28"] if use_zh_ui else ["Top #3", "Lucky Bag 01:28"]))
         )
         cx_cur = pad_x
         for ch in chips:
@@ -252,8 +267,8 @@ def overlay_platform_hud(
 
     # 2. Rig-Specific Viewfinder / PK Tug-of-War Bar Overlays
     if rig == "overhead-showcase-rig" and shot_idx == 1:
-        # Autofocus [AF-C] yellow tracking brackets around foreground product
-        bx0, by0, bx1, by1 = int(106 * s), int(218 * s), int(254 * s), int(366 * s)
+        # Autofocus [AF-C] yellow tracking brackets framing the foreground held gadget cube + palm
+        bx0, by0, bx1, by1 = int(102 * s), int(288 * s), int(258 * s), int(438 * s)
         blen = int(18 * s)
         col_af = (250, 204, 21, 245)
         lw = max(2, int(2.2 * s))
@@ -290,61 +305,7 @@ def overlay_platform_hud(
         # Vertical center seam line across the dual rooms
         d.line([(w // 2, bar_y + bar_h + int(4 * s)), (w // 2, int(430 * s))], fill=(255, 255, 255, 145), width=max(1, int(1.5 * s)))
 
-    # 3. Active Interactive Popups (Gift Combo / Live Shopping Card / Instagram Q&A)
-    active_popup = hud_meta.get("activePopup", "join_toast")
-    if active_popup in ("gift_combo", "gift_combo_peak"):
-        gift_info = hud_meta.get("giftZh" if is_zh else "giftEn") or {"sender": "Nova", "gift": "Starlight", "combo": 66}
-        combo_base = int(gift_info.get("combo", 66))
-        combo_now = max(1, int(combo_base * (0.4 + 0.6 * phase)))
-        gy = int(378 * s)
-        gw = int(212 * s)
-        gh = int(38 * s)
-        d.rounded_rectangle([pad_x, gy, pad_x + gw, gy + gh], radius=int(19 * s), fill=(15, 23, 42, 212), outline=pal["accent"], width=max(1, int(1.5 * s)))
-        d.ellipse([pad_x + int(4 * s), gy + int(4 * s), pad_x + int(34 * s), gy + int(34 * s)], fill=(250, 204, 21, 255))
-        d.text((pad_x + int(13 * s), gy + int(9 * s)), "★", font=f_md, fill=(15, 23, 42, 255))
-        sender_str = str(gift_info.get("sender", "VIP"))[:9]
-        gift_str = str(gift_info.get("gift", "Rocket"))[:10]
-        d.text((pad_x + int(40 * s), gy + int(4 * s)), sender_str, font=f_xs, fill=(253, 224, 71, 255))
-        verb = "送出 " if is_zh else "Sent "
-        d.text((pad_x + int(40 * s), gy + int(19 * s)), f"{verb}{gift_str}", font=f_xs, fill=(255, 255, 255, 245))
-        d.text((pad_x + gw - int(52 * s), gy + int(7 * s)), f"x{combo_now}", font=f_xl, fill=(253, 224, 71, 255))
-
-    elif active_popup == "commerce_card" and platform in ("douyin", "kuaishou", "tiktok"):
-        cw_card, ch_card = int(102 * s), int(116 * s)
-        cx0 = w - pad_x - cw_card
-        cy0 = h - int(176 * s)
-        d.rounded_rectangle([cx0, cy0, cx0 + cw_card, cy0 + ch_card], radius=int(11 * s), fill=(255, 255, 255, 242))
-        d.rounded_rectangle([cx0 + int(6 * s), cy0 + int(6 * s), cx0 + int(56 * s), cy0 + int(21 * s)], radius=int(4 * s), fill=pal["accent"])
-        badge_t = "讲解中" if is_zh else "LIVE"
-        d.text((cx0 + int(10 * s), cy0 + int(7 * s)), badge_t, font=f_xs, fill=(255, 255, 255, 255))
-        d.rounded_rectangle([cx0 + int(6 * s), cy0 + int(25 * s), cx0 + cw_card - int(6 * s), cy0 + int(68 * s)], radius=int(7 * s), fill=(254, 226, 226, 255))
-        draw_heart(d, cx0 + cw_card / 2, cy0 + int(47 * s), 11 * s, pal["accent"])
-        item_t = "1号福利链接" if is_zh else "Link #1 Deal"
-        d.text((cx0 + int(7 * s), cy0 + int(72 * s)), item_t, font=f_xs, fill=(15, 23, 42, 255))
-        d.text((cx0 + int(7 * s), cy0 + int(91 * s)), "¥39.9" if is_zh else "$19", font=f_md, fill=(225, 29, 72, 255))
-        d.rounded_rectangle([cx0 + cw_card - int(34 * s), cy0 + int(89 * s), cx0 + cw_card - int(6 * s), cy0 + int(109 * s)], radius=int(5 * s), fill=(225, 29, 72, 255))
-        d.text((cx0 + cw_card - int(26 * s), cy0 + int(92 * s)), "抢" if is_zh else "GO", font=f_xs, fill=(255, 255, 255, 255))
-
-    elif active_popup == "qa_pinned" and platform == "instagram":
-        qx0, qy0, qx1, qy1 = pad_x, int(390 * s), w - int(62 * s), int(444 * s)
-        d.rounded_rectangle([qx0, qy0, qx1, qy1], radius=int(12 * s), fill=(255, 255, 255, 234))
-        d.text((qx0 + int(10 * s), qy0 + int(6 * s)), "Q&A · @mina.design", font=f_xs, fill=(100, 116, 139, 255))
-        q_body = "等等！刚才是真的自己在动吗？？" if is_zh else "Wait did that actually move on live?!"
-        d.text((qx0 + int(10 * s), qy0 + int(23 * s)), q_body[:22], font=f_sm, fill=(15, 23, 42, 255))
-
-    # 4. Join Ribbon + Scrolling Comment Feed Stack (with top alpha fade!)
-    comments = hud_meta.get("commentsZh" if is_zh else "commentsEn") or [
-        {"user": "viewer_01", "text": "SO REAL!!", "lv": 12},
-        {"user": "chat_pro", "text": "WAIT LOOK BEHIND!", "lv": 19},
-        {"user": "clip_king", "text": "CLIP THAT RN!!", "lv": 25},
-    ]
-
-    chat_layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-    cd = ImageDraw.Draw(chat_layer)
-    base_chat_y = h - int(62 * s)
-    row_h = int(25 * s)
-    scroll_px = int(phase * row_h * 0.45)
-
+    # 3. Sinusoidal Bezier Rising Heart Fountain (drawn onto background heart_layer BEFORE foreground cards so popups stay 100% unobstructed!)
     periscope_cols = [
         (252, 228, 115, 255),
         (246, 139, 57, 255),
@@ -353,20 +314,105 @@ def overlay_platform_hud(
         (151, 205, 118, 255),
         (53, 177, 209, 255),
     ]
+    active_popup = hud_meta.get("activePopup", "join_toast")
+    by_bar = h - int(44 * s)
+    heart_layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    hd = ImageDraw.Draw(heart_layer)
+    heart_cols = (
+        periscope_cols if platform == "x"
+        else [(pal["accent"][0], pal["accent"][1], pal["accent"][2], 235), (251, 113, 133, 235), (250, 204, 21, 225), (192, 132, 252, 230)]
+    )
+    num_hearts = 6 if hud_meta.get("heartBurstIntensity") == "high" else 4
+    hx_anchor = w - pad_x - int(15 * s)
+    hy_anchor = (h - int(184 * s)) if (active_popup == "commerce_card" and platform in ("douyin", "kuaishou", "tiktok")) else (by_bar - int(8 * s))
+    for hi in range(num_hearts):
+        p_h = (phase + hi / float(num_hearts)) % 1.0
+        sway = math.sin(p_h * math.pi * 2.2 + hi * 1.7) * (12.0 * s)
+        hy = hy_anchor - p_h * (165.0 * s)
+        alpha_scale = math.sin(p_h * math.pi)
+        hc = heart_cols[hi % len(heart_cols)]
+        hr = (5.5 + (hi % 3) * 1.8) * s * (0.7 + 0.35 * alpha_scale)
+        draw_heart(hd, hx_anchor + sway, hy, hr, (hc[0], hc[1], hc[2], int(230 * alpha_scale)))
+    img = Image.alpha_composite(img, heart_layer)
 
-    max_pill_w = w - pad_x - (int(120 * s) if active_popup == "commerce_card" and platform in ("douyin", "kuaishou", "tiktok") else int(58 * s))
+    # 4. Active Interactive Popups (Gift Combo / Live Shopping Card / Instagram Q&A)
+    use_zh_popup = is_zh and platform not in ("tiktok", "x", "instagram")
+    if active_popup in ("gift_combo", "gift_combo_peak"):
+        gift_info = hud_meta.get("giftZh" if use_zh_popup else "giftEn") or {"sender": "Nova", "gift": "Starlight", "combo": 66}
+        combo_base = int(gift_info.get("combo", 66))
+        combo_now = max(1, int(combo_base * (0.55 + 0.45 * phase)))
+        sender_str = fit_text_px(d, str(gift_info.get("sender", "VIP")), f_xs, int(138 * s))
+        verb = "送出 " if use_zh_popup else "Sent "
+        gift_line = fit_text_px(d, f"{verb}{gift_info.get('gift', 'Rocket')}", f_xs, int(146 * s))
+        combo_str = f"x{combo_now}"
+        combo_w = text_w(d, combo_str, f_xl)
+        text_block_w = max(text_w(d, sender_str, f_xs), text_w(d, gift_line, f_xs))
+        gy = int(378 * s)
+        gw = min(w - 2 * pad_x - int(24 * s), max(int(208 * s), int(46 * s) + text_block_w + combo_w + int(20 * s)))
+        gh = int(38 * s)
+        d.rounded_rectangle([pad_x, gy, pad_x + gw, gy + gh], radius=int(19 * s), fill=(15, 23, 42, 218), outline=pal["accent"], width=max(1, int(1.5 * s)))
+        d.ellipse([pad_x + int(4 * s), gy + int(4 * s), pad_x + int(34 * s), gy + int(34 * s)], fill=(250, 204, 21, 255))
+        d.text((pad_x + int(12 * s), gy + int(9 * s)), "★", font=f_md, fill=(15, 23, 42, 255))
+        d.text((pad_x + int(40 * s), gy + int(4 * s)), sender_str, font=f_xs, fill=(253, 224, 71, 255))
+        d.text((pad_x + int(40 * s), gy + int(19 * s)), gift_line, font=f_xs, fill=(255, 255, 255, 245))
+        d.text((pad_x + gw - combo_w - int(10 * s), gy + int(7 * s)), combo_str, font=f_xl, fill=(253, 224, 71, 255))
+
+    elif active_popup == "commerce_card" and platform in ("douyin", "kuaishou", "tiktok"):
+        cw_card, ch_card = int(106 * s), int(116 * s)
+        cx0 = w - pad_x - cw_card
+        cy0 = h - int(174 * s)
+        d.rounded_rectangle([cx0, cy0, cx0 + cw_card, cy0 + ch_card], radius=int(11 * s), fill=(255, 255, 255, 246))
+        badge_t = "讲解中" if use_zh_popup else "PINNED"
+        bw_tag = text_w(d, badge_t, f_xs) + int(10 * s)
+        d.rounded_rectangle([cx0 + int(6 * s), cy0 + int(6 * s), cx0 + int(6 * s) + bw_tag, cy0 + int(21 * s)], radius=int(4 * s), fill=pal["accent"])
+        d.text((cx0 + int(11 * s), cy0 + int(7 * s)), badge_t, font=f_xs, fill=(255, 255, 255, 255))
+        d.rounded_rectangle([cx0 + int(6 * s), cy0 + int(25 * s), cx0 + cw_card - int(6 * s), cy0 + int(68 * s)], radius=int(7 * s), fill=(254, 226, 226, 255))
+        draw_heart(d, cx0 + cw_card / 2, cy0 + int(47 * s), 11 * s, pal["accent"])
+        raw_item_t = hud_meta.get("commerceItemZh" if use_zh_popup else "commerceItemEn") or ("1号福利链接" if use_zh_popup else "Link #1 Deal")
+        item_t = fit_text_px(d, raw_item_t, f_xs, cw_card - int(12 * s))
+        d.text((cx0 + int(6 * s), cy0 + int(72 * s)), item_t, font=f_xs, fill=(15, 23, 42, 255))
+        d.text((cx0 + int(6 * s), cy0 + int(91 * s)), "¥39.9" if use_zh_popup else "$24", font=f_md, fill=(225, 29, 72, 255))
+        cta_t = "抢" if use_zh_popup else "Buy"
+        cta_w = max(int(28 * s), text_w(d, cta_t, f_xs) + int(12 * s))
+        d.rounded_rectangle([cx0 + cw_card - cta_w - int(6 * s), cy0 + int(89 * s), cx0 + cw_card - int(6 * s), cy0 + int(109 * s)], radius=int(5 * s), fill=(225, 29, 72, 255))
+        d.text((cx0 + cw_card - cta_w, cy0 + int(92 * s)), cta_t, font=f_xs, fill=(255, 255, 255, 255))
+
+    elif active_popup == "qa_pinned" and platform == "instagram":
+        qx0, qy0, qx1, qy1 = pad_x, int(386 * s), w - int(54 * s), int(442 * s)
+        d.rounded_rectangle([qx0, qy0, qx1, qy1], radius=int(12 * s), fill=(255, 255, 255, 238))
+        d.text((qx0 + int(10 * s), qy0 + int(6 * s)), "Q&A · @mina.design", font=f_xs, fill=(100, 116, 139, 255))
+        raw_q = hud_meta.get("qaQuestionZh" if is_zh else "qaQuestionEn") or ("等等！刚才是真的自己在动吗？？" if is_zh else "Wait did that actually move on live?!")
+        q_body = fit_text_px(d, raw_q, f_sm, (qx1 - qx0) - int(20 * s))
+        d.text((qx0 + int(10 * s), qy0 + int(23 * s)), q_body, font=f_sm, fill=(15, 23, 42, 255))
+
+    # 5. Join Ribbon + Scrolling Comment Feed Stack (with pixel-fitted text & Kuaishou combo pills!)
+    comments = hud_meta.get("commentsZh" if is_zh else "commentsEn") or [
+        {"user": "kai_live", "text": "Wait look right behind you!!", "lv": 14},
+        {"user": "momo_07", "text": "No way this is unscripted!", "lv": 19},
+        {"user": "clip_pro", "text": "Instant hall of fame clip!", "lv": 25},
+    ]
+
+    chat_layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+    cd = ImageDraw.Draw(chat_layer)
+    base_chat_y = h - int(62 * s)
+    row_h = int(25 * s)
+    scroll_px = int(phase * row_h * 0.45)
+
+    max_pill_w = w - pad_x - (int(122 * s) if active_popup == "commerce_card" and platform in ("douyin", "kuaishou", "tiktok") else int(54 * s))
     for idx_c, c_item in enumerate(reversed(comments[:3])):
         ry = base_chat_y - (idx_c + 1) * (row_h + int(4 * s)) - scroll_px
         fade_alpha = 245 if idx_c < 2 else int(155 * (1.0 - phase * 0.45))
-        u_name = str(c_item.get("user", "user"))[:7]
-        u_text = str(c_item.get("text", ""))[:13]
-        full_line = f"{u_name}: {u_text}"
+        u_name = str(c_item.get("user", "user"))
+        u_text = str(c_item.get("text", ""))
+        raw_line = f"{u_name}: {u_text}"
 
         if platform == "instagram":
+            full_line = fit_text_px(cd, raw_line, f_sm, max_pill_w - int(8 * s))
             cd.text((pad_x + 1, ry + int(5 * s) + 1), full_line, font=f_sm, fill=(0, 0, 0, int(fade_alpha * 0.85)))
             cd.text((pad_x, ry + int(5 * s)), full_line, font=f_sm, fill=(255, 255, 255, fade_alpha))
         elif platform == "x":
             tint = periscope_cols[idx_c % len(periscope_cols)]
+            full_line = fit_text_px(cd, raw_line, f_xs, max_pill_w - int(18 * s))
             rw = min(max_pill_w, text_w(cd, full_line, f_xs) + int(18 * s))
             cd.rounded_rectangle([pad_x, ry, pad_x + rw, ry + row_h], radius=int(11 * s), fill=(15, 20, 25, int(fade_alpha * 0.82)))
             cd.rounded_rectangle([pad_x, ry + int(4 * s), pad_x + int(3.5 * s), ry + row_h - int(4 * s)], radius=int(2 * s), fill=(tint[0], tint[1], tint[2], fade_alpha))
@@ -374,37 +420,46 @@ def overlay_platform_hud(
         else:
             lv_str = f"Lv.{c_item.get('lv', 12)}"
             lv_w = text_w(cd, lv_str, f_xs) + int(10 * s)
-            msg_w = text_w(cd, full_line, f_xs)
-            rw = min(max_pill_w, lv_w + msg_w + int(18 * s))
+            combo_val = c_item.get("combo")
+            combo_tag = f"x{combo_val}" if (combo_val and platform == "kuaishou") else ""
+            combo_tag_w = (text_w(cd, combo_tag, f_xs) + int(10 * s)) if combo_tag else 0
+            avail_msg_w = max(int(64 * s), max_pill_w - lv_w - combo_tag_w - int(18 * s))
+            fitted_msg = fit_text_px(cd, raw_line, f_xs, avail_msg_w)
+            msg_w = text_w(cd, fitted_msg, f_xs)
+            rw = min(max_pill_w, lv_w + msg_w + combo_tag_w + int(18 * s))
             cd.rounded_rectangle([pad_x, ry, pad_x + rw, ry + row_h], radius=int(10 * s), fill=(0, 0, 0, int(fade_alpha * 0.44)))
             cd.rounded_rectangle([pad_x + int(5 * s), ry + int(4 * s), pad_x + int(5 * s) + lv_w, ry + row_h - int(4 * s)], radius=int(4 * s), fill=(pal["badge"][0], pal["badge"][1], pal["badge"][2], fade_alpha))
             cd.text((pad_x + int(10 * s), ry + int(5 * s)), lv_str, font=f_xs, fill=(255, 255, 255, fade_alpha))
-            cd.text((pad_x + int(10 * s) + lv_w, ry + int(5 * s)), full_line, font=f_xs, fill=(255, 255, 255, fade_alpha))
+            cd.text((pad_x + int(10 * s) + lv_w, ry + int(5 * s)), fitted_msg, font=f_xs, fill=(255, 255, 255, fade_alpha))
+            if combo_tag:
+                cx_cb = pad_x + rw - combo_tag_w - int(4 * s)
+                cd.rounded_rectangle([cx_cb, ry + int(4 * s), cx_cb + combo_tag_w, ry + row_h - int(4 * s)], radius=int(7 * s), fill=(255, 80, 0, fade_alpha))
+                cd.text((cx_cb + int(5 * s), ry + int(5 * s)), combo_tag, font=f_xs, fill=(255, 255, 255, fade_alpha))
 
     # Join toast pill just above chat stack on Shot 0 (CJK-safe symbols, zero missing emoji boxes!)
     if active_popup == "join_toast":
         jy = base_chat_y - 3 * (row_h + int(4 * s)) - int(28 * s)
         j_txt = (
-            "★ [铁粉] 榜一大哥 点亮了红心" if (platform == "kuaishou" and is_zh)
+            "★ [铁粉] 榜一大哥 点亮了红心" if (platform == "kuaishou" and use_zh_popup)
             else ("● kaya.studio joined · Wave" if platform == "instagram"
             else ("@alex_dev joined live" if platform == "x"
-            else ("★ [钻粉] 星河舰长 来了" if is_zh else "★ [Fan Lv.16] Nova joined")))
+            else ("★ [钻粉] 星河舰长 来了" if use_zh_popup else "★ [Gifter Lv.24] pixel_kai joined")))
         )
-        jw = min(max_pill_w, text_w(cd, j_txt, f_xs) + int(18 * s))
+        j_fitted = fit_text_px(cd, j_txt, f_xs, max_pill_w - int(18 * s))
+        jw = min(max_pill_w, text_w(cd, j_fitted, f_xs) + int(18 * s))
         cd.rounded_rectangle([pad_x, jy, pad_x + jw, jy + int(22 * s)], radius=int(11 * s), fill=(pal["badge"][0], pal["badge"][1], pal["badge"][2], 198))
-        cd.text((pad_x + int(9 * s), jy + int(4 * s)), j_txt, font=f_xs, fill=(255, 255, 255, 250))
+        cd.text((pad_x + int(9 * s), jy + int(4 * s)), j_fitted, font=f_xs, fill=(255, 255, 255, 250))
 
     img = Image.alpha_composite(img, chat_layer)
 
-    # 5. Bottom Input Bar + Action Buttons
-    by_bar = h - int(44 * s)
+    # 6. Bottom Input Bar + Action Buttons
     comp_w = int(198 * s)
     d.rounded_rectangle([pad_x, by_bar, pad_x + comp_w, by_bar + int(30 * s)], radius=int(15 * s), fill=(0, 0, 0, 112), outline=(255, 255, 255, 58))
     placeholder = (
-        "聊一聊…" if (platform == "kuaishou" and is_zh)
+        "聊一聊…" if (platform == "kuaishou" and use_zh_popup)
         else ("Add a comment…" if platform == "instagram"
         else ("Say something…" if platform == "x"
-        else ("说点什么…" if is_zh else "Add comment…")))
+        else ("说点什么…" if use_zh_popup else "Add comment…")))
     )
     d.text((pad_x + int(12 * s), by_bar + int(7 * s)), placeholder, font=f_xs, fill=(226, 232, 240, 200))
 
@@ -419,23 +474,6 @@ def overlay_platform_hud(
         else:
             sym = "+" if bi == 0 else "↗"
             d.text((bx_c + int(9 * s), by_bar + int(6 * s)), sym, font=f_md, fill=(255, 255, 255, 240))
-
-    # 6. Sinusoidal Bezier Rising Heart Fountain (Right Column)
-    heart_cols = (
-        periscope_cols if platform == "x"
-        else [(pal["accent"][0], pal["accent"][1], pal["accent"][2], 235), (251, 113, 133, 235), (250, 204, 21, 225), (192, 132, 252, 230)]
-    )
-    num_hearts = 6 if hud_meta.get("heartBurstIntensity") == "high" else 4
-    hx_anchor = w - pad_x - int(15 * s)
-    hy_anchor = by_bar - int(6 * s)
-    for hi in range(num_hearts):
-        p_h = (phase + hi / float(num_hearts)) % 1.0
-        sway = math.sin(p_h * math.pi * 2.2 + hi * 1.7) * (13.0 * s)
-        hy = hy_anchor - p_h * (195.0 * s)
-        alpha_scale = math.sin(p_h * math.pi)
-        hc = heart_cols[hi % len(heart_cols)]
-        hr = (5.5 + (hi % 3) * 1.8) * s * (0.7 + 0.35 * alpha_scale)
-        draw_heart(d, hx_anchor + sway, hy, hr, (hc[0], hc[1], hc[2], int(235 * alpha_scale)))
 
     # Optional Roblox overhead BillboardGui crisp English speech bubble when chatEn exists
     chat_en = hud_meta.get("chatEn", "")
@@ -473,7 +511,7 @@ def save_grid_sheet(cards, cols: int, card_w: int, card_h: int, out_path: str, t
         d.rounded_rectangle([x0, y0, x0 + card_w + 8, y0 + card_h + 42], radius=14, fill=(255, 255, 255), outline=border_col, width=2)
         im = item["image"].convert("RGB").resize((card_w, card_h), Image.Resampling.BILINEAR)
         sheet.paste(im, (x0 + 4, y0 + 4))
-        lbl = item.get("label", "")
+        lbl = fit_text_px(d, item.get("label", ""), f_lbl, card_w - 18)
         if item.get("badgeFill"):
             bf = tuple(item["badgeFill"])
             d.rounded_rectangle([x0 + 10, y0 + card_h + 9, x0 + card_w - 2, y0 + card_h + 36], radius=7, fill=bf)

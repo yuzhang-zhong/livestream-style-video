@@ -61,46 +61,50 @@
         "activePopup": "join_toast",
         "commentsZh": [
           {
-            "user": "阿泽冲冲冲",
-            "text": "前排打卡！真敢播啊？？",
-            "lv": 14
+            "user": "深夜壮胆团",
+            "text": "第一视角呼吸声听着后背发凉",
+            "lv": 15
           },
           {
-            "user": "芝士小猫",
-            "text": "镜头离这么近太真实了",
-            "lv": 8
+            "user": "建筑考据",
+            "text": "左手看弹幕右手照路，真一个人？",
+            "lv": 9
           },
           {
-            "user": "夜猫子07",
-            "text": "家人们别眨眼看后面！",
+            "user": "高能预警",
+            "text": "404铜牌反光有点诡异啊",
             "lv": 21
           }
         ],
         "commentsEn": [
           {
-            "user": "kai_streams",
-            "text": "YO chat we are actually live!!",
-            "lv": 14
+            "user": "urbex_kai",
+            "text": "chest POV makes my palms sweat",
+            "lv": 15
           },
           {
-            "user": "momo_irl",
-            "text": "wait look right behind you...",
-            "lv": 8
+            "user": "mina.design",
+            "text": "checking chat on left phone is wild",
+            "lv": 9
           },
           {
-            "user": "nightowl99",
-            "text": "no way they do this on stream",
+            "user": "night_watch",
+            "text": "do NOT knock on Room 404",
             "lv": 21
           }
         ],
+        "commerceItemZh": "1号福利链接",
+        "commerceItemEn": "Link #1 Deal",
+        "qaQuestionZh": "404木门外面明明插着门闩，千万别进去！",
+        "qaQuestionEn": "Wait isn't Room 404 bolted from the outside?!",
         "giftZh": {
           "sender": "kaya.studio",
-          "gift": "发送了徽章打赏",
+          "gift": "直播徽章打赏",
           "combo": 3
         },
         "giftEn": {
           "sender": "kaya.studio",
-          "gift": "bought 3 Badges",
+          "gift": "Live Badges",
           "combo": 3
         },
         "pkScoreRatio": 0.52,
@@ -148,48 +152,50 @@
         "activePopup": "qa_pinned",
         "commentsZh": [
           {
-            "user": "测评老司机",
-            "text": "这微距对焦绝了，看清细节了",
+            "user": "显微镜观众",
+            "text": "刚才手挥过去确实没钓鱼线！",
             "lv": 18
           },
           {
-            "user": "泡泡糖",
-            "text": "等等……声音是不是不对劲",
-            "lv": 9
+            "user": "胆小鬼勿入",
+            "text": "头顶灯泡是不是闪了一下？？",
+            "lv": 12
           },
           {
-            "user": "不吃香菜",
-            "text": "哈哈哈哈弹幕全在预警",
-            "lv": 12,
-            "combo": 6
+            "user": "夜班保安",
+            "text": "快退后两步，门轴在响！",
+            "lv": 25
           }
         ],
         "commentsEn": [
           {
-            "user": "lens_nerd",
-            "text": "that autofocus pull is clean 👀",
+            "user": "skeptic_01",
+            "text": "okay zero wires confirmed...",
             "lv": 18
           },
           {
-            "user": "pixel_tea",
-            "text": "hold up did something just move?!",
-            "lv": 9
+            "user": "audio_head",
+            "text": "WAIT DID THE BULB JUST FLICKER",
+            "lv": 12
           },
           {
-            "user": "chat_clipper",
-            "text": "W STREAM LMAO",
-            "lv": 12,
-            "combo": 6
+            "user": "run_now",
+            "text": "bro back away from the frame!!",
+            "lv": 25
           }
         ],
+        "commerceItemZh": "1号福利链接",
+        "commerceItemEn": "Link #1 Deal",
+        "qaQuestionZh": "404木门外面明明插着门闩，千万别进去！",
+        "qaQuestionEn": "Wait isn't Room 404 bolted from the outside?!",
         "giftZh": {
           "sender": "kaya.studio",
-          "gift": "发送了徽章打赏",
+          "gift": "直播徽章打赏",
           "combo": 3
         },
         "giftEn": {
           "sender": "kaya.studio",
-          "gift": "bought 3 Badges",
+          "gift": "Live Badges",
           "combo": 3
         },
         "pkScoreRatio": 0.52,
@@ -237,48 +243,50 @@
         "activePopup": "gift_combo",
         "commentsZh": [
           {
-            "user": "全场课代表",
-            "text": "卧槽！！直播事故名场面！！",
-            "lv": 26,
-            "combo": 23
-          },
-          {
-            "user": "可乐加冰",
-            "text": "？？？？刚刚发生了什么",
-            "lv": 15
-          },
-          {
-            "user": "切片组就位",
-            "text": "录屏了录屏了，神回预定！",
+            "user": "满屏护体",
+            "text": "卧槽门自己开了！！快跑啊！！",
             "lv": 30
+          },
+          {
+            "user": "心跳180",
+            "text": "手电筒抖成筛子了别回头！！",
+            "lv": 19
+          },
+          {
+            "user": "实况见证",
+            "text": "真没剧本，鸡皮疙瘩起来了",
+            "lv": 27
           }
         ],
         "commentsEn": [
           {
-            "user": "clip_that_now",
-            "text": "BRO WHAT JUST HAPPENED?!?!",
-            "lv": 26,
-            "combo": 23
-          },
-          {
-            "user": "iced_latte",
-            "text": "CHAT IS GOING CRAZY RN 😭😭",
-            "lv": 15
-          },
-          {
-            "user": "vod_hunter",
-            "text": "INSTANT HALL OF FAME FAIL",
+            "user": "panic_chat",
+            "text": "IT OPENED BY ITSELF RUNNN!!",
             "lv": 30
+          },
+          {
+            "user": "flashlight",
+            "text": "LOOK HOW HARD HIS HAND SHAKES",
+            "lv": 19
+          },
+          {
+            "user": "live_proof",
+            "text": "nah I'm watching with lights on",
+            "lv": 27
           }
         ],
+        "commerceItemZh": "1号福利链接",
+        "commerceItemEn": "Link #1 Deal",
+        "qaQuestionZh": "404木门外面明明插着门闩，千万别进去！",
+        "qaQuestionEn": "Wait isn't Room 404 bolted from the outside?!",
         "giftZh": {
           "sender": "kaya.studio",
-          "gift": "发送了徽章打赏",
+          "gift": "直播徽章打赏",
           "combo": 3
         },
         "giftEn": {
           "sender": "kaya.studio",
-          "gift": "bought 3 Badges",
+          "gift": "Live Badges",
           "combo": 3
         },
         "pkScoreRatio": 0.28,
@@ -326,48 +334,50 @@
         "activePopup": "gift_combo_peak",
         "commentsZh": [
           {
-            "user": "满屏问号",
-            "text": "主播表情彻底凝固哈哈哈哈",
-            "lv": 19,
-            "combo": 66
+            "user": "百米飞人",
+            "text": "主播这转身冲刺速度破纪录了",
+            "lv": 22
           },
           {
-            "user": "早八特种兵",
-            "text": "刚进来就看到大型破防现场",
-            "lv": 11
+            "user": "安全出口",
+            "text": "看到绿牌EXIT终于松一口气",
+            "lv": 14
           },
           {
-            "user": "榜一随缘",
-            "text": "礼物走一波安慰一下主播！",
-            "lv": 36
+            "user": "打赏压惊",
+            "text": "徽章刷一波给主播买新鞋！",
+            "lv": 32
           }
         ],
         "commentsEn": [
           {
-            "user": "zero_chill",
-            "text": "LOOK AT THEIR FACE LMAO 💀",
-            "lv": 19,
-            "combo": 66
+            "user": "sprint_pro",
+            "text": "fastest 180 toward EXIT in history",
+            "lv": 22
           },
           {
-            "user": "cozy_byte",
-            "text": "joined at the exact peak moment",
-            "lv": 11
+            "user": "kaya.studio",
+            "text": "badges sent for emotional damage",
+            "lv": 32
           },
           {
-            "user": "top_gifter",
-            "text": "clip it!! 100k views incoming",
-            "lv": 36
+            "user": "saved_vod",
+            "text": "legendary IG Live moment",
+            "lv": 14
           }
         ],
+        "commerceItemZh": "1号福利链接",
+        "commerceItemEn": "Link #1 Deal",
+        "qaQuestionZh": "404木门外面明明插着门闩，千万别进去！",
+        "qaQuestionEn": "Wait isn't Room 404 bolted from the outside?!",
         "giftZh": {
           "sender": "kaya.studio",
-          "gift": "发送了徽章打赏",
+          "gift": "直播徽章打赏",
           "combo": 3
         },
         "giftEn": {
           "sender": "kaya.studio",
-          "gift": "bought 3 Badges",
+          "gift": "Live Badges",
           "combo": 3
         },
         "pkScoreRatio": 0.14,

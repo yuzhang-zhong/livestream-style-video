@@ -61,38 +61,42 @@
         "activePopup": "join_toast",
         "commentsZh": [
           {
-            "user": "阿泽冲冲冲",
-            "text": "前排打卡！真敢播啊？？",
-            "lv": 14
+            "user": "跑酷见证人",
+            "text": "第99关零失误？右上角主播嘴角压不住了",
+            "lv": 16
           },
           {
-            "user": "芝士小猫",
-            "text": "镜头离这么近太真实了",
-            "lv": 8
+            "user": "毒奶协会",
+            "text": "半场开香槟最为致命哈哈",
+            "lv": 11
           },
           {
-            "user": "夜猫子07",
-            "text": "家人们别眨眼看后面！",
-            "lv": 21
+            "user": "R6死忠粉",
+            "text": "猫耳耳机小窗同步率满分！",
+            "lv": 20
           }
         ],
         "commentsEn": [
           {
-            "user": "kai_streams",
-            "text": "YO chat we are actually live!!",
-            "lv": 14
+            "user": "obby_master",
+            "text": "Stage 99 zero-death flag planted 👀",
+            "lv": 16
           },
           {
-            "user": "momo_irl",
-            "text": "wait look right behind you...",
-            "lv": 8
+            "user": "jinx_squad",
+            "text": "never flex before the green pad lol",
+            "lv": 11
           },
           {
-            "user": "nightowl99",
-            "text": "no way they do this on stream",
-            "lv": 21
+            "user": "r6_purist",
+            "text": "smug PiP facecam smirk is crazy",
+            "lv": 20
           }
         ],
+        "commerceItemZh": "跑酷加速弹簧通行证",
+        "commerceItemEn": "Speed-Coil Gamepass",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
         "giftZh": {
           "sender": "pixel_kai",
           "gift": "Galaxy Rose",
@@ -167,40 +171,42 @@
         "activePopup": "commerce_card",
         "commentsZh": [
           {
-            "user": "测评老司机",
-            "text": "这微距对焦绝了，看清细节了",
+            "user": "屏住呼吸",
+            "text": "最后一跳了！！千万别按早空格！",
             "lv": 18
           },
           {
-            "user": "泡泡糖",
-            "text": "等等……声音是不是不对劲",
-            "lv": 9
+            "user": "细节放大镜",
+            "text": "主播脸都快贴进显示器蓝光里了",
+            "lv": 14
           },
           {
-            "user": "不吃香菜",
-            "text": "哈哈哈哈弹幕全在预警",
-            "lv": 12,
-            "combo": 6
+            "user": "终点旗招手",
+            "text": "稳住这把破世界纪录了！！",
+            "lv": 25
           }
         ],
         "commentsEn": [
           {
-            "user": "lens_nerd",
-            "text": "that autofocus pull is clean 👀",
+            "user": "spacebar_pro",
+            "text": "ONE LAST JUMP HOLD YOUR BREATH",
             "lv": 18
           },
           {
-            "user": "pixel_tea",
-            "text": "hold up did something just move?!",
-            "lv": 9
+            "user": "sweat_drop",
+            "text": "bro leaning 2 inches from monitor",
+            "lv": 14
           },
           {
-            "user": "chat_clipper",
-            "text": "W STREAM LMAO",
-            "lv": 12,
-            "combo": 6
+            "user": "wr_pace",
+            "text": "SO CLOSE TO THE FINISH FLAG!!",
+            "lv": 25
           }
         ],
+        "commerceItemZh": "跑酷加速弹簧通行证",
+        "commerceItemEn": "Speed-Coil Gamepass",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
         "giftZh": {
           "sender": "pixel_kai",
           "gift": "Galaxy Rose",
@@ -275,40 +281,44 @@
         "activePopup": "gift_combo",
         "commentsZh": [
           {
-            "user": "全场课代表",
-            "text": "卧槽！！直播事故名场面！！",
-            "lv": 26,
-            "combo": 23
+            "user": "红砖杀手",
+            "text": "卧槽脚尖擦了0.1毫米红砖直接没了？！",
+            "lv": 32,
+            "combo": 28
           },
           {
-            "user": "可乐加冰",
-            "text": "？？？？刚刚发生了什么",
-            "lv": 15
+            "user": "O_O表情包",
+            "text": "右上角小窗震惊圆圈眼截图了！！",
+            "lv": 21
           },
           {
-            "user": "切片组就位",
-            "text": "录屏了录屏了，神回预定！",
-            "lv": 30
+            "user": "Oof经典咏流传",
+            "text": "差半步拿旗，血压直接拉满",
+            "lv": 27
           }
         ],
         "commentsEn": [
           {
-            "user": "clip_that_now",
-            "text": "BRO WHAT JUST HAPPENED?!?!",
-            "lv": 26,
-            "combo": 23
+            "user": "killbrick_rip",
+            "text": "HIS BLOCKY TOE GRAZED RED BRICK?!",
+            "lv": 32,
+            "combo": 28
           },
           {
-            "user": "iced_latte",
-            "text": "CHAT IS GOING CRAZY RN 😭😭",
-            "lv": 15
+            "user": "clip_that",
+            "text": "LOOK AT THE O_O FACECAM REACTION",
+            "lv": 21
           },
           {
-            "user": "vod_hunter",
-            "text": "INSTANT HALL OF FAME FAIL",
-            "lv": 30
+            "user": "oof_moment",
+            "text": "generational choke right on live",
+            "lv": 27
           }
         ],
+        "commerceItemZh": "跑酷加速弹簧通行证",
+        "commerceItemEn": "Speed-Coil Gamepass",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
         "giftZh": {
           "sender": "pixel_kai",
           "gift": "Galaxy Rose",
@@ -383,40 +393,44 @@
         "activePopup": "gift_combo_peak",
         "commentsZh": [
           {
-            "user": "满屏问号",
-            "text": "主播表情彻底凝固哈哈哈哈",
-            "lv": 19,
-            "combo": 66
+            "user": "喜提第一关",
+            "text": "双手刚性拍桌+瀑布宽条眼泪笑疯",
+            "lv": 29,
+            "combo": 99
           },
           {
-            "user": "早八特种兵",
-            "text": "刚进来就看到大型破防现场",
-            "lv": 11
+            "user": "键盘侠心疼",
+            "text": "桌子：我承受了不该承受的痛",
+            "lv": 15
           },
           {
-            "user": "榜一随缘",
-            "text": "礼物走一波安慰一下主播！",
+            "user": "pixel_kai",
+            "text": "99朵银河玫瑰安慰重开主播！",
             "lv": 36
           }
         ],
         "commentsEn": [
           {
-            "user": "zero_chill",
-            "text": "LOOK AT THEIR FACE LMAO 💀",
-            "lv": 19,
-            "combo": 66
+            "user": "stage1_club",
+            "text": "BACK TO STAGE 1 WATERFALL TEARS 💀",
+            "lv": 29,
+            "combo": 99
           },
           {
-            "user": "cozy_byte",
-            "text": "joined at the exact peak moment",
-            "lv": 11
+            "user": "desk_check",
+            "text": "RIP desk after that double block slam",
+            "lv": 15
           },
           {
-            "user": "top_gifter",
-            "text": "clip it!! 100k views incoming",
+            "user": "pixel_kai",
+            "text": "99x Galaxy Rose for the rebuild",
             "lv": 36
           }
         ],
+        "commerceItemZh": "跑酷加速弹簧通行证",
+        "commerceItemEn": "Speed-Coil Gamepass",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
         "giftZh": {
           "sender": "pixel_kai",
           "gift": "Galaxy Rose",

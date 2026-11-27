@@ -61,46 +61,50 @@
         "activePopup": "join_toast",
         "commentsZh": [
           {
-            "user": "阿泽冲冲冲",
-            "text": "前排打卡！真敢播啊？？",
+            "user": "酒店老房客",
+            "text": "050号铜牌门单排自拍？主播胆子真肥",
             "lv": 14
           },
           {
-            "user": "芝士小猫",
-            "text": "镜头离这么近太真实了",
-            "lv": 8
+            "user": "耳机音量警告",
+            "text": "这木地板脚步声听着心里发毛",
+            "lv": 9
           },
           {
-            "user": "夜猫子07",
-            "text": "家人们别眨眼看后面！",
-            "lv": 21
+            "user": "前排护体",
+            "text": "握紧手电筒注意听电流声！",
+            "lv": 19
           }
         ],
         "commentsEn": [
           {
-            "user": "kai_streams",
-            "text": "YO chat we are actually live!!",
+            "user": "doors_vet",
+            "text": "streaming Door 050 on selfie stick?!",
             "lv": 14
           },
           {
-            "user": "momo_irl",
-            "text": "wait look right behind you...",
-            "lv": 8
+            "user": "wood_creak",
+            "text": "dark hotel corridor looks so eerie",
+            "lv": 9
           },
           {
-            "user": "nightowl99",
-            "text": "no way they do this on stream",
-            "lv": 21
+            "user": "stay_alert",
+            "text": "watch the brass sconces closely",
+            "lv": 19
           }
         ],
+        "commerceItemZh": "1号福利链接",
+        "commerceItemEn": "Link #1 Deal",
+        "qaQuestionZh": "壁灯闪了两下！快找木衣柜躲进去别看后面！",
+        "qaQuestionEn": "LIGHTS FLICKERED TWICE — HIDE IN THE CLOSET NOW!!",
         "giftZh": {
           "sender": "kaya.studio",
-          "gift": "发送了徽章打赏",
+          "gift": "直播徽章打赏",
           "combo": 3
         },
         "giftEn": {
           "sender": "kaya.studio",
-          "gift": "bought 3 Badges",
+          "gift": "Live Badges",
           "combo": 3
         },
         "pkScoreRatio": 0.52,
@@ -167,48 +171,50 @@
         "activePopup": "qa_pinned",
         "commentsZh": [
           {
-            "user": "测评老司机",
-            "text": "这微距对焦绝了，看清细节了",
-            "lv": 18
+            "user": "满屏快躲",
+            "text": "灯闪了灯闪了！！别低头看弹幕快躲！",
+            "lv": 26
           },
           {
-            "user": "泡泡糖",
-            "text": "等等……声音是不是不对劲",
-            "lv": 9
+            "user": "衣柜指路党",
+            "text": "右手边就有百叶木柜快进去！！",
+            "lv": 17
           },
           {
-            "user": "不吃香菜",
-            "text": "哈哈哈哈弹幕全在预警",
-            "lv": 12,
-            "combo": 6
+            "user": "急死观众",
+            "text": "主播还在问为什么刷HIDE？？",
+            "lv": 22
           }
         ],
         "commentsEn": [
           {
-            "user": "lens_nerd",
-            "text": "that autofocus pull is clean 👀",
-            "lv": 18
+            "user": "spam_hide",
+            "text": "HIDE HIDE HIDE LIGHTS JUST FLASHED!!",
+            "lv": 26
           },
           {
-            "user": "pixel_tea",
-            "text": "hold up did something just move?!",
-            "lv": 9
+            "user": "closet_now",
+            "text": "STOP READING CHAT GET IN WARDROBE",
+            "lv": 17
           },
           {
-            "user": "chat_clipper",
-            "text": "W STREAM LMAO",
-            "lv": 12,
-            "combo": 6
+            "user": "mina.design",
+            "text": "something is coming down the hall!",
+            "lv": 22
           }
         ],
+        "commerceItemZh": "1号福利链接",
+        "commerceItemEn": "Link #1 Deal",
+        "qaQuestionZh": "壁灯闪了两下！快找木衣柜躲进去别看后面！",
+        "qaQuestionEn": "LIGHTS FLICKERED TWICE — HIDE IN THE CLOSET NOW!!",
         "giftZh": {
           "sender": "kaya.studio",
-          "gift": "发送了徽章打赏",
+          "gift": "直播徽章打赏",
           "combo": 3
         },
         "giftEn": {
           "sender": "kaya.studio",
-          "gift": "bought 3 Badges",
+          "gift": "Live Badges",
           "combo": 3
         },
         "pkScoreRatio": 0.52,
@@ -275,48 +281,50 @@
         "activePopup": "gift_combo",
         "commentsZh": [
           {
-            "user": "全场课代表",
-            "text": "卧槽！！直播事故名场面！！",
-            "lv": 26,
-            "combo": 23
+            "user": "左肩高能",
+            "text": "自拍屏幕里左肩膀后面亮起一对白眼！！",
+            "lv": 34
           },
           {
-            "user": "可乐加冰",
-            "text": "？？？？刚刚发生了什么",
-            "lv": 15
+            "user": "瞳孔地震",
+            "text": "不用回头直接从前置镜头对视上了！",
+            "lv": 24
           },
           {
-            "user": "切片组就位",
-            "text": "录屏了录屏了，神回预定！",
-            "lv": 30
+            "user": "吓飞手机",
+            "text": "18mm超广角自拍恐怖感直接翻倍",
+            "lv": 29
           }
         ],
         "commentsEn": [
           {
-            "user": "clip_that_now",
-            "text": "BRO WHAT JUST HAPPENED?!?!",
-            "lv": 26,
-            "combo": 23
+            "user": "behind_left",
+            "text": "GLOWING WHITE EYES OVER LEFT SHOULDER",
+            "lv": 34
           },
           {
-            "user": "iced_latte",
-            "text": "CHAT IS GOING CRAZY RN 😭😭",
-            "lv": 15
+            "user": "selfie_scare",
+            "text": "SPOTTED IT IN THE FRONT CAM PREVIEW!",
+            "lv": 24
           },
           {
-            "user": "vod_hunter",
-            "text": "INSTANT HALL OF FAME FAIL",
-            "lv": 30
+            "user": "heart_rate",
+            "text": "O_O decal switch was instant",
+            "lv": 29
           }
         ],
+        "commerceItemZh": "1号福利链接",
+        "commerceItemEn": "Link #1 Deal",
+        "qaQuestionZh": "壁灯闪了两下！快找木衣柜躲进去别看后面！",
+        "qaQuestionEn": "LIGHTS FLICKERED TWICE — HIDE IN THE CLOSET NOW!!",
         "giftZh": {
           "sender": "kaya.studio",
-          "gift": "发送了徽章打赏",
+          "gift": "直播徽章打赏",
           "combo": 3
         },
         "giftEn": {
           "sender": "kaya.studio",
-          "gift": "bought 3 Badges",
+          "gift": "Live Badges",
           "combo": 3
         },
         "pkScoreRatio": 0.28,
@@ -400,48 +408,50 @@
         "activePopup": "gift_combo_peak",
         "commentsZh": [
           {
-            "user": "满屏问号",
-            "text": "主播表情彻底凝固哈哈哈哈",
-            "lv": 19,
-            "combo": 66
+            "user": "百叶窗视角",
+            "text": "躲进木柜只靠手机屏冷光照明绝了",
+            "lv": 25
           },
           {
-            "user": "早八特种兵",
-            "text": "刚进来就看到大型破防现场",
-            "lv": 11
+            "user": "静音大军",
+            "text": "别刷大声特效礼物会把怪引过来哈哈",
+            "lv": 18
           },
           {
-            "user": "榜一随缘",
-            "text": "礼物走一波安慰一下主播！",
-            "lv": 36
+            "user": "kaya.studio",
+            "text": "瀑布泪贴图太真实了，徽章压惊",
+            "lv": 31
           }
         ],
         "commentsEn": [
           {
-            "user": "zero_chill",
-            "text": "LOOK AT THEIR FACE LMAO 💀",
-            "lv": 19,
-            "combo": 66
+            "user": "closet_gang",
+            "text": "peeking through wooden slats crying 💀",
+            "lv": 25
           },
           {
-            "user": "cozy_byte",
-            "text": "joined at the exact peak moment",
-            "lv": 11
+            "user": "shhh_chat",
+            "text": "nobody breathe until red glow passes",
+            "lv": 18
           },
           {
-            "user": "top_gifter",
-            "text": "clip it!! 100k views incoming",
-            "lv": 36
+            "user": "kaya.studio",
+            "text": "3 Badges for surviving Door 050!",
+            "lv": 31
           }
         ],
+        "commerceItemZh": "1号福利链接",
+        "commerceItemEn": "Link #1 Deal",
+        "qaQuestionZh": "壁灯闪了两下！快找木衣柜躲进去别看后面！",
+        "qaQuestionEn": "LIGHTS FLICKERED TWICE — HIDE IN THE CLOSET NOW!!",
         "giftZh": {
           "sender": "kaya.studio",
-          "gift": "发送了徽章打赏",
+          "gift": "直播徽章打赏",
           "combo": 3
         },
         "giftEn": {
           "sender": "kaya.studio",
-          "gift": "bought 3 Badges",
+          "gift": "Live Badges",
           "combo": 3
         },
         "pkScoreRatio": 0.14,

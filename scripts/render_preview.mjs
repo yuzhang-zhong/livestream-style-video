@@ -613,15 +613,31 @@ function buildEpisodeScene(slug, shotIdx, phase = 0.5) {
           })
         );
 
-        // Silver Mystery Gadget Cube (held close to lens in Shot 1, on desk otherwise)
-        const cubePos = s === 1 ? v3(0.02, 0.16, 1.25) : v3(0.02, -0.19, 0.55);
+        // Silver Mystery Gadget Cube (held close to lens at chest level in Shot 1 with flat open palm behind it!)
+        const cubePos = s === 1 ? v3(0.02, -0.02, 1.24) : v3(0.02, -0.19, 0.55);
         const qc = sub3(p, cubePos);
-        hit.add(sdRoundBox(qc, v3(0.13, 0.13, 0.13), 0.022), [148, 163, 184], 0.18, 42);
-        hit.add(sdRoundedCylinder(sub3(qc, v3(0, 0.135, 0)), 0.045, 0.008, 0.018), [239, 68, 68], 0.08, 42);
+        hit.add(sdRoundBox(qc, v3(0.125, 0.125, 0.125), 0.022), [148, 163, 184], 0.18, 42);
+        hit.add(sdRoundedCylinder(sub3(qc, v3(0, 0.13, 0)), 0.044, 0.008, 0.018), [239, 68, 68], 0.08, 42);
+        if (s === 1) {
+          // Influencer flat palm held behind the gadget cube to trigger continuous AF-C focus lock
+          const pPalm = rotZ(sub3(p, v3(-0.11, 0.08, 1.06)), 0.18);
+          hit.add(sdRoundBox(pPalm, v3(0.088, 0.125, 0.024), 0.02), [253, 220, 192], 0.32, 42);
+          hit.add(sdCapsule(pPalm, v3(0.07, -0.04, 0), v3(0.13, 0.04, 0.02), 0.022), [253, 220, 192], 0.32, 42);
+        }
 
         if (s >= 2) {
           const mascotY = s === 2 ? -0.05 + popH : -0.02;
-          hit.add(sdSphere(sub3(p, v3(0.02, mascotY, 0.55)), 0.105), [250, 204, 21], 0.22, 43);
+          const pm = sub3(p, v3(0.02, mascotY, 0.55));
+          const dM = sdSphere(pm, 0.105);
+          if (dM < hit.d) {
+            let mCol = [250, 204, 21];
+            if (pm.z > 0.07 && Math.abs(Math.abs(pm.x) - 0.035) < 0.014 && Math.abs(pm.y - 0.015) < 0.016) mCol = [15, 23, 42];
+            hit.add(dM, mCol, 0.22, 43);
+          }
+          // Spring coil beneath mascot in Shot 2
+          if (s === 2) {
+            hit.add(sdRoundedCylinder(sub3(p, v3(0.02, -0.04 + popH * 0.45, 0.55)), 0.032, 0.006, popH * 0.45 + 0.02), [226, 232, 240], 0.18, 43);
+          }
         }
         return hit;
       }
@@ -636,40 +652,55 @@ function buildEpisodeScene(slug, shotIdx, phase = 0.5) {
     return {
       cam: {
         ro: v3(shake, 0.22 + walkBob, s === 0 ? 2.35 - phase * 0.35 : 2.0),
-        ta: v3(s === 3 ? 0.55 : 0, 0.20, -1.0),
+        ta: v3(s === 3 ? 0.35 : 0, 0.20, -1.0),
         fov: 1.42, // 16mm ultra-wide POV
         bgTop: [8, 12, 22],
         bgBot: [18, 24, 38],
         rimTint: [56, 189, 248],
         floorY: -0.88,
         floorCol1: [28, 24, 22],
-        floorCol2: [38, 32, 28]
+        floorCol2: [42, 36, 30]
       },
       sceneFn: (p) => {
         const hit = new SceneHit();
-        // Left & Right corridor walls
+        // Left & Right corridor walls + warm wall sconce
         hit.add(sdRoundBox(sub3(p, v3(-1.15, 0.3, -0.2)), v3(0.08, 1.3, 2.6), 0.01), [30, 41, 59], 0.48, 50);
         hit.add(sdRoundBox(sub3(p, v3(1.15, 0.3, -0.2)), v3(0.08, 1.3, 2.6), 0.01), [30, 41, 59], 0.48, 50);
-
-        // End wall + Wooden Door 404 (or glowing green EXIT sign in Shot 3)
-        if (s === 3) {
-          hit.add(sdRoundBox(sub3(p, v3(0.35, 0.72, -1.1)), v3(0.24, 0.09, 0.03), 0.01), [34, 197, 94], 0.03, 51);
-        } else {
-          const pd = rotY(sub3(p, v3(-0.32, 0.05, -1.25)), doorOpenYaw);
-          hit.add(sdRoundBox(sub3(pd, v3(0.32, 0, 0)), v3(0.34, 0.78, 0.04), 0.015), [120, 72, 42], 0.38, 51);
-          hit.add(sdRoundBox(sub3(pd, v3(0.32, 0.32, 0.045)), v3(0.11, 0.045, 0.01), 0.005), [250, 204, 21], 0.14, 51);
+        const bulbOn = !(s === 2 && Math.floor(phase * 6) % 2 === 1);
+        if (s < 3 && bulbOn) {
+          hit.add(sdSphere(sub3(p, v3(0, 0.96, -0.65)), 0.055), [254, 240, 138], 0.03, 50);
         }
 
-        // First-Person Left Hand holding glowing Chat Smartphone in lower-left!
-        const phL = sub3(p, v3(-0.34, -0.14 + walkBob * 0.5, 1.28));
-        hit.add(sdRoundBox(phL, v3(0.085, 0.15, 0.016), 0.012), [56, 189, 248], 0.04, 52);
-        hit.add(sdSphere(sub3(phL, v3(-0.06, -0.08, 0.04)), 0.055), [253, 224, 196], 0.34, 52);
+        // End wall + Wooden Door 404 with trim & handle (or glowing green EXIT stairwell door in Shot 3)
+        if (s === 3) {
+          hit.add(sdRoundBox(sub3(p, v3(0.28, 0.05, -1.25)), v3(0.38, 0.72, 0.04), 0.015), [51, 65, 85], 0.35, 51);
+          hit.add(sdRoundBox(sub3(p, v3(0.28, 0.92, -1.18)), v3(0.22, 0.085, 0.03), 0.01), [34, 197, 94], 0.03, 51);
+        } else {
+          // Outer doorframe
+          hit.add(sdRoundBox(sub3(p, v3(0, 0.06, -1.28)), v3(0.41, 0.84, 0.025), 0.01), [71, 46, 28], 0.42, 51);
+          const pd = rotY(sub3(p, v3(-0.34, 0.05, -1.24)), doorOpenYaw);
+          const qDoor = sub3(pd, v3(0.34, 0, 0));
+          hit.add(sdRoundBox(qDoor, v3(0.34, 0.78, 0.038), 0.015), [124, 76, 44], 0.38, 51);
+          hit.add(sdRoundBox(sub3(qDoor, v3(0, 0.32, 0.042)), v3(0.11, 0.045, 0.01), 0.005), [250, 204, 21], 0.12, 51);
+          hit.add(sdSphere(sub3(qDoor, v3(0.23, -0.04, 0.055)), 0.028), [250, 204, 21], 0.14, 51);
+        }
+
+        // First-Person Left Hand holding dark-bezel Chat Smartphone cleanly inside lower-left frame!
+        const phL = rotY(sub3(p, v3(-0.22, -0.08 + walkBob * 0.5, 1.24)), 0.24);
+        hit.add(sdRoundBox(phL, v3(0.078, 0.142, 0.016), 0.014), [15, 23, 42], 0.20, 52);
+        const dScr = sdRoundBox(sub3(phL, v3(0, 0, 0.006)), v3(0.068, 0.126, 0.014), 0.01);
+        if (dScr < hit.d) {
+          const isChatRow = Math.abs(phL.x) < 0.052 && (Math.abs(phL.y + 0.02) < 0.012 || Math.abs(phL.y + 0.055) < 0.012 || Math.abs(phL.y + 0.09) < 0.012);
+          hit.add(dScr, isChatRow ? [125, 211, 252] : [14, 32, 58], 0.04, 52);
+        }
+        hit.add(sdSphere(sub3(phL, v3(-0.072, -0.05, 0.025)), 0.042), [253, 220, 192], 0.34, 52);
 
         // First-Person Right Hand holding Flashlight (waves across lens in Shot 1)
-        const waveX = s === 1 ? Math.sin(phase * Math.PI * 2) * 0.24 : 0.34;
-        const flP = sub3(p, v3(waveX, -0.12, 1.26));
-        hit.add(sdRoundedCylinder(rotX(flP, Math.PI / 2), 0.048, 0.01, 0.14), [71, 85, 105], 0.22, 53);
-        hit.add(sdSphere(sub3(flP, v3(0, 0, -0.14)), 0.044), [254, 249, 195], 0.02, 53);
+        const waveX = s === 1 ? Math.sin(phase * Math.PI * 2) * 0.22 : 0.28;
+        const flP = sub3(p, v3(waveX, -0.10, 1.24));
+        hit.add(sdRoundedCylinder(rotX(flP, Math.PI / 2), 0.046, 0.01, 0.14), [71, 85, 105], 0.22, 53);
+        hit.add(sdSphere(sub3(flP, v3(0, 0, -0.14)), 0.042), [254, 249, 195], 0.02, 53);
+        hit.add(sdSphere(sub3(flP, v3(0.045, -0.04, 0.04)), 0.045), [253, 220, 192], 0.34, 53);
         return hit;
       }
     };
@@ -690,11 +721,26 @@ function buildEpisodeScene(slug, shotIdx, phase = 0.5) {
       },
       sceneFn: (p) => {
         const hit = new SceneHit();
-        // Desk + Glowing RGB Mechanical Keyboard + Cyan Shelf Strip
+        // Desk + Mechanical Keyboard with keycap grid over RGB underglow
         hit.add(sdRoundBox(sub3(p, v3(0, -0.38, 0.45)), v3(1.3, 0.05, 0.52), 0.02), [120, 82, 54], 0.40, 60);
-        hit.add(sdRoundBox(sub3(p, v3(0, -0.31, 0.52)), v3(0.32, 0.022, 0.13), 0.01), [56, 189, 248], 0.05, 61);
-        if (p.z < -0.6) {
-          hit.add(sdRoundBox(sub3(p, v3(0.65, 0.62, -0.95)), v3(0.45, 0.025, 0.04), 0.01), [37, 244, 238], 0.04, 62);
+        const pk = sub3(p, v3(0, -0.31, 0.52));
+        const dKb = sdRoundBox(pk, v3(0.32, 0.024, 0.13), 0.01);
+        if (dKb < hit.d) {
+          let kCol = [30, 41, 59];
+          if (pk.y < -0.008) kCol = [37, 244, 238];
+          else if (pk.y > 0.012 && Math.abs(pk.x) < 0.28 && Math.abs(pk.z) < 0.095) {
+            const gx = Math.abs(((pk.x + 1) * 18) % 1 - 0.5);
+            const gz = Math.abs(((pk.z + 1) * 18) % 1 - 0.5);
+            kCol = gx < 0.36 && gz < 0.36 ? [51, 65, 85] : [56, 189, 248];
+          }
+          hit.add(dKb, kCol, kCol[0] === 37 || kCol[0] === 56 ? 0.05 : 0.28, 61);
+        }
+        // Warm desk lamp on left + Solid cyan LED wall shelf behind (thick Z so zero raymarch gaps!)
+        hit.add(sdCapsule(p, v3(-0.78, -0.34, 0.32), v3(-0.66, 0.24, 0.32), 0.02), [71, 85, 105], 0.3, 62);
+        hit.add(sdSphere(sub3(p, v3(-0.62, 0.22, 0.34)), 0.055), [254, 243, 199], 0.04, 62);
+        if (p.z < -0.5) {
+          hit.add(sdRoundBox(sub3(p, v3(0.56, 0.58, -0.88)), v3(0.42, 0.032, 0.12), 0.012), [71, 85, 105], 0.38, 62);
+          hit.add(sdRoundBox(sub3(p, v3(0.56, 0.62, -0.82)), v3(0.40, 0.028, 0.055), 0.014), [37, 244, 238], 0.03, 62);
         }
 
         hit.merge(
@@ -728,6 +774,7 @@ function buildEpisodeScene(slug, shotIdx, phase = 0.5) {
           if (dCatHead < hit.d) {
             let cCol = [251, 146, 60];
             if (ch.z > 0.06 && Math.abs(Math.abs(ch.x) - 0.038) < 0.018 && Math.abs(ch.y - 0.015) < 0.018) cCol = [15, 23, 42];
+            else if (ch.y > 0.04 && Math.abs(ch.x) < 0.014) cCol = [194, 65, 12];
             hit.add(dCatHead, cCol, 0.32, 64);
           }
           hit.add(sdRoundBox(sub3(ch, v3(-0.065, 0.095, 0)), v3(0.028, 0.042, 0.018), 0.008), [249, 115, 22], 0.35, 64);
@@ -738,13 +785,14 @@ function buildEpisodeScene(slug, shotIdx, phase = 0.5) {
     };
   }
 
-  // 5. Wuxia Sword Flight Selfie Live (Cloud Sea + Glowing Rune Sword + White Crane)
+  // 5. Wuxia Sword Flight Selfie Live (Cloud Sea + Glowing Rune Sword + Red-Crowned White Spirit Crane)
   if (slug === "wuxia_sword_flight_live") {
     const roll = s === 2 ? Math.sin(phase * Math.PI * 4) * 0.18 : 0;
     return {
       cam: {
-        ro: v3(0.08, s === 1 ? 0.12 : 0.48, 2.38),
-        ta: v3(0, s === 1 ? -0.58 : 0.16, 0),
+        // Keep Shot 1 head well below top HUD safe-zone while showing the glowing sword underfoot!
+        ro: v3(0.08, s === 1 ? 0.56 : 0.48, s === 1 ? 2.86 : 2.38),
+        ta: v3(0, s === 1 ? -0.28 : 0.16, 0),
         roll,
         fov: 1.56,
         bgTop: [56, 189, 248],
@@ -754,10 +802,10 @@ function buildEpisodeScene(slug, shotIdx, phase = 0.5) {
       },
       sceneFn: (p) => {
         const hit = new SceneHit();
-        // Hovering Jade-Bronze Flying Sword underfoot
+        // Hovering Jade-Bronze Flying Sword underfoot with glowing gold crossguard & cyan rune blade
         const ps = sub3(p, v3(0, -0.96, 0));
-        hit.add(sdRoundBox(ps, v3(0.16, 0.026, 0.88), 0.012), [45, 212, 191], 0.06, 70);
-        hit.add(sdRoundBox(sub3(ps, v3(0, 0.01, -0.68)), v3(0.28, 0.032, 0.06), 0.012), [250, 204, 21], 0.16, 70);
+        hit.add(sdRoundBox(ps, v3(0.17, 0.028, 0.92), 0.012), [45, 212, 191], 0.06, 70);
+        hit.add(sdRoundBox(sub3(ps, v3(0, 0.012, -0.68)), v3(0.30, 0.035, 0.065), 0.012), [250, 204, 21], 0.16, 70);
 
         // Cloud puffs below
         if (p.y < -0.75) {
@@ -779,13 +827,21 @@ function buildEpisodeScene(slug, shotIdx, phase = 0.5) {
           })
         );
 
-        // Photobombing White Spirit Crane in Shot 2
+        // Sculpted Red-Crowned White Spirit Crane (丹顶白鹤) photobombing right shoulder in Shot 2!
         if (s === 2) {
-          const cp = sub3(p, v3(mix(0.85, 0.36, phase), 0.56, -0.35));
-          hit.add(sdRoundBox(cp, v3(0.18, 0.11, 0.22), 0.08), [255, 255, 255], 0.3, 72);
-          const wingY = Math.sin(phase * Math.PI * 6) * 0.14;
-          hit.add(sdRoundBox(sub3(cp, v3(-0.28, wingY, 0)), v3(0.22, 0.025, 0.14), 0.015), [248, 250, 252], 0.3, 72);
-          hit.add(sdRoundBox(sub3(cp, v3(0.28, wingY, 0)), v3(0.22, 0.025, 0.14), 0.015), [248, 250, 252], 0.3, 72);
+          const cp = rotY(sub3(p, v3(mix(0.82, 0.44, phase), 0.50, -0.28)), 0.32);
+          hit.add(sdRoundBox(cp, v3(0.14, 0.095, 0.20), 0.075), [255, 255, 255], 0.28, 72);
+          // Graceful S-neck + white head + crimson red crown + golden beak
+          hit.add(sdCapsule(cp, v3(0, 0.05, 0.14), v3(-0.04, 0.25, 0.22), 0.036), [255, 255, 255], 0.28, 72);
+          hit.add(sdSphere(sub3(cp, v3(-0.04, 0.27, 0.23)), 0.048), [255, 255, 255], 0.28, 72);
+          hit.add(sdSphere(sub3(cp, v3(-0.04, 0.31, 0.23)), 0.024), [239, 68, 68], 0.18, 72);
+          hit.add(sdCapsule(cp, v3(-0.04, 0.26, 0.27), v3(-0.06, 0.24, 0.38), 0.016), [250, 204, 21], 0.20, 72);
+          // Flapping wings with black trailing tips
+          const wingAng = Math.sin(phase * Math.PI * 6) * 0.35 + 0.18;
+          const pwL = rotZ(sub3(cp, v3(-0.12, 0.04, 0)), -wingAng);
+          const pwR = rotZ(sub3(cp, v3(0.12, 0.04, 0)), wingAng);
+          hit.add(sdRoundBox(sub3(pwL, v3(-0.18, 0, 0)), v3(0.18, 0.022, 0.12), 0.012), pwL.x < -0.26 ? [30, 41, 59] : [248, 250, 252], 0.3, 72);
+          hit.add(sdRoundBox(sub3(pwR, v3(0.18, 0, 0)), v3(0.18, 0.022, 0.12), 0.012), pwR.x > 0.26 ? [30, 41, 59] : [248, 250, 252], 0.3, 72);
         }
         return hit;
       }
@@ -962,12 +1018,23 @@ function buildEpisodeScene(slug, shotIdx, phase = 0.5) {
       } else {
         // Left: tiny dull gray pebble
         hit.add(sdRoundBox(sub3(p, v3(-0.56, -0.26, 0.52)), v3(0.06, 0.045, 0.06), 0.02), [100, 116, 139], 0.48, 92);
-        // Right: Hovering Blocky Cyan-Gold Mythic Dragon!
-        const dy = 0.42 + Math.sin(phase * Math.PI * 2) * 0.06;
-        const qd = sub3(p, v3(0.56, dy, 0.48));
-        hit.add(sdRoundBox(qd, v3(0.12, 0.10, 0.14), 0.025), [37, 244, 238], 0.05, 93);
-        hit.add(sdRoundBox(sub3(qd, v3(-0.20, 0.04, 0)), v3(0.10, 0.022, 0.09), 0.01), [250, 204, 21], 0.06, 93);
-        hit.add(sdRoundBox(sub3(qd, v3(0.20, 0.04, 0)), v3(0.10, 0.022, 0.09), 0.01), [250, 204, 21], 0.06, 93);
+        // Right: Sculpted Hovering Blocky Cyan-Gold Mythic Dragon above Noob's shoulder (unobstructed smile!)
+        const dy = 0.72 + Math.sin(phase * Math.PI * 2) * 0.05;
+        const qd = rotY(sub3(p, v3(0.32, dy, 0.38)), -0.38);
+        hit.add(sdRoundBox(qd, v3(0.11, 0.09, 0.14), 0.022), [37, 244, 238], 0.06, 93);
+        const dh = sub3(qd, v3(0, 0.08, 0.15));
+        const dDrgHead = sdRoundBox(dh, v3(0.085, 0.075, 0.09), 0.018);
+        if (dDrgHead < hit.d) {
+          let drgCol = [56, 189, 248];
+          if (dh.z > 0.07 && Math.abs(Math.abs(dh.x) - 0.038) < 0.016 && Math.abs(dh.y - 0.015) < 0.018) drgCol = [15, 23, 42];
+          hit.add(dDrgHead, drgCol, 0.08, 93);
+        }
+        // Golden blocky horns + flapping golden neon wing plates
+        hit.add(sdRoundBox(sub3(dh, v3(-0.05, 0.095, -0.02)), v3(0.018, 0.042, 0.018), 0.005), [250, 204, 21], 0.05, 93);
+        hit.add(sdRoundBox(sub3(dh, v3(0.05, 0.095, -0.02)), v3(0.018, 0.042, 0.018), 0.005), [250, 204, 21], 0.05, 93);
+        const flap = Math.sin(phase * Math.PI * 4) * 0.28 + 0.22;
+        hit.add(sdRoundBox(sub3(rotZ(sub3(qd, v3(-0.10, 0.04, 0)), -flap), v3(-0.13, 0, 0)), v3(0.13, 0.020, 0.09), 0.008), [250, 204, 21], 0.05, 93);
+        hit.add(sdRoundBox(sub3(rotZ(sub3(qd, v3(0.10, 0.04, 0)), flap), v3(0.13, 0, 0)), v3(0.13, 0.020, 0.09), 0.008), [250, 204, 21], 0.05, 93);
       }
       return hit;
     }
@@ -1410,15 +1477,26 @@ function buildShowcaseManifest(rawDir) {
           labelZh: "抖音直播间 · 小黄车讲解卡",
           labelEn: "Douyin · Live Deal Card",
           borderColor: [254, 44, 85],
-          hudMeta: { activePopup: "commerce_card", viewerCount: 24800, heartBurstIntensity: "high" }
+          hudMeta: buildShotHudTimeline({ hudPopup: "commerce_card", baseViewers: 21500 }, 1, 4, "douyin", "irl_night_market_selfie")
         },
         {
           platform: "kuaishou",
           host: "老铁实测",
-          labelZh: "快手直播间 · 穿云箭连击x18",
-          labelEn: "Kuaishou · Combo Gift x18",
+          labelZh: "快手直播间 · 穿云箭连击x28",
+          labelEn: "Kuaishou · SkyArrow Combo",
           borderColor: [255, 80, 0],
-          hudMeta: { activePopup: "gift_combo", giftZh: { sender: "榜一大哥", gift: "穿云箭", combo: 28 }, giftEn: { sender: "TopBro", gift: "SkyArrow", combo: 28 }, viewerCount: 32100 }
+          hudMeta: buildShotHudTimeline(
+            {
+              hudPopup: "gift_combo",
+              hudGiftZh: { sender: "榜一大哥", gift: "黄金穿云箭", combo: 28 },
+              hudGiftEn: { sender: "IronBro_01", gift: "Sky Arrow", combo: 28 },
+              baseViewers: 17400
+            },
+            2,
+            4,
+            "kuaishou",
+            "desk_unboxing_autofocus"
+          )
         },
         {
           platform: "instagram",
@@ -1426,7 +1504,7 @@ function buildShowcaseManifest(rawDir) {
           labelZh: "Ins Live · 无框弹幕与提问卡",
           labelEn: "IG Live · Borderless + Q&A",
           borderColor: [225, 48, 108],
-          hudMeta: { activePopup: "qa_pinned", viewerCount: 14200 }
+          hudMeta: buildShotHudTimeline({ hudPopup: "qa_pinned", baseViewers: 12400 }, 1, 4, "instagram", "midnight_corridor_fpv_live")
         },
         {
           platform: "x",
@@ -1434,7 +1512,10 @@ function buildShowcaseManifest(rawDir) {
           labelZh: "X Live · 暗夜玻璃与六色飘心",
           labelEn: "X / Periscope · 6-Color Hearts",
           borderColor: [53, 177, 209],
-          hudMeta: { activePopup: "join_toast", viewerCount: 18400, heartBurstIntensity: "high" }
+          hudMeta: {
+            ...buildShotHudTimeline({ hudPopup: "join_toast", baseViewers: 15800 }, 0, 4, "x", "late_night_study_webcam"),
+            heartBurstIntensity: "high"
+          }
         },
         {
           platform: "tiktok",
@@ -1442,7 +1523,18 @@ function buildShowcaseManifest(rawDir) {
           labelZh: "TikTok Live · 玫瑰连击x99",
           labelEn: "TikTok · Galaxy Rose x99",
           borderColor: [37, 244, 238],
-          hudMeta: { activePopup: "gift_combo_peak", giftZh: { sender: "pixel_kai", gift: "Galaxy Rose", combo: 99 }, giftEn: { sender: "pixel_kai", gift: "Galaxy Rose", combo: 99 }, viewerCount: 19600 }
+          hudMeta: buildShotHudTimeline(
+            {
+              hudPopup: "gift_combo_peak",
+              hudGiftZh: { sender: "pixel_kai", gift: "Galaxy Rose", combo: 99 },
+              hudGiftEn: { sender: "pixel_kai", gift: "Galaxy Rose", combo: 99 },
+              baseViewers: 16200
+            },
+            3,
+            4,
+            "tiktok",
+            "roblox_obby_rage_pip"
+          )
         }
       ]
     },
@@ -1451,12 +1543,74 @@ function buildShowcaseManifest(rawDir) {
       outEn: path.join(showcaseDir, "camera_rigs_atlas.en.png"),
       outDefault: path.join(showcaseDir, "camera_rigs_atlas.png"),
       items: [
-        { file: "irl_night_market_selfie_shot_0.png", rig: "handheld-selfie-irl", platform: "douyin", host: "Lin", shotIdx: 0, labelZh: "18mm 手持前置户外自拍", labelEn: "18mm Handheld IRL Selfie" },
-        { file: "desk_unboxing_autofocus_shot_1.png", rig: "overhead-showcase-rig", platform: "kuaishou", host: "Kaya", shotIdx: 1, labelZh: "35mm 托底微距对焦 [AF-C]", labelEn: "35mm Palm Autofocus [AF-C]", hudMeta: { activePopup: "commerce_card" } },
-        { file: "midnight_corridor_fpv_live_shot_0.png", rig: "chest-head-pov", platform: "instagram", host: "ren.urban", shotIdx: 0, labelZh: "16mm 胸挂第一人称双持", labelEn: "16mm Chest Dual-Hand POV" },
-        { file: "wuxia_sword_flight_live_shot_2.png", rig: "handheld-selfie-irl", platform: "douyin", host: "青云师兄", shotIdx: 2, labelZh: "架空仙侠御剑自拍转译", labelEn: "Genre Plot -> Sword Selfie" },
-        { file: "roblox_obby_rage_pip_shot_2.png", pipFile: "roblox_obby_rage_pip_pip_shot_2.png", rig: "pip-facecam-rig", platform: "tiktok", host: "BloxyKai", shotIdx: 2, labelZh: "Roblox 实况 + B轨反应小窗", labelEn: "Roblox Dual-Track + PiP", hudMeta: { style: "roblox-blocky", chatEn: "NOOOO!!" } },
-        { file: "roblox_pet_hatch_pk_shot_2.png", rig: "pk-cohost-split", platform: "kuaishou", host: "Y2K_Queen", shotIdx: 2, labelZh: "Roblox 50/50 连麦 PK 分屏", labelEn: "Roblox 50/50 Co-Host PK", hudMeta: { style: "roblox-blocky", pkScoreRatio: 0.16, activePopup: "gift_combo" } }
+        {
+          file: "irl_night_market_selfie_shot_0.png",
+          rig: "handheld-selfie-irl",
+          platform: "douyin",
+          host: "Lin",
+          shotIdx: 0,
+          labelZh: "18mm 手持前置户外自拍",
+          labelEn: "18mm Handheld IRL Selfie",
+          hudMeta: buildShotHudTimeline({}, 0, 4, "douyin", "irl_night_market_selfie")
+        },
+        {
+          file: "desk_unboxing_autofocus_shot_1.png",
+          rig: "overhead-showcase-rig",
+          platform: "kuaishou",
+          host: "Kaya",
+          shotIdx: 1,
+          labelZh: "35mm 托底微距对焦 [AF-C]",
+          labelEn: "35mm Palm Autofocus [AF-C]",
+          hudMeta: buildShotHudTimeline({ hudPopup: "commerce_card" }, 1, 4, "kuaishou", "desk_unboxing_autofocus")
+        },
+        {
+          file: "midnight_corridor_fpv_live_shot_0.png",
+          rig: "chest-head-pov",
+          platform: "instagram",
+          host: "ren.urban",
+          shotIdx: 0,
+          labelZh: "16mm 胸挂第一人称双持",
+          labelEn: "16mm Chest Dual-Hand POV",
+          hudMeta: buildShotHudTimeline({}, 0, 4, "instagram", "midnight_corridor_fpv_live")
+        },
+        {
+          file: "wuxia_sword_flight_live_shot_2.png",
+          rig: "handheld-selfie-irl",
+          platform: "douyin",
+          host: "青云小师兄",
+          shotIdx: 2,
+          labelZh: "架空仙侠御剑自拍转译",
+          labelEn: "Genre Plot -> Sword Selfie",
+          hudMeta: buildShotHudTimeline({}, 2, 4, "douyin", "wuxia_sword_flight_live")
+        },
+        {
+          file: "roblox_obby_rage_pip_shot_2.png",
+          pipFile: "roblox_obby_rage_pip_pip_shot_2.png",
+          rig: "pip-facecam-rig",
+          platform: "tiktok",
+          host: "BloxyKai",
+          shotIdx: 2,
+          labelZh: "Roblox 实况 + B轨反应小窗",
+          labelEn: "Roblox Dual-Track + PiP",
+          hudMeta: {
+            ...buildShotHudTimeline({}, 2, 4, "tiktok", "roblox_obby_rage_pip"),
+            style: "roblox-blocky",
+            chatEn: "NOOOO!!"
+          }
+        },
+        {
+          file: "roblox_pet_hatch_pk_shot_2.png",
+          rig: "pk-cohost-split",
+          platform: "kuaishou",
+          host: "Y2K_Queen",
+          shotIdx: 2,
+          labelZh: "Roblox 50/50 连麦 PK 分屏",
+          labelEn: "Roblox 50/50 Co-Host PK",
+          hudMeta: {
+            ...buildShotHudTimeline({ pkScoreRatio: 0.16, hudPopup: "gift_combo" }, 2, 4, "kuaishou", "roblox_pet_hatch_pk"),
+            style: "roblox-blocky"
+          }
+        }
       ]
     },
     drift: {

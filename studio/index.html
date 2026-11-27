@@ -75,46 +75,19 @@
       display: none;
     }
 
-    /* Stylized camera-rig subject silhouette when no external MP4 is loaded */
-    .demo-streamer-silhouette {
+    #live-plate-canvas {
       position: absolute;
       inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
       pointer-events: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
     }
-    .demo-ring-catchlight {
-      width: 126px;
-      height: 126px;
-      border-radius: 40px;
-      background: linear-gradient(145deg, #fde68a, #f59e0b);
-      border: 3px solid rgba(255, 255, 255, 0.65);
-      position: relative;
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
-      transform: translateY(-28px);
-    }
-    .demo-ring-catchlight::before,
-    .demo-ring-catchlight::after {
-      content: "";
-      position: absolute;
-      top: 46px;
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      background: #0f172a;
-      box-shadow: inset 0 0 0 3px #0f172a, inset 0 0 0 5.5px #ffffff;
-    }
-    .demo-ring-catchlight::before { left: 34px; }
-    .demo-ring-catchlight::after { right: 34px; }
-    .demo-torso {
-      width: 184px;
-      height: 150px;
-      border-radius: 26px;
-      background: linear-gradient(180deg, #38bdf8, #2563eb);
-      border: 3px solid rgba(186, 230, 253, 0.6);
-      transform: translateY(-18px);
+    #pip-canvas {
+      width: 100%;
+      height: 100%;
+      border-radius: 14px;
+      display: block;
     }
     .af-box {
       position: absolute;
@@ -651,7 +624,7 @@
       border-color: rgba(255, 255, 255, 0.35);
     }
 
-    /* Right-Column Floating Heart Fountain (Periscope / Douyin / IG bezier flows) */
+    /* Right-Column Floating Heart Fountain (Periscope / Douyin / IG bezier flows — sits behind popups) */
     .hearts-fountain {
       position: absolute;
       right: 10px;
@@ -659,7 +632,7 @@
       width: 78px;
       height: 320px;
       pointer-events: none;
-      z-index: 28;
+      z-index: 22;
       overflow: hidden;
     }
     .floating-heart {
@@ -747,11 +720,8 @@
   <!-- 9:16 Live Viewport -->
   <div class="phone-stage-wrap" id="phone-stage" data-platform="douyin">
     <div class="clean-plate-bg" id="clean-plate-bg">
+      <canvas id="live-plate-canvas" width="390" height="844"></canvas>
       <video id="custom-video-plate" loop muted playsinline></video>
-      <div class="demo-streamer-silhouette" id="demo-silhouette">
-        <div class="demo-ring-catchlight"></div>
-        <div class="demo-torso"></div>
-      </div>
       <div class="af-box" id="af-box"><span>[ AF-C · MACRO LOCK ]</span></div>
     </div>
 
@@ -771,9 +741,7 @@
 
     <!-- Corner PiP Facecam -->
     <div class="pip-facecam-box" id="pip-box">
-      <div class="pip-mini-head"></div>
-      <div class="pip-mini-body"></div>
-      <div class="pip-caption">PiP · FACECAM</div>
+      <canvas id="pip-canvas" width="104" height="138"></canvas>
     </div>
 
     <div class="top-scrim" id="top-scrim"></div>
@@ -903,13 +871,15 @@
     </div>
 
     <div class="control-group">
-      <div class="group-label">5. 导入纯净 AI 视频底片或绿幕抠像合成</div>
+      <div class="group-label">5. 纯净底片动态机位预演 / 本地 MP4 / 绿幕抠像</div>
       <div class="btn-grid">
+        <button class="ctrl-btn active" data-set-scene="studio-irl" id="btn-bg-normal">🎙️ 写实直播台 (24mm)</button>
+        <button class="ctrl-btn" data-set-scene="wuxia-sword">⚔️ 仙侠御剑自拍 (18mm)</button>
+        <button class="ctrl-btn" data-set-scene="roblox-obby">🧱 Roblox 跑酷实况</button>
         <label class="ctrl-btn" style="display:inline-block;">
           📂 载入本地 MP4 底片
           <input type="file" id="video-file-input" accept="video/*" style="display:none;" />
         </label>
-        <button class="ctrl-btn" id="btn-bg-normal">默认光影底板</button>
         <button class="ctrl-btn" id="btn-bg-green">绿幕抠像 (#00FF00)</button>
         <button class="ctrl-btn" id="btn-bg-checker">透明棋盘格</button>
       </div>

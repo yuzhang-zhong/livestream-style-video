@@ -58,41 +58,45 @@
           "chatWidthRatio": 0.7,
           "chatMaxHeightRatio": 0.24
         },
-        "activePopup": "commerce_card",
+        "activePopup": "join_toast",
         "commentsZh": [
           {
-            "user": "阿泽冲冲冲",
-            "text": "前排打卡！真敢播啊？？",
-            "lv": 14
+            "user": "数码老铁",
+            "text": "终于等到这款断货王实测了！",
+            "lv": 16
           },
           {
-            "user": "芝士小猫",
-            "text": "镜头离这么近太真实了",
-            "lv": 8
+            "user": "手工耿迷弟",
+            "text": "听说里面机关很邪乎小心点",
+            "lv": 10
           },
           {
-            "user": "夜猫子07",
-            "text": "家人们别眨眼看后面！",
-            "lv": 21
+            "user": "前排蹲链接",
+            "text": "快开快开，好用直接秒",
+            "lv": 19
           }
         ],
         "commentsEn": [
           {
-            "user": "kai_streams",
-            "text": "YO chat we are actually live!!",
-            "lv": 14
+            "user": "tech_bro",
+            "text": "finally testing the viral cube!",
+            "lv": 16
           },
           {
-            "user": "momo_irl",
-            "text": "wait look right behind you...",
-            "lv": 8
+            "user": "desk_setup",
+            "text": "left boom mic framing is crisp",
+            "lv": 10
           },
           {
-            "user": "nightowl99",
-            "text": "no way they do this on stream",
-            "lv": 21
+            "user": "unbox_fan",
+            "text": "press the red button!!",
+            "lv": 19
           }
         ],
+        "commerceItemZh": "全金属解压机关盒",
+        "commerceItemEn": "Mystery Spring Box",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
         "giftZh": {
           "sender": "榜一大哥",
           "gift": "黄金穿云箭",
@@ -148,40 +152,44 @@
         "activePopup": "commerce_card",
         "commentsZh": [
           {
-            "user": "测评老司机",
-            "text": "这微距对焦绝了，看清细节了",
-            "lv": 18
+            "user": "微距控",
+            "text": "手掌托底秒锁焦，金属拉丝绝了",
+            "lv": 22
           },
           {
-            "user": "泡泡糖",
-            "text": "等等……声音是不是不对劲",
-            "lv": 9
+            "user": "买买买君",
+            "text": "小黄车库存只剩最后50件了",
+            "lv": 14,
+            "combo": 8
           },
           {
-            "user": "不吃香菜",
-            "text": "哈哈哈哈弹幕全在预警",
-            "lv": 12,
-            "combo": 6
+            "user": "细节狂魔",
+            "text": "这红按钮看着就想按下去！",
+            "lv": 11
           }
         ],
         "commentsEn": [
           {
-            "user": "lens_nerd",
-            "text": "that autofocus pull is clean 👀",
-            "lv": 18
+            "user": "af_master",
+            "text": "AF-C palm lock is buttery smooth",
+            "lv": 22
           },
           {
-            "user": "pixel_tea",
-            "text": "hold up did something just move?!",
-            "lv": 9
+            "user": "gear_head",
+            "text": "machined aluminum edges look clean",
+            "lv": 14,
+            "combo": 8
           },
           {
-            "user": "chat_clipper",
-            "text": "W STREAM LMAO",
-            "lv": 12,
-            "combo": 6
+            "user": "deal_watch",
+            "text": "grabbed Link #1 before sellout",
+            "lv": 11
           }
         ],
+        "commerceItemZh": "全金属解压机关盒",
+        "commerceItemEn": "Mystery Spring Box",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
         "giftZh": {
           "sender": "榜一大哥",
           "gift": "黄金穿云箭",
@@ -237,40 +245,46 @@
         "activePopup": "gift_combo",
         "commentsZh": [
           {
-            "user": "全场课代表",
-            "text": "卧槽！！直播事故名场面！！",
-            "lv": 26,
-            "combo": 23
+            "user": "弹幕护体",
+            "text": "卧槽！！弹簧直接怼麦上了哈哈",
+            "lv": 28,
+            "combo": 18
           },
           {
-            "user": "可乐加冰",
-            "text": "？？？？刚刚发生了什么",
+            "user": "耳机党阵亡",
+            "text": "主播吓得连人带椅往后飞",
             "lv": 15
           },
           {
-            "user": "切片组就位",
-            "text": "录屏了录屏了，神回预定！",
-            "lv": 30
+            "user": "快手课代表",
+            "text": "年度最佳带货工伤现场666",
+            "lv": 24,
+            "combo": 12
           }
         ],
         "commentsEn": [
           {
-            "user": "clip_that_now",
-            "text": "BRO WHAT JUST HAPPENED?!?!",
-            "lv": 26,
-            "combo": 23
+            "user": "jump_scare",
+            "text": "YO IT LAUNCHED INTO THE MIC!!",
+            "lv": 28,
+            "combo": 18
           },
           {
-            "user": "iced_latte",
-            "text": "CHAT IS GOING CRAZY RN 😭😭",
+            "user": "chair_gang",
+            "text": "THE CHAIR RECOIL LMAO",
             "lv": 15
           },
           {
-            "user": "vod_hunter",
-            "text": "INSTANT HALL OF FAME FAIL",
-            "lv": 30
+            "user": "clip_king",
+            "text": "100% UNSCRIPTED GOLD",
+            "lv": 24,
+            "combo": 12
           }
         ],
+        "commerceItemZh": "全金属解压机关盒",
+        "commerceItemEn": "Mystery Spring Box",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
         "giftZh": {
           "sender": "榜一大哥",
           "gift": "黄金穿云箭",
@@ -326,40 +340,44 @@
         "activePopup": "gift_combo_peak",
         "commentsZh": [
           {
-            "user": "满屏问号",
-            "text": "主播表情彻底凝固哈哈哈哈",
-            "lv": 19,
+            "user": "榜一大哥",
+            "text": "表情管理彻底下线哈哈哈哈",
+            "lv": 38,
             "combo": 66
           },
           {
-            "user": "早八特种兵",
-            "text": "刚进来就看到大型破防现场",
-            "lv": 11
+            "user": "解压协会",
+            "text": "反向测评最为致命，已下单！",
+            "lv": 17
           },
           {
-            "user": "榜一随缘",
-            "text": "礼物走一波安慰一下主播！",
-            "lv": 36
+            "user": "录屏小能手",
+            "text": "穿云箭走起，赔主播精神损失",
+            "lv": 29
           }
         ],
         "commentsEn": [
           {
-            "user": "zero_chill",
-            "text": "LOOK AT THEIR FACE LMAO 💀",
-            "lv": 19,
+            "user": "IronBro_01",
+            "text": "sending Golden Sky Arrows lol",
+            "lv": 38,
             "combo": 66
           },
           {
-            "user": "cozy_byte",
-            "text": "joined at the exact peak moment",
-            "lv": 11
+            "user": "sold_out",
+            "text": "best accidental ad ever, bought 2",
+            "lv": 17
           },
           {
-            "user": "top_gifter",
-            "text": "clip it!! 100k views incoming",
-            "lv": 36
+            "user": "chat_roast",
+            "text": "hazard pay needed immediately",
+            "lv": 29
           }
         ],
+        "commerceItemZh": "全金属解压机关盒",
+        "commerceItemEn": "Mystery Spring Box",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
         "giftZh": {
           "sender": "榜一大哥",
           "gift": "黄金穿云箭",

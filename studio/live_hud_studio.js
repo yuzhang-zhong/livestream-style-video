@@ -178,6 +178,8 @@
 
   const state = {
     platform: "douyin",
+    scene: "studio-irl",
+    chromaMode: "none",
     giftComboCount: 1,
     joinCursor: 0,
     pkVisible: false,
@@ -222,14 +224,15 @@
     afBox: document.getElementById("af-box"),
     safeZoneGuides: document.getElementById("safe-zone-guides"),
     cleanPlateBg: document.getElementById("clean-plate-bg"),
+    plateCanvas: document.getElementById("live-plate-canvas"),
+    pipCanvas: document.getElementById("pip-canvas"),
     videoPlate: document.getElementById("custom-video-plate"),
-    demoSilhouette: document.getElementById("demo-silhouette"),
     telemetry: document.getElementById("telemetry-box"),
     chatInput: document.getElementById("custom-chat-input")
   };
 
   function updateTelemetry() {
-    els.telemetry.textContent = `platform=${state.platform} | pk=${state.pkVisible} (${state.pkLeftRatio}%) | pip=${state.pipVisible} | combo=x${state.giftComboCount} | commerce=${state.commerceVisible} | qa=${state.qaVisible}`;
+    els.telemetry.textContent = `platform=${state.platform} | scene=${state.scene} | pk=${state.pkVisible} (${state.pkLeftRatio}%) | pip=${state.pipVisible} | combo=x${state.giftComboCount} | commerce=${state.commerceVisible}`;
   }
 
   function appendChatRow(item, cfg) {
@@ -465,24 +468,371 @@
   document.getElementById("video-file-input").addEventListener("change", (ev) => {
     const file = ev.target.files && ev.target.files[0];
     if (!file) return;
+    state.chromaMode = "video";
+    els.cleanPlateBg.className = "clean-plate-bg";
+    els.plateCanvas.style.display = "none";
     els.videoPlate.src = URL.createObjectURL(file);
     els.videoPlate.style.display = "block";
     els.videoPlate.play();
-    els.demoSilhouette.style.display = "none";
+    updateTelemetry();
   });
 
-  document.getElementById("btn-bg-normal").addEventListener("click", () => {
+  function setScene(sceneId) {
+    state.scene = sceneId;
+    state.chromaMode = "none";
     els.cleanPlateBg.className = "clean-plate-bg";
-  });
-  document.getElementById("btn-bg-green").addEventListener("click", () => {
-    els.cleanPlateBg.className = "clean-plate-bg chroma-green";
-    els.demoSilhouette.style.display = "none";
-  });
-  document.getElementById("btn-bg-checker").addEventListener("click", () => {
-    els.cleanPlateBg.className = "clean-plate-bg chroma-checker";
+    els.videoPlate.style.display = "none";
+    els.plateCanvas.style.display = "block";
+    document.querySelectorAll("[data-set-scene]").forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.setScene === sceneId);
+    });
+    if (sceneId === "roblox-obby" && !state.pipVisible) {
+      state.pipVisible = true;
+      els.pipBox.classList.add("visible");
+    }
+    updateTelemetry();
+  }
+
+  document.querySelectorAll("[data-set-scene]").forEach((btn) => {
+    btn.addEventListener("click", () => setScene(btn.dataset.setScene));
   });
 
-  // Initialize default Douyin state + initial heart burst
+  document.getElementById("btn-bg-green").addEventListener("click", () => {
+    state.chromaMode = "green";
+    els.cleanPlateBg.className = "clean-plate-bg chroma-green";
+    els.plateCanvas.style.display = "none";
+    els.videoPlate.style.display = "none";
+    document.querySelectorAll("[data-set-scene]").forEach((b) => b.classList.remove("active"));
+    updateTelemetry();
+  });
+
+  document.getElementById("btn-bg-checker").addEventListener("click", () => {
+    state.chromaMode = "checker";
+    els.cleanPlateBg.className = "clean-plate-bg chroma-checker";
+    els.plateCanvas.style.display = "none";
+    els.videoPlate.style.display = "none";
+    document.querySelectorAll("[data-set-scene]").forEach((b) => b.classList.remove("active"));
+    updateTelemetry();
+  });
+
+  // Procedural Clean-Plate Live Camera Viewport Renderer (Studio IRL / Wuxia Sword / Roblox Obby + Synced PiP)
+  function roundRect(ctx, x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.roundRect(x, y, w, h, r);
+    ctx.closePath();
+  }
+
+  function renderLivePlates(ts) {
+    const t = (ts || 0) * 0.001;
+    if (state.chromaMode === "none" && els.plateCanvas) {
+      const ctx = els.plateCanvas.getContext("2d");
+      const W = 390, H = 844;
+      ctx.clearRect(0, 0, W, H);
+
+      if (state.scene === "wuxia-sword") {
+        const gSky = ctx.createLinearGradient(0, 0, 0, H);
+        gSky.addColorStop(0, "#0284c7");
+        gSky.addColorStop(0.58, "#7dd3fc");
+        gSky.addColorStop(1, "#fef3c7");
+        ctx.fillStyle = gSky;
+        ctx.fillRect(0, 0, W, H);
+
+        // Drifting golden-white clouds
+        for (let i = 0; i < 4; i++) {
+          const cx = ((i * 130 + t * (28 + i * 9)) % (W + 180)) - 90;
+          const cy = 500 + i * 52;
+          ctx.fillStyle = i % 2 === 0 ? "rgba(255,255,255,0.85)" : "rgba(254,243,199,0.82)";
+          roundRect(ctx, cx, cy, 150, 38, 19);
+          ctx.fill();
+        }
+
+        // Hovering cyan rune sword underfoot
+        const bob = Math.sin(t * 2.6) * 6;
+        ctx.save();
+        ctx.translate(W / 2, 548 + bob);
+        ctx.fillStyle = "#2dd4bf";
+        ctx.shadowColor = "#2dd4bf";
+        ctx.shadowBlur = 18;
+        roundRect(ctx, -28, -8, 56, 140, 12);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = "#facc15";
+        roundRect(ctx, -46, -12, 92, 16, 6);
+        ctx.fill();
+        ctx.restore();
+
+        // Spirit crane gliding across upper-right
+        const craneX = W + 60 - ((t * 55) % (W + 140));
+        const craneY = 235 + Math.sin(t * 5) * 8;
+        ctx.fillStyle = "#ffffff";
+        roundRect(ctx, craneX - 24, craneY - 10, 48, 20, 10);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.ellipse(craneX - 22, craneY - 18, 8, 8, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "#ef4444";
+        ctx.beginPath();
+        ctx.arc(craneX - 22, craneY - 25, 4, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Swordsman streamer in azure robes + topknot holding 18mm selfie angle
+        const sy = 340 + bob;
+        ctx.fillStyle = "#bae6fd";
+        roundRect(ctx, W / 2 - 66, sy + 52, 132, 146, 28);
+        ctx.fill();
+        ctx.fillStyle = "#f8fafc";
+        ctx.fillRect(W / 2 - 18, sy + 52, 36, 146);
+        // Extended right arm toward selfie camera
+        ctx.fillStyle = "#7dd3fc";
+        roundRect(ctx, W / 2 + 48, sy + 36, 68, 34, 16);
+        ctx.fill();
+        // Head + hair + jade topknot
+        ctx.fillStyle = "#1e293b";
+        ctx.beginPath();
+        ctx.arc(W / 2, sy - 6, 52, 0, Math.PI * 2);
+        ctx.fill();
+        roundRect(ctx, W / 2 - 16, sy - 74, 32, 22, 9);
+        ctx.fill();
+        ctx.fillStyle = "#38bdf8";
+        roundRect(ctx, W / 2 - 20, sy - 56, 40, 7, 3);
+        ctx.fill();
+        ctx.fillStyle = "#fde0c4";
+        ctx.beginPath();
+        ctx.ellipse(W / 2, sy + 4, 44, 48, 0, 0, Math.PI * 2);
+        ctx.fill();
+        // Eyes + confident grin
+        ctx.fillStyle = "#0f172a";
+        ctx.beginPath();
+        ctx.arc(W / 2 - 15, sy + 2, 5.5, 0, Math.PI * 2);
+        ctx.arc(W / 2 + 15, sy + 2, 5.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = "#ffffff";
+        ctx.lineWidth = 1.8;
+        ctx.beginPath();
+        ctx.arc(W / 2 - 15, sy + 2, 2.6, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(W / 2 + 15, sy + 2, 2.6, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.strokeStyle = "#0f172a";
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(W / 2, sy + 18, 10, 0.15, Math.PI - 0.15);
+        ctx.stroke();
+      } else if (state.scene === "roblox-obby") {
+        const gSky = ctx.createLinearGradient(0, 0, 0, H);
+        gSky.addColorStop(0, "#0e7490");
+        gSky.addColorStop(1, "#bae6fd");
+        ctx.fillStyle = gSky;
+        ctx.fillRect(0, 0, W, H);
+
+        // Floating SmoothPlastic Obby Pads + Glowing Red Killbrick
+        ctx.fillStyle = "#f472b6";
+        roundRect(ctx, 34, 540, 142, 26, 7);
+        ctx.fill();
+        ctx.fillStyle = "#34d399";
+        roundRect(ctx, 214, 512, 146, 26, 7);
+        ctx.fill();
+        ctx.fillStyle = "#ff2438";
+        ctx.shadowColor = "#ff2438";
+        ctx.shadowBlur = 14;
+        roundRect(ctx, 182, 520, 26, 18, 5);
+        ctx.fill();
+        ctx.shadowBlur = 0;
+
+        // Canonical Roblox R6 Blocky Runner (2x2x1 torso + flush 1x2x1 limbs + 1:1 barrel head)
+        const jumpPhase = (t * 0.75) % 1;
+        const rx = 95 + Math.sin(jumpPhase * Math.PI) * 115;
+        const ry = 372 - Math.sin(jumpPhase * Math.PI) * 78;
+        ctx.save();
+        ctx.translate(rx, ry);
+        // Flush 1x2x1 Legs
+        ctx.fillStyle = "#1e293b";
+        roundRect(ctx, -38, 66, 37, 68, 5);
+        ctx.fill();
+        roundRect(ctx, 1, 66, 37, 68, 5);
+        ctx.fill();
+        // Solid 1x2x1 Fingerless Block Arms
+        ctx.fillStyle = "#fde68a";
+        roundRect(ctx, -74, -4, 34, 72, 6);
+        ctx.fill();
+        roundRect(ctx, 40, -16, 34, 72, 6);
+        ctx.fill();
+        // 2x2x1 Torso + Geometric Triangle Emblem
+        ctx.fillStyle = "#0ea5e9";
+        roundRect(ctx, -38, -6, 76, 72, 7);
+        ctx.fill();
+        ctx.fillStyle = "#f8fafc";
+        ctx.beginPath();
+        ctx.moveTo(0, 10);
+        ctx.lineTo(16, 40);
+        ctx.lineTo(-16, 40);
+        ctx.closePath();
+        ctx.fill();
+        // 1:1 Studless Barrel Head + 2D Decal
+        ctx.fillStyle = "#facc15";
+        roundRect(ctx, -26, -58, 52, 50, 15);
+        ctx.fill();
+        ctx.fillStyle = "#0f172a";
+        ctx.beginPath();
+        ctx.arc(-9, -35, 3.5, 0, Math.PI * 2);
+        ctx.arc(9, -35, 3.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = "#0f172a";
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(0, -24, 8, 0.15, Math.PI - 0.15);
+        ctx.stroke();
+        ctx.restore();
+      } else {
+        // Default: Realistic 24mm Studio Streamer Rig (RGB Wall + Ring-Light Catchlights + 0°/15° Glance + Left Boom Mic)
+        const gRoom = ctx.createLinearGradient(0, 0, 0, H);
+        gRoom.addColorStop(0, "#0f172a");
+        gRoom.addColorStop(0.6, "#1e1b4b");
+        gRoom.addColorStop(1, "#090d16");
+        ctx.fillStyle = gRoom;
+        ctx.fillRect(0, 0, W, H);
+
+        // RGB Wall Neon Strips
+        ctx.strokeStyle = "#fe2c55";
+        ctx.lineWidth = 6;
+        ctx.shadowColor = "#fe2c55";
+        ctx.shadowBlur = 16;
+        ctx.beginPath();
+        ctx.moveTo(52, 165);
+        ctx.lineTo(52, 370);
+        ctx.stroke();
+
+        ctx.strokeStyle = "#25f4ee";
+        ctx.shadowColor = "#25f4ee";
+        ctx.beginPath();
+        ctx.moveTo(338, 175);
+        ctx.lineTo(338, 380);
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        // Studio Desk + RGB Keyboard Glow
+        ctx.fillStyle = "#334155";
+        roundRect(ctx, 20, 505, W - 40, 120, 14);
+        ctx.fill();
+        ctx.fillStyle = "rgba(56, 189, 248, 0.35)";
+        roundRect(ctx, 110, 514, 170, 16, 6);
+        ctx.fill();
+
+        // Streamer Torso + White Tee + Wireless Lavalier Mic
+        const breathe = Math.sin(t * 2.2) * 3.5;
+        const sy = 325 + breathe;
+        ctx.fillStyle = "#2563eb";
+        roundRect(ctx, W / 2 - 86, sy + 64, 172, 148, 36);
+        ctx.fill();
+        ctx.fillStyle = "#f8fafc";
+        roundRect(ctx, W / 2 - 24, sy + 64, 48, 130, 8);
+        ctx.fill();
+        ctx.fillStyle = "#0f172a";
+        roundRect(ctx, W / 2 + 18, sy + 82, 14, 20, 4);
+        ctx.fill();
+
+        // Neck + Sculpted Hair + Over-Ear Headphones + Ellipsoid Face
+        ctx.fillStyle = "#f5cba7";
+        roundRect(ctx, W / 2 - 18, sy + 38, 36, 36, 12);
+        ctx.fill();
+
+        // Headphone arch
+        ctx.strokeStyle = "#a855f7";
+        ctx.lineWidth = 11;
+        ctx.beginPath();
+        ctx.arc(W / 2, sy - 2, 58, Math.PI, 0);
+        ctx.stroke();
+        ctx.fillStyle = "#38bdf8";
+        roundRect(ctx, W / 2 - 66, sy - 14, 16, 38, 8);
+        ctx.fill();
+        roundRect(ctx, W / 2 + 50, sy - 14, 16, 38, 8);
+        ctx.fill();
+
+        ctx.fillStyle = "#1e293b";
+        ctx.beginPath();
+        ctx.arc(W / 2, sy - 12, 52, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.fillStyle = "#fde0c4";
+        ctx.beginPath();
+        ctx.ellipse(W / 2, sy + 2, 46, 54, 0, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Bangs
+        ctx.fillStyle = "#1e293b";
+        ctx.beginPath();
+        ctx.ellipse(W / 2, sy - 38, 46, 20, 0, Math.PI, Math.PI * 2);
+        ctx.fill();
+
+        // 0° Direct Lens vs 15° Off-Axis Chat-Monitor Eye Glance!
+        const glanceChat = (t % 5.0) > 3.6;
+        const eyeShiftX = glanceChat ? 5.5 : 0;
+        for (const ex of [W / 2 - 17, W / 2 + 17]) {
+          ctx.fillStyle = "#0f172a";
+          ctx.beginPath();
+          ctx.arc(ex + eyeShiftX, sy - 2, 7.2, 0, Math.PI * 2);
+          ctx.fill();
+          // Circular LED Ring-Light Catchlight!
+          ctx.strokeStyle = "#ffffff";
+          ctx.lineWidth = 2.1;
+          ctx.beginPath();
+          ctx.arc(ex + eyeShiftX, sy - 2, 3.6, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+        ctx.strokeStyle = "#0f172a";
+        ctx.lineWidth = 3.2;
+        ctx.beginPath();
+        ctx.arc(W / 2 + eyeShiftX * 0.4, sy + 20, 11, 0.15, Math.PI - 0.15);
+        ctx.stroke();
+
+        // Locked Screen-Left Condenser Boom Mic + Pop Filter
+        ctx.strokeStyle = "#475569";
+        ctx.lineWidth = 10;
+        ctx.lineCap = "round";
+        ctx.beginPath();
+        ctx.moveTo(12, 525);
+        ctx.lineTo(122, 428);
+        ctx.stroke();
+        ctx.fillStyle = "#1e293b";
+        roundRect(ctx, 110, 396, 34, 52, 16);
+        ctx.fill();
+      }
+    }
+
+    // Render synced Corner PiP Streamer Reaction Canvas when visible
+    if (state.pipVisible && els.pipCanvas) {
+      const pctx = els.pipCanvas.getContext("2d");
+      pctx.fillStyle = "#1e1b4b";
+      pctx.fillRect(0, 0, 104, 138);
+      const bob = Math.sin(t * 4) * 2;
+      pctx.fillStyle = "#0ea5e9";
+      roundRect(pctx, 20, 76 + bob, 64, 48, 8);
+      pctx.fill();
+      pctx.fillStyle = "#a855f7";
+      roundRect(pctx, 24, 24 + bob, 56, 12, 6);
+      pctx.fill();
+      pctx.fillStyle = "#facc15";
+      roundRect(pctx, 28, 30 + bob, 48, 44, 13);
+      pctx.fill();
+      pctx.fillStyle = "#0f172a";
+      pctx.beginPath();
+      pctx.arc(44, 50 + bob, 3.5, 0, Math.PI * 2);
+      pctx.arc(60, 50 + bob, 3.5, 0, Math.PI * 2);
+      pctx.fill();
+      pctx.fillStyle = "rgba(2,6,23,0.82)";
+      roundRect(pctx, 8, 116, 88, 16, 6);
+      pctx.fill();
+      pctx.fillStyle = "#7dd3fc";
+      pctx.font = "bold 9px monospace";
+      pctx.fillText("PiP · R6 CAM", 18, 127);
+    }
+
+    requestAnimationFrame(renderLivePlates);
+  }
+
+  // Initialize default Douyin state + live canvas + initial heart burst
   setPlatform("douyin");
   spawnHeartBurst(5);
+  requestAnimationFrame(renderLivePlates);
 })();

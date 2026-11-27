@@ -61,38 +61,44 @@
         "activePopup": "join_toast",
         "commentsZh": [
           {
-            "user": "阿泽冲冲冲",
-            "text": "前排打卡！真敢播啊？？",
-            "lv": 14
+            "user": "氪金观察员",
+            "text": "左屏金色VIP蛋 vs 右屏新手斑点蛋哈哈",
+            "lv": 16
           },
           {
-            "user": "芝士小猫",
-            "text": "镜头离这么近太真实了",
-            "lv": 8
+            "user": "PK吃瓜群众",
+            "text": "开局血条78%比22%，新手拿头赢？",
+            "lv": 12,
+            "combo": 6
           },
           {
-            "user": "夜猫子07",
-            "text": "家人们别眨眼看后面！",
-            "lv": 21
+            "user": "黄皮信仰",
+            "text": "别小看经典Noob的玄学微笑！",
+            "lv": 23
           }
         ],
         "commentsEn": [
           {
-            "user": "kai_streams",
-            "text": "YO chat we are actually live!!",
-            "lv": 14
+            "user": "whale_watch",
+            "text": "Golden VIP Egg vs Starter Egg PK lol",
+            "lv": 16
           },
           {
-            "user": "momo_irl",
-            "text": "wait look right behind you...",
-            "lv": 8
+            "user": "odds_maker",
+            "text": "78% PK lead already, poor Noob",
+            "lv": 12,
+            "combo": 6
           },
           {
-            "user": "nightowl99",
-            "text": "no way they do this on stream",
-            "lv": 21
+            "user": "noob_believer",
+            "text": "never doubt the Default Smile aura",
+            "lv": 23
           }
         ],
+        "commerceItemZh": "神宠盲盒幸运孵化蛋",
+        "commerceItemEn": "Mythic Hatch Egg",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
         "giftZh": {
           "sender": "榜一大哥",
           "gift": "黄金穿云箭",
@@ -186,40 +192,44 @@
         "activePopup": "commerce_card",
         "commentsZh": [
           {
-            "user": "测评老司机",
-            "text": "这微距对焦绝了，看清细节了",
-            "lv": 18
+            "user": "同步敲蛋",
+            "text": "两边同时亮金裂纹了！！谁出金？？",
+            "lv": 19
           },
           {
-            "user": "泡泡糖",
-            "text": "等等……声音是不是不对劲",
-            "lv": 9
+            "user": "心跳开奖",
+            "text": "小黄车同款盲盒蛋先拍一单沾喜气",
+            "lv": 14
           },
           {
-            "user": "不吃香菜",
-            "text": "哈哈哈哈弹幕全在预警",
-            "lv": 12,
-            "combo": 6
+            "user": "欧气检定",
+            "text": "三二一开壳见真章！！",
+            "lv": 25,
+            "combo": 12
           }
         ],
         "commentsEn": [
           {
-            "user": "lens_nerd",
-            "text": "that autofocus pull is clean 👀",
-            "lv": 18
+            "user": "crack_hype",
+            "text": "BOTH EGGS GLOWING AT ONCE!!",
+            "lv": 19
           },
           {
-            "user": "pixel_tea",
-            "text": "hold up did something just move?!",
-            "lv": 9
+            "user": "rng_gods",
+            "text": "please let the starter egg cook",
+            "lv": 14
           },
           {
-            "user": "chat_clipper",
-            "text": "W STREAM LMAO",
-            "lv": 12,
-            "combo": 6
+            "user": "drumroll",
+            "text": "3... 2... 1... HATCH!!",
+            "lv": 25,
+            "combo": 12
           }
         ],
+        "commerceItemZh": "神宠盲盒幸运孵化蛋",
+        "commerceItemEn": "Mythic Hatch Egg",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
         "giftZh": {
           "sender": "榜一大哥",
           "gift": "黄金穿云箭",
@@ -311,40 +321,46 @@
         "activePopup": "gift_combo",
         "commentsZh": [
           {
-            "user": "全场课代表",
-            "text": "卧槽！！直播事故名场面！！",
-            "lv": 26,
-            "combo": 23
+            "user": "全服播报",
+            "text": "卧槽0.01%青金传说神龙给新手孵出来了？！",
+            "lv": 35,
+            "combo": 38
           },
           {
-            "user": "可乐加冰",
-            "text": "？？？？刚刚发生了什么",
-            "lv": 15
+            "user": "PK条极限反杀",
+            "text": "左边开出灰石头当场石化哈哈哈哈",
+            "lv": 22
           },
           {
-            "user": "切片组就位",
-            "text": "录屏了录屏了，神回预定！",
-            "lv": 30
+            "user": "微笑战神",
+            "text": "Noob爆出神龙连表情都不变一下太帅了",
+            "lv": 29,
+            "combo": 18
           }
         ],
         "commentsEn": [
           {
-            "user": "clip_that_now",
-            "text": "BRO WHAT JUST HAPPENED?!?!",
-            "lv": 26,
-            "combo": 23
+            "user": "server_alert",
+            "text": "0.01% MYTHIC NEON DRAGON ON STARTER EGG?!",
+            "lv": 35,
+            "combo": 38
           },
           {
-            "user": "iced_latte",
-            "text": "CHAT IS GOING CRAZY RN 😭😭",
-            "lv": 15
+            "user": "pebble_rip",
+            "text": "Y2K QUEEN GOT A GRAY ROCK LMAO",
+            "lv": 22
           },
           {
-            "user": "vod_hunter",
-            "text": "INSTANT HALL OF FAME FAIL",
-            "lv": 30
+            "user": "pk_comeback",
+            "text": "PK BAR INSTANTLY FLIPPED TO 84%!!",
+            "lv": 29,
+            "combo": 18
           }
         ],
+        "commerceItemZh": "神宠盲盒幸运孵化蛋",
+        "commerceItemEn": "Mythic Hatch Egg",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
         "giftZh": {
           "sender": "榜一大哥",
           "gift": "黄金穿云箭",
@@ -450,40 +466,44 @@
         "activePopup": "gift_combo_peak",
         "commentsZh": [
           {
-            "user": "满屏问号",
-            "text": "主播表情彻底凝固哈哈哈哈",
-            "lv": 19,
-            "combo": 66
+            "user": "当场改名",
+            "text": "左屏90度刚体扑桌自闭 vs 右屏淡定喝可乐",
+            "lv": 31,
+            "combo": 88
           },
           {
-            "user": "早八特种兵",
-            "text": "刚进来就看到大型破防现场",
-            "lv": 11
+            "user": "榜一大哥",
+            "text": "穿云箭全刷给右屏欧皇老铁！！",
+            "lv": 42
           },
           {
-            "user": "榜一随缘",
-            "text": "礼物走一波安慰一下主播！",
-            "lv": 36
+            "user": "节目效果拉满",
+            "text": "年度最具戏剧性连麦PK没有之一",
+            "lv": 26
           }
         ],
         "commentsEn": [
           {
-            "user": "zero_chill",
-            "text": "LOOK AT THEIR FACE LMAO 💀",
-            "lv": 19,
-            "combo": 66
+            "user": "bloxy_toast",
+            "text": "90° desk faceplant vs calm Bloxy Cola sip",
+            "lv": 31,
+            "combo": 88
           },
           {
-            "user": "cozy_byte",
-            "text": "joined at the exact peak moment",
-            "lv": 11
+            "user": "IronBro_01",
+            "text": "Golden Sky Arrows for ClassicNoob!!",
+            "lv": 42
           },
           {
-            "user": "top_gifter",
-            "text": "clip it!! 100k views incoming",
-            "lv": 36
+            "user": "gg_ez",
+            "text": "default smile stays undefeated",
+            "lv": 26
           }
         ],
+        "commerceItemZh": "神宠盲盒幸运孵化蛋",
+        "commerceItemEn": "Mythic Hatch Egg",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
         "giftZh": {
           "sender": "榜一大哥",
           "gift": "黄金穿云箭",

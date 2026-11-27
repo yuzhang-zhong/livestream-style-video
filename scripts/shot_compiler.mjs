@@ -154,7 +154,7 @@ export const TEMPLATES = {
         sfxCue: "clack",
         sfx: "清脆指节敲盒声 + 直播间上链接提示音",
         caption: "全网断货的解压机关盒，今天直播间实测！",
-        hudPopup: "commerce_card"
+        hudPopup: "join_toast"
       },
       {
         role: "Proof / 网红手掌托底对焦",
@@ -1108,7 +1108,7 @@ export function compileStoryboard(options = {}) {
     const i2vPromptEn = formatEngineCleanPromptEn(engine, rigSpec, baseWithSubject, sh);
     const i2vPromptZh = formatEngineCleanPromptZh(engine, rigSpec, baseWithSubject, sh);
 
-    const hudOverlay = buildShotHudTimeline(sh, idx, rawShots.length, platformPreset.id);
+    const hudOverlay = buildShotHudTimeline(sh, idx, rawShots.length, platformPreset.id, base.slug || "");
 
     return {
       shotNumber: idx + 1,
