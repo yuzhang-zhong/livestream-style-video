@@ -19,34 +19,42 @@
 作為可掛載的 Agent Skill，本專案可在對話中將任意題材與畫風拆解為 15 秒、4 鏡頭（`9:16` 直式）的完整直播視角短片包，內建 8 套模板（5 套通用寫實與跨題材 AI 影片樣本 + 3 套 Roblox 方塊直播樣本）。下方的 **MP4** 與動圖均由 `scripts/render_preview.mjs` 在本機離線渲染，用來在呼叫外部付費影片模型前，先確認物理機位、眼神互動軸、安全區與後置直播間 HUD 彈幕特效。
 
 <p align="center">
-  <a href="../../examples/irl-night-market-selfie/assets/irl_night_market_selfie.mp4"><img src="../../examples/irl-night-market-selfie/assets/irl_night_market_selfie.gif" width="192" alt="夜市18mm自拍試吃 9:16 動態預覽" /></a>
-  <a href="../../examples/desk-unboxing-autofocus/assets/desk_unboxing_autofocus.mp4"><img src="../../examples/desk-unboxing-autofocus/assets/desk_unboxing_autofocus.gif" width="192" alt="桌面托底微距開箱 9:16 動態預覽" /></a>
-  <a href="../../examples/midnight-corridor-fpv-live/assets/midnight_corridor_fpv_live.mp4"><img src="../../examples/midnight-corridor-fpv-live/assets/midnight_corridor_fpv_live.gif" width="192" alt="舊樓第一人稱雙持探險 9:16 動態預覽" /></a>
-  <a href="../../examples/late-night-study-webcam/assets/late_night_study_webcam.mp4"><img src="../../examples/late-night-study-webcam/assets/late_night_study_webcam.gif" width="192" alt="深夜固定攝影機橘貓亂入 9:16 動態預覽" /></a>
+  <a href="../../examples/duolingo-owl-streak-cam/assets/duolingo_owl_streak_cam.mp4"><img src="../../examples/duolingo-owl-streak-cam/assets/duolingo_owl_streak_cam.gif" width="196" alt="多鄰國風綠鳥午夜查崗 9:16 動態預覽" /></a>
+  <a href="../../examples/duolingo-chill-night-market/assets/duolingo_chill_night_market.mp4"><img src="../../examples/duolingo-chill-night-market/assets/duolingo_chill_night_market.gif" width="196" alt="扁平3D酷妹夜市試吃 9:16 動態預覽" /></a>
+  <a href="../../examples/tux-ferris-code-webcam/assets/tux_ferris_code_webcam.mp4"><img src="../../examples/tux-ferris-code-webcam/assets/tux_ferris_code_webcam.gif" width="196" alt="Linux Tux與Rust Ferris直播 9:16 動態預覽" /></a>
+  <a href="../../examples/godot-bot-unboxing-af/assets/godot_bot_unboxing_af.mp4"><img src="../../examples/godot-bot-unboxing-af/assets/godot_bot_unboxing_af.gif" width="196" alt="Godot齒輪機器人微距開箱 9:16 動態預覽" /></a>
   <br />
-  <a href="../../examples/wuxia-sword-flight-live/assets/wuxia_sword_flight_live.mp4"><img src="../../examples/wuxia-sword-flight-live/assets/wuxia_sword_flight_live.gif" width="192" alt="仙俠御劍早高峰自拍 9:16 動態預覽" /></a>
-  <a href="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.mp4"><img src="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.gif" width="192" alt="Roblox天空跑酷畫中畫 9:16 動態預覽" /></a>
-  <a href="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.mp4"><img src="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.gif" width="192" alt="Roblox驚悚走廊自拍桿 9:16 動態預覽" /></a>
-  <a href="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.mp4"><img src="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.gif" width="192" alt="Roblox雙人連麥PK抽神龍 9:16 動態預覽" /></a>
+  <a href="../../examples/voxel-wuxia-sword-live/assets/voxel_wuxia_sword_live.mp4"><img src="../../examples/voxel-wuxia-sword-live/assets/voxel_wuxia_sword_live.gif" width="196" alt="8x8體素仙俠御劍自拍 9:16 動態預覽" /></a>
+  <a href="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.mp4"><img src="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.gif" width="196" alt="Roblox天空跑酷畫中畫 9:16 動態預覽" /></a>
+  <a href="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.mp4"><img src="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.gif" width="196" alt="Roblox驚悚走廊自拍桿 9:16 動態預覽" /></a>
+  <a href="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.mp4"><img src="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.gif" width="196" alt="Roblox雙人連麥PK抽神龍 9:16 動態預覽" /></a>
 </p>
 
 ## 分鏡拆解與多平台直播表
 
-影片生成模型若在單個 4 至 5 秒片段內串聯多步劇情或中途切機位，很容易退化成疏離的電影空鏡或肢體穿模。每支 15 秒直播短片固定拆為四個單動作節拍（`0–3.5s` 開播立 Flag、`3.5–7.5s` 懟臉對焦實證、`7.5–11.5s` 突發直播事故、`11.5–15s` 掃彈幕破防定格）：
+影片生成模型若在單個 4 至 5 秒片段內串聯多步劇情或中途切機位，很容易退化成疏離的電影空鏡或肢體穿模。每支 15 秒直播短片固定拆為四個單動作節拍（`0–3.5s` 開播立 Flag、`3.5–7.5s` 偏軸讀彈幕或對焦實證、`7.5–11.5s` 突發直播高能、`11.5–15s` 掃彈幕反轉定格）：
 
-| 鏡頭 01 · 開播鉤子 (`0–3.5s`) | 鏡頭 02 · 實拍自證 (`3.5–7.5s`) | 鏡頭 03 · 突發事故 (`7.5–11.5s`) | 鏡頭 04 · 破防收尾 (`11.5–15s`) |
+| 鏡頭 01 · 開播鉤子 (`0–3.5s`) | 鏡頭 02 · 掃視彈幕 (`3.5–7.5s`) | 鏡頭 03 · 紅溫警告 (`7.5–11.5s`) | 鏡頭 04 · 星星眼收尾 (`11.5–15s`) |
 | :---: | :---: | :---: | :---: |
-| <img src="../../examples/wuxia-sword-flight-live/assets/shot_01.png" width="196" alt="鏡頭 01：18mm玉簡自拍吐槽雲海早高峰" /> | <img src="../../examples/wuxia-sword-flight-live/assets/shot_02.png" width="196" alt="鏡頭 02：手腕下搖展示腳下青霜符文飛劍" /> | <img src="../../examples/wuxia-sword-flight-live/assets/shot_03.png" width="196" alt="鏡頭 03：丹頂白鶴貼臉超車震歪鏡頭" /> | <img src="../../examples/wuxia-sword-flight-live/assets/shot_04.png" width="196" alt="鏡頭 04：道冠吹歪生無可戀盯彈幕" /> |
+| <img src="../../examples/duolingo-owl-streak-cam/assets/shot_01.png" width="200" alt="鏡頭 01：多鄰國風綠鳥微笑揮翅" /> | <img src="../../examples/duolingo-owl-streak-cam/assets/shot_02.png" width="200" alt="鏡頭 02：15度偏軸掃視彈幕瞇眼" /> | <img src="../../examples/duolingo-owl-streak-cam/assets/shot_03.png" width="200" alt="鏡頭 03：紅光驟亮亮出365連勝火苗" /> | <img src="../../examples/duolingo-owl-streak-cam/assets/shot_04.png" width="200" alt="鏡頭 04：秒變彎彎笑眼雙翅歡呼" /> |
 
-六種直播機位與跨畫風題材的四格分鏡聯繫表：
+六種直播機位與跨畫風角色（Duolingo 萌系、開源吉祥物 Tux/Ferris/Godot、`8×8` 體素仙俠與 Roblox R6）的 `3×2` 高清矩陣與全寬四格分鏡表：
 
-| 01 · 夜市超廣角自拍 (`可靈` · `18mm` 手持雲台與抖音邊框) | 02 · 桌面微距開箱 (`即夢` · 手掌托底 `[AF-C]` 與快手邊框) |
-| :---: | :---: |
-| <a href="../../examples/irl-night-market-selfie/"><img src="../../examples/irl-night-market-selfie/assets/storyboard_sheet.zh.png" width="410" alt="夜市超廣角自拍四鏡頭分鏡表" /></a> | <a href="../../examples/desk-unboxing-autofocus/"><img src="../../examples/desk-unboxing-autofocus/assets/storyboard_sheet.zh.png" width="410" alt="桌面微距開箱四鏡頭分鏡表" /></a> |
-| **04 · 深夜趕工橘貓踩鍵盤 (`萬相` · `24mm` 螢幕攝影機與 X 邊框)** | **06 · Roblox 天空跑酷畫中畫 (`海螺` · A/B 雙軌與 TikTok 邊框)** |
-| <a href="../../examples/late-night-study-webcam/"><img src="../../examples/late-night-study-webcam/assets/storyboard_sheet.zh.png" width="410" alt="深夜趕工橘貓亂入四鏡頭分鏡表" /></a> | <a href="../../examples/roblox-obby-rage-pip/"><img src="../../examples/roblox-obby-rage-pip/assets/storyboard_sheet.zh.png" width="410" alt="Roblox天空跑酷畫中畫四鏡頭分鏡表" /></a> |
-| **07 · Roblox 走廊自拍桿 (`Sora` · 身後白眼突臉與 Ins 邊框)** | **08 · Roblox 雙人連麥 PK (`可靈` · 50/50 抽神龍反殺與快手邊框)** |
-| <a href="../../examples/roblox-doors-irl-selfie/"><img src="../../examples/roblox-doors-irl-selfie/assets/storyboard_sheet.zh.png" width="410" alt="Roblox驚悚走廊自拍桿四鏡頭分鏡表" /></a> | <a href="../../examples/roblox-pet-hatch-pk/"><img src="../../examples/roblox-pet-hatch-pk/assets/storyboard_sheet.zh.png" width="410" alt="Roblox雙人連麥PK四鏡頭分鏡表" /></a> |
+<p align="center">
+  <img src="../../assets/showcase/camera_rigs_atlas.zh.png" width="840" alt="六大直播機位與跨畫風角色樣本 3x2 高清大圖" />
+</p>
+
+<p align="center">
+  <a href="../../examples/tux-ferris-code-webcam/"><img src="../../examples/tux-ferris-code-webcam/assets/storyboard_sheet.zh.png" width="840" alt="Linux Tux 與 Rust Ferris 深夜敲程式碼直播四鏡分鏡表" /></a>
+</p>
+
+<p align="center">
+  <a href="../../examples/voxel-wuxia-sword-live/"><img src="../../examples/voxel-wuxia-sword-live/assets/storyboard_sheet.zh.png" width="840" alt="8x8體素仙俠御劍自拍四鏡分鏡表" /></a>
+</p>
+
+<p align="center">
+  <a href="../../examples/roblox-pet-hatch-pk/"><img src="../../examples/roblox-pet-hatch-pk/assets/storyboard_sheet.zh.png" width="840" alt="Roblox雙人連麥PK四鏡分鏡表" /></a>
+</p>
 
 內建經 REA 協議與樣式逆向復刻的五大直播平台邊框、彈窗與飄心特效（`douyin`、`kuaishou`、`instagram`、`x`、`tiktok`，詳見[逆向台帳](../../references/platform-ui-rea-ledger.md)），亦可在 [`studio/index.html`](../../studio/index.html) 瀏覽器 / OBS 工作台中即時觸發或綠幕匯出：
 

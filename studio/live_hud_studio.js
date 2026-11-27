@@ -178,7 +178,7 @@
 
   const state = {
     platform: "douyin",
-    scene: "studio-irl",
+    scene: "duolingo-owl",
     chromaMode: "none",
     giftComboCount: 1,
     joinCursor: 0,
@@ -529,7 +529,7 @@
       const W = 390, H = 844;
       ctx.clearRect(0, 0, W, H);
 
-      if (state.scene === "wuxia-sword") {
+      if (state.scene === "voxel-wuxia") {
         const gSky = ctx.createLinearGradient(0, 0, 0, H);
         gSky.addColorStop(0, "#0284c7");
         gSky.addColorStop(0.58, "#7dd3fc");
@@ -537,88 +537,140 @@
         ctx.fillStyle = gSky;
         ctx.fillRect(0, 0, W, H);
 
-        // Drifting golden-white clouds
+        // Cubic Voxel Clouds
         for (let i = 0; i < 4; i++) {
           const cx = ((i * 130 + t * (28 + i * 9)) % (W + 180)) - 90;
-          const cy = 500 + i * 52;
-          ctx.fillStyle = i % 2 === 0 ? "rgba(255,255,255,0.85)" : "rgba(254,243,199,0.82)";
-          roundRect(ctx, cx, cy, 150, 38, 19);
-          ctx.fill();
+          const cy = 510 + i * 48;
+          ctx.fillStyle = i % 2 === 0 ? "rgba(255,255,255,0.92)" : "rgba(254,243,199,0.88)";
+          ctx.fillRect(cx, cy, 140, 32);
+          ctx.fillRect(cx + 24, cy - 16, 84, 18);
         }
 
-        // Hovering cyan rune sword underfoot
+        // Stepped 16x16x1 Voxel Rune Sword Underfoot
         const bob = Math.sin(t * 2.6) * 6;
         ctx.save();
         ctx.translate(W / 2, 548 + bob);
         ctx.fillStyle = "#2dd4bf";
         ctx.shadowColor = "#2dd4bf";
-        ctx.shadowBlur = 18;
-        roundRect(ctx, -28, -8, 56, 140, 12);
-        ctx.fill();
+        ctx.shadowBlur = 16;
+        ctx.fillRect(-26, -8, 52, 136);
         ctx.shadowBlur = 0;
         ctx.fillStyle = "#facc15";
-        roundRect(ctx, -46, -12, 92, 16, 6);
-        ctx.fill();
+        ctx.fillRect(-48, -14, 96, 18);
         ctx.restore();
 
-        // Spirit crane gliding across upper-right
+        // Cubic Voxel Spirit Crane
         const craneX = W + 60 - ((t * 55) % (W + 140));
         const craneY = 235 + Math.sin(t * 5) * 8;
         ctx.fillStyle = "#ffffff";
-        roundRect(ctx, craneX - 24, craneY - 10, 48, 20, 10);
-        ctx.fill();
-        ctx.beginPath();
-        ctx.ellipse(craneX - 22, craneY - 18, 8, 8, 0, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.fillRect(craneX - 24, craneY - 10, 48, 22);
+        ctx.fillRect(craneX - 30, craneY - 26, 18, 18);
         ctx.fillStyle = "#ef4444";
+        ctx.fillRect(craneX - 28, craneY - 32, 14, 6);
+
+        // 8x8x8 Voxel Wuxia Swordsman
+        const sy = 336 + bob;
+        ctx.fillStyle = "#f8fafc";
+        ctx.fillRect(W / 2 - 54, sy + 44, 108, 136);
+        ctx.fillStyle = "#38bdf8";
+        ctx.fillRect(W / 2 - 54, sy + 116, 108, 20);
+        ctx.fillRect(W / 2 + 54, sy + 36, 44, 92);
+        ctx.fillRect(W / 2 - 98, sy + 44, 44, 92);
+        // Sharp 8x8 Cubic Head + Jade Crown
+        ctx.fillStyle = "#1e293b";
+        ctx.fillRect(W / 2 - 48, sy - 54, 96, 98);
+        ctx.fillRect(W / 2 - 20, sy - 78, 40, 24);
+        ctx.fillStyle = "#2dd4bf";
+        ctx.fillRect(W / 2 - 48, sy - 38, 96, 12);
+        ctx.fillStyle = "#f5cba7";
+        ctx.fillRect(W / 2 - 40, sy - 22, 80, 62);
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(W / 2 - 30, sy - 8, 20, 14);
+        ctx.fillRect(W / 2 + 10, sy - 8, 20, 14);
+        ctx.fillStyle = "#0f172a";
+        ctx.fillRect(W / 2 - 20, sy - 8, 10, 14);
+        ctx.fillRect(W / 2 + 10, sy - 8, 10, 14);
+        ctx.fillStyle = "#be123c";
+        ctx.fillRect(W / 2 - 14, sy + 18, 28, 10);
+      } else if (state.scene === "tux-ferris") {
+        const gRoom = ctx.createLinearGradient(0, 0, 0, H);
+        gRoom.addColorStop(0, "#0f172a");
+        gRoom.addColorStop(0.65, "#1e293b");
+        gRoom.addColorStop(1, "#090d16");
+        ctx.fillStyle = gRoom;
+        ctx.fillRect(0, 0, W, H);
+
+        // Walnut Desk + RGB Mechanical Keyboard
+        ctx.fillStyle = "#7c4d2b";
+        roundRect(ctx, 18, 505, W - 36, 125, 14);
+        ctx.fill();
+        ctx.fillStyle = "#1e293b";
+        roundRect(ctx, 68, 518, 210, 34, 8);
+        ctx.fill();
+        ctx.strokeStyle = "#25f4ee";
+        ctx.lineWidth = 3;
+        roundRect(ctx, 68, 518, 210, 34, 8);
+        ctx.stroke();
+
+        // Linux Tux Penguin in Cyan RGB Studio Headphones
+        const bob = Math.sin(t * 2.5) * 3.5;
+        const tx = 165, ty = 378 + bob;
+        ctx.strokeStyle = "#38bdf8";
+        ctx.lineWidth = 10;
         ctx.beginPath();
-        ctx.arc(craneX - 22, craneY - 25, 4, 0, Math.PI * 2);
+        ctx.arc(tx, ty - 48, 66, Math.PI, 0);
+        ctx.stroke();
+        ctx.fillStyle = "#25f4ee";
+        roundRect(ctx, tx - 76, ty - 56, 18, 42, 8);
+        ctx.fill();
+        roundRect(ctx, tx + 58, ty - 56, 18, 42, 8);
         ctx.fill();
 
-        // Swordsman streamer in azure robes + topknot holding 18mm selfie angle
-        const sy = 340 + bob;
-        ctx.fillStyle = "#bae6fd";
-        roundRect(ctx, W / 2 - 66, sy + 52, 132, 146, 28);
+        ctx.fillStyle = "#161b26";
+        ctx.beginPath();
+        ctx.ellipse(tx, ty + 18, 78, 108, 0, 0, Math.PI * 2);
         ctx.fill();
         ctx.fillStyle = "#f8fafc";
-        ctx.fillRect(W / 2 - 18, sy + 52, 36, 146);
-        // Extended right arm toward selfie camera
-        ctx.fillStyle = "#7dd3fc";
-        roundRect(ctx, W / 2 + 48, sy + 36, 68, 34, 16);
-        ctx.fill();
-        // Head + hair + jade topknot
-        ctx.fillStyle = "#1e293b";
         ctx.beginPath();
-        ctx.arc(W / 2, sy - 6, 52, 0, Math.PI * 2);
+        ctx.ellipse(tx, ty + 38, 54, 74, 0, 0, Math.PI * 2);
         ctx.fill();
-        roundRect(ctx, W / 2 - 16, sy - 74, 32, 22, 9);
-        ctx.fill();
-        ctx.fillStyle = "#38bdf8";
-        roundRect(ctx, W / 2 - 20, sy - 56, 40, 7, 3);
-        ctx.fill();
-        ctx.fillStyle = "#fde0c4";
+        // Eyes + Golden Bill
+        ctx.fillStyle = "#ffffff";
         ctx.beginPath();
-        ctx.ellipse(W / 2, sy + 4, 44, 48, 0, 0, Math.PI * 2);
+        ctx.ellipse(tx - 18, ty - 42, 15, 19, 0, 0, Math.PI * 2);
+        ctx.ellipse(tx + 18, ty - 42, 15, 19, 0, 0, Math.PI * 2);
         ctx.fill();
-        // Eyes + confident grin
         ctx.fillStyle = "#0f172a";
         ctx.beginPath();
-        ctx.arc(W / 2 - 15, sy + 2, 5.5, 0, Math.PI * 2);
-        ctx.arc(W / 2 + 15, sy + 2, 5.5, 0, Math.PI * 2);
+        ctx.arc(tx - 14, ty - 40, 7.5, 0, Math.PI * 2);
+        ctx.arc(tx + 14, ty - 40, 7.5, 0, Math.PI * 2);
         ctx.fill();
-        ctx.strokeStyle = "#ffffff";
-        ctx.lineWidth = 1.8;
+        ctx.fillStyle = "#fbb018";
+        roundRect(ctx, tx - 30, ty - 22, 60, 22, 11);
+        ctx.fill();
+
+        // CC0 Rust Ferris the Crab (#F74C00) Scuttling Beside Keyboard!
+        const fx = 302 + Math.sin(t * 3.2) * 8;
+        const fy = 486 - Math.abs(Math.sin(t * 4.5)) * 12;
+        ctx.fillStyle = "#f74c00";
         ctx.beginPath();
-        ctx.arc(W / 2 - 15, sy + 2, 2.6, 0, Math.PI * 2);
-        ctx.stroke();
+        ctx.ellipse(fx, fy, 42, 28, 0, 0, Math.PI * 2);
+        ctx.fill();
+        // Cute Pincers + Stalk Eyes
+        roundRect(ctx, fx - 54, fy - 24, 20, 18, 8);
+        ctx.fill();
+        roundRect(ctx, fx + 34, fy - 28, 20, 18, 8);
+        ctx.fill();
+        ctx.fillStyle = "#0f172a";
         ctx.beginPath();
-        ctx.arc(W / 2 + 15, sy + 2, 2.6, 0, Math.PI * 2);
-        ctx.stroke();
-        ctx.strokeStyle = "#0f172a";
-        ctx.lineWidth = 3;
+        ctx.arc(fx - 13, fy - 12, 5.5, 0, Math.PI * 2);
+        ctx.arc(fx + 13, fy - 12, 5.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = "#ffffff";
         ctx.beginPath();
-        ctx.arc(W / 2, sy + 18, 10, 0.15, Math.PI - 0.15);
-        ctx.stroke();
+        ctx.arc(fx - 15, fy - 14, 2, 0, Math.PI * 2);
+        ctx.arc(fx + 11, fy - 14, 2, 0, Math.PI * 2);
+        ctx.fill();
       } else if (state.scene === "roblox-obby") {
         const gSky = ctx.createLinearGradient(0, 0, 0, H);
         gSky.addColorStop(0, "#0e7490");
@@ -626,7 +678,6 @@
         ctx.fillStyle = gSky;
         ctx.fillRect(0, 0, W, H);
 
-        // Floating SmoothPlastic Obby Pads + Glowing Red Killbrick
         ctx.fillStyle = "#f472b6";
         roundRect(ctx, 34, 540, 142, 26, 7);
         ctx.fill();
@@ -640,162 +691,179 @@
         ctx.fill();
         ctx.shadowBlur = 0;
 
-        // Canonical Roblox R6 Blocky Runner (2x2x1 torso + flush 1x2x1 limbs + 1:1 barrel head)
         const jumpPhase = (t * 0.75) % 1;
         const rx = 95 + Math.sin(jumpPhase * Math.PI) * 115;
         const ry = 372 - Math.sin(jumpPhase * Math.PI) * 78;
         ctx.save();
         ctx.translate(rx, ry);
-        // Flush 1x2x1 Legs
         ctx.fillStyle = "#1e293b";
         roundRect(ctx, -38, 66, 37, 68, 5);
         ctx.fill();
         roundRect(ctx, 1, 66, 37, 68, 5);
         ctx.fill();
-        // Solid 1x2x1 Fingerless Block Arms
+        ctx.fillStyle = "#0ea5e9";
+        roundRect(ctx, -74, -4, 34, 52, 6);
+        ctx.fill();
+        roundRect(ctx, 40, -16, 34, 52, 6);
+        ctx.fill();
         ctx.fillStyle = "#fde68a";
-        roundRect(ctx, -74, -4, 34, 72, 6);
+        roundRect(ctx, -74, 42, 34, 24, 5);
         ctx.fill();
-        roundRect(ctx, 40, -16, 34, 72, 6);
+        roundRect(ctx, 40, 30, 34, 24, 5);
         ctx.fill();
-        // 2x2x1 Torso + Geometric Triangle Emblem
         ctx.fillStyle = "#0ea5e9";
         roundRect(ctx, -38, -6, 76, 72, 7);
         ctx.fill();
-        ctx.fillStyle = "#f8fafc";
+        ctx.fillStyle = "#38bdf8";
         ctx.beginPath();
         ctx.moveTo(0, 10);
         ctx.lineTo(16, 40);
         ctx.lineTo(-16, 40);
         ctx.closePath();
         ctx.fill();
-        // 1:1 Studless Barrel Head + 2D Decal
-        ctx.fillStyle = "#facc15";
+        ctx.fillStyle = "#fde68a";
         roundRect(ctx, -26, -58, 52, 50, 15);
+        ctx.fill();
+        // Sculpted dark bangs + RGB Cat-Ear Headset
+        ctx.fillStyle = "#1e293b";
+        roundRect(ctx, -27, -62, 54, 18, 8);
+        ctx.fill();
+        ctx.fillStyle = "#f472b6";
+        roundRect(ctx, -22, -74, 12, 12, 3);
+        ctx.fill();
+        roundRect(ctx, 10, -74, 12, 12, 3);
         ctx.fill();
         ctx.fillStyle = "#0f172a";
         ctx.beginPath();
-        ctx.arc(-9, -35, 3.5, 0, Math.PI * 2);
-        ctx.arc(9, -35, 3.5, 0, Math.PI * 2);
+        ctx.arc(-9, -33, 3.8, 0, Math.PI * 2);
+        ctx.arc(9, -33, 3.8, 0, Math.PI * 2);
         ctx.fill();
         ctx.strokeStyle = "#0f172a";
         ctx.lineWidth = 3;
         ctx.beginPath();
-        ctx.arc(0, -24, 8, 0.15, Math.PI - 0.15);
+        ctx.arc(0, -22, 8, 0.15, Math.PI - 0.15);
         ctx.stroke();
         ctx.restore();
       } else {
-        // Default: Realistic 24mm Studio Streamer Rig (RGB Wall + Ring-Light Catchlights + 0°/15° Glance + Left Boom Mic)
+        // Default: Duolingo-Inspired Feather-Green Owl Mascot (LingoOwl) 24mm Studio Stream!
         const gRoom = ctx.createLinearGradient(0, 0, 0, H);
-        gRoom.addColorStop(0, "#0f172a");
-        gRoom.addColorStop(0.6, "#1e1b4b");
+        gRoom.addColorStop(0, "#141c34");
+        gRoom.addColorStop(0.6, "#223052");
         gRoom.addColorStop(1, "#090d16");
         ctx.fillStyle = gRoom;
         ctx.fillRect(0, 0, W, H);
 
-        // RGB Wall Neon Strips
-        ctx.strokeStyle = "#fe2c55";
+        // Feather-Green & Gold Studio Neon Accents
+        ctx.strokeStyle = "#58cc02";
         ctx.lineWidth = 6;
-        ctx.shadowColor = "#fe2c55";
+        ctx.shadowColor = "#58cc02";
         ctx.shadowBlur = 16;
         ctx.beginPath();
-        ctx.moveTo(52, 165);
-        ctx.lineTo(52, 370);
+        ctx.moveTo(48, 168);
+        ctx.lineTo(48, 365);
         ctx.stroke();
-
-        ctx.strokeStyle = "#25f4ee";
-        ctx.shadowColor = "#25f4ee";
+        ctx.strokeStyle = "#ffc800";
+        ctx.shadowColor = "#ffc800";
         ctx.beginPath();
-        ctx.moveTo(338, 175);
-        ctx.lineTo(338, 380);
+        ctx.moveTo(342, 178);
+        ctx.lineTo(342, 372);
         ctx.stroke();
         ctx.shadowBlur = 0;
 
-        // Studio Desk + RGB Keyboard Glow
-        ctx.fillStyle = "#334155";
-        roundRect(ctx, 20, 505, W - 40, 120, 14);
-        ctx.fill();
-        ctx.fillStyle = "rgba(56, 189, 248, 0.35)";
-        roundRect(ctx, 110, 514, 170, 16, 6);
+        // Sleek Studio Desk
+        ctx.fillStyle = "#e2e8f0";
+        roundRect(ctx, 20, 508, W - 40, 118, 14);
         ctx.fill();
 
-        // Streamer Torso + White Tee + Wireless Lavalier Mic
-        const breathe = Math.sin(t * 2.2) * 3.5;
-        const sy = 325 + breathe;
-        ctx.fillStyle = "#2563eb";
-        roundRect(ctx, W / 2 - 86, sy + 64, 172, 148, 36);
-        ctx.fill();
-        ctx.fillStyle = "#f8fafc";
-        roundRect(ctx, W / 2 - 24, sy + 64, 48, 130, 8);
-        ctx.fill();
-        ctx.fillStyle = "#0f172a";
-        roundRect(ctx, W / 2 + 18, sy + 82, 14, 20, 4);
-        ctx.fill();
+        const bounce = Math.sin(t * 2.6) * 4.5;
+        const ox = W / 2, oy = 382 + bounce;
 
-        // Neck + Sculpted Hair + Over-Ear Headphones + Ellipsoid Face
-        ctx.fillStyle = "#f5cba7";
-        roundRect(ctx, W / 2 - 18, sy + 38, 36, 36, 12);
+        // Plump Feather-Green Owl Body (#58CC02) + Ear Tufts
+        ctx.fillStyle = "#58cc02";
+        roundRect(ctx, ox - 88, oy - 96, 176, 206, 76);
         ctx.fill();
-
-        // Headphone arch
-        ctx.strokeStyle = "#a855f7";
-        ctx.lineWidth = 11;
         ctx.beginPath();
-        ctx.arc(W / 2, sy - 2, 58, Math.PI, 0);
-        ctx.stroke();
-        ctx.fillStyle = "#38bdf8";
-        roundRect(ctx, W / 2 - 66, sy - 14, 16, 38, 8);
+        ctx.moveTo(ox - 58, oy - 86);
+        ctx.lineTo(ox - 92, oy - 122);
+        ctx.lineTo(ox - 24, oy - 94);
         ctx.fill();
-        roundRect(ctx, W / 2 + 50, sy - 14, 16, 38, 8);
-        ctx.fill();
-
-        ctx.fillStyle = "#1e293b";
         ctx.beginPath();
-        ctx.arc(W / 2, sy - 12, 52, 0, Math.PI * 2);
+        ctx.moveTo(ox + 58, oy - 86);
+        ctx.lineTo(ox + 92, oy - 122);
+        ctx.lineTo(ox + 24, oy - 94);
         ctx.fill();
 
-        ctx.fillStyle = "#fde0c4";
+        // Waving Left Wing + Right Wing Holding 365 Streak Flame
+        const wave = Math.sin(t * 4.2) * 10;
+        roundRect(ctx, ox - 118, oy - 24 + wave, 38, 88, 19);
+        ctx.fill();
+        roundRect(ctx, ox + 80, oy - 24 - wave, 38, 88, 19);
+        ctx.fill();
+
+        // Lime-Chartreuse Scalloped Belly (#89E219)
+        ctx.fillStyle = "#89e219";
         ctx.beginPath();
-        ctx.ellipse(W / 2, sy + 2, 46, 54, 0, 0, Math.PI * 2);
+        ctx.ellipse(ox, oy + 48, 58, 52, 0, 0, Math.PI * 2);
         ctx.fill();
-
-        // Bangs
-        ctx.fillStyle = "#1e293b";
-        ctx.beginPath();
-        ctx.ellipse(W / 2, sy - 38, 46, 20, 0, Math.PI, Math.PI * 2);
-        ctx.fill();
-
-        // 0° Direct Lens vs 15° Off-Axis Chat-Monitor Eye Glance!
-        const glanceChat = (t % 5.0) > 3.6;
-        const eyeShiftX = glanceChat ? 5.5 : 0;
-        for (const ex of [W / 2 - 17, W / 2 + 17]) {
-          ctx.fillStyle = "#0f172a";
+        ctx.strokeStyle = "#3ea004";
+        ctx.lineWidth = 4;
+        for (const sx of [-24, 0, 24]) {
           ctx.beginPath();
-          ctx.arc(ex + eyeShiftX, sy - 2, 7.2, 0, Math.PI * 2);
-          ctx.fill();
-          // Circular LED Ring-Light Catchlight!
-          ctx.strokeStyle = "#ffffff";
-          ctx.lineWidth = 2.1;
-          ctx.beginPath();
-          ctx.arc(ex + eyeShiftX, sy - 2, 3.6, 0, Math.PI * 2);
+          ctx.arc(ox + sx, oy + (sx === 0 ? 52 : 36), 10, 0.15, Math.PI - 0.15);
           ctx.stroke();
         }
-        ctx.strokeStyle = "#0f172a";
-        ctx.lineWidth = 3.2;
-        ctx.beginPath();
-        ctx.arc(W / 2 + eyeShiftX * 0.4, sy + 20, 11, 0.15, Math.PI - 0.15);
-        ctx.stroke();
 
-        // Locked Screen-Left Condenser Boom Mic + Pop Filter
-        ctx.strokeStyle = "#475569";
+        // Giant Twin-Pill White Eye Masks + Glossy Tracking Pupils
+        const glanceChat = (t % 5.0) > 3.5;
+        const shiftX = glanceChat ? 6 : 0;
+        ctx.fillStyle = "#ffffff";
+        roundRect(ctx, ox - 64, oy - 68, 58, 68, 28);
+        ctx.fill();
+        roundRect(ctx, ox + 6, oy - 68, 58, 68, 28);
+        ctx.fill();
+
+        for (const ex of [ox - 35, ox + 35]) {
+          ctx.fillStyle = "#182226";
+          ctx.beginPath();
+          ctx.arc(ex + shiftX, oy - 34, 15, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.fillStyle = "#ffffff";
+          ctx.beginPath();
+          ctx.arc(ex + shiftX - 5, oy - 40, 5.5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        // Bold Expressive Green Brow Bars
+        ctx.fillStyle = "#3ea004";
+        roundRect(ctx, ox - 66, oy - 82, 58, 14, 7);
+        ctx.fill();
+        roundRect(ctx, ox + 8, oy - 82, 58, 14, 7);
+        ctx.fill();
+
+        // 2-Part Amber-Gold Beak (#FFC800 + #FF9600)
+        ctx.fillStyle = "#ffc800";
+        roundRect(ctx, ox - 20, oy - 12, 40, 22, 11);
+        ctx.fill();
+        ctx.fillStyle = "#ff9600";
+        roundRect(ctx, ox - 13, oy + 6, 26, 14, 7);
+        ctx.fill();
+
+        // Stubby Amber Feet
+        roundRect(ctx, ox - 52, oy + 102, 36, 16, 8);
+        ctx.fill();
+        roundRect(ctx, ox + 16, oy + 102, 36, 16, 8);
+        ctx.fill();
+
+        // Locked Screen-Left Condenser Boom Mic
+        ctx.strokeStyle = "#334155";
         ctx.lineWidth = 10;
         ctx.lineCap = "round";
         ctx.beginPath();
-        ctx.moveTo(12, 525);
-        ctx.lineTo(122, 428);
+        ctx.moveTo(14, 520);
+        ctx.lineTo(106, 434);
         ctx.stroke();
-        ctx.fillStyle = "#1e293b";
-        roundRect(ctx, 110, 396, 34, 52, 16);
+        ctx.fillStyle = "#0f172a";
+        roundRect(ctx, 96, 404, 32, 48, 15);
         ctx.fill();
       }
     }

@@ -19,34 +19,42 @@ Claude Code・Cursor・GitHub Copilot・Codex 向けの **Agent Skill**（`SKILL
 AI コーディングエージェントから呼び出すと、任意の画風やプロットを 8 種類の内蔵フォーマット（実写・異世界変換 AI 動画 5 種 + Roblox ブロック配信 3 種）に沿った 15 秒・4 カットの縦型（`9:16`）パッケージへ変換します。以下の **MP4** と GIF は同梱の `scripts/render_preview.mjs` でオフライン描画した 3D + Post-HUD アニマティクスで、外部の動画生成モデルを実行する前にカメラマウント、視線誘導、セーフゾーンを確認できます。
 
 <p align="center">
-  <a href="../../examples/irl-night-market-selfie/assets/irl_night_market_selfie.mp4"><img src="../../examples/irl-night-market-selfie/assets/irl_night_market_selfie.gif" width="192" alt="夜市18mmセルフィー 9:16 プレビュー" /></a>
-  <a href="../../examples/desk-unboxing-autofocus/assets/desk_unboxing_autofocus.mp4"><img src="../../examples/desk-unboxing-autofocus/assets/desk_unboxing_autofocus.gif" width="192" alt="卓上AF-C開封 9:16 プレビュー" /></a>
-  <a href="../../examples/midnight-corridor-fpv-live/assets/midnight_corridor_fpv_live.mp4"><img src="../../examples/midnight-corridor-fpv-live/assets/midnight_corridor_fpv_live.gif" width="192" alt="深夜廊下16mm主観 9:16 プレビュー" /></a>
-  <a href="../../examples/late-night-study-webcam/assets/late_night_study_webcam.mp4"><img src="../../examples/late-night-study-webcam/assets/late_night_study_webcam.gif" width="192" alt="深夜作業Webカメラ猫乱入 9:16 プレビュー" /></a>
+  <a href="../../examples/duolingo-owl-streak-cam/assets/duolingo_owl_streak_cam.mp4"><img src="../../examples/duolingo-owl-streak-cam/assets/duolingo_owl_streak_cam.gif" width="196" alt="Duolingo風フクロウ 9:16 プレビュー" /></a>
+  <a href="../../examples/duolingo-chill-night-market/assets/duolingo_chill_night_market.mp4"><img src="../../examples/duolingo-chill-night-market/assets/duolingo_chill_night_market.gif" width="196" alt="フラット3D夜市セルフィー 9:16 プレビュー" /></a>
+  <a href="../../examples/tux-ferris-code-webcam/assets/tux_ferris_code_webcam.mp4"><img src="../../examples/tux-ferris-code-webcam/assets/tux_ferris_code_webcam.gif" width="196" alt="Linux Tux & Rust Ferris 9:16 プレビュー" /></a>
+  <a href="../../examples/godot-bot-unboxing-af/assets/godot_bot_unboxing_af.mp4"><img src="../../examples/godot-bot-unboxing-af/assets/godot_bot_unboxing_af.gif" width="196" alt="Godot風ギアロボット開封 9:16 プレビュー" /></a>
   <br />
-  <a href="../../examples/wuxia-sword-flight-live/assets/wuxia_sword_flight_live.mp4"><img src="../../examples/wuxia-sword-flight-live/assets/wuxia_sword_flight_live.gif" width="192" alt="仙侠・御剣飛行セルフィー 9:16 プレビュー" /></a>
-  <a href="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.mp4"><img src="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.gif" width="192" alt="Roblox Sky-Obby PiP 9:16 プレビュー" /></a>
-  <a href="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.mp4"><img src="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.gif" width="192" alt="Roblox DOORS廊下セルフィー 9:16 プレビュー" /></a>
-  <a href="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.mp4"><img src="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.gif" width="192" alt="Roblox 50/50 コラボPK 9:16 プレビュー" /></a>
+  <a href="../../examples/voxel-wuxia-sword-live/assets/voxel_wuxia_sword_live.mp4"><img src="../../examples/voxel-wuxia-sword-live/assets/voxel_wuxia_sword_live.gif" width="196" alt="8x8ボクセル御剣飛行 9:16 プレビュー" /></a>
+  <a href="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.mp4"><img src="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.gif" width="196" alt="Roblox Sky-Obby PiP 9:16 プレビュー" /></a>
+  <a href="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.mp4"><img src="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.gif" width="196" alt="Roblox DOORS廊下セルフィー 9:16 プレビュー" /></a>
+  <a href="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.mp4"><img src="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.gif" width="196" alt="Roblox 50/50 コラボPK 9:16 プレビュー" /></a>
 </p>
 
 ## シーンボードとカット割り
 
-4〜5 秒の単一クリップに複数の連続動作を詰め込むと、物理カメラの臨場感が崩れやすくなります。各ライブショートは「1 カット 1 アクション」の 4 ビート（`0–3.5s` 開始フック、`3.5–7.5s` 接写実証、`7.5–11.5s` 放送ハプニング、`11.5–15s` コメント欄リアクション）に分割しています：
+4〜5 秒の単一クリップに複数の連続動作を詰め込むと、物理カメラの臨場感が崩れやすくなります。各ライブショートは「1 カット 1 アクション」の 4 ビート（`0–3.5s` 開始フック、`3.5–7.5s` 15°コメント読み／接写実証、`7.5–11.5s` 放送ハプニング、`11.5–15s` リアクションオチ）に分割しています：
 
 | Shot 01 · フック (`0–3.5s`) | Shot 02 · 実証 (`3.5–7.5s`) | Shot 03 · 急展開 (`7.5–11.5s`) | Shot 04 · オチ (`11.5–15s`) |
 | :---: | :---: | :---: | :---: |
-| <img src="../../examples/wuxia-sword-flight-live/assets/shot_01.png" width="196" alt="Shot 01: 雲海ラッシュアワー自撮り" /> | <img src="../../examples/wuxia-sword-flight-live/assets/shot_02.png" width="196" alt="Shot 02: 足元の発光飛剣をチルト撮影" /> | <img src="../../examples/wuxia-sword-flight-live/assets/shot_03.png" width="196" alt="Shot 03: 丹頂鶴の割り込み気流" /> | <img src="../../examples/wuxia-sword-flight-live/assets/shot_04.png" width="196" alt="Shot 04: 髪飾りが傾いた無表情リアクション" /> |
+| <img src="../../examples/duolingo-owl-streak-cam/assets/shot_01.png" width="200" alt="Shot 01: 緑のフクロウが手を振る" /> | <img src="../../examples/duolingo-owl-streak-cam/assets/shot_02.png" width="200" alt="Shot 02: 15度コメント欄確認" /> | <img src="../../examples/duolingo-owl-streak-cam/assets/shot_03.png" width="200" alt="Shot 03: 赤色警告と365連続炎" /> | <img src="../../examples/duolingo-owl-streak-cam/assets/shot_04.png" width="200" alt="Shot 04: にっこり翼パタパタ" /> |
 
-6 つのカメラリグ・画風別の 4 カット絵コンテシート：
+6 つのカメラリグ・画風（Duolingo風マスコット・Linux Tux & Ferris・Godot風ボット・`8×8` ボクセル・Roblox R6）の `3×2` HD マトリクスとフル幅 4 カット絵コンテシート：
 
-| 01 · 夜市セルフィー (`Kling` · `18mm` ＆ Douyin HUD) | 02 · 卓上AF開封 (`Seedance` · `[AF-C]` ＆ Kuaishou HUD) |
-| :---: | :---: |
-| <a href="../../examples/irl-night-market-selfie/"><img src="../../examples/irl-night-market-selfie/assets/storyboard_sheet.en.png" width="410" alt="Night-Market Selfie 4-shot sheet" /></a> | <a href="../../examples/desk-unboxing-autofocus/"><img src="../../examples/desk-unboxing-autofocus/assets/storyboard_sheet.en.png" width="410" alt="Desk Unboxing 4-shot sheet" /></a> |
-| **04 · 深夜作業Webカメラ (`Wan` · `24mm` ＆ X HUD)** | **06 · Roblox Sky-Obby + PiP (`Hailuo` · 2トラック ＆ TikTok HUD)** |
-| <a href="../../examples/late-night-study-webcam/"><img src="../../examples/late-night-study-webcam/assets/storyboard_sheet.en.png" width="410" alt="Study Webcam 4-shot sheet" /></a> | <a href="../../examples/roblox-obby-rage-pip/"><img src="../../examples/roblox-obby-rage-pip/assets/storyboard_sheet.en.png" width="410" alt="Roblox Obby PiP 4-shot sheet" /></a> |
-| **07 · Roblox DOORS セルフィー (`Sora` · `18mm` ＆ IG HUD)** | **08 · Roblox 50/50 コラボPK (`Kling` · 分割対決 ＆ Kuaishou HUD)** |
-| <a href="../../examples/roblox-doors-irl-selfie/"><img src="../../examples/roblox-doors-irl-selfie/assets/storyboard_sheet.en.png" width="410" alt="Roblox DOORS 4-shot sheet" /></a> | <a href="../../examples/roblox-pet-hatch-pk/"><img src="../../examples/roblox-pet-hatch-pk/assets/storyboard_sheet.en.png" width="410" alt="Roblox PK 4-shot sheet" /></a> |
+<p align="center">
+  <img src="../../assets/showcase/camera_rigs_atlas.en.png" width="840" alt="6大カメラリグと異スタイルキャスト 3x2 HDマトリクス" />
+</p>
+
+<p align="center">
+  <a href="../../examples/tux-ferris-code-webcam/"><img src="../../examples/tux-ferris-code-webcam/assets/storyboard_sheet.en.png" width="840" alt="Linux Tux & Rust Ferris 4-shot sheet" /></a>
+</p>
+
+<p align="center">
+  <a href="../../examples/voxel-wuxia-sword-live/"><img src="../../examples/voxel-wuxia-sword-live/assets/storyboard_sheet.en.png" width="840" alt="8x8 Voxel Wuxia 4-shot sheet" /></a>
+</p>
+
+<p align="center">
+  <a href="../../examples/roblox-pet-hatch-pk/"><img src="../../examples/roblox-pet-hatch-pk/assets/storyboard_sheet.en.png" width="840" alt="Roblox PK 4-shot sheet" /></a>
+</p>
 
 REA 解析に基づき再現した 5 大配信プラットフォーム HUD（`douyin`・`kuaishou`・`instagram`・`x`・`tiktok`、[詳細台帳](../../references/platform-ui-rea-ledger.md)）は、ブラウザ / OBS 用 [`studio/index.html`](../../studio/index.html) でもインタラクティブに操作できます：
 

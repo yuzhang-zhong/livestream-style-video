@@ -1,6 +1,6 @@
 {
   "name": "livestream-style-video",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "private": false,
   "type": "module",
   "description": "Agent Skill to map any visual style or storyline into authentic 9:16 livestream camera perspectives, clean-plate I2V/T2V prompts, detachable HUDs, and local MP4 previews.",

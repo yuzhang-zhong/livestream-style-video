@@ -38,9 +38,24 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 
-test("rig_spec combines all 8 livestream camera rigs with all 6 orthogonal style packs", () => {
+test("rig_spec combines all 8 livestream camera rigs with all 8 orthogonal style packs", () => {
   assert.equal(Object.keys(RIG_PROFILES).length, 8);
-  assert.equal(Object.keys(STYLE_ADAPTERS).length, 6);
+  assert.equal(Object.keys(STYLE_ADAPTERS).length, 8);
+
+  const duoOwl = buildRigSpec({
+    rig: "desktop-webcam",
+    style: "duolingo-mascot",
+    host: "LingoOwl"
+  });
+  assert.equal(duoOwl.rigId, "desktop-webcam");
+  assert.match(duoOwl.setupAnchorPromptEn, /#58CC02/);
+
+  const ossBot = buildRigSpec({
+    rig: "overhead-showcase-rig",
+    style: "opensource-mascot",
+    host: "GodoBot"
+  });
+  assert.match(ossBot.setupAnchorPromptEn, /Linux Tux|Ferris|#478CBF/);
 
   const irlSelfie = buildRigSpec({
     rig: "handheld-selfie-irl",
@@ -79,15 +94,15 @@ test("hud_presets exposes 6 platform chrome definitions with REA-calibrated safe
 });
 
 test("shot_compiler handles built-in templates, custom specs, 15s/30s/45s non-repeating beats, and arbitrary freeform plots", () => {
-  // 1. 15s built-in template
-  const irlPlan = compileStoryboard({
-    template: "irl-night-market-selfie",
+  // 1. 15s built-in Duolingo mascot template
+  const duoPlan = compileStoryboard({
+    template: "duolingo-owl-streak-cam",
     duration: 15,
     engine: "kling"
   });
-  assert.equal(irlPlan.shotCount, 4);
-  assert.equal(irlPlan.platform, "douyin");
-  assert.match(irlPlan.shots[0].i2vPromptZh, /可灵I2V纯净直播底片/);
+  assert.equal(duoPlan.shotCount, 4);
+  assert.equal(duoPlan.platform, "douyin");
+  assert.match(duoPlan.shots[0].i2vPromptZh, /可灵I2V纯净直播底片/);
 
   // 2. 30s Roblox PiP with Hailuo bracketed camera syntax & 8 unique shots
   const roblox30 = compileStoryboard({
@@ -119,7 +134,7 @@ test("shot_compiler handles built-in templates, custom specs, 15s/30s/45s non-re
     spec: path.join(ROOT, "templates", "custom_livestream_spec.json"),
     engine: "seedance"
   });
-  assert.equal(specPlan.slug, "cyber_ramen_stall_live");
+  assert.equal(specPlan.slug, "ferris_ramen_stall_live");
   assert.equal(specPlan.shotCount, 4);
 });
 
@@ -205,16 +220,16 @@ test("render_preview computes exact timing, synthesizes live WAV audio, and rend
       { cwd: ROOT, stdio: "pipe" }
     );
     assert.ok(fs.existsSync(path.join(tmpOut, "shot_01.png")));
-    assert.ok(fs.existsSync(path.join(tmpOut, "cyber_ramen_stall_live.gif")));
-    assert.ok(fs.existsSync(path.join(tmpOut, "cyber_ramen_stall_live.mp4")));
+    assert.ok(fs.existsSync(path.join(tmpOut, "ferris_ramen_stall_live.gif")));
+    assert.ok(fs.existsSync(path.join(tmpOut, "ferris_ramen_stall_live.mp4")));
   } finally {
     fs.rmSync(tmpOut, { recursive: true, force: true });
   }
 });
 
 test("CLI formatters support all 10 languages plus zh-en bilingual mode", () => {
-  const rigSpec = buildRigSpec({ rig: "desktop-webcam", style: "realistic-irl" });
-  const plan = compileStoryboard({ template: "late-night-study-webcam", engine: "wan" });
+  const rigSpec = buildRigSpec({ rig: "desktop-webcam", style: "duolingo-mascot" });
+  const plan = compileStoryboard({ template: "tux-ferris-code-webcam", engine: "wan" });
   const drift = inspectPrompt({
     prompt: plan.shots[0].i2vPromptEn,
     engine: "wan",
@@ -234,5 +249,5 @@ test("validate_skill verifies all required files, manifests, media assets, and r
     cwd: ROOT,
     encoding: "utf8"
   });
-  assert.match(out, /livestream-style-video v1\.1\.0 package is valid/);
+  assert.match(out, /livestream-style-video v2\.0\.0 package is valid/);
 });

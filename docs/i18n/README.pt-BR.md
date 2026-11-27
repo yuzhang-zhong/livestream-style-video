@@ -19,34 +19,42 @@ Uma **Agent Skill** (`SKILL.md` + guias de referência + ferramentas CLI sem dep
 Quando acionada em um agente de programação, esta skill transforma qualquer ideia ou enredo em um pacote vertical (`9:16`) de 15 segundos e quatro planos entre oito formatos integrados (cinco lives realistas e de fantasia mais três lives estilo Roblox). Os **MP4s** e GIFs abaixo são animáticas 3D + Post-HUD geradas offline por `scripts/render_preview.mjs` para validar suportes físicos de câmera, olhares `0°/15°` e áreas seguras antes de gastar créditos em modelos externos.
 
 <p align="center">
-  <a href="../../examples/irl-night-market-selfie/assets/irl_night_market_selfie.mp4"><img src="../../examples/irl-night-market-selfie/assets/irl_night_market_selfie.gif" width="192" alt="Selfie feira noturna 9:16" /></a>
-  <a href="../../examples/desk-unboxing-autofocus/assets/desk_unboxing_autofocus.mp4"><img src="../../examples/desk-unboxing-autofocus/assets/desk_unboxing_autofocus.gif" width="192" alt="Unboxing autofoco AF-C 9:16" /></a>
-  <a href="../../examples/midnight-corridor-fpv-live/assets/midnight_corridor_fpv_live.mp4"><img src="../../examples/midnight-corridor-fpv-live/assets/midnight_corridor_fpv_live.gif" width="192" alt="Corredor meia-noite POV 9:16" /></a>
-  <a href="../../examples/late-night-study-webcam/assets/late_night_study_webcam.mp4"><img src="../../examples/late-night-study-webcam/assets/late_night_study_webcam.gif" width="192" alt="Webcam estudo gato 9:16" /></a>
+  <a href="../../examples/duolingo-owl-streak-cam/assets/duolingo_owl_streak_cam.mp4"><img src="../../examples/duolingo-owl-streak-cam/assets/duolingo_owl_streak_cam.gif" width="196" alt="Coruja verde estilo Duolingo 9:16" /></a>
+  <a href="../../examples/duolingo-chill-night-market/assets/duolingo_chill_night_market.mp4"><img src="../../examples/duolingo-chill-night-market/assets/duolingo_chill_night_market.gif" width="196" alt="Selfie feira noturna Flat-3D 9:16" /></a>
+  <a href="../../examples/tux-ferris-code-webcam/assets/tux_ferris_code_webcam.mp4"><img src="../../examples/tux-ferris-code-webcam/assets/tux_ferris_code_webcam.gif" width="196" alt="Linux Tux e Rust Ferris webcam 9:16" /></a>
+  <a href="../../examples/godot-bot-unboxing-af/assets/godot_bot_unboxing_af.mp4"><img src="../../examples/godot-bot-unboxing-af/assets/godot_bot_unboxing_af.gif" width="196" alt="Godot Gear-Bot unboxing AF-C 9:16" /></a>
   <br />
-  <a href="../../examples/wuxia-sword-flight-live/assets/wuxia_sword_flight_live.mp4"><img src="../../examples/wuxia-sword-flight-live/assets/wuxia_sword_flight_live.gif" width="192" alt="Voo na espada Wuxia selfie 9:16" /></a>
-  <a href="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.mp4"><img src="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.gif" width="192" alt="Roblox Sky-Obby PiP 9:16" /></a>
-  <a href="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.mp4"><img src="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.gif" width="192" alt="Roblox DOORS corredor selfie 9:16" /></a>
-  <a href="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.mp4"><img src="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.gif" width="192" alt="Roblox PK 50/50 9:16" /></a>
+  <a href="../../examples/voxel-wuxia-sword-live/assets/voxel_wuxia_sword_live.mp4"><img src="../../examples/voxel-wuxia-sword-live/assets/voxel_wuxia_sword_live.gif" width="196" alt="Voxel 8x8 Wuxia selfie 9:16" /></a>
+  <a href="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.mp4"><img src="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.gif" width="196" alt="Roblox Sky-Obby PiP 9:16" /></a>
+  <a href="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.mp4"><img src="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.gif" width="196" alt="Roblox DOORS corredor selfie 9:16" /></a>
+  <a href="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.mp4"><img src="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.gif" width="196" alt="Roblox PK 50/50 9:16" /></a>
 </p>
 
 ## Pranchas de cenas e ritmo de cortes
 
-Modelos de difusão perdem a sensação física de live quando um clipe de 4–5 segundos empilha várias ações. Cada vídeo divide a história em quatro batidas de ação única (`0–3.5s` gancho inicial, `3.5–7.5s` prova macro na lente, `7.5–11.5s` reviravolta ao vivo e `11.5–15s` reação ao chat):
+Modelos de difusão perdem a sensação física de live quando um clipe de 4–5 segundos empilha várias ações. Cada vídeo divide a história em quatro batidas de ação única (`0–3.5s` gancho inicial, `3.5–7.5s` leitura `15°` ou prova macro, `7.5–11.5s` reviravolta ao vivo e `11.5–15s` reação ao chat):
 
 | Shot 01 · Gancho (`0–3.5s`) | Shot 02 · Prova (`3.5–7.5s`) | Shot 03 · Giro (`7.5–11.5s`) | Shot 04 · Desfecho (`11.5–15s`) |
 | :---: | :---: | :---: | :---: |
-| <img src="../../examples/wuxia-sword-flight-live/assets/shot_01.png" width="196" alt="Shot 01: selfie sobre mar de nuvens" /> | <img src="../../examples/wuxia-sword-flight-live/assets/shot_02.png" width="196" alt="Shot 02: inclinação mostrando espada rúnica" /> | <img src="../../examples/wuxia-sword-flight-live/assets/shot_03.png" width="196" alt="Shot 03: grou espiritual invade o quadro" /> | <img src="../../examples/wuxia-sword-flight-live/assets/shot_04.png" width="196" alt="Shot 04: olhar impassível com coque torto" /> |
+| <img src="../../examples/duolingo-owl-streak-cam/assets/shot_01.png" width="200" alt="Shot 01: coruja verde acenando" /> | <img src="../../examples/duolingo-owl-streak-cam/assets/shot_02.png" width="200" alt="Shot 02: leitura de desculpas no chat" /> | <img src="../../examples/duolingo-owl-streak-cam/assets/shot_03.png" width="200" alt="Shot 03: alerta vermelho com chama 365" /> | <img src="../../examples/duolingo-owl-streak-cam/assets/shot_04.png" width="200" alt="Shot 04: olhos felizes comemorando" /> |
 
-Folhas de contato de quatro planos em seis câmeras e estilos visuais:
+Matriz `3×2` HD das seis câmeras e folhas de contato em largura total:
 
-| 01 · Selfie Feira Noturna (`Kling` · `18mm` & Douyin HUD) | 02 · Unboxing Autofoco (`Seedance` · `[AF-C]` & Kuaishou HUD) |
-| :---: | :---: |
-| <a href="../../examples/irl-night-market-selfie/"><img src="../../examples/irl-night-market-selfie/assets/storyboard_sheet.en.png" width="410" alt="Night-Market Selfie 4-shot sheet" /></a> | <a href="../../examples/desk-unboxing-autofocus/"><img src="../../examples/desk-unboxing-autofocus/assets/storyboard_sheet.en.png" width="410" alt="Desk Unboxing 4-shot sheet" /></a> |
-| **04 · Webcam Noturna (`Wan` · `24mm` & X HUD)** | **06 · Roblox Sky-Obby + PiP (`Hailuo` · Pista dupla & TikTok HUD)** |
-| <a href="../../examples/late-night-study-webcam/"><img src="../../examples/late-night-study-webcam/assets/storyboard_sheet.en.png" width="410" alt="Study Webcam 4-shot sheet" /></a> | <a href="../../examples/roblox-obby-rage-pip/"><img src="../../examples/roblox-obby-rage-pip/assets/storyboard_sheet.en.png" width="410" alt="Roblox Obby PiP 4-shot sheet" /></a> |
-| **07 · Roblox DOORS Selfie (`Sora` · `18mm` & IG HUD)** | **08 · Roblox Duelo PK 50/50 (`Kling` · Tela dividida & Kuaishou HUD)** |
-| <a href="../../examples/roblox-doors-irl-selfie/"><img src="../../examples/roblox-doors-irl-selfie/assets/storyboard_sheet.en.png" width="410" alt="Roblox DOORS 4-shot sheet" /></a> | <a href="../../examples/roblox-pet-hatch-pk/"><img src="../../examples/roblox-pet-hatch-pk/assets/storyboard_sheet.en.png" width="410" alt="Roblox PK 4-shot sheet" /></a> |
+<p align="center">
+  <img src="../../assets/showcase/camera_rigs_atlas.en.png" width="840" alt="Matriz 3x2 HD de seis câmeras e estilos" />
+</p>
+
+<p align="center">
+  <a href="../../examples/tux-ferris-code-webcam/"><img src="../../examples/tux-ferris-code-webcam/assets/storyboard_sheet.en.png" width="840" alt="Linux Tux & Rust Ferris 4-shot sheet" /></a>
+</p>
+
+<p align="center">
+  <a href="../../examples/voxel-wuxia-sword-live/"><img src="../../examples/voxel-wuxia-sword-live/assets/storyboard_sheet.en.png" width="840" alt="Voxel Wuxia 4-shot sheet" /></a>
+</p>
+
+<p align="center">
+  <a href="../../examples/roblox-pet-hatch-pk/"><img src="../../examples/roblox-pet-hatch-pk/assets/storyboard_sheet.en.png" width="840" alt="Roblox PK 4-shot sheet" /></a>
+</p>
 
 Cinco interfaces de plataformas reconstruídas via REA (`douyin`, `kuaishou`, `instagram`, `x`, `tiktok`, veja o [registro REA](../../references/platform-ui-rea-ledger.md)) são sobrepostas após gerar o vídeo limpo ou testadas ao vivo em [`studio/index.html`](../../studio/index.html):
 

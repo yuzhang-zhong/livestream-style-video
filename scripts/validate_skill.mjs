@@ -102,11 +102,11 @@ const binaryFiles = [
 ];
 
 const examples = [
-  ["irl-night-market-selfie", "irl_night_market_selfie"],
-  ["desk-unboxing-autofocus", "desk_unboxing_autofocus"],
-  ["midnight-corridor-fpv-live", "midnight_corridor_fpv_live"],
-  ["late-night-study-webcam", "late_night_study_webcam"],
-  ["wuxia-sword-flight-live", "wuxia_sword_flight_live"],
+  ["duolingo-owl-streak-cam", "duolingo_owl_streak_cam"],
+  ["duolingo-chill-night-market", "duolingo_chill_night_market"],
+  ["tux-ferris-code-webcam", "tux_ferris_code_webcam"],
+  ["godot-bot-unboxing-af", "godot_bot_unboxing_af"],
+  ["voxel-wuxia-sword-live", "voxel_wuxia_sword_live"],
   ["roblox-obby-rage-pip", "roblox_obby_rage_pip"],
   ["roblox-doors-irl-selfie", "roblox_doors_irl_selfie"],
   ["roblox-pet-hatch-pk", "roblox_pet_hatch_pk"]

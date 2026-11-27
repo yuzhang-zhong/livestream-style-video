@@ -355,241 +355,243 @@ export function resolvePlatformPreset(platformId = "douyin") {
  * Q&A cards, PK tug-of-war bars, and bezier heart particles.
  */
 const EPISODE_DANMAKU_PACKS = {
-  irl_night_market_selfie: {
-    commerceZh: "秘制十倍辣烤串",
+  duolingo_owl_streak_cam: {
+    commerceZh: "连胜冻结保护卡礼盒",
+    commerceEn: "Streak Freeze Pack",
+    qaZh: "绿鸟大大别锁我家门！我现在立刻背50个单词！！",
+    qaEn: "PLEASE SPARE MY 365 STREAK I AM PRACTICING RIGHT NOW!!",
+    zh: [
+      [
+        { user: "背词困难户", text: "救命23:58了！绿鸟亲自开播查岗了", lv: 16 },
+        { user: "全勤打卡王", text: "这圆滚滚翠绿小翅膀好萌但好慌哈哈", lv: 11 },
+        { user: "拖延症晚期", text: "再刷最后一个视频就去背单词！", lv: 21 }
+      ],
+      [
+        { user: "眼神压迫感", text: "完了完了，它偏头看弹幕开始眯眼了", lv: 19 },
+        { user: "求生欲拉满", text: "小黄车连胜冻结卡先囤两张保命！", lv: 14, combo: 9 },
+        { user: "西语练习生", text: "谁在弹幕请假？绿鸟已经记小本本了", lv: 24 }
+      ],
+      [
+        { user: "红温警报", text: "卧槽红灯亮了！！365火苗怼脸警告！！", lv: 32, combo: 28 },
+        { user: "光速打开APP", text: "别盯了别盯了，我已经在拼写句子了", lv: 18 },
+        { user: "名场面截图", text: "这倒八字粗绿眉压迫感拉满哈哈", lv: 27 }
+      ],
+      [
+        { user: "连胜保卫军", text: "一秒变回弯弯星星眼拍翅太可爱了！", lv: 25, combo: 66 },
+        { user: "榜一课代表", text: "全直播间集体保住连胜，星舰走起！", lv: 38 },
+        { user: "明日再战", text: "川剧变脸大师非绿鸟莫属哈哈", lv: 16 }
+      ]
+    ],
+    en: [
+      [
+        { user: "streak_panic", text: "11:58 PM AND THE GREEN OWL IS LIVE?!", lv: 16 },
+        { user: "polyglot_99", text: "those big cheerful eyes hide pure power", lv: 11 },
+        { user: "procrastinator", text: "one more scroll then Spanish I swear", lv: 21 }
+      ],
+      [
+        { user: "side_eye", text: "UH OH HE JUST READ CHAT'S EXCUSES!!", lv: 19 },
+        { user: "freeze_buyer", text: "copping a Streak Freeze just in case", lv: 14, combo: 9 },
+        { user: "french_101", text: "those thick green brows are lowering...", lv: 24 }
+      ],
+      [
+        { user: "red_alert", text: "RED RIM LIGHT + 365 FLAME TROPHY LMAO", lv: 32, combo: 28 },
+        { user: "doing_lesson", text: "OKAY OKAY IM FINISHING MY LESSON RN!!", lv: 18 },
+        { user: "meme_lord", text: "intense V-brow stare in 4K HD", lv: 27 }
+      ],
+      [
+        { user: "streak_saved", text: "INSTANT HAPPY WING FLAPS SO CUTE!!", lv: 25, combo: 66 },
+        { user: "NovaPilot", text: "Starlight Cruiser for keeping us accountable", lv: 38 },
+        { user: "see_u_tmrw", text: "mood switch faster than compiler", lv: 16 }
+      ]
+    ]
+  },
+  duolingo_chill_night_market: {
+    commerceZh: "秘制十倍魔鬼辣烤串",
     commerceEn: "10x Chili Skewers",
     zh: [
       [
-        { user: "吃货雷达", text: "十倍变态辣？主播别逞强啊", lv: 14 },
-        { user: "夜市老饕", text: "这摊红油闻着就冲鼻梁！", lv: 9 },
-        { user: "前排围观", text: "立帖为证，三秒内必破防", lv: 21 }
+        { user: "紫发酷妹粉", text: "这半耷拉死鱼眼酷姐气场两米八！", lv: 15 },
+        { user: "夜市老饕", text: "十倍魔鬼辣？酷妹人设小心不保啊", lv: 10 },
+        { user: "扁平3D美学", text: "紫波波头配红灯笼夜市配色绝了", lv: 22 }
       ],
       [
-        { user: "镜头考据党", text: "手掌托底对焦绝了，辣椒籽好清", lv: 18 },
-        { user: "夜猫子07", text: "看着都斯哈斯哈流口水", lv: 11 },
-        { user: "不吃香菜", text: "小黄车1号同款辣酱已拍", lv: 15, combo: 6 }
+        { user: "微距考据党", text: "圆手掌托底对焦好稳，红油滋滋响！", lv: 18 },
+        { user: "夜猫子07", text: "小黄车1号同款辣串夜宵已下单", lv: 13, combo: 8 },
+        { user: "前排押注", text: "赌五毛钱三秒内高冷表情必破功", lv: 25 }
       ],
       [
-        { user: "全场课代表", text: "哈哈哈哈脸瞬间红温石化了！！", lv: 26, combo: 23 },
-        { user: "可乐加冰", text: "自拍杆都在发抖笑死我了", lv: 16 },
-        { user: "切片组就位", text: "嘴硬王者光速翻车名场面", lv: 30 }
+        { user: "人设崩塌组", text: "哈哈哈哈死鱼眼一秒瞪成铜铃大圆眼！", lv: 29, combo: 26 },
+        { user: "红温现场", text: "整张脸红成小番茄，自拍杆都在抖", lv: 17 },
+        { user: "切片预定", text: "年度最反差萌吃播翻车没有之一", lv: 31 }
       ],
       [
-        { user: "满屏问号", text: "吨吨吨狂炫冰柠檬茶救命", lv: 19, combo: 66 },
-        { user: "早八特种兵", text: "榜一快刷个火箭送去医院哈哈", lv: 12 },
-        { user: "榜一随缘", text: "敬你是条汉子，星舰安排！", lv: 36 }
+        { user: "吨吨吨救命", text: "抱着超大冰柠檬茶猛吸太真实了哈哈", lv: 21, combo: 66 },
+        { user: "嘴硬王者", text: "边喝冰茶边瞪弹幕，傲娇值拉满", lv: 16 },
+        { user: "榜一随缘", text: "刷艘星舰给酷姐买十杯冰饮解辣！", lv: 36 }
       ]
     ],
     en: [
       [
-        { user: "spice_king", text: "10x ghost chili?? bold move", lv: 14 },
-        { user: "night_bites", text: "that neon market vibe is fire", lv: 9 },
-        { user: "chat_bet", text: "giving him 3 seconds max lol", lv: 21 }
+        { user: "chill_vibes", text: "Lila's deadpan half-lidded aura is iconic", lv: 15 },
+        { user: "night_bites", text: "10x ghost chili vs cool girl persona", lv: 10 },
+        { user: "color_nerd", text: "violet bob + warm red lanterns looks crisp!", lv: 22 }
       ],
       [
-        { user: "lens_nerd", text: "clean palm autofocus on the spice!", lv: 18 },
-        { user: "hungry_rn", text: "sizzling oil looks unreal", lv: 11 },
-        { user: "clip_bot", text: "chat brace yourselves", lv: 15, combo: 6 }
+        { user: "lens_nerd", text: "clean palm autofocus on that spice glaze!", lv: 18 },
+        { user: "hungry_rn", text: "sizzling chili crust in full HD", lv: 13, combo: 8 },
+        { user: "chat_bet", text: "3... 2... 1... goodbye poker face", lv: 25 }
       ],
       [
-        { user: "vod_hunter", text: "BRO TURNED BRIGHT RED INSTANTLY", lv: 26, combo: 23 },
-        { user: "iced_tea", text: "EVEN THE SELFIE ARM IS SHAKING", lv: 16 },
-        { user: "zero_chill", text: "instant regret in 4K lmao", lv: 30 }
+        { user: "persona_gone", text: "HER COOL EYES POPPED WIDE OPEN LMAO", lv: 29, combo: 26 },
+        { user: "coral_blush", text: "FULL TOMATO BLUSH + SHAKING ARM", lv: 17 },
+        { user: "vod_clipper", text: "funniest character break on live", lv: 31 }
       ],
       [
-        { user: "laugh_riot", text: "CHUGGING THAT LEMON TEA FOR LIFE", lv: 19, combo: 66 },
-        { user: "top_gifter", text: "take a Starlight Cruiser champ", lv: 36 },
-        { user: "chat_wins", text: "chat undefeated once again", lv: 12 }
+        { user: "lemon_tea", text: "CHUGGING THAT GIANT BOBA CUP FOR DEAR LIFE", lv: 21, combo: 66 },
+        { user: "top_gifter", text: "Starlight Cruiser for the spicy recovery", lv: 36 },
+        { user: "still_cool", text: "grumpy glare at chat is perfection", lv: 16 }
       ]
     ]
   },
-  desk_unboxing_autofocus: {
-    commerceZh: "全金属解压机关盒",
-    commerceEn: "Mystery Spring Box",
+  tux_ferris_code_webcam: {
     zh: [
       [
-        { user: "数码老铁", text: "终于等到这款断货王实测了！", lv: 16 },
-        { user: "手工耿迷弟", text: "听说里面机关很邪乎小心点", lv: 10 },
-        { user: "前排蹲链接", text: "快开快开，好用直接秒", lv: 19 }
+        { user: "内核守夜人", text: "戴大耳机的Linux企鹅Tux敲键盘太萌了！", lv: 14 },
+        { user: "青轴发烧友", text: "小黑翅拍机械键盘这麻将音绝了", lv: 19 },
+        { user: "周五不发版", text: "记住铁律：周五凌晨绝不碰生产分支", lv: 23 }
       ],
       [
-        { user: "微距控", text: "手掌托底秒锁焦，金属拉丝绝了", lv: 22 },
-        { user: "买买买君", text: "小黄车库存只剩最后50件了", lv: 14, combo: 8 },
-        { user: "细节狂魔", text: "这红按钮看着就想按下去！", lv: 11 }
+        { user: "列文虎克", text: "等等！！马克杯后面探出一只橙色小螃蟹！", lv: 26 },
+        { user: "Rust布道师", text: "是Ferris！！它两只小钳子盯上回车键了", lv: 18 },
+        { user: "运维急救", text: "企鹅快回头！螃蟹要帮你内存安全上线了！", lv: 31 }
       ],
       [
-        { user: "弹幕护体", text: "卧槽！！弹簧直接怼麦上了哈哈", lv: 28, combo: 18 },
-        { user: "耳机党阵亡", text: "主播吓得连人带椅往后飞", lv: 15 },
-        { user: "快手课代表", text: "年度最佳带货工伤现场666", lv: 24, combo: 12 }
+        { user: "全站报警", text: "完了！！Ferris横跳一钳子砸中Enter！！", lv: 34 },
+        { user: "Git惨案", text: "强制推送主分支？Tux眼珠子都快瞪出来了", lv: 22 },
+        { user: "桌面微震", text: "连显示器摄像头都被蟹壳震晃了一下哈哈", lv: 20 }
       ],
       [
-        { user: "榜一大哥", text: "表情管理彻底下线哈哈哈哈", lv: 38, combo: 66 },
-        { user: "解压协会", text: "反向测评最为致命，已下单！", lv: 17 },
-        { user: "录屏小能手", text: "穿云箭走起，赔主播精神损失", lv: 29 }
+        { user: "开源世界名画", text: "企鹅抱头石化 + 小螃蟹无辜举钳神同步！", lv: 37 },
+        { user: "用Rust重写", text: "Ferris：编译过了就能直接发生产呀哈哈", lv: 25 },
+        { user: "录屏封神", text: "开源吉祥物联动直播节目效果满分！", lv: 30 }
       ]
     ],
     en: [
       [
-        { user: "tech_bro", text: "finally testing the viral cube!", lv: 16 },
-        { user: "desk_setup", text: "left boom mic framing is crisp", lv: 10 },
-        { user: "unbox_fan", text: "press the red button!!", lv: 19 }
+        { user: "@kernel_hacker", text: "Tux in RGB headphones typing is peak cozy", lv: 14 },
+        { user: "@thock_keys", text: "flipper WPM is unironically 140+", lv: 19 },
+        { user: "@sre_oncall", text: "rule #1: never deploy on Friday 2AM", lv: 23 }
       ],
       [
-        { user: "af_master", text: "AF-C palm lock is buttery smooth", lv: 22 },
-        { user: "gear_head", text: "machined aluminum edges look clean", lv: 14, combo: 8 },
-        { user: "deal_watch", text: "grabbed Link #1 before sellout", lv: 11 }
+        { user: "@crab_spotted", text: "WAIT FERRIS THE CRAB IS BEHIND THE MUG", lv: 26 },
+        { user: "@rust_lang_fan", text: "LOOK AT THOSE TINY ORANGE PINCERS AIMING", lv: 18 },
+        { user: "@lock_screen", text: "TUX TURN AROUND HE'S EYEING ENTER!!", lv: 31 }
       ],
       [
-        { user: "jump_scare", text: "YO IT LAUNCHED INTO THE MIC!!", lv: 28, combo: 18 },
-        { user: "chair_gang", text: "THE CHAIR RECOIL LMAO", lv: 15 },
-        { user: "clip_king", text: "100% UNSCRIPTED GOLD", lv: 24, combo: 12 }
+        { user: "@prod_deploy", text: "FERRIS SCUTTLE-SLAMMED THE ENTER KEY!!", lv: 34 },
+        { user: "@git_blame", text: "shipped straight to production zero hesitation", lv: 22 },
+        { user: "@tux_shock", text: "Tux's wide eyes reflecting terminal flash lol", lv: 20 }
       ],
       [
-        { user: "IronBro_01", text: "sending Golden Sky Arrows lol", lv: 38, combo: 66 },
-        { user: "sold_out", text: "best accidental ad ever, bought 2", lv: 17 },
-        { user: "chat_roast", text: "hazard pay needed immediately", lv: 29 }
+        { user: "@oss_hall_fame", text: "Tux flippers-on-head + Ferris claw wave!!", lv: 37 },
+        { user: "@dev_pulse", text: "Super Heart Boost for the open-source duo", lv: 30 },
+        { user: "@cargo_build", text: "if it compiles it ships — Ferris probably", lv: 25 }
       ]
     ]
   },
-  midnight_corridor_fpv_live: {
-    qaZh: "404木门外面明明插着门闩，千万别进去！",
-    qaEn: "Wait isn't Room 404 bolted from the outside?!",
+  godot_bot_unboxing_af: {
+    commerceZh: "开源极客弹簧盲盒魔方",
+    commerceEn: "Open-Hardware Cube",
     zh: [
       [
-        { user: "深夜壮胆团", text: "第一视角呼吸声听着后背发凉", lv: 15 },
-        { user: "建筑考据", text: "左手看弹幕右手照路，真一个人？", lv: 9 },
-        { user: "高能预警", text: "404铜牌反光有点诡异啊", lv: 21 }
+        { user: "独立游戏人", text: "蓝齿轮机器人GodoBot开播测评了！前排！", lv: 16 },
+        { user: "机甲颜值党", text: "头顶三枚圆齿轮配发光白环眼好精致", lv: 12 },
+        { user: "老铁蹲坑", text: "快拆快拆，看看开源硬件盲盒里装啥", lv: 20 }
       ],
       [
-        { user: "显微镜观众", text: "刚才手挥过去确实没钓鱼线！", lv: 18 },
-        { user: "胆小鬼勿入", text: "头顶灯泡是不是闪了一下？？", lv: 12 },
-        { user: "夜班保安", text: "快退后两步，门轴在响！", lv: 25 }
+        { user: "对焦满分", text: "蓝白机械平掌托底秒锁AF-C黄框！够专业", lv: 23 },
+        { user: "小黄车秒杀", text: "金属倒角质感绝了，1号链接已冲！", lv: 15, combo: 8 },
+        { user: "红钮诱惑", text: "快按顶上那颗发光红按钮试试！", lv: 19 }
       ],
       [
-        { user: "满屏护体", text: "卧槽门自己开了！！快跑啊！！", lv: 30 },
-        { user: "心跳180", text: "手电筒抖成筛子了别回头！！", lv: 19 },
-        { user: "实况见证", text: "真没剧本，鸡皮疙瘩起来了", lv: 27 }
+        { user: "弹幕护体", text: "卧槽弹簧金星直接窜起来撞防喷棉了哈哈", lv: 29, combo: 18 },
+        { user: "芯片过载", text: "机器人LED眼睛瞬间缩成震惊大圆环！！", lv: 21 },
+        { user: "物理引擎暴走", text: "RigidBody3D弹力系数设太高了吧666", lv: 26, combo: 12 }
       ],
       [
-        { user: "百米飞人", text: "主播这转身冲刺速度破纪录了", lv: 22 },
-        { user: "安全出口", text: "看到绿牌EXIT终于松一口气", lv: 14 },
-        { user: "打赏压惊", text: "徽章刷一波给主播买新鞋！", lv: 32 }
+        { user: "弯弯笑眼", text: "切换成 ^_^ 弧线笑眼指弹幕太治愈了！", lv: 35, combo: 66 },
+        { user: "榜一大哥", text: "穿云箭安排！给小机器人升级显卡！", lv: 40 },
+        { user: "金星萌物", text: "桌上的发光小金星也在跟着弹跳好萌", lv: 18 }
       ]
     ],
     en: [
       [
-        { user: "urbex_kai", text: "chest POV makes my palms sweat", lv: 15 },
-        { user: "mina.design", text: "checking chat on left phone is wild", lv: 9 },
-        { user: "night_watch", text: "do NOT knock on Room 404", lv: 21 }
+        { user: "indie_dev", text: "GodoBot hosting tech unboxing?! instant sub", lv: 16 },
+        { user: "shader_pro", text: "cobalt gear-head + glowing LED eyes look crisp", lv: 12 },
+        { user: "box_hunter", text: "tap that silver mystery cube!!", lv: 20 }
       ],
       [
-        { user: "skeptic_01", text: "okay zero wires confirmed...", lv: 18 },
-        { user: "audio_head", text: "WAIT DID THE BULB JUST FLICKER", lv: 12 },
-        { user: "run_now", text: "bro back away from the frame!!", lv: 25 }
+        { user: "af_c_lock", text: "mechanical white palm AF-C lock is genius", lv: 23 },
+        { user: "cnc_finish", text: "anodized bevels + red button super sharp", lv: 15, combo: 8 },
+        { user: "press_it", text: "PRESS THE RED BUTTON ON LIVE!", lv: 19 }
       ],
       [
-        { user: "panic_chat", text: "IT OPENED BY ITSELF RUNNN!!", lv: 30 },
-        { user: "flashlight", text: "LOOK HOW HARD HIS HAND SHAKES", lv: 19 },
-        { user: "live_proof", text: "nah I'm watching with lights on", lv: 27 }
+        { user: "spring_pop", text: "GOLDEN STAR ROCKETED INTO THE BOOM MIC!!", lv: 29, combo: 18 },
+        { user: "physics_bug", text: "who set bounce restitution to 9.0 lmao", lv: 26, combo: 12 },
+        { user: "led_shock", text: "HIS LED EYES WENT FULL WIDE RINGS", lv: 21 }
       ],
       [
-        { user: "sprint_pro", text: "fastest 180 toward EXIT in history", lv: 22 },
-        { user: "kaya.studio", text: "badges sent for emotional damage", lv: 32 },
-        { user: "saved_vod", text: "legendary IG Live moment", lv: 14 }
+        { user: "happy_arcs", text: "THE ^_^ LED ARCS POINTING AT CHAT!!", lv: 35, combo: 66 },
+        { user: "IronBro_01", text: "Golden Sky Arrows for GodoBot!!", lv: 40 },
+        { user: "star_buddy", text: "wholesome open-source stream W", lv: 18 }
       ]
     ]
   },
-  late_night_study_webcam: {
+  voxel_wuxia_sword_live: {
+    commerceZh: "附魔青霜像素飞剑",
+    commerceEn: "Enchanted Rune Sword",
     zh: [
       [
-        { user: "考研夜航船", text: "凌晨两点陪伴直播，键盘声好治愈", lv: 12 },
-        { user: "全栈打工人", text: "青轴麻将音听着效率拉满", lv: 18 },
-        { user: "咖啡续命", text: "改完这版PPT就能睡了吧", lv: 9 }
+        { user: "方块蜀山弟子", text: "8x8体素仙侠御剑直播？！双厨狂喜！！", lv: 17 },
+        { user: "像素考据党", text: "立体道冠外层皮肤配方块云海质感太正了", lv: 22 },
+        { user: "早八御剑人", text: "三环方块航道又堵了，师兄走高空层啊", lv: 11 }
       ],
       [
-        { user: "列文虎克", text: "等等！椅子后面冒出两只橘猫耳朵！", lv: 24 },
-        { user: "云吸猫协会", text: "主播完全没发现身后有刺客哈哈", lv: 15 },
-        { user: "运维老哥", text: "快锁键盘！主子准备起跳了！！", lv: 29 }
+        { user: "附魔铁匠", text: "16x16x1阶梯像素青霜剑自发光帅炸了！", lv: 20 },
+        { user: "百公里两绿宝石", text: "比坐矿车快十倍，小黄车同款飞剑已拍", lv: 15, combo: 9 },
+        { user: "空管预警", text: "小心右后方！有只像素丹顶鹤贴脸飞来了！", lv: 27 }
       ],
       [
-        { user: "生产环境危", text: "完了！！橘猫两爪精准踩中回车！！", lv: 31 },
-        { user: "代码审计", text: "未测试分支直接推线上库了？？", lv: 22 },
-        { user: "眼镜反光", text: "从镜片里看到了绝望的弹窗白光", lv: 19 }
+        { user: "护体罡气", text: "卧槽体素仙鹤加塞抢镜！！剑身歪了12度！", lv: 31, combo: 24 },
+        { user: "方块乱流", text: "像素眼睛瞬间瞪大，差点掉下云海哈哈", lv: 19 },
+        { user: "修真行车记录", text: "全服都看到仙鹤别停青云师兄了", lv: 28 }
       ],
       [
-        { user: "名画诞生", text: "一人一猫同步抬头盯摄像头神同步", lv: 35 },
-        { user: "橘猫无罪", text: "猫猫：我帮铲屎官提前下班喵~", lv: 17 },
-        { user: "热搜预定", text: "千万别删回放，太经典了哈哈", lv: 28 }
+        { user: "歪冠战神", text: "像素青玉道冠吹歪一格+死鱼眼(-_-)绝了", lv: 24, combo: 66 },
+        { user: "青云掌门", text: "御剑飞行期间看弹幕扣五百宗门贡献！", lv: 40 },
+        { user: "榜一剑仙", text: "刷艘璀璨星舰给师兄扶正道冠哈哈", lv: 35 }
       ]
     ],
     en: [
       [
-        { user: "@shader_cat", text: "2:00 AM co-working vibes are elite", lv: 12 },
-        { user: "@rust_acean", text: "thocky keyboard switches sound clean", lv: 18 },
-        { user: "@night_dev", text: "almost done with the release!", lv: 9 }
+        { user: "voxel_cultivator", text: "8x8x8 Voxel Wuxia sword stream goes CRAZY", lv: 17 },
+        { user: "bsl_shader", text: "3D outer robe layer + cubic clouds = peak", lv: 22 },
+        { user: "sky_commuter", text: "sword highway traffic at 8AM again lol", lv: 11 }
       ],
       [
-        { user: "@eagle_eye", text: "WAIT ORANGE CAT EARS BEHIND CHAIR", lv: 24 },
-        { user: "@feline_ops", text: "he has zero clue what's coming", lv: 15 },
-        { user: "@sre_oncall", text: "LOCK YOUR TERMINAL RIGHT NOW", lv: 29 }
+        { user: "pixel_smith", text: "16x16x1 stepped cyan rune blade underfoot!!", lv: 20 },
+        { user: "emerald_saver", text: "2 emeralds per 100km? instant buy", lv: 15, combo: 9 },
+        { user: "radar_alert", text: "VOXEL SPIRIT CRANE INCOMING RIGHT SHOULDER!", lv: 27 }
       ],
       [
-        { user: "@prod_down", text: "THE CAT STEPPED DIRECTLY ON ENTER", lv: 31 },
-        { user: "@git_push", text: "force-pushed straight to main 💀", lv: 22 },
-        { user: "@webcam_shake", text: "even the monitor cam shook lmao", lv: 19 }
+        { user: "wing_gust", text: "CUBIC WHITE CRANE PHOTOBOMBED THE SELFIE", lv: 31, combo: 24 },
+        { user: "roll_12deg", text: "that turbulence camera roll had me sweating", lv: 19 },
+        { user: "immortal_clip", text: "even his 8x8 pixel eyes went wide!!", lv: 28 }
       ],
       [
-        { user: "@cinema_irl", text: "synchronized cat + human 0° stare", lv: 35 },
-        { user: "@dev_pulse", text: "Super Heart Boost for severance pay", lv: 28 },
-        { user: "@clip_archive", text: "cat looks proud of the deploy too", lv: 17 }
-      ]
-    ]
-  },
-  wuxia_sword_flight_live: {
-    commerceZh: "二阶青霜飞剑法器",
-    commerceEn: "Tier-2 Azure Sword",
-    zh: [
-      [
-        { user: "蜀山早八人", text: "御剑三环又堵？师兄走云海辅路啊", lv: 15 },
-        { user: "炼器阁主", text: "这传音玉简前置画质够稳的！", lv: 21 },
-        { user: "丹修摸鱼", text: "高空风这么大发带都没吹飞", lv: 10 }
-      ],
-      [
-        { user: "剑道发烧友", text: "下摇看剑身符文太帅了！求链接", lv: 19 },
-        { user: "百公里两灵石", text: "比宗门灵舟省钱多了，已拍小黄车", lv: 14, combo: 9 },
-        { user: "御剑交警", text: "注意！右后方有只大仙鹤没打转向符", lv: 26 }
-      ],
-      [
-        { user: "护体剑罡", text: "卧槽仙鹤贴脸加塞！！险些坠剑！！", lv: 30, combo: 24 },
-        { user: "丹顶鹤车主", text: "仙鹤尾流把镜头晃歪12度哈哈", lv: 18 },
-        { user: "修真切片组", text: "全修真界都看到师兄劈叉稳剑了", lv: 27 }
-      ],
-      [
-        { user: "发髻歪了", text: "道冠歪成斜塔还强装淡定笑死", lv: 23, combo: 66 },
-        { user: "青云掌门", text: "御剑期间禁止看弹幕扣分！", lv: 40 },
-        { user: "榜一剑仙", text: "刷艘星舰赔师兄的发型管理费", lv: 34 }
-      ]
-    ],
-    en: [
-      [
-        { user: "cloud_rider", text: "rush hour on the sword lane again?!", lv: 15 },
-        { user: "jade_cam", text: "18mm jade-slip selfie cam goes hard", lv: 21 },
-        { user: "sect_junior", text: "bro streaming at 10,000 feet", lv: 10 }
-      ],
-      [
-        { user: "rune_smith", text: "those cyan sword runes underfoot!!", lv: 19 },
-        { user: "spirit_stone", text: "2 stones per 100km? instant cop", lv: 14, combo: 9 },
-        { user: "sky_radar", text: "WATCH RIGHT SHOULDER SPIRIT CRANE!!", lv: 26 }
-      ],
-      [
-        { user: "turbulence", text: "WHITE CRANE CUT HIM OFF MID-AIR", lv: 30, combo: 24 },
-        { user: "wing_gust", text: "12-degree camera roll panic lmao", lv: 18 },
-        { user: "xianxia_vod", text: "road rage in the immortal realm", lv: 27 }
-      ],
-      [
-        { user: "crooked_bun", text: "THE TILTED HAIR CROWN DEADPAN 💀", lv: 23, combo: 66 },
-        { user: "sect_elder", text: "eyes on the skyway young disciple!", lv: 40 },
-        { user: "NovaPilot", text: "gifting Starlight Cruiser for aura", lv: 34 }
+        { user: "crooked_crown", text: "THE TILTED PIXEL JADE CROWN + (-_-) FACE!!", lv: 24, combo: 66 },
+        { user: "sect_master", text: "keep both square hands on the sword!!", lv: 40 },
+        { user: "NovaPilot", text: "Starlight Cruiser for the voxel swordsman", lv: 35 }
       ]
     ]
   },
@@ -620,7 +622,7 @@ const EPISODE_DANMAKU_PACKS = {
     ],
     en: [
       [
-        { user: "obby_master", text: "Stage 99 zero-death flag planted 👀", lv: 16 },
+        { user: "obby_master", text: "Stage 99 zero-death flag planted!!", lv: 16 },
         { user: "jinx_squad", text: "never flex before the green pad lol", lv: 11 },
         { user: "r6_purist", text: "smug PiP facecam smirk is crazy", lv: 20 }
       ],
@@ -635,7 +637,7 @@ const EPISODE_DANMAKU_PACKS = {
         { user: "oof_moment", text: "generational choke right on live", lv: 27 }
       ],
       [
-        { user: "stage1_club", text: "BACK TO STAGE 1 WATERFALL TEARS 💀", lv: 29, combo: 99 },
+        { user: "stage1_club", text: "BACK TO STAGE 1 WATERFALL TEARS!!", lv: 29, combo: 99 },
         { user: "desk_check", text: "RIP desk after that double block slam", lv: 15 },
         { user: "pixel_kai", text: "99x Galaxy Rose for the rebuild", lv: 36 }
       ]
@@ -683,7 +685,7 @@ const EPISODE_DANMAKU_PACKS = {
         { user: "heart_rate", text: "O_O decal switch was instant", lv: 29 }
       ],
       [
-        { user: "closet_gang", text: "peeking through wooden slats crying 💀", lv: 25 },
+        { user: "closet_gang", text: "peeking through wooden slats crying lol", lv: 25 },
         { user: "shhh_chat", text: "nobody breathe until red glow passes", lv: 18 },
         { user: "kaya.studio", text: "3 Badges for surviving Door 050!", lv: 31 }
       ]
@@ -749,7 +751,7 @@ export function buildShotHudTimeline(shot = {}, shotIdx = 0, totalShots = 4, pla
   const peakMultiplier = shotIdx === totalShots - 1 ? 2.4 : shotIdx === totalShots - 2 ? 1.85 : 1.15;
   const viewerCount = Math.round(baseViewers * peakMultiplier);
 
-  const pack = EPISODE_DANMAKU_PACKS[episodeSlug] || EPISODE_DANMAKU_PACKS.irl_night_market_selfie;
+  const pack = EPISODE_DANMAKU_PACKS[episodeSlug] || EPISODE_DANMAKU_PACKS.duolingo_owl_streak_cam;
   const cIdx = Math.min(3, shotIdx % 4);
   const commentsZh = shot.hudCommentsZh || pack.zh[cIdx];
   const commentsEn = shot.hudCommentsEn || pack.en[cIdx];

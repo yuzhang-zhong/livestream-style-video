@@ -120,6 +120,8 @@ export function stripNegatedSpans(text = "") {
 function detectImplicitStyle(text, explicitStyle = "") {
   if (explicitStyle && STYLE_ADAPTERS[explicitStyle]) return explicitStyle;
   if (/roblox|\br6\b|\br15\b|方块小人|smoothplastic|bloxy/i.test(text)) return "roblox-blocky";
+  if (/duolingo|多邻国|绿鸟|翠羽绿|owl\s+mascot|lingo/i.test(text)) return "duolingo-mascot";
+  if (/\btux\b|\bferris\b|\bgodot\b|开源吉祥物|linux\s*penguin|rust\s*crab|齿轮机器人/i.test(text)) return "opensource-mascot";
   if (/minecraft|voxel|体素|我的世界|8x8x8|16x16x16/i.test(text)) return "voxel-sandbox";
   if (/vtuber|live2d|cel[- ]shaded|虚拟主播|二次元/i.test(text)) return "anime-vtuber";
   if (/blind[- ]box|vinyl|潮玩|盲盒|pixar/i.test(text)) return "stylized-3d";
@@ -289,6 +291,15 @@ export function inspectPrompt(options = {}) {
         status: "FAIL",
         detailEn: "Voxel style violation: detected human fingers or rounded non-cubic head.",
         detailZh: "体素画风违规：检测到人类五指或非立方体圆头。"
+      };
+    }
+  } else if (styleId === "duolingo-mascot" || styleId === "opensource-mascot") {
+    if (/\b(?:realistic\s+human\s+skin\s+pores|uncanny\s+mannequin|sharp\s+bloody\s+talons)\b|(?:写实真人毛孔|恐怖谷假人|写实尖锐利爪)/i.test(posText)) {
+      styleGate = {
+        gate: `5. Style & Anatomy Lock (${styleId}) / 画风几何与手部防串味锁`,
+        status: "FAIL",
+        detailEn: "Mascot style violation: uncanny realistic human pores or horror anatomy detected.",
+        detailZh: "萌宠/开源吉祥物画风违规：混入写实毛孔或恐怖谷假人特征。"
       };
     }
   } else if (styleId === "realistic-irl") {

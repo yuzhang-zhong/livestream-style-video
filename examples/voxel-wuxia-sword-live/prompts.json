@@ -1,0 +1,396 @@
+{
+  "slug": "voxel_wuxia_sword_live",
+  "titleEn": "Voxel 8x8x8 Wuxia Flying-Sword Cloud Commute Selfie Live",
+  "titleZh": "体素像素风剑修御剑早高峰户外自拍（Minecraft 体素 × 仙侠跨题材）",
+  "category": "mascot-and-opensource-ip",
+  "engine": "hailuo",
+  "engineLabel": "Hailuo Director I2V ([Bracketed Camera] + Clean-Plate)",
+  "style": "voxel-sandbox",
+  "rig": "handheld-selfie-irl",
+  "lighting": "daylight-outdoor-autoexp",
+  "platform": "douyin",
+  "platformLabelEn": "Douyin Live Room Chrome & Commerce/Gift HUD",
+  "platformLabelZh": "抖音直播间风格 (Douyin Live Chrome)",
+  "aspect": "9:16",
+  "durationSeconds": 15,
+  "shotCount": 4,
+  "host": "青云像素剑修",
+  "cohost": "Momo",
+  "backdrop": "cloud_sea",
+  "dualTrackNoteEn": "Single-Track Clean Plate: Generate raw camera feed first, then composite optional LIVE badge and scrolling chat HUD cleanly.",
+  "dualTrackNoteZh": "单轨纯净底片原则：先生成无任何文字涂层的纯净镜头画面，后置叠加高清直播间角标与滚动弹幕。",
+  "setupAnchorPromptEn": "9:16 Livestream Setup Reference Sheet (3-panel consistency anchor for host \"青云像素剑修\"): Panel 1 [0° Primary Live Frame]: 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening, canonical voxel character with sharp 1:1:1 cubic 8x8x8 head, 8x12x4 torso, fingerless flat 4x4 square pixel-block hands, unfiltered nearest-neighbor 16x16 pixel block textures, +0.5px 3D headset/hoodie outer skin layer, and extruded pixel mic/tools, compact clip-on wireless lavalier microphone transmitter clipped to collar/lapel, crisp natural daylight rim-lighting windblown silhouettes, authentic action-cam auto-exposure highlight roll-off, direct eye-contact into the lens as if greeting live chat; Panel 2 [15° Chat-Read Glance]: exact same room, outfit, and mic position, eyes flicked 15 degrees off-axis reading a glowing secondary chat monitor with subtle smile; Panel 3 [Rig & Optical Side Diagram]: clean side-view showing camera mount distance, ring-light placement, and room background props. Clean raw camera feed, zero burned-in UI text, zero platform watermarks.",
+  "setupAnchorPromptZh": "9:16 直播间跨镜头一致性三态锚定参考卡（主播「青云像素剑修」）：左格【0°主镜头直视态】：18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变，标准体素小人（直角8x8x8立方头、8x12x4躯干、无手指4x4平头像素方手、+0.5px立体耳机卫衣外层皮肤、清晰邻近采样16x16像素贴图与立体像素麦克风道具），衣领处夹持一枚紧凑型无线领夹麦克风发射器，通透自然日光勾勒迎风轮廓，真实运动相机/手机直出自动曝光高光过渡，眼神0°直视镜头向直播间观众打招呼；中格【15°偏轴读弹幕态】：完全相同的房间陈设、穿搭与麦克风左右位置，视线偏转15°扫向副屏弹幕并露出实时反应；右格【机位与补光侧视锚点】：清晰交代摄像头架设距离、环形灯/霓虹光源方位与背景固定摆件。画面保持100%纯净无UI文字底片，零平台水印、零乱码弹幕。",
+  "shots": [
+    {
+      "shotNumber": 1,
+      "role": "Hook / 方块云海早高峰开播吐槽",
+      "durationSec": 3.5,
+      "timeWindow": "0.0s–3.5s",
+      "exactTimeWindow": "0.00s–3.50s",
+      "actionEn": "balances atop the hovering pixel rune sword above golden-white cubic cloud blocks while raising left 4x4 square block hand to greet the 0° held jade selfie lens",
+      "actionZh": "稳稳踩在悬浮像素符文飞剑上掠过金白方块云海，举起左侧4x4平头像素方手对着一臂外0°玉简前置镜头大声打招呼吐槽早高峰",
+      "eyeLineEn": "expressive 2x1 pixel eyes lock 0° into the held selfie lens",
+      "eyeLineZh": "灵动像素双眸0°直视手持玉简自拍镜头",
+      "cameraEn": "18mm ultra-wide arm's-length voxel selfie POV showing cubic cloud sea below",
+      "cameraZh": "18mm超广角一臂像素自拍微俯视角，完整收入脚下方块云海",
+      "hailuoTag": "[Pull out, Shake]",
+      "firstFramePromptEn": "9:16 vertical static keyframe, 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening: a crisp Minecraft-style 8x8x8 cubic voxel wuxia swordsman (sharp 90-degree 1:1:1 head with unfiltered 8x8 pixel face, Fresh-Animations sliding pixel eyes, +0.5px stepped 3D pixel dark hair & cyan jade crown, 8x12x4 azure-white robe torso, flat 4x4 fingerless square pixel hands) riding a stepped 16x16x1 glowing cyan rune sword above cubic clouds while holding an 18mm pixel jade-slip selfie cam, mid-setup before balances atop the hovering pixel rune sword above golden-white cubic cloud blocks while raising left 4x4 square block hand to greet the 0° held jade selfie lens. crisp natural daylight rim-lighting windblown silhouettes, authentic action-cam auto-exposure highlight roll-off. Crisp room/world background, clean raw camera feed, zero UI text or watermarks.",
+      "firstFramePromptZh": "9:16竖屏首帧静态锚定图，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变：棱角分明的8x8x8体素像素风仙侠剑修（直角立方头配清晰邻近采样8x8像素五官与灵动像素眼、+0.5px立体像素黑发与青玉道冠、8x12x4青白像素道袍躯干、无手指4x4平头像素方手），脚踏16x16x1阶梯像素发光青霜飞剑穿梭在方块云海之上，右臂举像素玉简呈18mm超广角自拍，处于「稳稳踩在悬浮像素符文飞剑上掠过金白方块云海，举起左侧4x4平头像素方手对着一臂外0°玉简前置镜头大声打招呼吐槽早高峰」起始构图。通透自然日光勾勒迎风轮廓，真实运动相机/手机直出自动曝光高光过渡。100%纯净无UI文字底片，零乱码弹幕，零水印。",
+      "i2vPromptEn": "[Pull out, Shake] 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening. Subject: a crisp Minecraft-style 8x8x8 cubic voxel wuxia swordsman (sharp 90-degree 1:1:1 head with unfiltered 8x8 pixel face, Fresh-Animations sliding pixel eyes, +0.5px stepped 3D pixel dark hair & cyan jade crown, 8x12x4 azure-white robe torso, flat 4x4 fingerless square pixel hands) riding a stepped 16x16x1 glowing cyan rune sword above cubic clouds while holding an 18mm pixel jade-slip selfie cam. Action: balances atop the hovering pixel rune sword above golden-white cubic cloud blocks while raising left 4x4 square block hand to greet the 0° held jade selfie lens. Eye-line: expressive 2x1 pixel eyes lock 0° into the held selfie lens. Camera physics: 18mm ultra-wide arm's-length voxel selfie POV showing cubic cloud sea below. Lighting: crisp natural daylight rim-lighting windblown silhouettes, authentic action-cam auto-exposure highlight roll-off. 9:16 vertical raw livestream camera plate, clean camera feed, zero burned-in UI text, zero scrolling comments, zero platform watermarks.",
+      "i2vPromptZh": "【HAILUO 直播视角纯净底片】9:16竖屏，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变。主体：棱角分明的8x8x8体素像素风仙侠剑修（直角立方头配清晰邻近采样8x8像素五官与灵动像素眼、+0.5px立体像素黑发与青玉道冠、8x12x4青白像素道袍躯干、无手指4x4平头像素方手），脚踏16x16x1阶梯像素发光青霜飞剑穿梭在方块云海之上，右臂举像素玉简呈18mm超广角自拍。单一动作：稳稳踩在悬浮像素符文飞剑上掠过金白方块云海，举起左侧4x4平头像素方手对着一臂外0°玉简前置镜头大声打招呼吐槽早高峰。互动眼神轴：灵动像素双眸0°直视手持玉简自拍镜头。机位反馈：18mm超广角一臂像素自拍微俯视角，完整收入脚下方块云海。补光：通透自然日光勾勒迎风轮廓，真实运动相机/手机直出自动曝光高光过渡。100%纯净无UI文字底片（严禁AI直出滚动弹幕文字、礼物按钮或平台台标水印，所有直播边框由后置HUD叠加）。",
+      "trackBFacecamPromptEn": null,
+      "trackBFacecamPromptZh": null,
+      "negativePromptEn": "human fingers, bilinear blurry textures, rounded Roblox cylindrical head, Lego studs or C-claws, smooth round metal rods, burned-in gibberish UI, floating omniscient crane camera, detached movie scene ignoring the lens, garbled AI-generated chat text, fake TikTok/Douyin/Twitch logo watermarks, microphone switching sides",
+      "negativePromptZh": "人类五指，双线性模糊贴图，圆角桶状头，乐高圆粒或C型爪，光滑圆棍道具，乱码弹幕UI，上帝视角电影摇臂空镜，角色无视镜头演戏，AI直出乱码弹幕文字，虚假平台Logo水印，麦克风跨镜头左右跳位",
+      "sfxCue": "chime",
+      "sfx": "像素风清脆提示音 + 高空呼啸风声 + 飞剑蜂鸣",
+      "caption": "御剑直播间家人们早！今天三环方块剑道又堵麻了！",
+      "chatEn": "",
+      "hudOverlay": {
+        "platform": "douyin",
+        "enabled": true,
+        "viewerCount": 14260,
+        "safeZone1080x1920": {
+          "topAvoidPx": 290,
+          "bottomAvoidPx": 580,
+          "rightAvoidPx": 148,
+          "chatWidthRatio": 0.68,
+          "chatMaxHeightRatio": 0.23
+        },
+        "activePopup": "join_toast",
+        "commentsZh": [
+          {
+            "user": "方块蜀山弟子",
+            "text": "8x8体素仙侠御剑直播？！双厨狂喜！！",
+            "lv": 17
+          },
+          {
+            "user": "像素考据党",
+            "text": "立体道冠外层皮肤配方块云海质感太正了",
+            "lv": 22
+          },
+          {
+            "user": "早八御剑人",
+            "text": "三环方块航道又堵了，师兄走高空层啊",
+            "lv": 11
+          }
+        ],
+        "commentsEn": [
+          {
+            "user": "voxel_cultivator",
+            "text": "8x8x8 Voxel Wuxia sword stream goes CRAZY",
+            "lv": 17
+          },
+          {
+            "user": "bsl_shader",
+            "text": "3D outer robe layer + cubic clouds = peak",
+            "lv": 22
+          },
+          {
+            "user": "sky_commuter",
+            "text": "sword highway traffic at 8AM again lol",
+            "lv": 11
+          }
+        ],
+        "commerceItemZh": "附魔青霜像素飞剑",
+        "commerceItemEn": "Enchanted Rune Sword",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
+        "giftZh": {
+          "sender": "星河舰长",
+          "gift": "璀璨星舰",
+          "combo": 66
+        },
+        "giftEn": {
+          "sender": "NovaPilot",
+          "gift": "Starlight Cruiser",
+          "combo": 66
+        },
+        "pkScoreRatio": 0.52,
+        "heartBurstIntensity": "normal"
+      },
+      "actors": null,
+      "props": null
+    },
+    {
+      "shotNumber": 2,
+      "role": "Proof / 下摇展示16x16x1阶梯像素飞剑",
+      "durationSec": 4,
+      "timeWindow": "3.5s–7.5s",
+      "exactTimeWindow": "3.50s–7.50s",
+      "actionEn": "tilts the held selfie cam slightly downward to showcase his pixel boots balanced on the glowing 16x16x1 stepped cyan-and-gold rune sword skimming cubic clouds",
+      "actionZh": "手腕下倾展示双脚稳稳立在16x16x1阶梯边缘自发光青金符文飞剑上，剑气划开下方层叠方块白云",
+      "eyeLineEn": "camera tilts down to show glowing pixel sword underfoot while keeping 0° eye-contact with the selfie lens",
+      "eyeLineZh": "镜头下倾实拍脚下发光像素剑身，人物稳居安全区内0°直视镜头自证",
+      "cameraEn": "Continuous handheld 18mm selfie tilt with BSL warm sunlight & emissive cyan sword glow",
+      "cameraZh": "手持前置一臂机位配合BSL暖阳轮廓光与青色方块自发光",
+      "hailuoTag": "[Tilt down]",
+      "firstFramePromptEn": "9:16 vertical static keyframe, 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening: a crisp Minecraft-style 8x8x8 cubic voxel wuxia swordsman (sharp 90-degree 1:1:1 head with unfiltered 8x8 pixel face, Fresh-Animations sliding pixel eyes, +0.5px stepped 3D pixel dark hair & cyan jade crown, 8x12x4 azure-white robe torso, flat 4x4 fingerless square pixel hands) riding a stepped 16x16x1 glowing cyan rune sword above cubic clouds while holding an 18mm pixel jade-slip selfie cam, mid-setup before tilts the held selfie cam slightly downward to showcase his pixel boots balanced on the glowing 16x16x1 stepped cyan-and-gold rune sword skimming cubic clouds. crisp natural daylight rim-lighting windblown silhouettes, authentic action-cam auto-exposure highlight roll-off. Crisp room/world background, clean raw camera feed, zero UI text or watermarks.",
+      "firstFramePromptZh": "9:16竖屏首帧静态锚定图，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变：棱角分明的8x8x8体素像素风仙侠剑修（直角立方头配清晰邻近采样8x8像素五官与灵动像素眼、+0.5px立体像素黑发与青玉道冠、8x12x4青白像素道袍躯干、无手指4x4平头像素方手），脚踏16x16x1阶梯像素发光青霜飞剑穿梭在方块云海之上，右臂举像素玉简呈18mm超广角自拍，处于「手腕下倾展示双脚稳稳立在16x16x1阶梯边缘自发光青金符文飞剑上，剑气划开下方层叠方块白云」起始构图。通透自然日光勾勒迎风轮廓，真实运动相机/手机直出自动曝光高光过渡。100%纯净无UI文字底片，零乱码弹幕，零水印。",
+      "i2vPromptEn": "[Tilt down] 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening. Subject: a crisp Minecraft-style 8x8x8 cubic voxel wuxia swordsman (sharp 90-degree 1:1:1 head with unfiltered 8x8 pixel face, Fresh-Animations sliding pixel eyes, +0.5px stepped 3D pixel dark hair & cyan jade crown, 8x12x4 azure-white robe torso, flat 4x4 fingerless square pixel hands) riding a stepped 16x16x1 glowing cyan rune sword above cubic clouds while holding an 18mm pixel jade-slip selfie cam. Action: tilts the held selfie cam slightly downward to showcase his pixel boots balanced on the glowing 16x16x1 stepped cyan-and-gold rune sword skimming cubic clouds. Eye-line: camera tilts down to show glowing pixel sword underfoot while keeping 0° eye-contact with the selfie lens. Camera physics: Continuous handheld 18mm selfie tilt with BSL warm sunlight & emissive cyan sword glow. Lighting: crisp natural daylight rim-lighting windblown silhouettes, authentic action-cam auto-exposure highlight roll-off. 9:16 vertical raw livestream camera plate, clean camera feed, zero burned-in UI text, zero scrolling comments, zero platform watermarks.",
+      "i2vPromptZh": "【HAILUO 直播视角纯净底片】9:16竖屏，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变。主体：棱角分明的8x8x8体素像素风仙侠剑修（直角立方头配清晰邻近采样8x8像素五官与灵动像素眼、+0.5px立体像素黑发与青玉道冠、8x12x4青白像素道袍躯干、无手指4x4平头像素方手），脚踏16x16x1阶梯像素发光青霜飞剑穿梭在方块云海之上，右臂举像素玉简呈18mm超广角自拍。单一动作：手腕下倾展示双脚稳稳立在16x16x1阶梯边缘自发光青金符文飞剑上，剑气划开下方层叠方块白云。互动眼神轴：镜头下倾实拍脚下发光像素剑身，人物稳居安全区内0°直视镜头自证。机位反馈：手持前置一臂机位配合BSL暖阳轮廓光与青色方块自发光。补光：通透自然日光勾勒迎风轮廓，真实运动相机/手机直出自动曝光高光过渡。100%纯净无UI文字底片（严禁AI直出滚动弹幕文字、礼物按钮或平台台标水印，所有直播边框由后置HUD叠加）。",
+      "trackBFacecamPromptEn": null,
+      "trackBFacecamPromptZh": null,
+      "negativePromptEn": "human fingers, bilinear blurry textures, rounded Roblox cylindrical head, Lego studs or C-claws, smooth round metal rods, burned-in gibberish UI, floating omniscient crane camera, detached movie scene ignoring the lens, garbled AI-generated chat text, fake TikTok/Douyin/Twitch logo watermarks, microphone switching sides",
+      "negativePromptZh": "人类五指，双线性模糊贴图，圆角桶状头，乐高圆粒或C型爪，光滑圆棍道具，乱码弹幕UI，上帝视角电影摇臂空镜，角色无视镜头演戏，AI直出乱码弹幕文字，虚假平台Logo水印，麦克风跨镜头左右跳位",
+      "sfxCue": "boing",
+      "sfx": "清越像素破空剑鸣声 + 方块气流声",
+      "caption": "新锻造的附魔青霜剑，百公里仅耗两颗绿宝石！",
+      "chatEn": "",
+      "hudOverlay": {
+        "platform": "douyin",
+        "enabled": true,
+        "viewerCount": 22080,
+        "safeZone1080x1920": {
+          "topAvoidPx": 290,
+          "bottomAvoidPx": 580,
+          "rightAvoidPx": 148,
+          "chatWidthRatio": 0.68,
+          "chatMaxHeightRatio": 0.23
+        },
+        "activePopup": "commerce_card",
+        "commentsZh": [
+          {
+            "user": "附魔铁匠",
+            "text": "16x16x1阶梯像素青霜剑自发光帅炸了！",
+            "lv": 20
+          },
+          {
+            "user": "百公里两绿宝石",
+            "text": "比坐矿车快十倍，小黄车同款飞剑已拍",
+            "lv": 15,
+            "combo": 9
+          },
+          {
+            "user": "空管预警",
+            "text": "小心右后方！有只像素丹顶鹤贴脸飞来了！",
+            "lv": 27
+          }
+        ],
+        "commentsEn": [
+          {
+            "user": "pixel_smith",
+            "text": "16x16x1 stepped cyan rune blade underfoot!!",
+            "lv": 20
+          },
+          {
+            "user": "emerald_saver",
+            "text": "2 emeralds per 100km? instant buy",
+            "lv": 15,
+            "combo": 9
+          },
+          {
+            "user": "radar_alert",
+            "text": "VOXEL SPIRIT CRANE INCOMING RIGHT SHOULDER!",
+            "lv": 27
+          }
+        ],
+        "commerceItemZh": "附魔青霜像素飞剑",
+        "commerceItemEn": "Enchanted Rune Sword",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
+        "giftZh": {
+          "sender": "星河舰长",
+          "gift": "璀璨星舰",
+          "combo": 66
+        },
+        "giftEn": {
+          "sender": "NovaPilot",
+          "gift": "Starlight Cruiser",
+          "combo": 66
+        },
+        "pkScoreRatio": 0.52,
+        "heartBurstIntensity": "normal"
+      },
+      "actors": null,
+      "props": null
+    },
+    {
+      "shotNumber": 3,
+      "role": "Twist / 体素丹顶白鹤贴脸超车抢镜",
+      "durationSec": 4,
+      "timeWindow": "7.5s–11.5s",
+      "exactTimeWindow": "7.50s–11.50s",
+      "actionEn": "a cubic voxel red-crowned white spirit crane swoops right behind the swordsman's right shoulder photobombing the selfie frame and tilting the sword 12 degrees in turbulence",
+      "actionZh": "一只立体像素风丹顶白鹤突然从剑修右肩后方贴脸超车闯入自拍画面，拍动的方块白翼卷起乱流震得飞剑倾斜12度",
+      "eyeLineEn": "spots the voxel crane in the 0° selfie screen as 8x8 pixel eyes widen in shock",
+      "eyeLineZh": "从自拍屏瞥见身后像素丹顶鹤贴脸，8x8像素眼瞬间放大震惊",
+      "cameraEn": "18mm handheld selfie frame rolling 12° with wing-gust turbulence shake",
+      "cameraZh": "18mm手持前置画面随仙鹤气流产生12°真实颠簸倾斜",
+      "hailuoTag": "[Shake, Pan left]",
+      "firstFramePromptEn": "9:16 vertical static keyframe, 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening: a crisp Minecraft-style 8x8x8 cubic voxel wuxia swordsman (sharp 90-degree 1:1:1 head with unfiltered 8x8 pixel face, Fresh-Animations sliding pixel eyes, +0.5px stepped 3D pixel dark hair & cyan jade crown, 8x12x4 azure-white robe torso, flat 4x4 fingerless square pixel hands) riding a stepped 16x16x1 glowing cyan rune sword above cubic clouds while holding an 18mm pixel jade-slip selfie cam, mid-setup before a cubic voxel red-crowned white spirit crane swoops right behind the swordsman's right shoulder photobombing the selfie frame and tilting the sword 12 degrees in turbulence. crisp natural daylight rim-lighting windblown silhouettes, authentic action-cam auto-exposure highlight roll-off. Crisp room/world background, clean raw camera feed, zero UI text or watermarks.",
+      "firstFramePromptZh": "9:16竖屏首帧静态锚定图，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变：棱角分明的8x8x8体素像素风仙侠剑修（直角立方头配清晰邻近采样8x8像素五官与灵动像素眼、+0.5px立体像素黑发与青玉道冠、8x12x4青白像素道袍躯干、无手指4x4平头像素方手），脚踏16x16x1阶梯像素发光青霜飞剑穿梭在方块云海之上，右臂举像素玉简呈18mm超广角自拍，处于「一只立体像素风丹顶白鹤突然从剑修右肩后方贴脸超车闯入自拍画面，拍动的方块白翼卷起乱流震得飞剑倾斜12度」起始构图。通透自然日光勾勒迎风轮廓，真实运动相机/手机直出自动曝光高光过渡。100%纯净无UI文字底片，零乱码弹幕，零水印。",
+      "i2vPromptEn": "[Shake, Pan left] 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening. Subject: a crisp Minecraft-style 8x8x8 cubic voxel wuxia swordsman (sharp 90-degree 1:1:1 head with unfiltered 8x8 pixel face, Fresh-Animations sliding pixel eyes, +0.5px stepped 3D pixel dark hair & cyan jade crown, 8x12x4 azure-white robe torso, flat 4x4 fingerless square pixel hands) riding a stepped 16x16x1 glowing cyan rune sword above cubic clouds while holding an 18mm pixel jade-slip selfie cam. Action: a cubic voxel red-crowned white spirit crane swoops right behind the swordsman's right shoulder photobombing the selfie frame and tilting the sword 12 degrees in turbulence. Eye-line: spots the voxel crane in the 0° selfie screen as 8x8 pixel eyes widen in shock. Camera physics: 18mm handheld selfie frame rolling 12° with wing-gust turbulence shake. Lighting: crisp natural daylight rim-lighting windblown silhouettes, authentic action-cam auto-exposure highlight roll-off. 9:16 vertical raw livestream camera plate, clean camera feed, zero burned-in UI text, zero scrolling comments, zero platform watermarks.",
+      "i2vPromptZh": "【HAILUO 直播视角纯净底片】9:16竖屏，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变。主体：棱角分明的8x8x8体素像素风仙侠剑修（直角立方头配清晰邻近采样8x8像素五官与灵动像素眼、+0.5px立体像素黑发与青玉道冠、8x12x4青白像素道袍躯干、无手指4x4平头像素方手），脚踏16x16x1阶梯像素发光青霜飞剑穿梭在方块云海之上，右臂举像素玉简呈18mm超广角自拍。单一动作：一只立体像素风丹顶白鹤突然从剑修右肩后方贴脸超车闯入自拍画面，拍动的方块白翼卷起乱流震得飞剑倾斜12度。互动眼神轴：从自拍屏瞥见身后像素丹顶鹤贴脸，8x8像素眼瞬间放大震惊。机位反馈：18mm手持前置画面随仙鹤气流产生12°真实颠簸倾斜。补光：通透自然日光勾勒迎风轮廓，真实运动相机/手机直出自动曝光高光过渡。100%纯净无UI文字底片（严禁AI直出滚动弹幕文字、礼物按钮或平台台标水印，所有直播边框由后置HUD叠加）。",
+      "trackBFacecamPromptEn": null,
+      "trackBFacecamPromptZh": null,
+      "negativePromptEn": "human fingers, bilinear blurry textures, rounded Roblox cylindrical head, Lego studs or C-claws, smooth round metal rods, burned-in gibberish UI, floating omniscient crane camera, detached movie scene ignoring the lens, garbled AI-generated chat text, fake TikTok/Douyin/Twitch logo watermarks, microphone switching sides",
+      "negativePromptZh": "人类五指，双线性模糊贴图，圆角桶状头，乐高圆粒或C型爪，光滑圆棍道具，乱码弹幕UI，上帝视角电影摇臂空镜，角色无视镜头演戏，AI直出乱码弹幕文字，虚假平台Logo水印，麦克风跨镜头左右跳位",
+      "sfxCue": "siren",
+      "sfx": "清亮鹤唳声 + 方块翅膀扑扇强风声",
+      "caption": "卧槽哪位长老放养的像素仙鹤？！超车不打转向灯啊！",
+      "chatEn": "",
+      "hudOverlay": {
+        "platform": "douyin",
+        "enabled": true,
+        "viewerCount": 48100,
+        "safeZone1080x1920": {
+          "topAvoidPx": 290,
+          "bottomAvoidPx": 580,
+          "rightAvoidPx": 148,
+          "chatWidthRatio": 0.68,
+          "chatMaxHeightRatio": 0.23
+        },
+        "activePopup": "gift_combo",
+        "commentsZh": [
+          {
+            "user": "护体罡气",
+            "text": "卧槽体素仙鹤加塞抢镜！！剑身歪了12度！",
+            "lv": 31,
+            "combo": 24
+          },
+          {
+            "user": "方块乱流",
+            "text": "像素眼睛瞬间瞪大，差点掉下云海哈哈",
+            "lv": 19
+          },
+          {
+            "user": "修真行车记录",
+            "text": "全服都看到仙鹤别停青云师兄了",
+            "lv": 28
+          }
+        ],
+        "commentsEn": [
+          {
+            "user": "wing_gust",
+            "text": "CUBIC WHITE CRANE PHOTOBOMBED THE SELFIE",
+            "lv": 31,
+            "combo": 24
+          },
+          {
+            "user": "roll_12deg",
+            "text": "that turbulence camera roll had me sweating",
+            "lv": 19
+          },
+          {
+            "user": "immortal_clip",
+            "text": "even his 8x8 pixel eyes went wide!!",
+            "lv": 28
+          }
+        ],
+        "commerceItemZh": "附魔青霜像素飞剑",
+        "commerceItemEn": "Enchanted Rune Sword",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
+        "giftZh": {
+          "sender": "星河舰长",
+          "gift": "璀璨星舰",
+          "combo": 66
+        },
+        "giftEn": {
+          "sender": "NovaPilot",
+          "gift": "Starlight Cruiser",
+          "combo": 66
+        },
+        "pkScoreRatio": 0.28,
+        "heartBurstIntensity": "high"
+      },
+      "actors": null,
+      "props": null
+    },
+    {
+      "shotNumber": 4,
+      "role": "Payoff / 像素道冠吹歪死鱼眼盯弹幕",
+      "durationSec": 3.5,
+      "timeWindow": "11.5s–15.0s",
+      "exactTimeWindow": "11.50s–15.00s",
+      "actionEn": "steadies the hovering rune sword with his 3D pixel jade hair-crown knocked crooked and stares deadpan (-_-) into the 0° selfie lens as chat spams laughs",
+      "actionZh": "重新稳住悬停像素飞剑但头顶立体青玉道冠已被吹歪，顶着歪冠切换为平面像素死鱼眼(-_-)0°凝视刷屏哈哈弹幕",
+      "eyeLineEn": "8° downward read of laughing danmaku locking into deadpan 0° pixel stare",
+      "eyeLineZh": "下瞥一眼满屏哈哈弹幕后定格0°无语像素死鱼眼",
+      "cameraEn": "Stabilized arm's-length 18mm voxel cloud-sea selfie shot",
+      "cameraZh": "恢复平稳的方块云海超广角自拍收尾",
+      "hailuoTag": "[Static shot]",
+      "firstFramePromptEn": "9:16 vertical static keyframe, 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening: a crisp Minecraft-style 8x8x8 cubic voxel wuxia swordsman (sharp 90-degree 1:1:1 head with unfiltered 8x8 pixel face, Fresh-Animations sliding pixel eyes, +0.5px stepped 3D pixel dark hair & cyan jade crown, 8x12x4 azure-white robe torso, flat 4x4 fingerless square pixel hands) riding a stepped 16x16x1 glowing cyan rune sword above cubic clouds while holding an 18mm pixel jade-slip selfie cam, mid-setup before steadies the hovering rune sword with his 3D pixel jade hair-crown knocked crooked and stares deadpan (-_-) into the 0° selfie lens as chat spams laughs. crisp natural daylight rim-lighting windblown silhouettes, authentic action-cam auto-exposure highlight roll-off. Crisp room/world background, clean raw camera feed, zero UI text or watermarks.",
+      "firstFramePromptZh": "9:16竖屏首帧静态锚定图，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变：棱角分明的8x8x8体素像素风仙侠剑修（直角立方头配清晰邻近采样8x8像素五官与灵动像素眼、+0.5px立体像素黑发与青玉道冠、8x12x4青白像素道袍躯干、无手指4x4平头像素方手），脚踏16x16x1阶梯像素发光青霜飞剑穿梭在方块云海之上，右臂举像素玉简呈18mm超广角自拍，处于「重新稳住悬停像素飞剑但头顶立体青玉道冠已被吹歪，顶着歪冠切换为平面像素死鱼眼(-_-)0°凝视刷屏哈哈弹幕」起始构图。通透自然日光勾勒迎风轮廓，真实运动相机/手机直出自动曝光高光过渡。100%纯净无UI文字底片，零乱码弹幕，零水印。",
+      "i2vPromptEn": "[Static shot] 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening. Subject: a crisp Minecraft-style 8x8x8 cubic voxel wuxia swordsman (sharp 90-degree 1:1:1 head with unfiltered 8x8 pixel face, Fresh-Animations sliding pixel eyes, +0.5px stepped 3D pixel dark hair & cyan jade crown, 8x12x4 azure-white robe torso, flat 4x4 fingerless square pixel hands) riding a stepped 16x16x1 glowing cyan rune sword above cubic clouds while holding an 18mm pixel jade-slip selfie cam. Action: steadies the hovering rune sword with his 3D pixel jade hair-crown knocked crooked and stares deadpan (-_-) into the 0° selfie lens as chat spams laughs. Eye-line: 8° downward read of laughing danmaku locking into deadpan 0° pixel stare. Camera physics: Stabilized arm's-length 18mm voxel cloud-sea selfie shot. Lighting: crisp natural daylight rim-lighting windblown silhouettes, authentic action-cam auto-exposure highlight roll-off. 9:16 vertical raw livestream camera plate, clean camera feed, zero burned-in UI text, zero scrolling comments, zero platform watermarks.",
+      "i2vPromptZh": "【HAILUO 直播视角纯净底片】9:16竖屏，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变。主体：棱角分明的8x8x8体素像素风仙侠剑修（直角立方头配清晰邻近采样8x8像素五官与灵动像素眼、+0.5px立体像素黑发与青玉道冠、8x12x4青白像素道袍躯干、无手指4x4平头像素方手），脚踏16x16x1阶梯像素发光青霜飞剑穿梭在方块云海之上，右臂举像素玉简呈18mm超广角自拍。单一动作：重新稳住悬停像素飞剑但头顶立体青玉道冠已被吹歪，顶着歪冠切换为平面像素死鱼眼(-_-)0°凝视刷屏哈哈弹幕。互动眼神轴：下瞥一眼满屏哈哈弹幕后定格0°无语像素死鱼眼。机位反馈：恢复平稳的方块云海超广角自拍收尾。补光：通透自然日光勾勒迎风轮廓，真实运动相机/手机直出自动曝光高光过渡。100%纯净无UI文字底片（严禁AI直出滚动弹幕文字、礼物按钮或平台台标水印，所有直播边框由后置HUD叠加）。",
+      "trackBFacecamPromptEn": null,
+      "trackBFacecamPromptZh": null,
+      "negativePromptEn": "human fingers, bilinear blurry textures, rounded Roblox cylindrical head, Lego studs or C-claws, smooth round metal rods, burned-in gibberish UI, floating omniscient crane camera, detached movie scene ignoring the lens, garbled AI-generated chat text, fake TikTok/Douyin/Twitch logo watermarks, microphone switching sides",
+      "negativePromptZh": "人类五指，双线性模糊贴图，圆角桶状头，乐高圆粒或C型爪，光滑圆棍道具，乱码弹幕UI，上帝视角电影摇臂空镜，角色无视镜头演戏，AI直出乱码弹幕文字，虚假平台Logo水印，麦克风跨镜头左右跳位",
+      "sfxCue": "win",
+      "sfx": "经验球清脆叮声 + 满屏礼物连击音效",
+      "caption": "刷『方块御剑科目三』的道友踢出宗门了啊！",
+      "chatEn": "",
+      "hudOverlay": {
+        "platform": "douyin",
+        "enabled": true,
+        "viewerCount": 78720,
+        "safeZone1080x1920": {
+          "topAvoidPx": 290,
+          "bottomAvoidPx": 580,
+          "rightAvoidPx": 148,
+          "chatWidthRatio": 0.68,
+          "chatMaxHeightRatio": 0.23
+        },
+        "activePopup": "gift_combo_peak",
+        "commentsZh": [
+          {
+            "user": "歪冠战神",
+            "text": "像素青玉道冠吹歪一格+死鱼眼(-_-)绝了",
+            "lv": 24,
+            "combo": 66
+          },
+          {
+            "user": "青云掌门",
+            "text": "御剑飞行期间看弹幕扣五百宗门贡献！",
+            "lv": 40
+          },
+          {
+            "user": "榜一剑仙",
+            "text": "刷艘璀璨星舰给师兄扶正道冠哈哈",
+            "lv": 35
+          }
+        ],
+        "commentsEn": [
+          {
+            "user": "crooked_crown",
+            "text": "THE TILTED PIXEL JADE CROWN + (-_-) FACE 💀",
+            "lv": 24,
+            "combo": 66
+          },
+          {
+            "user": "sect_master",
+            "text": "keep both square hands on the sword!!",
+            "lv": 40
+          },
+          {
+            "user": "NovaPilot",
+            "text": "Starlight Cruiser for the voxel swordsman",
+            "lv": 35
+          }
+        ],
+        "commerceItemZh": "附魔青霜像素飞剑",
+        "commerceItemEn": "Enchanted Rune Sword",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
+        "giftZh": {
+          "sender": "星河舰长",
+          "gift": "璀璨星舰",
+          "combo": 66
+        },
+        "giftEn": {
+          "sender": "NovaPilot",
+          "gift": "Starlight Cruiser",
+          "combo": 66
+        },
+        "pkScoreRatio": 0.14,
+        "heartBurstIntensity": "high"
+      },
+      "actors": null,
+      "props": null
+    }
+  ]
+}

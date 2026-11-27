@@ -1,24 +1,24 @@
 # Viral Livestream POV Archetypes Catalog / 八大高完播直播视角短片模板库
 
-All eight templates below are built directly into `scripts/shot_compiler.mjs --template <id>` and pre-rendered in [`examples/`](../examples/) (`5` General & Cross-Genre AI Video samples + `3` Roblox Livestream POV samples).
+All eight templates below are built directly into `scripts/shot_compiler.mjs --template <id>` and pre-rendered in HD (`720×1280` MP4 + `256`-color GIF + bilingual storyboards) in [`examples/`](../examples/) (`5` Duolingo / Open-Source Mascot / Voxel Cross-Genre samples + `3` Roblox Livestream POV samples — zero uncanny human mannequins).
 
-## Track A: General & Cross-Genre AI Video Samples (`通用写实与跨题材直播样本`)
+## Track A: Duolingo Mascot, Open-Source IP & Voxel Cross-Genre Samples (`多邻国风 · 开源吉祥物 IP · 体素跨题材样本`)
 
-1. **`irl-night-market-selfie` · 夜市超广角自拍杆试吃翻车**
-   - **Style / Rig / HUD**: `realistic-irl` · `handheld-selfie-irl` (`18mm`) · `douyin`
-   - **4-Beat Arc**: Walking neon stall boast (`0°` lens) → `20cm` palm-backed chili skewer autofocus → spicy freeze & trembling selfie arm → gulping iced lemon tea while reading `8°` laughing danmaku.
-2. **`desk-unboxing-autofocus` · 桌面带货微距开箱弹飞事故**
-   - **Style / Rig / HUD**: `realistic-irl` · `overhead-showcase-rig` (`35mm`) · `kuaishou`
-   - **4-Beat Arc**: Knuckle-tap mystery silver cube (`boom-left` locked) → `18cm` `[AF-C]` palm-backed button showcase → spring mascot pops out bumping mic & startling host back → laughing & pointing at `15°` chat monitor.
-3. **`midnight-corridor-fpv-live` · 深夜旧楼第一人称双持探险直播**
-   - **Style / Rig / HUD**: `realistic-irl` · `chest-head-pov` (`16mm`) · `instagram`
-   - **4-Beat Arc**: Dual-hand walk (left chat-phone glow + right flashlight on Room 404) → hand wave in beam proving zero strings (`Q&A` popup) → bulb flickers & door creaks open `15cm` → `180°` sprint toward green EXIT sign.
-4. **`late-night-study-webcam` · 深夜赶工固定摄像头橘猫踩键盘**
-   - **Style / Rig / HUD**: `realistic-irl` · `desktop-webcam` (`24mm`) · `x` (6-color Periscope hearts)
-   - **4-Beat Arc**: Typing + `15° → 0°` quiet thumbs-up → coffee mug toast while ginger cat ears peek behind chair (dramatic irony!) → cat leaps onto Enter key shaking webcam → synchronized human + cat `0°` deadpan stare.
-5. **`wuxia-sword-flight-live` · 仙侠御剑飞行早高峰户外直播（任意架空剧情转译示范）**
-   - **Style / Rig / HUD**: `cinematic-genre-adapt` · `handheld-selfie-irl` (`18mm` jade tablet) · `douyin`
-   - **4-Beat Arc**: Windblown cloud-sea commute rant → tilting selfie cam down to show rune-lit sword underfoot → white spirit crane photobombs shoulder causing `12°` turbulence roll → crooked hair-bun deadpan stare at chat.
+1. **`duolingo-owl-streak-cam` · 多邻国风绿鸟深夜查岗催打卡直播**
+   - **Style / Rig / HUD**: `duolingo-mascot` · `desktop-webcam` (`24mm`) · `douyin`
+   - **4-Beat Arc**: Feather-green `LingoOwl` cheerful wave (`0°` lens) → `15°` chat-read suspicious brow drop → crimson alert rim light + `365` Flame Streak Trophy close-up → instant flip back to `^_^` happy wing flaps.
+2. **`duolingo-chill-night-market` · 扁平几何酷妹夜市魔鬼辣烤串破功自拍**
+   - **Style / Rig / HUD**: `duolingo-mascot` · `handheld-selfie-irl` (`18mm`) · `douyin`
+   - **4-Beat Arc**: Deadpan violet-bob `Lila` walking rainy neon stalls → `20cm` palm-backed chili skewer autofocus → cool half-lidded eyes pop wide open + coral tomato blush → chugging giant iced lemon tea cup with grumpy glare.
+3. **`tux-ferris-code-webcam` · 开源企鹅 Tux 与 Rust 小螃蟹 Ferris 深夜敲代码上线事故**
+   - **Style / Rig / HUD**: `opensource-mascot` · `desktop-webcam` (`24mm`) · `x` (6-color Periscope hearts)
+   - **4-Beat Arc**: Linux Tux in RGB studio headphones typing → coffee toast while CC0 Rust Ferris (`#F74C00`) peeks behind mug → Ferris leaps onto glowing Enter key shaking webcam → synchronized Tux flippers-on-head + Ferris claw wave at `0°` lens.
+4. **`godot-bot-unboxing-af` · 开源蓝齿轮机器人微距托底开箱弹飞直播**
+   - **Style / Rig / HUD**: `opensource-mascot` · `overhead-showcase-rig` (`35mm`) · `kuaishou`
+   - **4-Beat Arc**: Cobalt Gear-Bot (`GodoBot`) taps silver mystery cube (`boom-left` locked) → `18cm` `[AF-C]` white mechanical palm focus lock → golden spring star rockets into boom mic (`wide_rings` LED shock) → `^_^` crescent LED laugh pointing at `15°` chat.
+5. **`voxel-wuxia-sword-live` · 8×8 体素像素风剑修御剑早高峰户外自拍**
+   - **Style / Rig / HUD**: `voxel-sandbox` · `handheld-selfie-irl` (`18mm` pixel jade slip) · `douyin`
+   - **4-Beat Arc**: Cubic cloud-sea commute rant → tilting selfie cam down to show stepped `16×16×1` glowing rune sword underfoot → cubic white Voxel Spirit Crane photobombs right shoulder (`12°` roll) → crooked pixel jade crown + `(-_-)` deadpan stare.
 
 ## Track B: Roblox Blocky Livestream Samples (`Roblox 方块小人直播视角样本`)
 

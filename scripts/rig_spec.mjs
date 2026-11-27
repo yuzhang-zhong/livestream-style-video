@@ -146,13 +146,37 @@ export const STYLE_ADAPTERS = {
     labelEn: "Canonical Roblox R6 / Chibi-Blocky Avatar Style",
     labelZh: "纯正 Roblox R6 / 盲盒方块小人直播画风",
     geometryLockEn:
-      "authentic 3D Roblox SmoothPlastic avatar: canonical 2x2x1 chamfered rectangular torso, two flush 1x2x1 rectangular leg blocks matching exact torso width (zero thigh gap), fingerless and clawless solid 1x2x1 beveled rectangular block hands, smooth studless 1:1 barrel-beveled cylindrical head, flat 2D screen-printed face decal (zero 3D nose), rigid Motor6D mechanical hinge joints, smooth studless SmoothPlastic/WoodPlanks floors and multi-part streaming props",
+      "authentic 3D Roblox SmoothPlastic avatar: canonical 2x2x1 chamfered rectangular torso, two flush 1x2x1 rectangular leg blocks matching exact torso width (zero thigh gap), fingerless and clawless solid 1x2x1 beveled rectangular block hands, smooth studless 1:1 barrel-beveled cylindrical head, sculpted 3D UGC hair/headwear, flat 2D screen-printed face decal (zero 3D nose), rigid Motor6D mechanical hinge joints, smooth studless SmoothPlastic/WoodPlanks floors and multi-part streaming props",
     geometryLockZh:
-      "纯正3D Roblox SmoothPlastic方块小人：标准2x2x1倒角长方体躯干、两条并拢同宽1x2x1方柱腿（无腿缝）、无人类五指且无乐高C型爪的1x2x1实心平头方柱手、头顶平滑无凸粒1:1桶状圆角头、纯平2D丝网印刷表情贴图（零3D鼻子凸起）、刚性Motor6D机械转轴关节、平滑无凸粒地板与多部件直播道具",
+      "纯正3D Roblox SmoothPlastic方块小人：标准2x2x1倒角长方体躯干、两条并拢同宽1x2x1方柱腿（无腿缝）、无人类五指且无乐高C型爪的1x2x1实心平头方柱手、头顶平滑无凸粒1:1桶状圆角头、立体UGC发型耳机、纯平2D丝网印刷表情贴图（零3D鼻子凸起）、刚性Motor6D机械转轴关节、平滑无凸粒地板与多部件直播道具",
     antiDriftNegativeEn:
       "human fingers, five-finger hands, Lego C-shaped claw hooks, raised circular Lego floor/head studs, Minecraft sharp 8x8x8 pixel voxel head, 3D protruding human nose, rubbery noodle limbs, official Roblox tilted-square logo, burned-in gibberish UI text",
     antiDriftNegativeZh:
       "人类五指，乐高C型夹爪手，乐高头顶与地面凸起圆颗粒，我的世界直角像素方头，3D真人鼻梁，面条状软体弯曲手臂，官方Roblox倾斜方框商标，画面内烘死的乱码弹幕UI"
+  },
+  "duolingo-mascot": {
+    labelEn: "Duolingo-Inspired Rounded Geometric Mascot & Bold Cast Style",
+    labelZh: "多邻国风高饱和圆润几何萌宠 / 扁平 3D 角色直播画风",
+    geometryLockEn:
+      "vibrant flat-shaded 3D rounded geometric mascot & bold world-character aesthetic: plump pill-and-sphere silhouette, feather-green (#58CC02) / beak-amber (#FFC800) / berry-violet (#CE82FF) matte-clay palette, oversized expressive white pill-shaped eyes with crisp pupils and thick floating geometric eyebrow bars, bouncy squash-and-stretch wing/flipper/pill-arm gestures, zero uncanny human skin pores or mannequin proportions",
+    geometryLockZh:
+      "高饱和多邻国风圆润几何萌宠与扁平3D角色美学：饱满胶囊球体几何比例、翠羽绿(#58CC02)/琥珀黄(#FFC800)/莓果紫(#CE82FF)哑光软陶质感、超大号胶囊白眼仁配灵动瞳孔与粗线条悬浮表情眉、Q弹翅膀/圆润几何短臂互动，彻底杜绝恐怖谷假人比例与写实毛孔",
+    antiDriftNegativeEn:
+      "uncanny valley mannequin face, realistic human nose/ears/pores, creepy bald plastic doll, desaturated muddy colors, sharp realistic bird feathers/talons, official trademarked brand wordmarks, burned-in gibberish UI text",
+    antiDriftNegativeZh:
+      "恐怖谷光头假人模型，写实真人鼻耳毛孔，阴暗脏污色调，写实尖锐鸟喙利爪，官方品牌字标水印，画面内烘死的乱码弹幕UI"
+  },
+  "opensource-mascot": {
+    labelEn: "Iconic Open-Source Character IPs (Linux Tux, Rust Ferris CC0, Godot Bot MIT)",
+    labelZh: "经典开源吉祥物角色 IP 直播画风（Linux 企鹅 Tux · Rust 螃蟹 Ferris · Godot 齿轮机器人）",
+    geometryLockEn:
+      "charming 3D studio-lit open-source mascot streamer: plump obsidian-and-snow Linux Tux penguin with golden beak & studio headphones, bright-tangerine (#F74C00) CC0 Rust Ferris crab with round scalloped shell & cute pincers, or cobalt-blue (#478CBF) MIT gear-head robot mascot with top cogs, glowing circular LED eyes, and segmented mouth-bar—rendered in tactile satin-matte vinyl with crisp rim light and zero uncanny humanization",
+    geometryLockZh:
+      "精致3D棚拍级开源吉祥物角色主播：圆润黑白配金黄扁嘴的戴耳机Linux企鹅Tux、活力亮橙色(#F74C00)圆壳大眼CC0开源小螃蟹Ferris，或钴蓝色(#478CBF)头顶齿轮配发光圆眼与分段嘴条的MIT开源机器人主播——哑光潮玩软胶质感配通透轮廓光，零恐怖谷人像感",
+    antiDriftNegativeEn:
+      "uncanny human skin face on animal/robot mascot, creepy mannequin head, realistic slimy crustacean legs, rusty horror metal, extra human fingers, burned-in gibberish UI text",
+    antiDriftNegativeZh:
+      "动物或机器人吉祥物长出恐怖谷真人脸，诡异假人头，写实粘液甲壳虫腿，恐怖生锈废铁，多余人类手指，画面内烘死的乱码UI"
   },
   "anime-vtuber": {
     labelEn: "2D Cel-Shaded Anime / Live2D & 3D VTuber Style",

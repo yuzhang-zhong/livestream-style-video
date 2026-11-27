@@ -81,19 +81,25 @@ def draw_heart(draw: ImageDraw.ImageDraw, cx: float, cy: float, r: float, fill_r
     draw.polygon(pts, fill=fill_rgba)
 
 
+_SCRIM_CACHE = {}
+
+
 def make_scrim(w: int, h: int, top_h: int, top_alpha: int, bot_h: int, bot_alpha: int) -> Image.Image:
-    scrim = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-    px = scrim.load()
+    key = (w, h, top_h, top_alpha, bot_h, bot_alpha)
+    if key in _SCRIM_CACHE:
+        return _SCRIM_CACHE[key]
+    strip = Image.new("RGBA", (1, h), (0, 0, 0, 0))
+    px = strip.load()
     for y in range(min(top_h, h)):
-        a = int(top_alpha * (1.0 - y / max(1, top_h)) ** 1.4)
-        for x in range(w):
-            px[x, y] = (0, 0, 0, a)
+        a = int(top_alpha * (1.0 - y / max(1, top_h)) ** 1.35)
+        px[0, y] = (0, 0, 0, a)
     for i in range(min(bot_h, h)):
         y = h - 1 - i
-        a = int(bot_alpha * (1.0 - i / max(1, bot_h)) ** 1.35)
-        for x in range(w):
-            old_a = px[x, y][3]
-            px[x, y] = (0, 0, 0, max(old_a, a))
+        a = int(bot_alpha * (1.0 - i / max(1, bot_h)) ** 1.30)
+        old_a = px[0, y][3]
+        px[0, y] = (0, 0, 0, max(old_a, a))
+    scrim = strip.resize((w, h), Image.Resampling.NEAREST)
+    _SCRIM_CACHE[key] = scrim
     return scrim
 
 
@@ -114,17 +120,17 @@ def overlay_platform_hud(
     w, h = img.size
     s = w / 360.0  # Scale relative to 360x640 reference
 
-    f_xs = load_font(max(9, int(9.5 * s)))
-    f_sm = load_font(max(10, int(11 * s)))
-    f_md = load_font(max(11, int(12.5 * s)))
-    f_lg = load_font(max(13, int(15.5 * s)))
-    f_xl = load_font(max(16, int(19 * s)))
-    f_mono = load_font(max(9, int(10 * s)), mono=True)
+    f_xs = load_font(max(10, int(10.8 * s)))
+    f_sm = load_font(max(11, int(12.2 * s)))
+    f_md = load_font(max(12, int(14.0 * s)))
+    f_lg = load_font(max(14, int(16.5 * s)))
+    f_xl = load_font(max(18, int(20.5 * s)))
+    f_mono = load_font(max(10, int(11.0 * s)), mono=True)
 
     # Composite corner PiP facecam even in clean/HUD modes when pip_img is supplied
     if pip_img is not None and rig == "pip-facecam-rig":
-        pw, ph = int(102 * s), int(136 * s)
-        pip_resized = pip_img.convert("RGBA").resize((pw, ph), Image.Resampling.BILINEAR)
+        pw, ph = int(106 * s), int(140 * s)
+        pip_resized = pip_img.convert("RGBA").resize((pw, ph), Image.Resampling.LANCZOS)
         mask = Image.new("L", (pw, ph), 0)
         ImageDraw.Draw(mask).rounded_rectangle([0, 0, pw - 1, ph - 1], radius=int(14 * s), fill=255)
         px_pos = w - pw - int(12 * s)
@@ -154,7 +160,7 @@ def overlay_platform_hud(
         return img
 
     # Scrims for WCAG contrast
-    scrim = make_scrim(w, h, int(115 * s), 125, int(245 * s), 165)
+    scrim = make_scrim(w, h, int(122 * s), 148, int(258 * s), 192)
     img = Image.alpha_composite(img, scrim)
     overlay = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     d = ImageDraw.Draw(overlay)
@@ -223,9 +229,9 @@ def overlay_platform_hud(
         )
         disp_host = fit_text_px(d, host_name, f_sm, int(88 * s))
         text_col_w = max(text_w(d, disp_host, f_sm), text_w(d, sub_txt, f_xs))
-        cap_w = min(int(196 * s), max(int(164 * s), int(38 * s) + text_col_w + fol_w + int(12 * s)))
-        cap_h = int(34 * s)
-        d.rounded_rectangle([pad_x, top_y, pad_x + cap_w, top_y + cap_h], radius=int(17 * s), fill=(0, 0, 0, 118))
+        cap_w = min(int(206 * s), max(int(170 * s), int(38 * s) + text_col_w + fol_w + int(14 * s)))
+        cap_h = int(36 * s)
+        d.rounded_rectangle([pad_x, top_y, pad_x + cap_w, top_y + cap_h], radius=int(18 * s), fill=(8, 12, 22, 176))
         av_r = int(13 * s)
         d.ellipse([pad_x + int(4 * s), top_y + int(4 * s), pad_x + int(4 * s) + av_r * 2, top_y + int(4 * s) + av_r * 2], fill=(56, 189, 248, 255))
         d.text((pad_x + int(11 * s), top_y + int(7 * s)), host_name[:1].upper(), font=f_sm, fill=(15, 23, 42, 255))
@@ -299,7 +305,7 @@ def overlay_platform_hud(
         rt_w = text_w(d, rt_str, f_mono)
         d.text((w - pad_x - rt_w - int(8 * s), bar_y + int(2 * s)), rt_str, font=f_mono, fill=(15, 23, 42, 255))
         # Clamp PK badge so it never overlaps either score number
-        badge_x = max(pad_x + int(68 * s), min(w - pad_x - int(68 * s), raw_split_x))
+        badge_x = max(pad_x + int(78 * s), min(w - pad_x - int(78 * s), raw_split_x))
         d.rounded_rectangle([badge_x - int(14 * s), bar_y - int(3 * s), badge_x + int(14 * s), bar_y + bar_h + int(3 * s)], radius=int(8 * s), fill=(250, 204, 21, 255))
         d.text((badge_x - int(8 * s), bar_y + int(1 * s)), "PK", font=f_mono, fill=(15, 23, 42, 255))
         # Vertical center seam line across the dual rooms
@@ -395,46 +401,47 @@ def overlay_platform_hud(
     chat_layer = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     cd = ImageDraw.Draw(chat_layer)
     base_chat_y = h - int(62 * s)
-    row_h = int(25 * s)
-    scroll_px = int(phase * row_h * 0.45)
+    row_h = int(27 * s)
+    scroll_px = int(phase * row_h * 0.42)
 
-    max_pill_w = w - pad_x - (int(122 * s) if active_popup == "commerce_card" and platform in ("douyin", "kuaishou", "tiktok") else int(54 * s))
+    max_pill_w = w - pad_x - (int(124 * s) if active_popup == "commerce_card" and platform in ("douyin", "kuaishou", "tiktok") else int(52 * s))
     for idx_c, c_item in enumerate(reversed(comments[:3])):
         ry = base_chat_y - (idx_c + 1) * (row_h + int(4 * s)) - scroll_px
-        fade_alpha = 245 if idx_c < 2 else int(155 * (1.0 - phase * 0.45))
+        fade_alpha = 250 if idx_c < 2 else int(195 * (1.0 - phase * 0.35))
         u_name = str(c_item.get("user", "user"))
         u_text = str(c_item.get("text", ""))
         raw_line = f"{u_name}: {u_text}"
 
         if platform == "instagram":
-            full_line = fit_text_px(cd, raw_line, f_sm, max_pill_w - int(8 * s))
-            cd.text((pad_x + 1, ry + int(5 * s) + 1), full_line, font=f_sm, fill=(0, 0, 0, int(fade_alpha * 0.85)))
-            cd.text((pad_x, ry + int(5 * s)), full_line, font=f_sm, fill=(255, 255, 255, fade_alpha))
+            full_line = fit_text_px(cd, raw_line, f_sm, max_pill_w - int(12 * s))
+            rw_ig = min(max_pill_w, text_w(cd, full_line, f_sm) + int(16 * s))
+            cd.rounded_rectangle([pad_x, ry + int(1 * s), pad_x + rw_ig, ry + row_h - int(1 * s)], radius=int(10 * s), fill=(8, 12, 22, int(fade_alpha * 0.56)))
+            cd.text((pad_x + int(8 * s), ry + int(5 * s)), full_line, font=f_sm, fill=(255, 255, 255, fade_alpha))
         elif platform == "x":
             tint = periscope_cols[idx_c % len(periscope_cols)]
-            full_line = fit_text_px(cd, raw_line, f_xs, max_pill_w - int(18 * s))
-            rw = min(max_pill_w, text_w(cd, full_line, f_xs) + int(18 * s))
-            cd.rounded_rectangle([pad_x, ry, pad_x + rw, ry + row_h], radius=int(11 * s), fill=(15, 20, 25, int(fade_alpha * 0.82)))
-            cd.rounded_rectangle([pad_x, ry + int(4 * s), pad_x + int(3.5 * s), ry + row_h - int(4 * s)], radius=int(2 * s), fill=(tint[0], tint[1], tint[2], fade_alpha))
-            cd.text((pad_x + int(9 * s), ry + int(5 * s)), full_line, font=f_xs, fill=(248, 250, 252, fade_alpha))
+            full_line = fit_text_px(cd, raw_line, f_xs, max_pill_w - int(20 * s))
+            rw = min(max_pill_w, text_w(cd, full_line, f_xs) + int(20 * s))
+            cd.rounded_rectangle([pad_x, ry, pad_x + rw, ry + row_h], radius=int(11 * s), fill=(12, 16, 24, int(fade_alpha * 0.88)))
+            cd.rounded_rectangle([pad_x, ry + int(4 * s), pad_x + int(4 * s), ry + row_h - int(4 * s)], radius=int(2 * s), fill=(tint[0], tint[1], tint[2], fade_alpha))
+            cd.text((pad_x + int(10 * s), ry + int(6 * s)), full_line, font=f_xs, fill=(248, 250, 252, fade_alpha))
         else:
             lv_str = f"Lv.{c_item.get('lv', 12)}"
             lv_w = text_w(cd, lv_str, f_xs) + int(10 * s)
             combo_val = c_item.get("combo")
             combo_tag = f"x{combo_val}" if (combo_val and platform == "kuaishou") else ""
             combo_tag_w = (text_w(cd, combo_tag, f_xs) + int(10 * s)) if combo_tag else 0
-            avail_msg_w = max(int(64 * s), max_pill_w - lv_w - combo_tag_w - int(18 * s))
+            avail_msg_w = max(int(64 * s), max_pill_w - lv_w - combo_tag_w - int(20 * s))
             fitted_msg = fit_text_px(cd, raw_line, f_xs, avail_msg_w)
             msg_w = text_w(cd, fitted_msg, f_xs)
-            rw = min(max_pill_w, lv_w + msg_w + combo_tag_w + int(18 * s))
-            cd.rounded_rectangle([pad_x, ry, pad_x + rw, ry + row_h], radius=int(10 * s), fill=(0, 0, 0, int(fade_alpha * 0.44)))
-            cd.rounded_rectangle([pad_x + int(5 * s), ry + int(4 * s), pad_x + int(5 * s) + lv_w, ry + row_h - int(4 * s)], radius=int(4 * s), fill=(pal["badge"][0], pal["badge"][1], pal["badge"][2], fade_alpha))
-            cd.text((pad_x + int(10 * s), ry + int(5 * s)), lv_str, font=f_xs, fill=(255, 255, 255, fade_alpha))
-            cd.text((pad_x + int(10 * s) + lv_w, ry + int(5 * s)), fitted_msg, font=f_xs, fill=(255, 255, 255, fade_alpha))
+            rw = min(max_pill_w, lv_w + msg_w + combo_tag_w + int(20 * s))
+            cd.rounded_rectangle([pad_x, ry, pad_x + rw, ry + row_h], radius=int(11 * s), fill=(8, 12, 22, int(fade_alpha * 0.72)))
+            cd.rounded_rectangle([pad_x + int(5 * s), ry + int(4 * s), pad_x + int(5 * s) + lv_w, ry + row_h - int(4 * s)], radius=int(5 * s), fill=(pal["badge"][0], pal["badge"][1], pal["badge"][2], fade_alpha))
+            cd.text((pad_x + int(10 * s), ry + int(6 * s)), lv_str, font=f_xs, fill=(255, 255, 255, fade_alpha))
+            cd.text((pad_x + int(11 * s) + lv_w, ry + int(6 * s)), fitted_msg, font=f_xs, fill=(255, 255, 255, fade_alpha))
             if combo_tag:
                 cx_cb = pad_x + rw - combo_tag_w - int(4 * s)
                 cd.rounded_rectangle([cx_cb, ry + int(4 * s), cx_cb + combo_tag_w, ry + row_h - int(4 * s)], radius=int(7 * s), fill=(255, 80, 0, fade_alpha))
-                cd.text((cx_cb + int(5 * s), ry + int(5 * s)), combo_tag, font=f_xs, fill=(255, 255, 255, fade_alpha))
+                cd.text((cx_cb + int(5 * s), ry + int(6 * s)), combo_tag, font=f_xs, fill=(255, 255, 255, fade_alpha))
 
     # Join toast pill just above chat stack on Shot 0 (CJK-safe symbols, zero missing emoji boxes!)
     if active_popup == "join_toast":
@@ -489,60 +496,98 @@ def overlay_platform_hud(
 
 
 def save_grid_sheet(cards, cols: int, card_w: int, card_h: int, out_path: str, title_text: str = ""):
-    pad = 18
-    header_h = 48 if title_text else 0
+    pad = 22
+    header_h = 56 if title_text else 0
+    footer_h = 50
     rows = math.ceil(len(cards) / cols)
-    total_w = pad + cols * (card_w + pad)
-    total_h = header_h + pad + rows * (card_h + 44 + pad)
-    sheet = Image.new("RGB", (total_w, total_h), (244, 246, 250))
+    total_w = pad + cols * (card_w + 8 + pad)
+    total_h = header_h + pad + rows * (card_h + footer_h + pad)
+    sheet = Image.new("RGB", (total_w, total_h), (244, 247, 252))
     d = ImageDraw.Draw(sheet)
-    f_title = load_font(20)
-    f_lbl = load_font(14)
+    f_title = load_font(23)
+    f_lbl = load_font(16)
 
     if title_text:
-        d.text((pad + 4, 14), title_text, font=f_title, fill=(15, 23, 42))
+        fitted_title = fit_text_px(d, title_text, f_title, total_w - 2 * pad - 8)
+        d.text((pad + 4, 16), fitted_title, font=f_title, fill=(15, 23, 42))
 
     for idx, item in enumerate(cards):
         r = idx // cols
         c = idx % cols
-        x0 = pad + c * (card_w + pad)
-        y0 = header_h + pad + r * (card_h + 44 + pad)
+        x0 = pad + c * (card_w + 8 + pad)
+        y0 = header_h + pad + r * (card_h + footer_h + pad)
         border_col = tuple(item.get("borderColor", [203, 213, 225]))
-        d.rounded_rectangle([x0, y0, x0 + card_w + 8, y0 + card_h + 42], radius=14, fill=(255, 255, 255), outline=border_col, width=2)
-        im = item["image"].convert("RGB").resize((card_w, card_h), Image.Resampling.BILINEAR)
+        d.rounded_rectangle([x0, y0, x0 + card_w + 8, y0 + card_h + footer_h - 2], radius=14, fill=(255, 255, 255), outline=border_col, width=3)
+        im = item["image"].convert("RGB").resize((card_w, card_h), Image.Resampling.LANCZOS)
         sheet.paste(im, (x0 + 4, y0 + 4))
         lbl = fit_text_px(d, item.get("label", ""), f_lbl, card_w - 18)
         if item.get("badgeFill"):
             bf = tuple(item["badgeFill"])
-            d.rounded_rectangle([x0 + 10, y0 + card_h + 9, x0 + card_w - 2, y0 + card_h + 36], radius=7, fill=bf)
-            d.text((x0 + 18, y0 + card_h + 13), lbl, font=f_lbl, fill=(255, 255, 255))
+            d.rounded_rectangle([x0 + 8, y0 + card_h + 10, x0 + card_w, y0 + card_h + 42], radius=8, fill=bf)
+            d.text((x0 + 16, y0 + card_h + 14), lbl, font=f_lbl, fill=(255, 255, 255))
         else:
-            d.text((x0 + 12, y0 + card_h + 13), lbl, font=f_lbl, fill=(30, 41, 59))
+            d.text((x0 + 12, y0 + card_h + 14), lbl, font=f_lbl, fill=(15, 23, 42))
 
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
     sheet.save(out_path, format="PNG", optimize=True)
 
 
+def encode_ffmpeg_palette_gif(ffmpeg_bin: str, input_pattern: str, in_fps: float, scale_w: int, scale_h: int, gif_path: str):
+    palette_path = gif_path + ".palette.png"
+    try:
+        subprocess.run(
+            [
+                ffmpeg_bin,
+                "-y",
+                "-loglevel",
+                "error",
+                "-framerate",
+                f"{in_fps:.4f}",
+                "-i",
+                input_pattern,
+                "-vf",
+                f"scale={scale_w}:{scale_h}:flags=lanczos,palettegen=max_colors=256:stats_mode=diff",
+                palette_path,
+            ],
+            check=True,
+        )
+        subprocess.run(
+            [
+                ffmpeg_bin,
+                "-y",
+                "-loglevel",
+                "error",
+                "-framerate",
+                f"{in_fps:.4f}",
+                "-i",
+                input_pattern,
+                "-i",
+                palette_path,
+                "-lavfi",
+                f"scale={scale_w}:{scale_h}:flags=lanczos[x];[x][1:v]paletteuse=dither=bayer:bayer_scale=5:diff_mode=rectangle",
+                "-loop",
+                "0",
+                gif_path,
+            ],
+            check=True,
+        )
+    finally:
+        if os.path.exists(palette_path):
+            os.remove(palette_path)
+
+
 def encode_gif_and_mp4(frame_paths, wav_path: str, in_fps: float, gif_path: str, mp4_path: str):
     os.makedirs(os.path.dirname(gif_path), exist_ok=True)
-    frames = [Image.open(fp).convert("RGB") for fp in frame_paths]
-    if frames:
-        dur_ms = max(60, int(round(1000.0 / max(1.0, in_fps))))
-        gif_frames = [f.resize((270, 480), Image.Resampling.BILINEAR).quantize(colors=128, method=Image.Quantize.MEDIANCUT) for f in frames]
-        gif_frames[0].save(
-            gif_path,
-            save_all=True,
-            append_images=gif_frames[1:],
-            duration=dur_ms,
-            loop=0,
-            optimize=True,
-        )
-
     ffmpeg_bin = shutil.which("ffmpeg")
     if ffmpeg_bin and frame_paths:
         pattern_dir = os.path.dirname(frame_paths[0])
         prefix = os.path.basename(frame_paths[0]).split("_hud_")[0]
         input_pattern = os.path.join(pattern_dir, f"{prefix}_hud_%04d.png")
+
+        # 2-pass 256-color crisp 360x640 GIF
+        encode_ffmpeg_palette_gif(ffmpeg_bin, input_pattern, in_fps, 360, 640, gif_path)
+
+        # 720x1280 HD H.264 + AAC MP4
         cmd = [
             ffmpeg_bin,
             "-y",
@@ -557,13 +602,13 @@ def encode_gif_and_mp4(frame_paths, wav_path: str, in_fps: float, gif_path: str,
             cmd += ["-i", wav_path, "-shortest", "-c:a", "aac", "-b:a", "128k"]
         cmd += [
             "-vf",
-            "scale=540:960:flags=lanczos,fps=24",
+            "scale=720:1280:flags=lanczos,fps=24",
             "-c:v",
             "libx264",
             "-preset",
             "fast",
             "-crf",
-            "22",
+            "19",
             "-pix_fmt",
             "yuv420p",
             "-movflags",
@@ -571,6 +616,14 @@ def encode_gif_and_mp4(frame_paths, wav_path: str, in_fps: float, gif_path: str,
             mp4_path,
         ]
         subprocess.run(cmd, check=True)
+        return
+
+    # Pure-Pillow fallback when ffmpeg is absent
+    frames = [Image.open(fp).convert("RGB") for fp in frame_paths]
+    if frames:
+        dur_ms = max(60, int(round(1000.0 / max(1.0, in_fps))))
+        gif_frames = [f.resize((360, 640), Image.Resampling.LANCZOS).quantize(colors=256, method=Image.Quantize.MEDIANCUT) for f in frames]
+        gif_frames[0].save(gif_path, save_all=True, append_images=gif_frames[1:], duration=dur_ms, loop=0, optimize=True)
 
 
 def main():
@@ -598,10 +651,13 @@ def main():
                 for df in t_info.get("outDefault", []):
                     shutil.copyfile(out_f, df)
 
-    # 2. Showcase Multi-Platform Chrome & Popup Atlas (5 platforms)
+    # 2. Showcase Multi-Platform Chrome & Popup Atlas (3x2 Large Readable Cards!)
     plat_atlas = manifest.get("platformAtlas")
     if plat_atlas and os.path.exists(os.path.join(raw_dir, plat_atlas["baseFile"])):
         base_plate = Image.open(os.path.join(raw_dir, plat_atlas["baseFile"]))
+        cols_p = int(plat_atlas.get("cols", 3))
+        cw_p = int(plat_atlas.get("cardW", 360))
+        ch_p = int(plat_atlas.get("cardH", 640))
         for lang in ("zh", "en"):
             cards = []
             for item in plat_atlas["items"]:
@@ -609,8 +665,8 @@ def main():
                     base_plate,
                     platform=item["platform"],
                     rig=item.get("rig", "desktop-webcam"),
-                    host_name=item.get("host", "Kaya"),
-                    cohost_name="Momo",
+                    host_name=item.get("host", "LingoOwl"),
+                    cohost_name="ClassicNoob",
                     shot_idx=item.get("shotIdx", 2),
                     phase=0.68,
                     lang=lang,
@@ -624,19 +680,22 @@ def main():
             out_f = plat_atlas["outZh"] if lang == "zh" else plat_atlas["outEn"]
             save_grid_sheet(
                 cards,
-                5,
-                252,
-                448,
+                cols_p,
+                cw_p,
+                ch_p,
                 out_f,
-                "主流直播平台边框 / 弹窗 / 飘心逆向复刻矩阵 (REA Clean-Plate + Post-HUD)" if lang == "zh"
-                else "Reconstructed Mainstream Livestream Chrome, Popups & Heart FX Matrix (REA)",
+                "主流直播间边框 / 弹窗 / 飘心逆向复刻矩阵 (3×2 高清可读大图 · REA Clean-Plate + Post-HUD)" if lang == "zh"
+                else "Reconstructed Mainstream Livestream Chrome, Popups & Heart FX Matrix (3×2 High-DPI REA)",
             )
             if lang == "en" and plat_atlas.get("outDefault"):
                 shutil.copyfile(out_f, plat_atlas["outDefault"])
 
-    # 3. Camera Rigs 6-Panel Atlas
+    # 3. Camera Rigs & Styles 6-Panel (3x2) HD Atlas
     rig_atlas = manifest.get("rigAtlas")
     if rig_atlas and all(os.path.exists(os.path.join(raw_dir, r["file"])) for r in rig_atlas["items"]):
+        cols_r = int(rig_atlas.get("cols", 3))
+        cw_r = int(rig_atlas.get("cardW", 360))
+        ch_r = int(rig_atlas.get("cardH", 640))
         for lang in ("zh", "en"):
             cards = []
             for r in rig_atlas["items"]:
@@ -646,8 +705,8 @@ def main():
                     raw_im,
                     platform=r.get("platform", "douyin"),
                     rig=r["rig"],
-                    host_name=r.get("host", "Alex"),
-                    cohost_name="Noob",
+                    host_name=r.get("host", "LingoOwl"),
+                    cohost_name="ClassicNoob",
                     shot_idx=r.get("shotIdx", 1),
                     phase=0.6,
                     lang=lang,
@@ -658,12 +717,12 @@ def main():
             out_f = rig_atlas["outZh"] if lang == "zh" else rig_atlas["outEn"]
             save_grid_sheet(
                 cards,
-                3,
-                270,
-                480,
+                cols_r,
+                cw_r,
+                ch_r,
                 out_f,
-                "六大核心直播机位光学与跨画风样本 (写实 IRL + 架空仙侠 + Roblox)" if lang == "zh"
-                else "Six Core Livestream Camera Rigs Across Styles (Realistic IRL, Wuxia & Roblox)",
+                "六大直播机位 × 跨画风角色样本 (Duolingo 萌系 · 开源吉祥物 Tux/Ferris/Godot · 8x8体素 · Roblox)" if lang == "zh"
+                else "Six Core Livestream Rigs Across Stylized & Open-Source Casts (Duolingo, Tux/Ferris/Godot, Voxel & Roblox)",
             )
             if lang == "en" and rig_atlas.get("outDefault"):
                 shutil.copyfile(out_f, rig_atlas["outDefault"])
@@ -679,9 +738,9 @@ def main():
                     raw_im = overlay_platform_hud(
                         raw_im,
                         platform=p["postHudPlatform"],
-                        rig="handheld-selfie-irl",
-                        host_name="Lin",
-                        cohost_name="Momo",
+                        rig="desktop-webcam",
+                        host_name="LingoOwl",
+                        cohost_name="ClassicNoob",
                         shot_idx=2,
                         phase=0.65,
                         lang=lang,
@@ -697,34 +756,33 @@ def main():
             save_grid_sheet(
                 cards,
                 4,
-                270,
-                480,
+                324,
+                576,
                 out_f,
-                "防跑偏对比：拒绝第三人称空镜与AI乱码UI -> 纯净底片 + 后置高清直播HUD" if lang == "zh"
-                else "Anti-Drift Guard: Block 3rd-Person Drift & Gibberish AI UI -> Clean Plate + Post-HUD",
+                "防跑偏四宫格对比：拒绝第三人称摇臂与AI乱码弹幕 -> 纯净镜头底片 + 后置高清直播HUD" if lang == "zh"
+                else "Anti-Drift Guard: Block 3rd-Person Drift & Gibberish AI UI -> Clean Plate + Crisp Post-HUD",
             )
             if lang == "en" and drift_info.get("outDefault"):
                 shutil.copyfile(out_f, drift_info["outDefault"])
 
-    # 5. Episode Cases (4-Shot Contact Sheets + Animated HUD Frames + GIF + MP4)
+    # 5. Episode Cases (4-Shot HD Contact Sheets + 540x960 Vector HUD Anim Frames + 256c GIF + 720p MP4)
     reel_sources = []
     for case in manifest.get("cases", []):
         prefix = case["prefix"]
         platform = case.get("platform", "douyin")
         rig = case.get("rig", "desktop-webcam")
-        host_name = case.get("host", "Alex")
-        cohost_name = case.get("cohost", "Momo")
-        style = case.get("style", "realistic-irl")
+        host_name = case.get("host", "LingoOwl")
+        cohost_name = case.get("cohost", "ClassicNoob")
+        style = case.get("style", "duolingo-mascot")
         shots = case["shots"]
 
-        # Contact sheets (.zh.png and .en.png) + individual shot keyframes
         for lang in ("zh", "en"):
             cards = []
             for s_idx, sh in enumerate(shots):
                 raw_shot_path = os.path.join(raw_dir, f"{prefix}_shot_{s_idx}.png")
                 if not os.path.exists(raw_shot_path):
                     continue
-                raw_im = Image.open(raw_shot_path)
+                raw_im = Image.open(raw_shot_path).resize((540, 960), Image.Resampling.LANCZOS)
                 pip_shot_path = os.path.join(raw_dir, f"{prefix}_pip_shot_{s_idx}.png")
                 pip_im = Image.open(pip_shot_path) if os.path.exists(pip_shot_path) else None
                 meta = dict(sh.get("hudMeta") or {})
@@ -753,11 +811,11 @@ def main():
             if cards:
                 cols = 4 if len(cards) == 4 else min(4, len(cards))
                 out_sheet = case["sheetZh"] if lang == "zh" else case["sheetEn"]
-                save_grid_sheet(cards, cols, 270, 480, out_sheet, case.get("titleZh" if lang == "zh" else "titleEn", ""))
+                save_grid_sheet(cards, cols, 324, 576, out_sheet, case.get("titleZh" if lang == "zh" else "titleEn", ""))
                 if lang == "en" and case.get("sheetDefault"):
                     shutil.copyfile(out_sheet, case["sheetDefault"])
 
-        # Composite HUD onto animation frames
+        # Composite vector HUD at 540x960 so all fonts & badges stay razor-sharp in GIF & 720p MP4!
         hud_frame_paths = []
         frame_cursor = 0
         for s_idx, sh in enumerate(shots):
@@ -771,7 +829,7 @@ def main():
                     frame_cursor += 1
                     continue
                 pip_anim = os.path.join(raw_dir, f"{prefix}_pip_anim_{frame_cursor:04d}.png")
-                raw_im = Image.open(raw_anim)
+                raw_im = Image.open(raw_anim).resize((540, 960), Image.Resampling.LANCZOS)
                 pip_im = Image.open(pip_anim) if os.path.exists(pip_anim) else None
                 phase = (f_local + 0.5) / max(1, f_count)
                 comp = overlay_platform_hud(
@@ -802,37 +860,33 @@ def main():
             if case.get("includeInHeroReel"):
                 reel_sources.append((case.get("reelLabel", prefix), hud_frame_paths, case.get("wavPath", ""), float(case.get("inFps", 3.2))))
 
-    # 6. 4-Up Synchronized Hero Showcase Reel (GIF + MP4)
+    # 6. 4-Up Synchronized HD Hero Showcase Reel (1120x548 256-Color GIF + H.264 MP4)
     hero_reel = manifest.get("heroReel")
     if hero_reel and len(reel_sources) >= 4:
         selected = reel_sources[:4]
         min_len = min(len(item[1]) for item in selected)
         reel_frame_paths = []
-        f_hdr = load_font(13)
+        f_hdr = load_font(15)
         for fi in range(min_len):
-            canvas = Image.new("RGB", (948, 456), (11, 15, 25))
+            canvas = Image.new("RGB", (1120, 548), (11, 15, 25))
             cd = ImageDraw.Draw(canvas)
             for ci, (lbl, fpaths, _, _) in enumerate(selected):
-                x0 = 12 + ci * 234
-                y0 = 10
-                im = Image.open(fpaths[fi]).convert("RGB").resize((222, 395), Image.Resampling.BILINEAR)
-                cd.rounded_rectangle([x0 - 2, y0 - 2, x0 + 224, y0 + 436], radius=12, fill=(30, 41, 59), outline=(51, 65, 85))
+                x0 = 14 + ci * 276
+                y0 = 12
+                im = Image.open(fpaths[fi]).convert("RGB").resize((264, 469), Image.Resampling.LANCZOS)
+                cd.rounded_rectangle([x0 - 3, y0 - 3, x0 + 267, y0 + 524], radius=14, fill=(24, 34, 52), outline=(71, 85, 105), width=2)
                 canvas.paste(im, (x0, y0))
-                cd.text((x0 + 8, y0 + 406), lbl[:24], font=f_hdr, fill=(226, 232, 240))
+                cd.text((x0 + 10, y0 + 484), lbl[:26], font=f_hdr, fill=(241, 245, 249))
             rfp = os.path.join(raw_dir, f"hero_reel_hud_{fi:04d}.png")
             canvas.save(rfp, format="PNG")
             reel_frame_paths.append(rfp)
 
-        # Save GIF directly at 948x456
-        frames_rgb = [Image.open(p).convert("RGB") for p in reel_frame_paths]
         in_fps_reel = selected[0][3]
-        dur_ms = max(70, int(round(1000.0 / max(1.0, in_fps_reel))))
         os.makedirs(os.path.dirname(hero_reel["gifPath"]), exist_ok=True)
-        q_frames = [fr.quantize(colors=128, method=Image.Quantize.MEDIANCUT) for fr in frames_rgb]
-        q_frames[0].save(hero_reel["gifPath"], save_all=True, append_images=q_frames[1:], duration=dur_ms, loop=0, optimize=True)
-
         ffmpeg_bin = shutil.which("ffmpeg")
         if ffmpeg_bin:
+            hero_pattern = os.path.join(raw_dir, "hero_reel_hud_%04d.png")
+            encode_ffmpeg_palette_gif(ffmpeg_bin, hero_pattern, in_fps_reel, 1120, 548, hero_reel["gifPath"])
             cmd = [
                 ffmpeg_bin,
                 "-y",
@@ -841,19 +895,19 @@ def main():
                 "-framerate",
                 f"{in_fps_reel:.4f}",
                 "-i",
-                os.path.join(raw_dir, "hero_reel_hud_%04d.png"),
+                hero_pattern,
             ]
             if selected[0][2] and os.path.exists(selected[0][2]):
                 cmd += ["-i", selected[0][2], "-shortest", "-c:a", "aac", "-b:a", "128k"]
             cmd += [
                 "-vf",
-                "fps=24,scale=948:456:flags=lanczos",
+                "fps=24,scale=1120:548:flags=lanczos",
                 "-c:v",
                 "libx264",
                 "-preset",
                 "fast",
                 "-crf",
-                "22",
+                "19",
                 "-pix_fmt",
                 "yuv420p",
                 "-movflags",
@@ -861,6 +915,11 @@ def main():
                 hero_reel["mp4Path"],
             ]
             subprocess.run(cmd, check=True)
+        else:
+            frames_rgb = [Image.open(p).convert("RGB") for p in reel_frame_paths]
+            dur_ms = max(70, int(round(1000.0 / max(1.0, in_fps_reel))))
+            q_frames = [fr.quantize(colors=256, method=Image.Quantize.MEDIANCUT) for fr in frames_rgb]
+            q_frames[0].save(hero_reel["gifPath"], save_all=True, append_images=q_frames[1:], duration=dur_ms, loop=0, optimize=True)
 
 
 if __name__ == "__main__":

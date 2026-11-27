@@ -4,12 +4,12 @@
 
 | 9:16 Animated Preview (Post-HUD) | 4-Shot Storyboard Contact Sheet |
 | :---: | :---: |
-| <a href="assets/roblox_pet_hatch_pk.mp4"><img src="assets/roblox_pet_hatch_pk.gif" width="185" alt="Roblox Dual-Host PK Split-Screen Mystery Egg Hatch (Pro vs Noob) 9:16 preview" /></a> | <img src="assets/storyboard_sheet.zh.png" width="540" alt="Roblox Dual-Host PK Split-Screen Mystery Egg Hatch (Pro vs Noob) 4-shot contact sheet" /> |
+| <a href="assets/roblox_pet_hatch_pk.mp4"><img src="assets/roblox_pet_hatch_pk.gif" width="210" alt="Roblox Dual-Host PK Split-Screen Mystery Egg Hatch (Pro vs Noob) 9:16 preview" /></a> | <img src="assets/storyboard_sheet.zh.png" width="560" alt="Roblox Dual-Host PK Split-Screen Mystery Egg Hatch (Pro vs Noob) 4-shot contact sheet" /> |
 
 ## Package contents
 
-- [`assets/roblox_pet_hatch_pk.mp4`](assets/roblox_pet_hatch_pk.mp4): offline 9:16 preview video (`H.264 MP4 + synthesized live audio + kuaishou HUD`)
-- [`assets/storyboard_sheet.zh.png`](assets/storyboard_sheet.zh.png) · [`en`](assets/storyboard_sheet.en.png): Chinese and English 4-shot contact sheets
+- [`assets/roblox_pet_hatch_pk.mp4`](assets/roblox_pet_hatch_pk.mp4): offline 720p `9:16` preview video (`H.264 MP4 + synthesized live audio + kuaishou HUD`)
+- [`assets/storyboard_sheet.zh.png`](assets/storyboard_sheet.zh.png) · [`en`](assets/storyboard_sheet.en.png): Chinese and English HD 4-shot contact sheets
 - [`rig_card.md`](rig_card.md): Camera Rig (`pk-cohost-split`) + Style (`roblox-blocky`) DNA card and 3-state setup anchor prompt
 - [`storyboard.md`](storyboard.md) · [`prompts.json`](prompts.json): Clean-Plate first-frame & `kling` motion prompts + Post-HUD popup timeline
 - [`drift_report.md`](drift_report.md): 8-gate anti-drift verification report (**PASS**)

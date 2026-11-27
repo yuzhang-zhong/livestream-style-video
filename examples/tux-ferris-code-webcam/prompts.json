@@ -1,0 +1,390 @@
+{
+  "slug": "tux_ferris_code_webcam",
+  "titleEn": "Open-Source Mascot Deploy Stream: Linux Tux & Rust Ferris Crab",
+  "titleZh": "开源吉祥物深夜敲代码直播：Linux 企鹅 Tux 与 Rust 螃蟹踩回车（开源 IP）",
+  "category": "mascot-and-opensource-ip",
+  "engine": "wan",
+  "engineLabel": "Wan 2.6 14B I2V/T2V Clean-Plate",
+  "style": "opensource-mascot",
+  "rig": "desktop-webcam",
+  "lighting": "warm-desk-lamp",
+  "platform": "x",
+  "platformLabelEn": "X / Periscope Dark Glass & 6-Color Heart Fountain HUD",
+  "platformLabelZh": "X / Periscope 极夜多彩飘心风格 (X Live)",
+  "aspect": "9:16",
+  "durationSeconds": 15,
+  "shotCount": 4,
+  "host": "@tux_kernel",
+  "cohost": "Momo",
+  "backdrop": "study_room",
+  "dualTrackNoteEn": "Single-Track Clean Plate: Generate raw camera feed first, then composite optional LIVE badge and scrolling chat HUD cleanly.",
+  "dualTrackNoteZh": "单轨纯净底片原则：先生成无任何文字涂层的纯净镜头画面，后置叠加高清直播间角标与滚动弹幕。",
+  "setupAnchorPromptEn": "9:16 Livestream Setup Reference Sheet (3-panel consistency anchor for host \"@tux_kernel\"): Panel 1 [0° Primary Live Frame]: 24mm–28mm webcam optics, 5–8° slight downward monitor-top angle, deep f/4.5 room focus, charming 3D studio-lit open-source mascot streamer: plump obsidian-and-snow Linux Tux penguin with golden beak & studio headphones, bright-tangerine (#F74C00) CC0 Rust Ferris crab with round scalloped shell & cute pincers, or cobalt-blue (#478CBF) MIT gear-head robot mascot with top cogs, glowing circular LED eyes, and segmented mouth-bar—rendered in tactile satin-matte vinyl with crisp rim light and zero uncanny humanization, matte-black condenser boom microphone arm entering cleanly from the lower-left edge with foam pop filter (locked to screen-left across all shots), warm 3000K architectural desk lamp pool paired with cool 6500K monitor screen glow across keyboard and hands, quiet cozy late-night room atmosphere, direct eye-contact into the lens as if greeting live chat; Panel 2 [15° Chat-Read Glance]: exact same room, outfit, and mic position, eyes flicked 15 degrees off-axis reading a glowing secondary chat monitor with subtle smile; Panel 3 [Rig & Optical Side Diagram]: clean side-view showing camera mount distance, ring-light placement, and room background props. Clean raw camera feed, zero burned-in UI text, zero platform watermarks.",
+  "setupAnchorPromptZh": "9:16 直播间跨镜头一致性三态锚定参考卡（主播「@tux_kernel」）：左格【0°主镜头直视态】：24mm–28mm广角桌面摄像头光学，显示器顶端5°–8°微俯拍，f/4.5清晰房间景深（不虚化死背景），精致3D棚拍级开源吉祥物角色主播：圆润黑白配金黄扁嘴的戴耳机Linux企鹅Tux、活力亮橙色(#F74C00)圆壳大眼CC0开源小螃蟹Ferris，或钴蓝色(#478CBF)头顶齿轮配发光圆眼与分段嘴条的MIT开源机器人主播——哑光潮玩软胶质感配通透轮廓光，零恐怖谷人像感，哑光黑悬臂电容麦克风配防喷棉从画面左下角伸入（全片跨镜头严格锁死左侧，严禁左右乱跳），3000K暖黄台灯光晕搭配6500K显示器冷蓝屏幕光洒在键盘与手部，静谧深夜陪伴直播氛围，眼神0°直视镜头向直播间观众打招呼；中格【15°偏轴读弹幕态】：完全相同的房间陈设、穿搭与麦克风左右位置，视线偏转15°扫向副屏弹幕并露出实时反应；右格【机位与补光侧视锚点】：清晰交代摄像头架设距离、环形灯/霓虹光源方位与背景固定摆件。画面保持100%纯净无UI文字底片，零平台水印、零乱码弹幕。",
+  "shots": [
+    {
+      "shotNumber": 1,
+      "role": "Hook / 企鹅Tux深夜敲内核读弹幕",
+      "durationSec": 3.5,
+      "timeWindow": "0.0s–3.5s",
+      "exactTimeWindow": "0.00s–3.50s",
+      "actionEn": "Tux types briskly on the glowing RGB mechanical keyboard with both black flippers, glances 15° right at chat, and gives a cheerful flipper salute to the 0° monitor-top webcam",
+      "actionZh": "戴耳机的企鹅Tux双翅飞快敲击RGB背光机械键盘，眼神偏15°扫过一条弹幕后，对着显示器上方0°摄像头帅气拍翅敬礼",
+      "eyeLineEn": "15° chat-monitor read shifting cleanly to bright 0° webcam eye-contact",
+      "eyeLineZh": "15°扫副屏弹幕后切回0°主摄像头圆环眼神光对视",
+      "cameraEn": "Locked 24mm monitor-top webcam at 6° downward tilt, cyan shelf rim-light behind",
+      "cameraZh": "锁死在显示器顶端的24mm广角摄像头，背景书架透出极客青色灯带",
+      "hailuoTag": "[Static shot]",
+      "firstFramePromptEn": "9:16 vertical static keyframe, 24mm–28mm webcam optics, 5–8° slight downward monitor-top angle, deep f/4.5 room focus: plump satin-matte Linux Tux penguin mascot (glossy obsidian-black feathers, crisp snow-white belly, golden-orange contoured beak, purple-cyan RGB studio headphones) seated at a warm-lit developer desk with a recessed-keycap RGB mechanical keyboard, accompanied by CC0 bright-tangerine (#F74C00) Rust Ferris the Crab, mid-setup before Tux types briskly on the glowing RGB mechanical keyboard with both black flippers, glances 15° right at chat, and gives a cheerful flipper salute to the 0° monitor-top webcam. warm 3000K architectural desk lamp pool paired with cool 6500K monitor screen glow across keyboard and hands, quiet cozy late-night room atmosphere. Crisp room/world background, clean raw camera feed, zero UI text or watermarks.",
+      "firstFramePromptZh": "9:16竖屏首帧静态锚定图，24mm–28mm广角桌面摄像头光学，显示器顶端5°–8°微俯拍，f/4.5清晰房间景深（不虚化死背景）：圆润呆萌的开源Linux企鹅Tux主播（曜石黑羽绒配雪白圆肚皮、金黄立体扁嘴、头戴紫青双色RGB监听大耳机）坐在摆着背光机械键盘与双联代码屏的深夜书桌前，身旁藏着亮橙色(#F74C00)CC0开源吉祥物Rust小螃蟹Ferris，处于「戴耳机的企鹅Tux双翅飞快敲击RGB背光机械键盘，眼神偏15°扫过一条弹幕后，对着显示器上方0°摄像头帅气拍翅敬礼」起始构图。3000K暖黄台灯光晕搭配6500K显示器冷蓝屏幕光洒在键盘与手部，静谧深夜陪伴直播氛围。100%纯净无UI文字底片，零乱码弹幕，零水印。",
+      "i2vPromptEn": "24mm–28mm webcam optics, 5–8° slight downward monitor-top angle, deep f/4.5 room focus. Subject: plump satin-matte Linux Tux penguin mascot (glossy obsidian-black feathers, crisp snow-white belly, golden-orange contoured beak, purple-cyan RGB studio headphones) seated at a warm-lit developer desk with a recessed-keycap RGB mechanical keyboard, accompanied by CC0 bright-tangerine (#F74C00) Rust Ferris the Crab. Action: Tux types briskly on the glowing RGB mechanical keyboard with both black flippers, glances 15° right at chat, and gives a cheerful flipper salute to the 0° monitor-top webcam. Eye-line: 15° chat-monitor read shifting cleanly to bright 0° webcam eye-contact. Camera physics: Locked 24mm monitor-top webcam at 6° downward tilt, cyan shelf rim-light behind. Lighting: warm 3000K architectural desk lamp pool paired with cool 6500K monitor screen glow across keyboard and hands, quiet cozy late-night room atmosphere. 9:16 vertical raw livestream camera plate, clean camera feed, zero burned-in UI text, zero scrolling comments, zero platform watermarks.",
+      "i2vPromptZh": "【万相2.6竖屏直播底片】9:16竖屏，24mm–28mm广角桌面摄像头光学，显示器顶端5°–8°微俯拍，f/4.5清晰房间景深（不虚化死背景）。主体：圆润呆萌的开源Linux企鹅Tux主播（曜石黑羽绒配雪白圆肚皮、金黄立体扁嘴、头戴紫青双色RGB监听大耳机）坐在摆着背光机械键盘与双联代码屏的深夜书桌前，身旁藏着亮橙色(#F74C00)CC0开源吉祥物Rust小螃蟹Ferris。单一动作：戴耳机的企鹅Tux双翅飞快敲击RGB背光机械键盘，眼神偏15°扫过一条弹幕后，对着显示器上方0°摄像头帅气拍翅敬礼。互动眼神轴：15°扫副屏弹幕后切回0°主摄像头圆环眼神光对视。机位反馈：锁死在显示器顶端的24mm广角摄像头，背景书架透出极客青色灯带。补光：3000K暖黄台灯光晕搭配6500K显示器冷蓝屏幕光洒在键盘与手部，静谧深夜陪伴直播氛围。100%纯净无UI文字底片（严禁AI直出滚动弹幕文字、礼物按钮或平台台标水印，所有直播边框由后置HUD叠加）。",
+      "trackBFacecamPromptEn": null,
+      "trackBFacecamPromptZh": null,
+      "negativePromptEn": "uncanny human skin face on animal/robot mascot, creepy mannequin head, realistic slimy crustacean legs, rusty horror metal, extra human fingers, burned-in gibberish UI text, floating omniscient crane camera, detached movie scene ignoring the lens, garbled AI-generated chat text, fake TikTok/Douyin/Twitch logo watermarks, microphone switching sides",
+      "negativePromptZh": "动物或机器人吉祥物长出恐怖谷真人脸，诡异假人头，写实粘液甲壳虫腿，恐怖生锈废铁，多余人类手指，画面内烘死的乱码UI，上帝视角电影摇臂空镜，角色无视镜头演戏，AI直出乱码弹幕文字，虚假平台Logo水印，麦克风跨镜头左右跳位",
+      "sfxCue": "clack",
+      "sfx": "清脆青轴机械键盘麻将音 + 深夜主机低鸣",
+      "caption": "2:00 AM kernel stream — running final checks before Friday freeze",
+      "chatEn": "",
+      "hudOverlay": {
+        "platform": "x",
+        "enabled": true,
+        "viewerCount": 14260,
+        "safeZone1080x1920": {
+          "topAvoidPx": 220,
+          "bottomAvoidPx": 490,
+          "rightAvoidPx": 140,
+          "chatWidthRatio": 0.68,
+          "chatMaxHeightRatio": 0.21
+        },
+        "activePopup": "join_toast",
+        "commentsZh": [
+          {
+            "user": "内核守夜人",
+            "text": "戴大耳机的Linux企鹅Tux敲键盘太萌了！",
+            "lv": 14
+          },
+          {
+            "user": "青轴发烧友",
+            "text": "小黑翅拍机械键盘这麻将音绝了",
+            "lv": 19
+          },
+          {
+            "user": "周五不发版",
+            "text": "记住铁律：周五凌晨绝不碰生产分支",
+            "lv": 23
+          }
+        ],
+        "commentsEn": [
+          {
+            "user": "@kernel_hacker",
+            "text": "Tux in RGB headphones typing is peak cozy",
+            "lv": 14
+          },
+          {
+            "user": "@thock_keys",
+            "text": "flipper WPM is unironically 140+",
+            "lv": 19
+          },
+          {
+            "user": "@sre_oncall",
+            "text": "rule #1: never deploy on Friday 2AM",
+            "lv": 23
+          }
+        ],
+        "commerceItemZh": "1号福利链接",
+        "commerceItemEn": "Link #1 Deal",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
+        "giftZh": {
+          "sender": "@dev_pulse",
+          "gift": "Super Heart Boost",
+          "combo": 12
+        },
+        "giftEn": {
+          "sender": "@dev_pulse",
+          "gift": "Super Heart Boost",
+          "combo": 12
+        },
+        "pkScoreRatio": 0.52,
+        "heartBurstIntensity": "normal"
+      },
+      "actors": null,
+      "props": null
+    },
+    {
+      "shotNumber": 2,
+      "role": "Proof / 企鹅举马克杯·小螃蟹偷探头",
+      "durationSec": 4,
+      "timeWindow": "3.5s–7.5s",
+      "exactTimeWindow": "3.50s–7.50s",
+      "actionEn": "Tux lifts a white coffee mug toward the 0° webcam in a sleepy toast while bright-orange Rust Ferris the Crab quietly pops its stalk-eyes and cute claws up beside the mug",
+      "actionZh": "企鹅Tux举起白色咖啡马克杯朝0°镜头隔空干杯，而书桌右侧亮橙色小螃蟹Ferris悄悄探出两只圆眼睛与小钳子（弹幕疯狂预警）",
+      "eyeLineEn": "Tux looks 0° at webcam unaware as Ferris's glossy eyes peek at the glowing Enter key",
+      "eyeLineZh": "Tux看0°镜头浑然不觉，小螃蟹Ferris圆眼直勾勾盯上发光回车键",
+      "cameraEn": "Identical locked 24mm monitor-top webcam framing",
+      "cameraZh": "完全一致的24mm固定显示器机位展现戏剧反差",
+      "hailuoTag": "[Static shot]",
+      "firstFramePromptEn": "9:16 vertical static keyframe, 24mm–28mm webcam optics, 5–8° slight downward monitor-top angle, deep f/4.5 room focus: plump satin-matte Linux Tux penguin mascot (glossy obsidian-black feathers, crisp snow-white belly, golden-orange contoured beak, purple-cyan RGB studio headphones) seated at a warm-lit developer desk with a recessed-keycap RGB mechanical keyboard, accompanied by CC0 bright-tangerine (#F74C00) Rust Ferris the Crab, mid-setup before Tux lifts a white coffee mug toward the 0° webcam in a sleepy toast while bright-orange Rust Ferris the Crab quietly pops its stalk-eyes and cute claws up beside the mug. warm 3000K architectural desk lamp pool paired with cool 6500K monitor screen glow across keyboard and hands, quiet cozy late-night room atmosphere. Crisp room/world background, clean raw camera feed, zero UI text or watermarks.",
+      "firstFramePromptZh": "9:16竖屏首帧静态锚定图，24mm–28mm广角桌面摄像头光学，显示器顶端5°–8°微俯拍，f/4.5清晰房间景深（不虚化死背景）：圆润呆萌的开源Linux企鹅Tux主播（曜石黑羽绒配雪白圆肚皮、金黄立体扁嘴、头戴紫青双色RGB监听大耳机）坐在摆着背光机械键盘与双联代码屏的深夜书桌前，身旁藏着亮橙色(#F74C00)CC0开源吉祥物Rust小螃蟹Ferris，处于「企鹅Tux举起白色咖啡马克杯朝0°镜头隔空干杯，而书桌右侧亮橙色小螃蟹Ferris悄悄探出两只圆眼睛与小钳子（弹幕疯狂预警）」起始构图。3000K暖黄台灯光晕搭配6500K显示器冷蓝屏幕光洒在键盘与手部，静谧深夜陪伴直播氛围。100%纯净无UI文字底片，零乱码弹幕，零水印。",
+      "i2vPromptEn": "24mm–28mm webcam optics, 5–8° slight downward monitor-top angle, deep f/4.5 room focus. Subject: plump satin-matte Linux Tux penguin mascot (glossy obsidian-black feathers, crisp snow-white belly, golden-orange contoured beak, purple-cyan RGB studio headphones) seated at a warm-lit developer desk with a recessed-keycap RGB mechanical keyboard, accompanied by CC0 bright-tangerine (#F74C00) Rust Ferris the Crab. Action: Tux lifts a white coffee mug toward the 0° webcam in a sleepy toast while bright-orange Rust Ferris the Crab quietly pops its stalk-eyes and cute claws up beside the mug. Eye-line: Tux looks 0° at webcam unaware as Ferris's glossy eyes peek at the glowing Enter key. Camera physics: Identical locked 24mm monitor-top webcam framing. Lighting: warm 3000K architectural desk lamp pool paired with cool 6500K monitor screen glow across keyboard and hands, quiet cozy late-night room atmosphere. 9:16 vertical raw livestream camera plate, clean camera feed, zero burned-in UI text, zero scrolling comments, zero platform watermarks.",
+      "i2vPromptZh": "【万相2.6竖屏直播底片】9:16竖屏，24mm–28mm广角桌面摄像头光学，显示器顶端5°–8°微俯拍，f/4.5清晰房间景深（不虚化死背景）。主体：圆润呆萌的开源Linux企鹅Tux主播（曜石黑羽绒配雪白圆肚皮、金黄立体扁嘴、头戴紫青双色RGB监听大耳机）坐在摆着背光机械键盘与双联代码屏的深夜书桌前，身旁藏着亮橙色(#F74C00)CC0开源吉祥物Rust小螃蟹Ferris。单一动作：企鹅Tux举起白色咖啡马克杯朝0°镜头隔空干杯，而书桌右侧亮橙色小螃蟹Ferris悄悄探出两只圆眼睛与小钳子（弹幕疯狂预警）。互动眼神轴：Tux看0°镜头浑然不觉，小螃蟹Ferris圆眼直勾勾盯上发光回车键。机位反馈：完全一致的24mm固定显示器机位展现戏剧反差。补光：3000K暖黄台灯光晕搭配6500K显示器冷蓝屏幕光洒在键盘与手部，静谧深夜陪伴直播氛围。100%纯净无UI文字底片（严禁AI直出滚动弹幕文字、礼物按钮或平台台标水印，所有直播边框由后置HUD叠加）。",
+      "trackBFacecamPromptEn": null,
+      "trackBFacecamPromptZh": null,
+      "negativePromptEn": "uncanny human skin face on animal/robot mascot, creepy mannequin head, realistic slimy crustacean legs, rusty horror metal, extra human fingers, burned-in gibberish UI text, floating omniscient crane camera, detached movie scene ignoring the lens, garbled AI-generated chat text, fake TikTok/Douyin/Twitch logo watermarks, microphone switching sides",
+      "negativePromptZh": "动物或机器人吉祥物长出恐怖谷真人脸，诡异假人头，写实粘液甲壳虫腿，恐怖生锈废铁，多余人类手指，画面内烘死的乱码UI，上帝视角电影摇臂空镜，角色无视镜头演戏，AI直出乱码弹幕文字，虚假平台Logo水印，麦克风跨镜头左右跳位",
+      "sfxCue": "chime",
+      "sfx": "轻举瓷杯声 + 小螃蟹咔嗒碎步声",
+      "caption": "Just one sip of coffee, definitely NOT deploying on Friday night...",
+      "chatEn": "",
+      "hudOverlay": {
+        "platform": "x",
+        "enabled": true,
+        "viewerCount": 22080,
+        "safeZone1080x1920": {
+          "topAvoidPx": 220,
+          "bottomAvoidPx": 490,
+          "rightAvoidPx": 140,
+          "chatWidthRatio": 0.68,
+          "chatMaxHeightRatio": 0.21
+        },
+        "activePopup": "join_toast",
+        "commentsZh": [
+          {
+            "user": "列文虎克",
+            "text": "等等！！马克杯后面探出一只橙色小螃蟹！",
+            "lv": 26
+          },
+          {
+            "user": "Rust布道师",
+            "text": "是Ferris！！它两只小钳子盯上回车键了",
+            "lv": 18
+          },
+          {
+            "user": "运维急救",
+            "text": "企鹅快回头！螃蟹要帮你内存安全上线了！",
+            "lv": 31
+          }
+        ],
+        "commentsEn": [
+          {
+            "user": "@crab_spotted",
+            "text": "WAIT FERRIS THE CRAB IS BEHIND THE MUG",
+            "lv": 26
+          },
+          {
+            "user": "@rust_lang_fan",
+            "text": "LOOK AT THOSE TINY ORANGE PINCERS AIMING",
+            "lv": 18
+          },
+          {
+            "user": "@lock_screen",
+            "text": "TUX TURN AROUND HE'S EYEING ENTER!!",
+            "lv": 31
+          }
+        ],
+        "commerceItemZh": "1号福利链接",
+        "commerceItemEn": "Link #1 Deal",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
+        "giftZh": {
+          "sender": "@dev_pulse",
+          "gift": "Super Heart Boost",
+          "combo": 12
+        },
+        "giftEn": {
+          "sender": "@dev_pulse",
+          "gift": "Super Heart Boost",
+          "combo": 12
+        },
+        "pkScoreRatio": 0.52,
+        "heartBurstIntensity": "normal"
+      },
+      "actors": null,
+      "props": null
+    },
+    {
+      "shotNumber": 3,
+      "role": "Twist / 小螃蟹飞扑一钳子砸下回车",
+      "durationSec": 4,
+      "timeWindow": "7.5s–11.5s",
+      "exactTimeWindow": "7.50s–11.50s",
+      "actionEn": "orange Ferris the Crab scuttle-leaps squarely onto the glowing mechanical keyboard, slamming both orange claws onto the Enter key as Tux's eyes widen in horror",
+      "actionZh": "亮橙色小螃蟹Ferris横着腾空一跃精准降落在机械键盘中央，两只橙色小蟹钳结结实实砸下回车键，Tux双眼瞬间瞪成铜铃",
+      "eyeLineEn": "screen deploy flash illuminates Tux's wide shocked eyes staring down at Ferris",
+      "eyeLineZh": "终端强制上线白光映亮企鹅Tux震惊放大的双眼",
+      "cameraEn": "Locked monitor-top webcam jolting briefly from Ferris landing on the desk",
+      "cameraZh": "24mm摄像头随小螃蟹落地产生真实桌面微震",
+      "hailuoTag": "[Shake, Static shot]",
+      "firstFramePromptEn": "9:16 vertical static keyframe, 24mm–28mm webcam optics, 5–8° slight downward monitor-top angle, deep f/4.5 room focus: plump satin-matte Linux Tux penguin mascot (glossy obsidian-black feathers, crisp snow-white belly, golden-orange contoured beak, purple-cyan RGB studio headphones) seated at a warm-lit developer desk with a recessed-keycap RGB mechanical keyboard, accompanied by CC0 bright-tangerine (#F74C00) Rust Ferris the Crab, mid-setup before orange Ferris the Crab scuttle-leaps squarely onto the glowing mechanical keyboard, slamming both orange claws onto the Enter key as Tux's eyes widen in horror. warm 3000K architectural desk lamp pool paired with cool 6500K monitor screen glow across keyboard and hands, quiet cozy late-night room atmosphere. Crisp room/world background, clean raw camera feed, zero UI text or watermarks.",
+      "firstFramePromptZh": "9:16竖屏首帧静态锚定图，24mm–28mm广角桌面摄像头光学，显示器顶端5°–8°微俯拍，f/4.5清晰房间景深（不虚化死背景）：圆润呆萌的开源Linux企鹅Tux主播（曜石黑羽绒配雪白圆肚皮、金黄立体扁嘴、头戴紫青双色RGB监听大耳机）坐在摆着背光机械键盘与双联代码屏的深夜书桌前，身旁藏着亮橙色(#F74C00)CC0开源吉祥物Rust小螃蟹Ferris，处于「亮橙色小螃蟹Ferris横着腾空一跃精准降落在机械键盘中央，两只橙色小蟹钳结结实实砸下回车键，Tux双眼瞬间瞪成铜铃」起始构图。3000K暖黄台灯光晕搭配6500K显示器冷蓝屏幕光洒在键盘与手部，静谧深夜陪伴直播氛围。100%纯净无UI文字底片，零乱码弹幕，零水印。",
+      "i2vPromptEn": "24mm–28mm webcam optics, 5–8° slight downward monitor-top angle, deep f/4.5 room focus. Subject: plump satin-matte Linux Tux penguin mascot (glossy obsidian-black feathers, crisp snow-white belly, golden-orange contoured beak, purple-cyan RGB studio headphones) seated at a warm-lit developer desk with a recessed-keycap RGB mechanical keyboard, accompanied by CC0 bright-tangerine (#F74C00) Rust Ferris the Crab. Action: orange Ferris the Crab scuttle-leaps squarely onto the glowing mechanical keyboard, slamming both orange claws onto the Enter key as Tux's eyes widen in horror. Eye-line: screen deploy flash illuminates Tux's wide shocked eyes staring down at Ferris. Camera physics: Locked monitor-top webcam jolting briefly from Ferris landing on the desk. Lighting: warm 3000K architectural desk lamp pool paired with cool 6500K monitor screen glow across keyboard and hands, quiet cozy late-night room atmosphere. 9:16 vertical raw livestream camera plate, clean camera feed, zero burned-in UI text, zero scrolling comments, zero platform watermarks.",
+      "i2vPromptZh": "【万相2.6竖屏直播底片】9:16竖屏，24mm–28mm广角桌面摄像头光学，显示器顶端5°–8°微俯拍，f/4.5清晰房间景深（不虚化死背景）。主体：圆润呆萌的开源Linux企鹅Tux主播（曜石黑羽绒配雪白圆肚皮、金黄立体扁嘴、头戴紫青双色RGB监听大耳机）坐在摆着背光机械键盘与双联代码屏的深夜书桌前，身旁藏着亮橙色(#F74C00)CC0开源吉祥物Rust小螃蟹Ferris。单一动作：亮橙色小螃蟹Ferris横着腾空一跃精准降落在机械键盘中央，两只橙色小蟹钳结结实实砸下回车键，Tux双眼瞬间瞪成铜铃。互动眼神轴：终端强制上线白光映亮企鹅Tux震惊放大的双眼。机位反馈：24mm摄像头随小螃蟹落地产生真实桌面微震。补光：3000K暖黄台灯光晕搭配6500K显示器冷蓝屏幕光洒在键盘与手部，静谧深夜陪伴直播氛围。100%纯净无UI文字底片（严禁AI直出滚动弹幕文字、礼物按钮或平台台标水印，所有直播边框由后置HUD叠加）。",
+      "trackBFacecamPromptEn": null,
+      "trackBFacecamPromptZh": null,
+      "negativePromptEn": "uncanny human skin face on animal/robot mascot, creepy mannequin head, realistic slimy crustacean legs, rusty horror metal, extra human fingers, burned-in gibberish UI text, floating omniscient crane camera, detached movie scene ignoring the lens, garbled AI-generated chat text, fake TikTok/Douyin/Twitch logo watermarks, microphone switching sides",
+      "negativePromptZh": "动物或机器人吉祥物长出恐怖谷真人脸，诡异假人头，写实粘液甲壳虫腿，恐怖生锈废铁，多余人类手指，画面内烘死的乱码UI，上帝视角电影摇臂空镜，角色无视镜头演戏，AI直出乱码弹幕文字，虚假平台Logo水印，麦克风跨镜头左右跳位",
+      "sfxCue": "drop",
+      "sfx": "蟹壳落地咔哒声 + 回车重击音 + 服务器警报叮声",
+      "caption": "FERRIS NO!! THAT WAS `git push --force origin main`!!",
+      "chatEn": "",
+      "hudOverlay": {
+        "platform": "x",
+        "enabled": true,
+        "viewerCount": 48100,
+        "safeZone1080x1920": {
+          "topAvoidPx": 220,
+          "bottomAvoidPx": 490,
+          "rightAvoidPx": 140,
+          "chatWidthRatio": 0.68,
+          "chatMaxHeightRatio": 0.21
+        },
+        "activePopup": "gift_combo",
+        "commentsZh": [
+          {
+            "user": "全站报警",
+            "text": "完了！！Ferris横跳一钳子砸中Enter！！",
+            "lv": 34
+          },
+          {
+            "user": "Git惨案",
+            "text": "强制推送主分支？Tux眼珠子都快瞪出来了",
+            "lv": 22
+          },
+          {
+            "user": "桌面微震",
+            "text": "连显示器摄像头都被蟹壳震晃了一下哈哈",
+            "lv": 20
+          }
+        ],
+        "commentsEn": [
+          {
+            "user": "@prod_deploy",
+            "text": "FERRIS SCUTTLE-SLAMMED THE ENTER KEY 💀",
+            "lv": 34
+          },
+          {
+            "user": "@git_blame",
+            "text": "shipped straight to production zero hesitation",
+            "lv": 22
+          },
+          {
+            "user": "@tux_shock",
+            "text": "Tux's wide eyes reflecting terminal flash lol",
+            "lv": 20
+          }
+        ],
+        "commerceItemZh": "1号福利链接",
+        "commerceItemEn": "Link #1 Deal",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
+        "giftZh": {
+          "sender": "@dev_pulse",
+          "gift": "Super Heart Boost",
+          "combo": 12
+        },
+        "giftEn": {
+          "sender": "@dev_pulse",
+          "gift": "Super Heart Boost",
+          "combo": 12
+        },
+        "pkScoreRatio": 0.28,
+        "heartBurstIntensity": "high"
+      },
+      "actors": null,
+      "props": null
+    },
+    {
+      "shotNumber": 4,
+      "role": "Payoff / 企鹅与小螃蟹同步盯镜头社死",
+      "durationSec": 3.5,
+      "timeWindow": "11.5s–15.0s",
+      "exactTimeWindow": "11.50s–15.00s",
+      "actionEn": "Tux holds both flippers on its head while orange Ferris sits innocently on the keyboard waving a tiny claw—both staring straight up into the 0° webcam together",
+      "actionZh": "双翅抱头石化的企鹅Tux与端坐在键盘上无辜挥小钳子的橙色螃蟹Ferris同步抬头，齐刷刷0°死死盯住显示器顶端的摄像头",
+      "eyeLineEn": "synchronized 0° direct webcam stare from both Linux Tux and Rust Ferris",
+      "eyeLineZh": "一企鹅一螃蟹同步0°凝视主摄像头定格成开源名画",
+      "cameraEn": "Locked 24mm monitor-top webcam payoff",
+      "cameraZh": "固定24mm桌面机位神同步定格收尾",
+      "hailuoTag": "[Static shot]",
+      "firstFramePromptEn": "9:16 vertical static keyframe, 24mm–28mm webcam optics, 5–8° slight downward monitor-top angle, deep f/4.5 room focus: plump satin-matte Linux Tux penguin mascot (glossy obsidian-black feathers, crisp snow-white belly, golden-orange contoured beak, purple-cyan RGB studio headphones) seated at a warm-lit developer desk with a recessed-keycap RGB mechanical keyboard, accompanied by CC0 bright-tangerine (#F74C00) Rust Ferris the Crab, mid-setup before Tux holds both flippers on its head while orange Ferris sits innocently on the keyboard waving a tiny claw—both staring straight up into the 0° webcam together. warm 3000K architectural desk lamp pool paired with cool 6500K monitor screen glow across keyboard and hands, quiet cozy late-night room atmosphere. Crisp room/world background, clean raw camera feed, zero UI text or watermarks.",
+      "firstFramePromptZh": "9:16竖屏首帧静态锚定图，24mm–28mm广角桌面摄像头光学，显示器顶端5°–8°微俯拍，f/4.5清晰房间景深（不虚化死背景）：圆润呆萌的开源Linux企鹅Tux主播（曜石黑羽绒配雪白圆肚皮、金黄立体扁嘴、头戴紫青双色RGB监听大耳机）坐在摆着背光机械键盘与双联代码屏的深夜书桌前，身旁藏着亮橙色(#F74C00)CC0开源吉祥物Rust小螃蟹Ferris，处于「双翅抱头石化的企鹅Tux与端坐在键盘上无辜挥小钳子的橙色螃蟹Ferris同步抬头，齐刷刷0°死死盯住显示器顶端的摄像头」起始构图。3000K暖黄台灯光晕搭配6500K显示器冷蓝屏幕光洒在键盘与手部，静谧深夜陪伴直播氛围。100%纯净无UI文字底片，零乱码弹幕，零水印。",
+      "i2vPromptEn": "24mm–28mm webcam optics, 5–8° slight downward monitor-top angle, deep f/4.5 room focus. Subject: plump satin-matte Linux Tux penguin mascot (glossy obsidian-black feathers, crisp snow-white belly, golden-orange contoured beak, purple-cyan RGB studio headphones) seated at a warm-lit developer desk with a recessed-keycap RGB mechanical keyboard, accompanied by CC0 bright-tangerine (#F74C00) Rust Ferris the Crab. Action: Tux holds both flippers on its head while orange Ferris sits innocently on the keyboard waving a tiny claw—both staring straight up into the 0° webcam together. Eye-line: synchronized 0° direct webcam stare from both Linux Tux and Rust Ferris. Camera physics: Locked 24mm monitor-top webcam payoff. Lighting: warm 3000K architectural desk lamp pool paired with cool 6500K monitor screen glow across keyboard and hands, quiet cozy late-night room atmosphere. 9:16 vertical raw livestream camera plate, clean camera feed, zero burned-in UI text, zero scrolling comments, zero platform watermarks.",
+      "i2vPromptZh": "【万相2.6竖屏直播底片】9:16竖屏，24mm–28mm广角桌面摄像头光学，显示器顶端5°–8°微俯拍，f/4.5清晰房间景深（不虚化死背景）。主体：圆润呆萌的开源Linux企鹅Tux主播（曜石黑羽绒配雪白圆肚皮、金黄立体扁嘴、头戴紫青双色RGB监听大耳机）坐在摆着背光机械键盘与双联代码屏的深夜书桌前，身旁藏着亮橙色(#F74C00)CC0开源吉祥物Rust小螃蟹Ferris。单一动作：双翅抱头石化的企鹅Tux与端坐在键盘上无辜挥小钳子的橙色螃蟹Ferris同步抬头，齐刷刷0°死死盯住显示器顶端的摄像头。互动眼神轴：一企鹅一螃蟹同步0°凝视主摄像头定格成开源名画。机位反馈：固定24mm桌面机位神同步定格收尾。补光：3000K暖黄台灯光晕搭配6500K显示器冷蓝屏幕光洒在键盘与手部，静谧深夜陪伴直播氛围。100%纯净无UI文字底片（严禁AI直出滚动弹幕文字、礼物按钮或平台台标水印，所有直播边框由后置HUD叠加）。",
+      "trackBFacecamPromptEn": null,
+      "trackBFacecamPromptZh": null,
+      "negativePromptEn": "uncanny human skin face on animal/robot mascot, creepy mannequin head, realistic slimy crustacean legs, rusty horror metal, extra human fingers, burned-in gibberish UI text, floating omniscient crane camera, detached movie scene ignoring the lens, garbled AI-generated chat text, fake TikTok/Douyin/Twitch logo watermarks, microphone switching sides",
+      "negativePromptZh": "动物或机器人吉祥物长出恐怖谷真人脸，诡异假人头，写实粘液甲壳虫腿，恐怖生锈废铁，多余人类手指，画面内烘死的乱码UI，上帝视角电影摇臂空镜，角色无视镜头演戏，AI直出乱码弹幕文字，虚假平台Logo水印，麦克风跨镜头左右跳位",
+      "sfxCue": "win",
+      "sfx": "螃蟹无辜夹钳咔嚓声 + 满屏六色飘心音效",
+      "caption": "Rewrite it in Rust they said... chat please don't clip this 💀",
+      "chatEn": "",
+      "hudOverlay": {
+        "platform": "x",
+        "enabled": true,
+        "viewerCount": 78720,
+        "safeZone1080x1920": {
+          "topAvoidPx": 220,
+          "bottomAvoidPx": 490,
+          "rightAvoidPx": 140,
+          "chatWidthRatio": 0.68,
+          "chatMaxHeightRatio": 0.21
+        },
+        "activePopup": "gift_combo_peak",
+        "commentsZh": [
+          {
+            "user": "开源世界名画",
+            "text": "企鹅抱头石化 + 小螃蟹无辜举钳神同步！",
+            "lv": 37
+          },
+          {
+            "user": "用Rust重写",
+            "text": "Ferris：编译过了就能直接发生产呀🦀",
+            "lv": 25
+          },
+          {
+            "user": "录屏封神",
+            "text": "开源吉祥物联动直播节目效果满分！",
+            "lv": 30
+          }
+        ],
+        "commentsEn": [
+          {
+            "user": "@oss_hall_fame",
+            "text": "Tux flippers-on-head + Ferris claw wave!!",
+            "lv": 37
+          },
+          {
+            "user": "@dev_pulse",
+            "text": "Super Heart Boost for the open-source duo",
+            "lv": 30
+          },
+          {
+            "user": "@cargo_build",
+            "text": "if it compiles it ships — Ferris probably",
+            "lv": 25
+          }
+        ],
+        "commerceItemZh": "1号福利链接",
+        "commerceItemEn": "Link #1 Deal",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
+        "giftZh": {
+          "sender": "@dev_pulse",
+          "gift": "Super Heart Boost",
+          "combo": 12
+        },
+        "giftEn": {
+          "sender": "@dev_pulse",
+          "gift": "Super Heart Boost",
+          "combo": 12
+        },
+        "pkScoreRatio": 0.14,
+        "heartBurstIntensity": "high"
+      },
+      "actors": null,
+      "props": null
+    }
+  ]
+}

@@ -5,7 +5,7 @@ description: |
   Use when the user wants to generate AI livestream-perspective videos, streamer POV shorts, IRL selfie-stick/webcam/bodycam/unboxing/PK/PiP gameplay videos across any art style (photorealistic IRL, Roblox R6/blocky, anime/VTuber, 3D vinyl, voxel, or wuxia/sci-fi/horror plot adaptations), reconstruct Douyin (抖音), Kuaishou (快手), Instagram Live (Ins), X/Periscope, or TikTok Live room overlays/popups/danmaku/gift combos, or compile prompts for Kling (可灵), Seedance/Jimeng (即梦), Hailuo (海螺), Wan (通义万相), Sora, Veo, or Runway without burned-in gibberish UI text.
 license: MIT
 metadata:
-  version: "1.1.0"
+  version: "2.0.0"
 ---
 
 # Livestream Style Video Skill (`livestream-style-video`)
@@ -33,12 +33,14 @@ This skill eliminates both failures by locking **eight Livestream Perspective in
    - Use circular LED ring-light eye catchlights, cyan/magenta RGB wall rim strips or monitor spill, deep readable room focus (`f/4–f/5.6` rather than background-obliterating `f/1.2` cinema bokeh), and signature live gestures such as holding a flat palm behind a close-up product (`influencer AF-C macro gesture`).
 5. **Style-Orthogonal Adapter Matrix (`跨画风正交解耦矩阵` — Any Style × Any Rig)**:
    - Camera rig physics and visual style are orthogonal. Combine any rig with:
-     - `realistic-irl` (general photorealistic AI video: natural skin texture, five-finger phone/mic grip, wireless lavalier or condenser boom mic).
-     - `roblox-blocky` (canonical Roblox SmoothPlastic geometry: `2×2×1` torso, flush `1×2×1` legs with zero thigh gap, fingerless and clawless solid `1×2×1` block hands, smooth studless `1:1` barrel head, flat 2D screen-printed face decal, smooth floors with zero Lego studs).
+     - `duolingo-mascot` (Duolingo-inspired rounded geometric owl mascot & bold flat-3D cast: `#58CC02` feather-green, `#FFC800` amber beak, `#7C3AED` berry-violet bob hair, oversized twin-pill eyes, bold floating brow bars).
+     - `opensource-mascot` (open-source mascot IPs: Linux Tux penguin in studio headphones, CC0 Rust Ferris the Crab `#F74C00`, and MIT Godot-inspired cobalt `#478CBF` Gear-Bot with glowing LED eyes).
+     - `roblox-blocky` (canonical Roblox SmoothPlastic geometry: `2×2×1` torso, flush `1×2×1` legs with zero thigh gap, fingerless and clawless solid `1×2×1` block hands, smooth studless `1:1` barrel head, flat 2D decal, sculpted 3D UGC hair/caps/Speed Coil).
+     - `voxel-sandbox` (`8×8×8` cubic head, `16×16` crisp nearest-neighbor pixel grid, `+0.5px` 3D outer robe/hair shell, flat `4×4` block hands).
      - `anime-vtuber` (cel-shaded 2D/Live2D avatar tracking sway & expression toggles).
      - `stylized-3d` (blind-box matte vinyl / Pixar-grade miniature studio).
-     - `voxel-sandbox` (`8×8×8` cubic head, `16×16` crisp nearest-neighbor pixel grid, flat `4×4` block hands).
      - `cinematic-genre-adapt` (translates wuxia, fantasy, medieval, horror, or sci-fi plots into diegetic in-universe selfie/visor/talisman livestreams).
+     - `realistic-irl` (photorealistic AI video prompt adapter for external diffusion engines: natural skin texture, five-finger phone/mic grip, wireless lavalier or condenser boom mic).
 6. **Universal Plot-to-Livestream 4-Beat Retention Arc (`全剧情直播化四幕转译`)**:
    - Map any story into `15s` (4 cuts) or `30s` (8 unique cuts):
      - `Shot 01 (0–3.5s) · Hook`: Cold-open live claim to `0°` lens ("Chat dared me to try this...").

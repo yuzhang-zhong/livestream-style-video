@@ -19,34 +19,42 @@ Claude Code, Cursor, GitHub Copilot, Codex용 **Agent Skill**(`SKILL.md` + 레�
 AI 코딩 에이전트에서 호출하면 어떤 아이디어든 8가지 내장 포맷(실사·장르 변환 AI 비디오 5종 + Roblox 블록 라이브 3종)에 맞춘 15초·4컷 세로형(`9:16`) 패키지로 변환합니다. 아래 **MP4**와 GIF는 `scripts/render_preview.mjs`가 로컬에서 렌더링한 3D + Post-HUD 프리뷰로, 외부 비디오 생성 모델을 실행하기 전에 카메라 마운트, 시선 처리, 안전 영역을 검증할 수 있습니다.
 
 <p align="center">
-  <a href="../../examples/irl-night-market-selfie/assets/irl_night_market_selfie.mp4"><img src="../../examples/irl-night-market-selfie/assets/irl_night_market_selfie.gif" width="192" alt="야시장 18mm 셀카 9:16 프리뷰" /></a>
-  <a href="../../examples/desk-unboxing-autofocus/assets/desk_unboxing_autofocus.mp4"><img src="../../examples/desk-unboxing-autofocus/assets/desk_unboxing_autofocus.gif" width="192" alt="데스크 AF-C 언박싱 9:16 프리뷰" /></a>
-  <a href="../../examples/midnight-corridor-fpv-live/assets/midnight_corridor_fpv_live.mp4"><img src="../../examples/midnight-corridor-fpv-live/assets/midnight_corridor_fpv_live.gif" width="192" alt="심야 복도 16mm POV 9:16 프리뷰" /></a>
-  <a href="../../examples/late-night-study-webcam/assets/late_night_study_webcam.mp4"><img src="../../examples/late-night-study-webcam/assets/late_night_study_webcam.gif" width="192" alt="새벽 웹캠 고양이 난입 9:16 프리뷰" /></a>
+  <a href="../../examples/duolingo-owl-streak-cam/assets/duolingo_owl_streak_cam.mp4"><img src="../../examples/duolingo-owl-streak-cam/assets/duolingo_owl_streak_cam.gif" width="196" alt="듀오링고풍 올빼미 스트림 9:16 프리뷰" /></a>
+  <a href="../../examples/duolingo-chill-night-market/assets/duolingo_chill_night_market.mp4"><img src="../../examples/duolingo-chill-night-market/assets/duolingo_chill_night_market.gif" width="196" alt="플랫3D 야시장 셀카 9:16 프리뷰" /></a>
+  <a href="../../examples/tux-ferris-code-webcam/assets/tux_ferris_code_webcam.mp4"><img src="../../examples/tux-ferris-code-webcam/assets/tux_ferris_code_webcam.gif" width="196" alt="Linux Tux & Rust Ferris 웹캠 9:16 프리뷰" /></a>
+  <a href="../../examples/godot-bot-unboxing-af/assets/godot_bot_unboxing_af.mp4"><img src="../../examples/godot-bot-unboxing-af/assets/godot_bot_unboxing_af.gif" width="196" alt="Godot 기어봇 AF-C 언박싱 9:16 프리뷰" /></a>
   <br />
-  <a href="../../examples/wuxia-sword-flight-live/assets/wuxia_sword_flight_live.mp4"><img src="../../examples/wuxia-sword-flight-live/assets/wuxia_sword_flight_live.gif" width="192" alt="무협 어검비행 셀카 9:16 프리뷰" /></a>
-  <a href="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.mp4"><img src="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.gif" width="192" alt="Roblox 점프맵 PiP 9:16 프리뷰" /></a>
-  <a href="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.mp4"><img src="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.gif" width="192" alt="Roblox DOORS 복도 셀카 9:16 프리뷰" /></a>
-  <a href="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.mp4"><img src="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.gif" width="192" alt="Roblox 50/50 합방 PK 9:16 프리뷰" /></a>
+  <a href="../../examples/voxel-wuxia-sword-live/assets/voxel_wuxia_sword_live.mp4"><img src="../../examples/voxel-wuxia-sword-live/assets/voxel_wuxia_sword_live.gif" width="196" alt="8x8 복셀 무협 비검 셀카 9:16 프리뷰" /></a>
+  <a href="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.mp4"><img src="../../examples/roblox-obby-rage-pip/assets/roblox_obby_rage_pip.gif" width="196" alt="Roblox 점프맵 PiP 9:16 프리뷰" /></a>
+  <a href="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.mp4"><img src="../../examples/roblox-doors-irl-selfie/assets/roblox_doors_irl_selfie.gif" width="196" alt="Roblox DOORS 복도 셀카 9:16 프리뷰" /></a>
+  <a href="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.mp4"><img src="../../examples/roblox-pet-hatch-pk/assets/roblox_pet_hatch_pk.gif" width="196" alt="Roblox 50/50 합방 PK 9:16 프리뷰" /></a>
 </p>
 
 ## 씬 보드 및 컷 호흡
 
-4~5초 클립 하나에 여러 연속 동작을 넣으면 라이브 카메라의 물리적 현장감이 무너집니다. 모든 쇼츠는 1컷 1액션의 4비트(`0–3.5s` 오프닝 훅, `3.5–7.5s` 근접 초점 검증, `7.5–11.5s` 돌발 방송 사고, `11.5–15s` 채팅창 리액션)로 분할됩니다:
+4~5초 클립 하나에 여러 연속 동작을 넣으면 라이브 카메라의 물리적 현장감이 무너집니다. 모든 쇼츠는 1컷 1액션의 4비트(`0–3.5s` 오프닝 훅, `3.5–7.5s` 15° 채팅 확인/초점 검증, `7.5–11.5s` 돌발 방송 사고, `11.5–15s` 채팅창 리액션)로 분할됩니다:
 
 | Shot 01 · 훅 (`0–3.5s`) | Shot 02 · 검증 (`3.5–7.5s`) | Shot 03 · 반전 (`7.5–11.5s`) | Shot 04 · 엔딩 (`11.5–15s`) |
 | :---: | :---: | :---: | :---: |
-| <img src="../../examples/wuxia-sword-flight-live/assets/shot_01.png" width="196" alt="Shot 01: 운해 출근길 18mm 셀카" /> | <img src="../../examples/wuxia-sword-flight-live/assets/shot_02.png" width="196" alt="Shot 02: 발아래 룬 비검 틸트다운" /> | <img src="../../examples/wuxia-sword-flight-live/assets/shot_03.png" width="196" alt="Shot 03: 단정학 끼어들기 기류 흔들림" /> | <img src="../../examples/wuxia-sword-flight-live/assets/shot_04.png" width="196" alt="Shot 04: 비뚤어진 상투로 채팅 응시" /> |
+| <img src="../../examples/duolingo-owl-streak-cam/assets/shot_01.png" width="200" alt="Shot 01: 초록 올빼미 인사" /> | <img src="../../examples/duolingo-owl-streak-cam/assets/shot_02.png" width="200" alt="Shot 02: 15도 채팅창 확인" /> | <img src="../../examples/duolingo-owl-streak-cam/assets/shot_03.png" width="200" alt="Shot 03: 적색 경고 및 365 불꽃" /> | <img src="../../examples/duolingo-owl-streak-cam/assets/shot_04.png" width="200" alt="Shot 04: 반달 눈웃음 리액션" /> |
 
-6가지 대표 카메라 리그 및 화풍별 4컷 컨택트 시트:
+6가지 대표 카메라 리그 및 화풍(`3×2` HD 매트릭스)과 전체 폭 4컷 컨택트 시트:
 
-| 01 · 야시장 셀카 (`Kling` · `18mm` 짐벌 & Douyin HUD) | 02 · 데스크 AF 언박싱 (`Seedance` · `[AF-C]` & Kuaishou HUD) |
-| :---: | :---: |
-| <a href="../../examples/irl-night-market-selfie/"><img src="../../examples/irl-night-market-selfie/assets/storyboard_sheet.en.png" width="410" alt="Night-Market Selfie 4-shot sheet" /></a> | <a href="../../examples/desk-unboxing-autofocus/"><img src="../../examples/desk-unboxing-autofocus/assets/storyboard_sheet.en.png" width="410" alt="Desk Unboxing 4-shot sheet" /></a> |
-| **04 · 새벽 작업 웹캠 (`Wan` · `24mm` 모니터캠 & X HUD)** | **06 · Roblox 점프맵 + PiP (`Hailuo` · 듀얼 트랙 & TikTok HUD)** |
-| <a href="../../examples/late-night-study-webcam/"><img src="../../examples/late-night-study-webcam/assets/storyboard_sheet.en.png" width="410" alt="Study Webcam 4-shot sheet" /></a> | <a href="../../examples/roblox-obby-rage-pip/"><img src="../../examples/roblox-obby-rage-pip/assets/storyboard_sheet.en.png" width="410" alt="Roblox Obby PiP 4-shot sheet" /></a> |
-| **07 · Roblox DOORS 셀카봉 (`Sora` · `18mm` & IG HUD)** | **08 · Roblox 50/50 합방 PK (`Kling` · 분할 대결 & Kuaishou HUD)** |
-| <a href="../../examples/roblox-doors-irl-selfie/"><img src="../../examples/roblox-doors-irl-selfie/assets/storyboard_sheet.en.png" width="410" alt="Roblox DOORS 4-shot sheet" /></a> | <a href="../../examples/roblox-pet-hatch-pk/"><img src="../../examples/roblox-pet-hatch-pk/assets/storyboard_sheet.en.png" width="410" alt="Roblox PK 4-shot sheet" /></a> |
+<p align="center">
+  <img src="../../assets/showcase/camera_rigs_atlas.en.png" width="840" alt="6대 카메라 리그 및 캐릭터 스타일 3x2 HD 매트릭스" />
+</p>
+
+<p align="center">
+  <a href="../../examples/tux-ferris-code-webcam/"><img src="../../examples/tux-ferris-code-webcam/assets/storyboard_sheet.en.png" width="840" alt="Linux Tux & Rust Ferris 4-shot sheet" /></a>
+</p>
+
+<p align="center">
+  <a href="../../examples/voxel-wuxia-sword-live/"><img src="../../examples/voxel-wuxia-sword-live/assets/storyboard_sheet.en.png" width="840" alt="8x8 Voxel Wuxia 4-shot sheet" /></a>
+</p>
+
+<p align="center">
+  <a href="../../examples/roblox-pet-hatch-pk/"><img src="../../examples/roblox-pet-hatch-pk/assets/storyboard_sheet.en.png" width="840" alt="Roblox PK 4-shot sheet" /></a>
+</p>
 
 REA 분석을 바탕으로 재구성한 5대 라이브 플랫폼 HUD(`douyin`, `kuaishou`, `instagram`, `x`, `tiktok`, [REA 원장](../../references/platform-ui-rea-ledger.md))는 브라우저 / OBS용 [`studio/index.html`](../../studio/index.html)에서도 실시간으로 조작할 수 있습니다:
 

@@ -1,0 +1,396 @@
+{
+  "slug": "duolingo_chill_night_market",
+  "titleEn": "Duolingo-Style Geometric Cast Night-Market Chili Skewer Selfie",
+  "titleZh": "多邻国扁平3D风紫发酷妹夜市辣串自拍（几何角色风）",
+  "category": "mascot-and-opensource-ip",
+  "engine": "seedance",
+  "engineLabel": "Seedance / Jimeng First+Last Frame I2V Clean-Plate",
+  "style": "duolingo-mascot",
+  "rig": "handheld-selfie-irl",
+  "lighting": "night-neon-irl",
+  "platform": "douyin",
+  "platformLabelEn": "Douyin Live Room Chrome & Commerce/Gift HUD",
+  "platformLabelZh": "抖音直播间风格 (Douyin Live Chrome)",
+  "aspect": "9:16",
+  "durationSeconds": 15,
+  "shotCount": 4,
+  "host": "Lila",
+  "cohost": "Momo",
+  "backdrop": "night_market",
+  "dualTrackNoteEn": "Single-Track Clean Plate: Generate raw camera feed first, then composite optional LIVE badge and scrolling chat HUD cleanly.",
+  "dualTrackNoteZh": "单轨纯净底片原则：先生成无任何文字涂层的纯净镜头画面，后置叠加高清直播间角标与滚动弹幕。",
+  "setupAnchorPromptEn": "9:16 Livestream Setup Reference Sheet (3-panel consistency anchor for host \"Lila\"): Panel 1 [0° Primary Live Frame]: 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening, vibrant flat-shaded 3D rounded geometric mascot & bold world-character aesthetic: plump pill-and-sphere silhouette, feather-green (#58CC02) / beak-amber (#FFC800) / berry-violet (#CE82FF) matte-clay palette, oversized expressive white pill-shaped eyes with crisp pupils and thick floating geometric eyebrow bars, bouncy squash-and-stretch wing/flipper/pill-arm gestures, zero uncanny human skin pores or mannequin proportions, compact clip-on wireless lavalier microphone transmitter clipped to collar/lapel, vibrant night-street neon signage bokeh in mid-ground, cool-white smartphone screen glow illuminating the host's face from arm's length, natural night auto-ISO texture, direct eye-contact into the lens as if greeting live chat; Panel 2 [15° Chat-Read Glance]: exact same room, outfit, and mic position, eyes flicked 15 degrees off-axis reading a glowing secondary chat monitor with subtle smile; Panel 3 [Rig & Optical Side Diagram]: clean side-view showing camera mount distance, ring-light placement, and room background props. Clean raw camera feed, zero burned-in UI text, zero platform watermarks.",
+  "setupAnchorPromptZh": "9:16 直播间跨镜头一致性三态锚定参考卡（主播「Lila」）：左格【0°主镜头直视态】：18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变，高饱和多邻国风圆润几何萌宠与扁平3D角色美学：饱满胶囊球体几何比例、翠羽绿(#58CC02)/琥珀黄(#FFC800)/莓果紫(#CE82FF)哑光软陶质感、超大号胶囊白眼仁配灵动瞳孔与粗线条悬浮表情眉、Q弹翅膀/圆润几何短臂互动，彻底杜绝恐怖谷假人比例与写实毛孔，衣领处夹持一枚紧凑型无线领夹麦克风发射器，中景街头霓虹灯牌流光溢彩，一臂距离的手机屏幕冷白光自然照亮主播面部，真实夜间手机自动曝光质感，眼神0°直视镜头向直播间观众打招呼；中格【15°偏轴读弹幕态】：完全相同的房间陈设、穿搭与麦克风左右位置，视线偏转15°扫向副屏弹幕并露出实时反应；右格【机位与补光侧视锚点】：清晰交代摄像头架设距离、环形灯/霓虹光源方位与背景固定摆件。画面保持100%纯净无UI文字底片，零平台水印、零乱码弹幕。",
+  "shots": [
+    {
+      "shotNumber": 1,
+      "role": "Hook / 死鱼眼酷妹夜市开播立Flag",
+      "durationSec": 3.5,
+      "timeWindow": "0.0s–3.5s",
+      "exactTimeWindow": "0.00s–3.50s",
+      "actionEn": "strolls past glowing red-and-gold night-market lanterns while casually pointing left rounded hand at a sizzling chili-oil skewer stall and addressing the 0° selfie lens",
+      "actionZh": "慢悠悠走过挂满红金灯笼的霓虹夜市摊，左手圆润短臂随手反指身后的变态辣红油烤串摊，用标志性半耷拉酷眼0°直视前置镜头",
+      "eyeLineEn": "cool half-lidded 0° front-camera eye-contact, quick 8° downward glance at phone chat",
+      "eyeLineZh": "酷感半眯眼0°直视手持前置镜头，顺势向下8°扫视弹幕挑衅",
+      "cameraEn": "18mm ultra-wide arm's-length selfie tracking shot with warm lantern bokeh",
+      "cameraZh": "18mm一臂距离超广角自拍跟走机位，背景红黄夜市灯笼流光溢彩",
+      "hailuoTag": "[Pull out, Shake]",
+      "firstFramePromptEn": "9:16 vertical static keyframe, 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening: a bold Duolingo-world-inspired flat-3D geometric character ('Lila') with a rounded matte-clay peach head, rosy circular blush cheeks, sculpted deep-violet bob hair with straight geometric bangs, oversized half-lidded expressive pill eyes, and a chunky lavender striped sweater, extending right pill-arm to hold an 18mm selfie gimbal, mid-setup before strolls past glowing red-and-gold night-market lanterns while casually pointing left rounded hand at a sizzling chili-oil skewer stall and addressing the 0° selfie lens. vibrant night-street neon signage bokeh in mid-ground, cool-white smartphone screen glow illuminating the host's face from arm's length, natural night auto-ISO texture. Crisp room/world background, clean raw camera feed, zero UI text or watermarks.",
+      "firstFramePromptZh": "9:16竖屏首帧静态锚定图，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变：多邻国角色体系风格的扁平3D圆润几何酷妹「Lila」（柔和圆方粉肤头部配圆形珊瑚腮红、深紫几何齐刘海波波头、半耷拉死鱼眼大眼仁配紫粗眉、穿浅紫条纹宽松毛衣），右臂前伸一臂持18mm前置自拍云台，处于「慢悠悠走过挂满红金灯笼的霓虹夜市摊，左手圆润短臂随手反指身后的变态辣红油烤串摊，用标志性半耷拉酷眼0°直视前置镜头」起始构图。中景街头霓虹灯牌流光溢彩，一臂距离的手机屏幕冷白光自然照亮主播面部，真实夜间手机自动曝光质感。100%纯净无UI文字底片，零乱码弹幕，零水印。",
+      "i2vPromptEn": "18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening. Subject: a bold Duolingo-world-inspired flat-3D geometric character ('Lila') with a rounded matte-clay peach head, rosy circular blush cheeks, sculpted deep-violet bob hair with straight geometric bangs, oversized half-lidded expressive pill eyes, and a chunky lavender striped sweater, extending right pill-arm to hold an 18mm selfie gimbal. Action: strolls past glowing red-and-gold night-market lanterns while casually pointing left rounded hand at a sizzling chili-oil skewer stall and addressing the 0° selfie lens. Eye-line: cool half-lidded 0° front-camera eye-contact, quick 8° downward glance at phone chat. Camera physics: 18mm ultra-wide arm's-length selfie tracking shot with warm lantern bokeh. Lighting: vibrant night-street neon signage bokeh in mid-ground, cool-white smartphone screen glow illuminating the host's face from arm's length, natural night auto-ISO texture. 9:16 vertical raw livestream camera plate, clean camera feed, zero burned-in UI text, zero scrolling comments, zero platform watermarks.",
+      "i2vPromptZh": "【即梦I2V首尾帧纯净底片】9:16竖屏，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变。主体：多邻国角色体系风格的扁平3D圆润几何酷妹「Lila」（柔和圆方粉肤头部配圆形珊瑚腮红、深紫几何齐刘海波波头、半耷拉死鱼眼大眼仁配紫粗眉、穿浅紫条纹宽松毛衣），右臂前伸一臂持18mm前置自拍云台。单一动作：慢悠悠走过挂满红金灯笼的霓虹夜市摊，左手圆润短臂随手反指身后的变态辣红油烤串摊，用标志性半耷拉酷眼0°直视前置镜头。互动眼神轴：酷感半眯眼0°直视手持前置镜头，顺势向下8°扫视弹幕挑衅。机位反馈：18mm一臂距离超广角自拍跟走机位，背景红黄夜市灯笼流光溢彩。补光：中景街头霓虹灯牌流光溢彩，一臂距离的手机屏幕冷白光自然照亮主播面部，真实夜间手机自动曝光质感。100%纯净无UI文字底片（严禁AI直出滚动弹幕文字、礼物按钮或平台台标水印，所有直播边框由后置HUD叠加）。",
+      "trackBFacecamPromptEn": null,
+      "trackBFacecamPromptZh": null,
+      "negativePromptEn": "uncanny valley mannequin face, realistic human nose/ears/pores, creepy bald plastic doll, desaturated muddy colors, sharp realistic bird feathers/talons, official trademarked brand wordmarks, burned-in gibberish UI text, floating omniscient crane camera, detached movie scene ignoring the lens, garbled AI-generated chat text, fake TikTok/Douyin/Twitch logo watermarks, microphone switching sides",
+      "negativePromptZh": "恐怖谷光头假人模型，写实真人鼻耳毛孔，阴暗脏污色调，写实尖锐鸟喙利爪，官方品牌字标水印，画面内烘死的乱码弹幕UI，上帝视角电影摇臂空镜，角色无视镜头演戏，AI直出乱码弹幕文字，虚假平台Logo水印，麦克风跨镜头左右跳位",
+      "sfxCue": "chime",
+      "sfx": "夜市滋滋烟火声 + 酷感开播提示音",
+      "caption": "弹幕赌我吃不下一串十倍辣？呵，小看谁呢。",
+      "chatEn": "",
+      "hudOverlay": {
+        "platform": "douyin",
+        "enabled": true,
+        "viewerCount": 14260,
+        "safeZone1080x1920": {
+          "topAvoidPx": 290,
+          "bottomAvoidPx": 580,
+          "rightAvoidPx": 148,
+          "chatWidthRatio": 0.68,
+          "chatMaxHeightRatio": 0.23
+        },
+        "activePopup": "join_toast",
+        "commentsZh": [
+          {
+            "user": "紫发酷妹粉",
+            "text": "这半耷拉死鱼眼酷姐气场两米八！",
+            "lv": 15
+          },
+          {
+            "user": "夜市老饕",
+            "text": "十倍魔鬼辣？酷妹人设小心不保啊",
+            "lv": 10
+          },
+          {
+            "user": "扁平3D美学",
+            "text": "紫波波头配红灯笼夜市配色绝了",
+            "lv": 22
+          }
+        ],
+        "commentsEn": [
+          {
+            "user": "chill_vibes",
+            "text": "Lila's deadpan half-lidded aura is iconic",
+            "lv": 15
+          },
+          {
+            "user": "night_bites",
+            "text": "10x ghost chili vs cool girl persona",
+            "lv": 10
+          },
+          {
+            "user": "color_nerd",
+            "text": "violet bob + warm red lanterns looks crisp!",
+            "lv": 22
+          }
+        ],
+        "commerceItemZh": "秘制十倍魔鬼辣烤串",
+        "commerceItemEn": "10x Chili Skewers",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
+        "giftZh": {
+          "sender": "星河舰长",
+          "gift": "璀璨星舰",
+          "combo": 66
+        },
+        "giftEn": {
+          "sender": "NovaPilot",
+          "gift": "Starlight Cruiser",
+          "combo": 66
+        },
+        "pkScoreRatio": 0.52,
+        "heartBurstIntensity": "normal"
+      },
+      "actors": null,
+      "props": null
+    },
+    {
+      "shotNumber": 2,
+      "role": "Proof / 微距怼脸展示红油辣串",
+      "durationSec": 4,
+      "timeWindow": "3.5s–7.5s",
+      "exactTimeWindow": "3.50s–7.50s",
+      "actionEn": "holds a bright-red chili skewer 20cm from the smartphone lens with her flat rounded left hand behind it so continuous autofocus locks onto the glistening spice coat",
+      "actionZh": "将裹满红亮辣椒油的烤串举到距镜头20厘米处，左手圆润手掌平摊在后方托底触发微距自动对焦",
+      "eyeLineEn": "peeks around the foreground skewer into 0° lens to confirm focus lock",
+      "eyeLineZh": "从前景烤串旁探出齐刘海脑袋0°确认微距合焦清晰",
+      "cameraEn": "Arm's-length 18mm selfie frame with crisp foreground macro focus pull",
+      "cameraZh": "手持前置超广角近景微距锁死红油烤串",
+      "hailuoTag": "[Static shot]",
+      "firstFramePromptEn": "9:16 vertical static keyframe, 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening: a bold Duolingo-world-inspired flat-3D geometric character ('Lila') with a rounded matte-clay peach head, rosy circular blush cheeks, sculpted deep-violet bob hair with straight geometric bangs, oversized half-lidded expressive pill eyes, and a chunky lavender striped sweater, extending right pill-arm to hold an 18mm selfie gimbal, mid-setup before holds a bright-red chili skewer 20cm from the smartphone lens with her flat rounded left hand behind it so continuous autofocus locks onto the glistening spice coat. vibrant night-street neon signage bokeh in mid-ground, cool-white smartphone screen glow illuminating the host's face from arm's length, natural night auto-ISO texture. Crisp room/world background, clean raw camera feed, zero UI text or watermarks.",
+      "firstFramePromptZh": "9:16竖屏首帧静态锚定图，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变：多邻国角色体系风格的扁平3D圆润几何酷妹「Lila」（柔和圆方粉肤头部配圆形珊瑚腮红、深紫几何齐刘海波波头、半耷拉死鱼眼大眼仁配紫粗眉、穿浅紫条纹宽松毛衣），右臂前伸一臂持18mm前置自拍云台，处于「将裹满红亮辣椒油的烤串举到距镜头20厘米处，左手圆润手掌平摊在后方托底触发微距自动对焦」起始构图。中景街头霓虹灯牌流光溢彩，一臂距离的手机屏幕冷白光自然照亮主播面部，真实夜间手机自动曝光质感。100%纯净无UI文字底片，零乱码弹幕，零水印。",
+      "i2vPromptEn": "18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening. Subject: a bold Duolingo-world-inspired flat-3D geometric character ('Lila') with a rounded matte-clay peach head, rosy circular blush cheeks, sculpted deep-violet bob hair with straight geometric bangs, oversized half-lidded expressive pill eyes, and a chunky lavender striped sweater, extending right pill-arm to hold an 18mm selfie gimbal. Action: holds a bright-red chili skewer 20cm from the smartphone lens with her flat rounded left hand behind it so continuous autofocus locks onto the glistening spice coat. Eye-line: peeks around the foreground skewer into 0° lens to confirm focus lock. Camera physics: Arm's-length 18mm selfie frame with crisp foreground macro focus pull. Lighting: vibrant night-street neon signage bokeh in mid-ground, cool-white smartphone screen glow illuminating the host's face from arm's length, natural night auto-ISO texture. 9:16 vertical raw livestream camera plate, clean camera feed, zero burned-in UI text, zero scrolling comments, zero platform watermarks.",
+      "i2vPromptZh": "【即梦I2V首尾帧纯净底片】9:16竖屏，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变。主体：多邻国角色体系风格的扁平3D圆润几何酷妹「Lila」（柔和圆方粉肤头部配圆形珊瑚腮红、深紫几何齐刘海波波头、半耷拉死鱼眼大眼仁配紫粗眉、穿浅紫条纹宽松毛衣），右臂前伸一臂持18mm前置自拍云台。单一动作：将裹满红亮辣椒油的烤串举到距镜头20厘米处，左手圆润手掌平摊在后方托底触发微距自动对焦。互动眼神轴：从前景烤串旁探出齐刘海脑袋0°确认微距合焦清晰。机位反馈：手持前置超广角近景微距锁死红油烤串。补光：中景街头霓虹灯牌流光溢彩，一臂距离的手机屏幕冷白光自然照亮主播面部，真实夜间手机自动曝光质感。100%纯净无UI文字底片（严禁AI直出滚动弹幕文字、礼物按钮或平台台标水印，所有直播边框由后置HUD叠加）。",
+      "trackBFacecamPromptEn": null,
+      "trackBFacecamPromptZh": null,
+      "negativePromptEn": "uncanny valley mannequin face, realistic human nose/ears/pores, creepy bald plastic doll, desaturated muddy colors, sharp realistic bird feathers/talons, official trademarked brand wordmarks, burned-in gibberish UI text, floating omniscient crane camera, detached movie scene ignoring the lens, garbled AI-generated chat text, fake TikTok/Douyin/Twitch logo watermarks, microphone switching sides",
+      "negativePromptZh": "恐怖谷光头假人模型，写实真人鼻耳毛孔，阴暗脏污色调，写实尖锐鸟喙利爪，官方品牌字标水印，画面内烘死的乱码弹幕UI，上帝视角电影摇臂空镜，角色无视镜头演戏，AI直出乱码弹幕文字，虚假平台Logo水印，麦克风跨镜头左右跳位",
+      "sfxCue": "boing",
+      "sfx": "烤串滋滋冒油声 + 对焦清脆锁定音",
+      "caption": "手掌托底给你们看清楚，满满一层魔鬼椒！",
+      "chatEn": "",
+      "hudOverlay": {
+        "platform": "douyin",
+        "enabled": true,
+        "viewerCount": 22080,
+        "safeZone1080x1920": {
+          "topAvoidPx": 290,
+          "bottomAvoidPx": 580,
+          "rightAvoidPx": 148,
+          "chatWidthRatio": 0.68,
+          "chatMaxHeightRatio": 0.23
+        },
+        "activePopup": "commerce_card",
+        "commentsZh": [
+          {
+            "user": "微距考据党",
+            "text": "圆手掌托底对焦好稳，红油滋滋响！",
+            "lv": 18
+          },
+          {
+            "user": "夜猫子07",
+            "text": "小黄车1号同款辣串夜宵已下单",
+            "lv": 13,
+            "combo": 8
+          },
+          {
+            "user": "前排押注",
+            "text": "赌五毛钱三秒内高冷表情必破功",
+            "lv": 25
+          }
+        ],
+        "commentsEn": [
+          {
+            "user": "lens_nerd",
+            "text": "clean palm autofocus on that spice glaze!",
+            "lv": 18
+          },
+          {
+            "user": "hungry_rn",
+            "text": "sizzling chili crust in full HD",
+            "lv": 13,
+            "combo": 8
+          },
+          {
+            "user": "chat_bet",
+            "text": "3... 2... 1... goodbye poker face",
+            "lv": 25
+          }
+        ],
+        "commerceItemZh": "秘制十倍魔鬼辣烤串",
+        "commerceItemEn": "10x Chili Skewers",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
+        "giftZh": {
+          "sender": "星河舰长",
+          "gift": "璀璨星舰",
+          "combo": 66
+        },
+        "giftEn": {
+          "sender": "NovaPilot",
+          "gift": "Starlight Cruiser",
+          "combo": 66
+        },
+        "pkScoreRatio": 0.52,
+        "heartBurstIntensity": "normal"
+      },
+      "actors": null,
+      "props": null
+    },
+    {
+      "shotNumber": 3,
+      "role": "Twist / 一口破功全脸涨红破防",
+      "durationSec": 4,
+      "timeWindow": "7.5s–11.5s",
+      "exactTimeWindow": "7.50s–11.50s",
+      "actionEn": "takes one bite and her cool half-lidded eyes instantly pop into giant wide circular shock as bright-coral blush spreads across her cheeks and the selfie arm trembles",
+      "actionZh": "淡定咬下一口后，原本高冷的半耷拉眼瞬间瞪成超大号震惊圆眼，珊瑚红晕一下漫过整张圆脸，举自拍杆的手臂疯狂发抖",
+      "eyeLineEn": "giant watering pill-eyes locked at 0° into the front lens in total panic",
+      "eyeLineZh": "破功瞪圆大眼0°死死盯住前置镜头，头顶呆毛炸起",
+      "cameraEn": "Close 18mm selfie framing with comedic spicy-tremor shake",
+      "cameraZh": "贴脸超广角前置构图伴随手抖高频微震",
+      "hailuoTag": "[Push in, Shake]",
+      "firstFramePromptEn": "9:16 vertical static keyframe, 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening: a bold Duolingo-world-inspired flat-3D geometric character ('Lila') with a rounded matte-clay peach head, rosy circular blush cheeks, sculpted deep-violet bob hair with straight geometric bangs, oversized half-lidded expressive pill eyes, and a chunky lavender striped sweater, extending right pill-arm to hold an 18mm selfie gimbal, mid-setup before takes one bite and her cool half-lidded eyes instantly pop into giant wide circular shock as bright-coral blush spreads across her cheeks and the selfie arm trembles. vibrant night-street neon signage bokeh in mid-ground, cool-white smartphone screen glow illuminating the host's face from arm's length, natural night auto-ISO texture. Crisp room/world background, clean raw camera feed, zero UI text or watermarks.",
+      "firstFramePromptZh": "9:16竖屏首帧静态锚定图，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变：多邻国角色体系风格的扁平3D圆润几何酷妹「Lila」（柔和圆方粉肤头部配圆形珊瑚腮红、深紫几何齐刘海波波头、半耷拉死鱼眼大眼仁配紫粗眉、穿浅紫条纹宽松毛衣），右臂前伸一臂持18mm前置自拍云台，处于「淡定咬下一口后，原本高冷的半耷拉眼瞬间瞪成超大号震惊圆眼，珊瑚红晕一下漫过整张圆脸，举自拍杆的手臂疯狂发抖」起始构图。中景街头霓虹灯牌流光溢彩，一臂距离的手机屏幕冷白光自然照亮主播面部，真实夜间手机自动曝光质感。100%纯净无UI文字底片，零乱码弹幕，零水印。",
+      "i2vPromptEn": "18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening. Subject: a bold Duolingo-world-inspired flat-3D geometric character ('Lila') with a rounded matte-clay peach head, rosy circular blush cheeks, sculpted deep-violet bob hair with straight geometric bangs, oversized half-lidded expressive pill eyes, and a chunky lavender striped sweater, extending right pill-arm to hold an 18mm selfie gimbal. Action: takes one bite and her cool half-lidded eyes instantly pop into giant wide circular shock as bright-coral blush spreads across her cheeks and the selfie arm trembles. Eye-line: giant watering pill-eyes locked at 0° into the front lens in total panic. Camera physics: Close 18mm selfie framing with comedic spicy-tremor shake. Lighting: vibrant night-street neon signage bokeh in mid-ground, cool-white smartphone screen glow illuminating the host's face from arm's length, natural night auto-ISO texture. 9:16 vertical raw livestream camera plate, clean camera feed, zero burned-in UI text, zero scrolling comments, zero platform watermarks.",
+      "i2vPromptZh": "【即梦I2V首尾帧纯净底片】9:16竖屏，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变。主体：多邻国角色体系风格的扁平3D圆润几何酷妹「Lila」（柔和圆方粉肤头部配圆形珊瑚腮红、深紫几何齐刘海波波头、半耷拉死鱼眼大眼仁配紫粗眉、穿浅紫条纹宽松毛衣），右臂前伸一臂持18mm前置自拍云台。单一动作：淡定咬下一口后，原本高冷的半耷拉眼瞬间瞪成超大号震惊圆眼，珊瑚红晕一下漫过整张圆脸，举自拍杆的手臂疯狂发抖。互动眼神轴：破功瞪圆大眼0°死死盯住前置镜头，头顶呆毛炸起。机位反馈：贴脸超广角前置构图伴随手抖高频微震。补光：中景街头霓虹灯牌流光溢彩，一臂距离的手机屏幕冷白光自然照亮主播面部，真实夜间手机自动曝光质感。100%纯净无UI文字底片（严禁AI直出滚动弹幕文字、礼物按钮或平台台标水印，所有直播边框由后置HUD叠加）。",
+      "trackBFacecamPromptEn": null,
+      "trackBFacecamPromptZh": null,
+      "negativePromptEn": "uncanny valley mannequin face, realistic human nose/ears/pores, creepy bald plastic doll, desaturated muddy colors, sharp realistic bird feathers/talons, official trademarked brand wordmarks, burned-in gibberish UI text, floating omniscient crane camera, detached movie scene ignoring the lens, garbled AI-generated chat text, fake TikTok/Douyin/Twitch logo watermarks, microphone switching sides",
+      "negativePromptZh": "恐怖谷光头假人模型，写实真人鼻耳毛孔，阴暗脏污色调，写实尖锐鸟喙利爪，官方品牌字标水印，画面内烘死的乱码弹幕UI，上帝视角电影摇臂空镜，角色无视镜头演戏，AI直出乱码弹幕文字，虚假平台Logo水印，麦克风跨镜头左右跳位",
+      "sfxCue": "buzz",
+      "sfx": "咔嚓咬下声 + 蒸汽喷发滑稽音效",
+      "caption": "等一下……我人设要崩了快拿水来！！",
+      "chatEn": "",
+      "hudOverlay": {
+        "platform": "douyin",
+        "enabled": true,
+        "viewerCount": 48100,
+        "safeZone1080x1920": {
+          "topAvoidPx": 290,
+          "bottomAvoidPx": 580,
+          "rightAvoidPx": 148,
+          "chatWidthRatio": 0.68,
+          "chatMaxHeightRatio": 0.23
+        },
+        "activePopup": "gift_combo",
+        "commentsZh": [
+          {
+            "user": "人设崩塌组",
+            "text": "哈哈哈哈死鱼眼一秒瞪成铜铃大圆眼！",
+            "lv": 29,
+            "combo": 26
+          },
+          {
+            "user": "红温现场",
+            "text": "整张脸红成小番茄，自拍杆都在抖",
+            "lv": 17
+          },
+          {
+            "user": "切片预定",
+            "text": "年度最反差萌吃播翻车没有之一",
+            "lv": 31
+          }
+        ],
+        "commentsEn": [
+          {
+            "user": "persona_gone",
+            "text": "HER COOL EYES POPPED WIDE OPEN LMAO",
+            "lv": 29,
+            "combo": 26
+          },
+          {
+            "user": "coral_blush",
+            "text": "FULL TOMATO BLUSH + SHAKING ARM",
+            "lv": 17
+          },
+          {
+            "user": "vod_clipper",
+            "text": "funniest character break on live",
+            "lv": 31
+          }
+        ],
+        "commerceItemZh": "秘制十倍魔鬼辣烤串",
+        "commerceItemEn": "10x Chili Skewers",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
+        "giftZh": {
+          "sender": "星河舰长",
+          "gift": "璀璨星舰",
+          "combo": 66
+        },
+        "giftEn": {
+          "sender": "NovaPilot",
+          "gift": "Starlight Cruiser",
+          "combo": 66
+        },
+        "pkScoreRatio": 0.28,
+        "heartBurstIntensity": "high"
+      },
+      "actors": null,
+      "props": null
+    },
+    {
+      "shotNumber": 4,
+      "role": "Payoff / 狂炫超大冰柠檬茶回血",
+      "durationSec": 3.5,
+      "timeWindow": "11.5s–15.0s",
+      "exactTimeWindow": "11.50s–15.00s",
+      "actionEn": "hugs an oversized yellow iced lemon-tea boba cup and gulps furiously through the straw while darting her eyes down 8° at the laughing chat stream",
+      "actionZh": "双手抱住超大杯黄色手打冰柠檬茶疯狂吨吨猛吸，眼神往下8°瞟向满屏刷『酷妹破防』的哈哈弹幕",
+      "eyeLineEn": "8° downward read of laughing danmaku returning to grumpy 0° glare",
+      "eyeLineZh": "下瞥手机弹幕区后给出委屈又嘴硬的0°凝视",
+      "cameraEn": "Stabilized 18mm night-market selfie close-up",
+      "cameraZh": "恢复平稳的夜市灯笼夜景前置自拍收尾",
+      "hailuoTag": "[Static shot]",
+      "firstFramePromptEn": "9:16 vertical static keyframe, 18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening: a bold Duolingo-world-inspired flat-3D geometric character ('Lila') with a rounded matte-clay peach head, rosy circular blush cheeks, sculpted deep-violet bob hair with straight geometric bangs, oversized half-lidded expressive pill eyes, and a chunky lavender striped sweater, extending right pill-arm to hold an 18mm selfie gimbal, mid-setup before hugs an oversized yellow iced lemon-tea boba cup and gulps furiously through the straw while darting her eyes down 8° at the laughing chat stream. vibrant night-street neon signage bokeh in mid-ground, cool-white smartphone screen glow illuminating the host's face from arm's length, natural night auto-ISO texture. Crisp room/world background, clean raw camera feed, zero UI text or watermarks.",
+      "firstFramePromptZh": "9:16竖屏首帧静态锚定图，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变：多邻国角色体系风格的扁平3D圆润几何酷妹「Lila」（柔和圆方粉肤头部配圆形珊瑚腮红、深紫几何齐刘海波波头、半耷拉死鱼眼大眼仁配紫粗眉、穿浅紫条纹宽松毛衣），右臂前伸一臂持18mm前置自拍云台，处于「双手抱住超大杯黄色手打冰柠檬茶疯狂吨吨猛吸，眼神往下8°瞟向满屏刷『酷妹破防』的哈哈弹幕」起始构图。中景街头霓虹灯牌流光溢彩，一臂距离的手机屏幕冷白光自然照亮主播面部，真实夜间手机自动曝光质感。100%纯净无UI文字底片，零乱码弹幕，零水印。",
+      "i2vPromptEn": "18mm–20mm ultra-wide front-facing smartphone or pocket gimbal lens at arm's length (55–70cm), slight perspective foreshortening. Subject: a bold Duolingo-world-inspired flat-3D geometric character ('Lila') with a rounded matte-clay peach head, rosy circular blush cheeks, sculpted deep-violet bob hair with straight geometric bangs, oversized half-lidded expressive pill eyes, and a chunky lavender striped sweater, extending right pill-arm to hold an 18mm selfie gimbal. Action: hugs an oversized yellow iced lemon-tea boba cup and gulps furiously through the straw while darting her eyes down 8° at the laughing chat stream. Eye-line: 8° downward read of laughing danmaku returning to grumpy 0° glare. Camera physics: Stabilized 18mm night-market selfie close-up. Lighting: vibrant night-street neon signage bokeh in mid-ground, cool-white smartphone screen glow illuminating the host's face from arm's length, natural night auto-ISO texture. 9:16 vertical raw livestream camera plate, clean camera feed, zero burned-in UI text, zero scrolling comments, zero platform watermarks.",
+      "i2vPromptZh": "【即梦I2V首尾帧纯净底片】9:16竖屏，18mm–20mm超广角手机前置/口袋云台一臂距离（55–70cm）自拍透视，带轻微近大远小畸变。主体：多邻国角色体系风格的扁平3D圆润几何酷妹「Lila」（柔和圆方粉肤头部配圆形珊瑚腮红、深紫几何齐刘海波波头、半耷拉死鱼眼大眼仁配紫粗眉、穿浅紫条纹宽松毛衣），右臂前伸一臂持18mm前置自拍云台。单一动作：双手抱住超大杯黄色手打冰柠檬茶疯狂吨吨猛吸，眼神往下8°瞟向满屏刷『酷妹破防』的哈哈弹幕。互动眼神轴：下瞥手机弹幕区后给出委屈又嘴硬的0°凝视。机位反馈：恢复平稳的夜市灯笼夜景前置自拍收尾。补光：中景街头霓虹灯牌流光溢彩，一臂距离的手机屏幕冷白光自然照亮主播面部，真实夜间手机自动曝光质感。100%纯净无UI文字底片（严禁AI直出滚动弹幕文字、礼物按钮或平台台标水印，所有直播边框由后置HUD叠加）。",
+      "trackBFacecamPromptEn": null,
+      "trackBFacecamPromptZh": null,
+      "negativePromptEn": "uncanny valley mannequin face, realistic human nose/ears/pores, creepy bald plastic doll, desaturated muddy colors, sharp realistic bird feathers/talons, official trademarked brand wordmarks, burned-in gibberish UI text, floating omniscient crane camera, detached movie scene ignoring the lens, garbled AI-generated chat text, fake TikTok/Douyin/Twitch logo watermarks, microphone switching sides",
+      "negativePromptZh": "恐怖谷光头假人模型，写实真人鼻耳毛孔，阴暗脏污色调，写实尖锐鸟喙利爪，官方品牌字标水印，画面内烘死的乱码弹幕UI，上帝视角电影摇臂空镜，角色无视镜头演戏，AI直出乱码弹幕文字，虚假平台Logo水印，麦克风跨镜头左右跳位",
+      "sfxCue": "win",
+      "sfx": "吨吨吸管猛喝声 + 满屏礼物飘屏叮声",
+      "caption": "刚刚那段不许录屏！！谁发切片我拉黑谁！",
+      "chatEn": "",
+      "hudOverlay": {
+        "platform": "douyin",
+        "enabled": true,
+        "viewerCount": 78720,
+        "safeZone1080x1920": {
+          "topAvoidPx": 290,
+          "bottomAvoidPx": 580,
+          "rightAvoidPx": 148,
+          "chatWidthRatio": 0.68,
+          "chatMaxHeightRatio": 0.23
+        },
+        "activePopup": "gift_combo_peak",
+        "commentsZh": [
+          {
+            "user": "吨吨吨救命",
+            "text": "抱着超大冰柠檬茶猛吸太真实了哈哈",
+            "lv": 21,
+            "combo": 66
+          },
+          {
+            "user": "嘴硬王者",
+            "text": "边喝冰茶边瞪弹幕，傲娇值拉满",
+            "lv": 16
+          },
+          {
+            "user": "榜一随缘",
+            "text": "刷艘星舰给酷姐买十杯冰饮解辣！",
+            "lv": 36
+          }
+        ],
+        "commentsEn": [
+          {
+            "user": "lemon_tea",
+            "text": "CHUGGING THAT GIANT BOBA CUP FOR DEAR LIFE",
+            "lv": 21,
+            "combo": 66
+          },
+          {
+            "user": "top_gifter",
+            "text": "Starlight Cruiser for the spicy recovery",
+            "lv": 36
+          },
+          {
+            "user": "still_cool",
+            "text": "grumpy glare at chat is perfection",
+            "lv": 16
+          }
+        ],
+        "commerceItemZh": "秘制十倍魔鬼辣烤串",
+        "commerceItemEn": "10x Chili Skewers",
+        "qaQuestionZh": "等等！刚才是真的自己在动吗？？",
+        "qaQuestionEn": "Wait did that actually move on live?!",
+        "giftZh": {
+          "sender": "星河舰长",
+          "gift": "璀璨星舰",
+          "combo": 66
+        },
+        "giftEn": {
+          "sender": "NovaPilot",
+          "gift": "Starlight Cruiser",
+          "combo": 66
+        },
+        "pkScoreRatio": 0.14,
+        "heartBurstIntensity": "high"
+      },
+      "actors": null,
+      "props": null
+    }
+  ]
+}

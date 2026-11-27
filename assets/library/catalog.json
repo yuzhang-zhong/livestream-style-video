@@ -1,6 +1,6 @@
 {
   "name": "livestream-style-video-catalog",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "rigs": [
     "desktop-webcam",
     "handheld-selfie-irl",
@@ -12,12 +12,14 @@
     "drone-follow-live"
   ],
   "styles": [
-    "realistic-irl",
+    "duolingo-mascot",
+    "opensource-mascot",
     "roblox-blocky",
+    "voxel-sandbox",
     "anime-vtuber",
     "stylized-3d",
-    "voxel-sandbox",
-    "cinematic-genre-adapt"
+    "cinematic-genre-adapt",
+    "realistic-irl"
   ],
   "platforms": [
     "douyin",
@@ -28,12 +30,12 @@
     "clean"
   ],
   "templates": {
-    "generalAiVideo": [
-      "irl-night-market-selfie",
-      "desk-unboxing-autofocus",
-      "midnight-corridor-fpv-live",
-      "late-night-study-webcam",
-      "wuxia-sword-flight-live"
+    "mascotAndOpenSourceIp": [
+      "duolingo-owl-streak-cam",
+      "duolingo-chill-night-market",
+      "tux-ferris-code-webcam",
+      "godot-bot-unboxing-af",
+      "voxel-wuxia-sword-live"
     ],
     "robloxLivestream": [
       "roblox-obby-rage-pip",

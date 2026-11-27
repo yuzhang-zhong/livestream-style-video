@@ -36,436 +36,436 @@ export const ENGINE_PROFILES = {
 };
 
 export const TEMPLATES = {
-  "irl-night-market-selfie": {
-    slug: "irl_night_market_selfie",
-    category: "general-ai-video",
-    titleZh: "夜市超广角自拍杆试吃翻车（通用写实 AI 视频）",
-    titleEn: "Night-Market Ultra-Wide Selfie Skewer Fail (Realistic IRL)",
-    style: "realistic-irl",
+  "duolingo-owl-streak-cam": {
+    slug: "duolingo_owl_streak_cam",
+    category: "mascot-and-opensource-ip",
+    titleZh: "多邻国风翠羽猫头鹰午夜查岗直播（Duolingo 几何萌宠风）",
+    titleEn: "Feather-Green Owl Mascot Midnight Streak-Check Webcam Live",
+    style: "duolingo-mascot",
+    rig: "desktop-webcam",
+    lighting: "ring-rgb-studio",
+    platform: "douyin",
+    host: "LingoOwl",
+    backdrop: "owl_studio",
+    subjectEn:
+      "a plump, vibrant feather-green (#58CC02) Duolingo-inspired rounded geometric owl mascot streamer with a lime-green scalloped belly patch, golden-amber (#FFC800) two-part beak, oversized white pill-shaped eyes with thick floating green brow bars, wearing studio headphones behind a left-mounted matte-black condenser boom mic",
+    subjectZh:
+      "饱满圆润的多邻国风翠羽绿(#58CC02)几何猫头鹰萌宠主播（浅绿扇纹肚皮、琥珀黄立体圆喙、超大号胶囊白眼仁配粗线条悬浮表情眉、头戴监听耳机），坐在左置哑光黑悬臂麦直播台后",
+    shots: [
+      {
+        role: "Hook / 午夜微笑查岗立Flag",
+        durationSec: 3.5,
+        actionEn:
+          "waves one plump green wing cheerfully toward the 0° monitor-top webcam while pointing the other wing at a glowing '23:58' desk flip-clock",
+        actionZh:
+          "对着显示器顶端0°广角摄像头元气满满地挥动右侧翠绿圆翅膀打招呼，左翅指向桌面上显示「23:58」的发光翻页钟提醒打卡",
+        eyeLineEn: "sweet 0° direct webcam lens eye-contact with arched cheerful brow bars",
+        eyeLineZh: "弯起开心粗眉0°直视主摄像头温柔微笑催打卡",
+        cameraEn: "Locked 24mm monitor-top webcam at 6° downward tilt, crisp vibrant matte-clay studio lighting",
+        cameraZh: "锁死在显示器顶端的24mm广角摄像头，高饱和通透软陶棚拍布光",
+        hailuoTag: "[Static shot]",
+        sfxCue: "chime",
+        sfx: "清脆打卡叮咚声 + 呆萌拍翅噗噗声",
+        caption: "宝子们晚上好呀～距离断签还有最后两分钟哦！",
+        hudPopup: "join_toast"
+      },
+      {
+        role: "Proof / 偏轴扫视借口弹幕眯眼",
+        durationSec: 4.0,
+        actionEn:
+          "leans closer to the desk mic and flicks its oversized pupils 15° right to read viewer excuses in live chat as its thick green brow bars lower into a suspicious squint",
+        actionZh:
+          "圆滚滚的身子凑近悬臂麦，超大号黑瞳孔向右侧15°副屏扫视满屏『明天一定学』的借口弹幕，头顶粗绿眉缓缓压低成怀疑凝视",
+        eyeLineEn: "15° off-axis chat-monitor squint shifting slowly back toward 0° webcam",
+        eyeLineZh: "15°偏轴半眯眼审视副屏弹幕，随即缓缓转回0°主镜头",
+        cameraEn: "Identical locked 24mm webcam frame with green screen-glow reflection",
+        cameraZh: "固定24mm桌面机位，副屏冷光映在圆润羽冠边缘",
+        hailuoTag: "[Push in]",
+        sfxCue: "clack",
+        sfx: "低沉审视嗡鸣音 + 密集弹幕滚动声",
+        caption: "弹幕说『在忙着刷视频没空背单词』？我记本本上了",
+        hudPopup: "commerce_card"
+      },
+      {
+        role: "Twist / 红光骤亮掏出365连胜火苗",
+        durationSec: 4.0,
+        actionEn:
+          "studio RGB rim-lights snap to dramatic crimson as the green owl raises a giant glowing orange '365 STREAK' flame trophy right up to the lens with intense V-angled brows",
+        actionZh:
+          "背景RGB灯带瞬间切换为压迫感红光，绿鸟主播双眉倒竖呈犀利V字，双翅猛地举起一枚发光的「365连胜火苗」奖牌怼到镜头前震慑全场",
+        eyeLineEn: "unblinking 0° extreme close-up lens stare behind the glowing flame icon",
+        eyeLineZh: "隔着熊熊燃烧的连胜火苗0°不眨眼怼脸凝视摄像头",
+        cameraEn: "Locked 24mm webcam shaking briefly from the trophy thump on the desk",
+        cameraZh: "24mm固定机位随奖牌砸桌产生真实高频微震",
+        hailuoTag: "[Shake, Push in]",
+        sfxCue: "siren",
+        sfx: "压迫感重低音咚声 + 火苗燃起呼啸声",
+        caption: "断签还是现在立刻学五分钟？看着我的眼睛回答！",
+        hudPopup: "gift_combo"
+      },
+      {
+        role: "Payoff / 秒变星星眼拍翅撒花收尾",
+        durationSec: 3.5,
+        actionEn:
+          "the instant chat completes the lesson, studio lights flip back to sunny rainbow pastel as the owl hops happily flapping both wings with sparkly joyful eyes",
+        actionZh:
+          "看到弹幕刷屏『已打卡保住连胜』瞬间，灯光秒回明快彩虹色，绿鸟一秒切换弯弯笑眼原地Q弹蹦跳拍翅庆祝",
+        eyeLineEn: "15° happy check of streak counter back to 0° joyful wing-wave",
+        eyeLineZh: "15°满意看一眼连胜后台，转回0°开心拍翅比心",
+        cameraEn: "Locked 24mm studio webcam loop return",
+        cameraZh: "固定24mm明快直播间构图无缝回扣开场",
+        hailuoTag: "[Static shot]",
+        sfxCue: "win",
+        sfx: "经典通关胜利欢呼号角 + 满屏礼物连击叮声",
+        caption: "连胜保住啦！明天23:58我们继续不见不散哦～",
+        hudPopup: "gift_combo_peak"
+      }
+    ]
+  },
+
+  "duolingo-chill-night-market": {
+    slug: "duolingo_chill_night_market",
+    category: "mascot-and-opensource-ip",
+    titleZh: "多邻国扁平3D风紫发酷妹夜市辣串自拍（几何角色风）",
+    titleEn: "Duolingo-Style Geometric Cast Night-Market Chili Skewer Selfie",
+    style: "duolingo-mascot",
     rig: "handheld-selfie-irl",
     lighting: "night-neon-irl",
     platform: "douyin",
-    host: "Lin",
+    host: "Lila",
     backdrop: "night_market",
     subjectEn:
-      "a photorealistic young street-food streamer in a denim jacket with a clip-on wireless lavalier mic on the collar, extending right arm forward holding an 18mm ultra-wide front-facing smartphone gimbal at arm's length",
+      "a bold Duolingo-world-inspired flat-3D geometric character ('Lila') with a rounded matte-clay peach head, rosy circular blush cheeks, sculpted deep-violet bob hair with straight geometric bangs, oversized half-lidded expressive pill eyes, and a chunky lavender striped sweater, extending right pill-arm to hold an 18mm selfie gimbal",
     subjectZh:
-      "身穿牛仔夹克、领口夹着无线领夹麦的写实年轻美食主播，右臂向前伸出一臂距离持握18mm超广角手机前置云台自拍",
+      "多邻国角色体系风格的扁平3D圆润几何酷妹「Lila」（柔和圆方粉肤头部配圆形珊瑚腮红、深紫几何齐刘海波波头、半耷拉死鱼眼大眼仁配紫粗眉、穿浅紫条纹宽松毛衣），右臂前伸一臂持18mm前置自拍云台",
     shots: [
       {
-        role: "Hook / 开播暴击点名弹幕",
+        role: "Hook / 死鱼眼酷妹夜市开播立Flag",
         durationSec: 3.5,
         actionEn:
-          "walks briskly past glowing night-market neon stalls while pointing with the free left hand at a smoking chili-oil skewer stall behind and grinning directly into the 0° held selfie lens",
+          "strolls past glowing red-and-gold night-market lanterns while casually pointing left rounded hand at a sizzling chili-oil skewer stall and addressing the 0° selfie lens",
         actionZh:
-          "边走过霓虹闪烁的夜市摊位，边用空出的左手反指身后冒着红油热气的变态辣烤串摊，0°怼脸直视手持前置镜头放狠话",
-        eyeLineEn: "direct 0° front-camera eye-contact, brief 8° downward flick checking live comment scroll on phone screen",
-        eyeLineZh: "0°直视手机前置镜头互动，顺势向下偏8°扫一眼屏幕弹幕",
-        cameraEn: "18mm ultra-wide arm's-length selfie tracking shot with natural walking bob and warm neon stall bokeh",
-        cameraZh: "18mm一臂距离超广角自拍跟走机位，带自然步伐起伏与夜市霓虹灯牌散景",
+          "慢悠悠走过挂满红金灯笼的霓虹夜市摊，左手圆润短臂随手反指身后的变态辣红油烤串摊，用标志性半耷拉酷眼0°直视前置镜头",
+        eyeLineEn: "cool half-lidded 0° front-camera eye-contact, quick 8° downward glance at phone chat",
+        eyeLineZh: "酷感半眯眼0°直视手持前置镜头，顺势向下8°扫视弹幕挑衅",
+        cameraEn: "18mm ultra-wide arm's-length selfie tracking shot with warm lantern bokeh",
+        cameraZh: "18mm一臂距离超广角自拍跟走机位，背景红黄夜市灯笼流光溢彩",
         hailuoTag: "[Pull out, Shake]",
         sfxCue: "chime",
-        sfx: "夜市鼎沸人声 + 领夹麦近讲人声 + 进场清脆提示音",
-        caption: "弹幕说不敢挑战十倍辣？安排！",
+        sfx: "夜市滋滋烟火声 + 酷感开播提示音",
+        caption: "弹幕赌我吃不下一串十倍辣？呵，小看谁呢。",
         hudPopup: "join_toast"
       },
       {
-        role: "Proof / 微距怼脸对焦实测",
+        role: "Proof / 微距怼脸展示红油辣串",
         durationSec: 4.0,
         actionEn:
-          "lifts a glistening red-chili skewer within 20cm of the smartphone lens with flat palm held behind it so continuous autofocus snaps sharply onto the sizzling spice crust",
+          "holds a bright-red chili skewer 20cm from the smartphone lens with her flat rounded left hand behind it so continuous autofocus locks onto the glistening spice coat",
         actionZh:
-          "将裹满红油辣椒面的烤串递到距前置镜头20厘米处，左手掌平摊在烤串后方托底触发手机连续微距自动对焦",
-        eyeLineEn: "glances between the close-up skewer and 0° lens to confirm autofocus lock",
-        eyeLineZh: "视线在近景烤串与手机前置对焦框之间确认清晰度",
-        cameraEn: "Arm's-length 18mm selfie frame with shallow macro autofocus pull onto foreground skewer",
-        cameraZh: "手持前置超广角机位，焦点快速拉近锁死前景红油烤串（背景主播微虚）",
+          "将裹满红亮辣椒油的烤串举到距镜头20厘米处，左手圆润手掌平摊在后方托底触发微距自动对焦",
+        eyeLineEn: "peeks around the foreground skewer into 0° lens to confirm focus lock",
+        eyeLineZh: "从前景烤串旁探出齐刘海脑袋0°确认微距合焦清晰",
+        cameraEn: "Arm's-length 18mm selfie frame with crisp foreground macro focus pull",
+        cameraZh: "手持前置超广角近景微距锁死红油烤串",
         hailuoTag: "[Static shot]",
         sfxCue: "boing",
-        sfx: "滋滋烤油声 + 手机对焦滴滴声",
-        caption: "家人们看这层辣椒籽，零滤镜直出！",
+        sfx: "烤串滋滋冒油声 + 对焦清脆锁定音",
+        caption: "手掌托底给你们看清楚，满满一层魔鬼椒！",
         hudPopup: "commerce_card"
       },
       {
-        role: "Twist / 直播翻车瞬间破防",
+        role: "Twist / 一口破功全脸涨红破防",
         durationSec: 4.0,
         actionEn:
-          "takes one confident bite of the chili skewer and instantly freezes mid-chew as cheeks flush red and handheld selfie arm trembles with panic",
+          "takes one bite and her cool half-lidded eyes instantly pop into giant wide circular shock as bright-coral blush spreads across her cheeks and the selfie arm trembles",
         actionZh:
-          "自信满满咬下一大口辣串，咀嚼半秒后整个人瞬间僵在原地，双颊泛红、持握自拍杆的右臂开始剧烈发抖",
-        eyeLineEn: "wide watering eyes locked at 0° into the front lens in silent regret",
-        eyeLineZh: "瞳孔地震泛起泪光，0°死死盯住前置摄像头陷入沉默",
-        cameraEn: "Close arm's-length selfie framing with involuntary hand-tremor micro-shake",
-        cameraZh: "近距前置怼脸构图，伴随主播手抖产生的真实高频微震",
+          "淡定咬下一口后，原本高冷的半耷拉眼瞬间瞪成超大号震惊圆眼，珊瑚红晕一下漫过整张圆脸，举自拍杆的手臂疯狂发抖",
+        eyeLineEn: "giant watering pill-eyes locked at 0° into the front lens in total panic",
+        eyeLineZh: "破功瞪圆大眼0°死死盯住前置镜头，头顶呆毛炸起",
+        cameraEn: "Close 18mm selfie framing with comedic spicy-tremor shake",
+        cameraZh: "贴脸超广角前置构图伴随手抖高频微震",
         hailuoTag: "[Push in, Shake]",
         sfxCue: "buzz",
-        sfx: "清脆咬合声 + 瞬间安静耳鸣音",
-        caption: "等一下……好像不太对劲",
+        sfx: "咔嚓咬下声 + 蒸汽喷发滑稽音效",
+        caption: "等一下……我人设要崩了快拿水来！！",
         hudPopup: "gift_combo"
       },
       {
-        role: "Payoff / 狂灌冰饮看弹幕刷屏",
+        role: "Payoff / 狂炫超大冰柠檬茶回血",
         durationSec: 3.5,
         actionEn:
-          "tilts the selfie camera slightly upward while gulping an oversized iced lemon tea in desperation, eyes darting rapidly down to read the exploding chat stream",
+          "hugs an oversized yellow iced lemon-tea boba cup and gulps furiously through the straw while darting her eyes down 8° at the laughing chat stream",
         actionZh:
-          "仰角举高自拍手机疯狂猛灌超大杯冰柠檬茶，眼神高频往下瞟向疯狂刷屏嘲笑的手机弹幕区",
-        eyeLineEn: "rapid 8° downward chat-read flicks alternating with defeated 0° stare",
-        eyeLineZh: "高频下瞥手机弹幕区后给出彻底服软的0°生无可恋眼神",
-        cameraEn: "Slightly high-angle 18mm handheld selfie shot with neon lanterns overhead",
-        cameraZh: "微俯拍18mm手持前置机位，头顶夜市灯笼入画收尾",
-        hailuoTag: "[Tilt down, Static shot]",
-        sfxCue: "win",
-        sfx: "吨吨猛喝冰块碰撞声 + 礼物连击清脆叮声",
-        caption: "榜一别刷火箭了先帮我叫救护车",
-        hudPopup: "gift_combo_peak"
-      }
-    ]
-  },
-
-  "desk-unboxing-autofocus": {
-    slug: "desk_unboxing_autofocus",
-    category: "general-ai-video",
-    titleZh: "桌面带货微距开箱弹飞事故（通用写实 AI 视频）",
-    titleEn: "Desk-Clamp Gadget Unboxing Spring Pop Fail (Realistic IRL)",
-    style: "realistic-irl",
-    rig: "overhead-showcase-rig",
-    lighting: "clean-beauty-softbox",
-    platform: "kuaishou",
-    host: "Kaya",
-    backdrop: "unboxing_desk",
-    subjectEn:
-      "a photorealistic tech livestream host in a crisp oatmeal knit sweater seated behind a clean studio desk with circular LED ring-light catchlights in the eyes and a left-mounted matte-black boom mic",
-    subjectZh:
-      "身穿燕麦色针织衫的写实数码测评主播坐在整洁直播台后，瞳孔映出清晰圆形环形灯眼神光，画面左下角固定伸入哑光黑悬臂麦",
-    shots: [
-      {
-        role: "Hook / 倒计时开箱钩子",
-        durationSec: 3.5,
-        actionEn:
-          "taps a sealed matte-silver mystery gadget cube on the desk twice and leans toward the 35mm desk-clamp lens with raised eyebrows",
-        actionZh:
-          "双手在直播台面轻敲两下密封哑光银色机关盲盒，身体向35mm桌面夹持摄像头前倾挑眉互动",
-        eyeLineEn: "0° direct lens eye-contact followed by a quick 15° glance to side iPad comment feed",
-        eyeLineZh: "0°直视主镜头互动，迅速向右侧15°平板弹幕屏扫一眼",
-        cameraEn: "Locked 35mm slightly high-angle desk-clamp livestream camera, crisp f/4 studio clarity",
-        cameraZh: "固定35mm微俯角桌面夹持直播机位，f/4通透高显色直播间画质",
-        hailuoTag: "[Static shot]",
-        sfxCue: "clack",
-        sfx: "清脆指节敲盒声 + 直播间上链接提示音",
-        caption: "全网断货的解压机关盒，今天直播间实测！",
-        hudPopup: "join_toast"
-      },
-      {
-        role: "Proof / 网红手掌托底对焦",
-        durationSec: 4.0,
-        actionEn:
-          "holds the metallic gadget cube 18cm from the camera lens with left palm flat behind it so autofocus locks onto the engraved red release button",
-        actionZh:
-          "右手将金属机关盒举到距镜头18厘米处，左手五指并拢平摊在盒子后方做网红托底对焦手势，焦点瞬间锁死盒顶红色按钮",
-        eyeLineEn: "peeks around the held box into 0° lens to verify focus sharpness",
-        eyeLineZh: "从展示盒旁探头直视0°镜头确认微距对焦清晰",
-        cameraEn: "Locked 35mm desk-clamp shot with smooth continuous AF-C focus shift from face to foreground cube",
-        cameraZh: "固定桌面机位触发平滑连续自动对焦（AF-C由人脸切至前景金属盒）",
-        hailuoTag: "[Push in]",
-        sfxCue: "chime",
-        sfx: "镜头马达轻响 + 金属质感摩挲声",
-        caption: "看这做工细节，手掌托底给大家看清楚",
-        hudPopup: "commerce_card"
-      },
-      {
-        role: "Twist / 弹簧机关意外炸开",
-        durationSec: 4.0,
-        actionEn:
-          "presses the red button on the desk and a harmless colorful foam mascot pops upward out of the cube, bumping the boom mic foam and startling the host backward into the chair",
-        actionZh:
-          "放回桌面按下红钮瞬间，盒内彩色海绵玩偶猛地弹簧弹出擦碰悬臂麦防喷棉，吓得主播整个人往后仰倒在电竞椅背上",
-        eyeLineEn: "wide startled eyes tracking the upward pop before snapping 0° to webcam",
-        eyeLineZh: "惊恐瞪眼追随弹起玩偶，随即猛看向0°摄像头确认刚刚全播出去",
-        cameraEn: "Locked desk-clamp camera with authentic brief desk-vibration micro-shake on pop",
-        cameraZh: "固定桌面支架机位，伴随桌面弹开瞬间的真实支架高频微震",
-        hailuoTag: "[Shake, Static shot]",
-        sfxCue: "boing",
-        sfx: "弹簧嘭声 + 麦克风防喷棉轻擦低频声",
-        caption: "卧槽！！厂家没说弹力这么猛啊！！",
-        hudPopup: "gift_combo"
-      },
-      {
-        role: "Payoff / 憋笑指副屏弹幕",
-        durationSec: 3.5,
-        actionEn:
-          "catches the fallen foam mascot on the desk, bursts out laughing while pointing right hand toward the off-axis chat monitor",
-        actionZh:
-          "一把按住落回桌面的海绵玩偶，破功憋不住大笑并用右手指着侧方15°弹幕副屏跟观众互怼",
-        eyeLineEn: "switches between 15° chat-monitor laugh and 0° direct webcam grin",
-        eyeLineZh: "在15°盯弹幕爆笑与0°回看主镜头之间自然切换",
-        cameraEn: "Locked 35mm studio desk framing matching Shot 1 for clean loop",
-        cameraZh: "固定35mm直播台构图完美回扣第一镜",
+          "双手抱住超大杯黄色手打冰柠檬茶疯狂吨吨猛吸，眼神往下8°瞟向满屏刷『酷妹破防』的哈哈弹幕",
+        eyeLineEn: "8° downward read of laughing danmaku returning to grumpy 0° glare",
+        eyeLineZh: "下瞥手机弹幕区后给出委屈又嘴硬的0°凝视",
+        cameraEn: "Stabilized 18mm night-market selfie close-up",
+        cameraZh: "恢复平稳的夜市灯笼夜景前置自拍收尾",
         hailuoTag: "[Static shot]",
         sfxCue: "win",
-        sfx: "真实憋笑声 + 键盘敲击截屏声",
-        caption: "谁在刷『主播工伤』出来挨打！",
+        sfx: "吨吨吸管猛喝声 + 满屏礼物飘屏叮声",
+        caption: "刚刚那段不许录屏！！谁发切片我拉黑谁！",
         hudPopup: "gift_combo_peak"
       }
     ]
   },
 
-  "midnight-corridor-fpv-live": {
-    slug: "midnight_corridor_fpv_live",
-    category: "general-ai-video",
-    titleZh: "深夜旧楼第一人称双持探险直播（悬疑剧情转直播）",
-    titleEn: "Midnight Corridor First-Person Flashlight & Chat-Phone Live",
-    style: "realistic-irl",
-    rig: "chest-head-pov",
-    lighting: "flashlight-dim-exploration",
-    platform: "instagram",
-    host: "ren.urban",
-    backdrop: "dim_corridor",
-    subjectEn:
-      "first-person 16mm chest/head-mounted live action-camera perspective of an urban explorer; left hand visible in lower-left holding a glowing smartphone displaying dark-mode chat light, right hand sweeping a tactical LED flashlight",
-    subjectZh:
-      "佩戴16mm超广角胸挂/头戴直播相机的第一人称视角；画面左下伸出左手举着泛冷蓝微光的副机看弹幕，右下伸出右手持战术强光手电筒扫射",
-    shots: [
-      {
-        role: "Hook / 第一视角双持开场",
-        durationSec: 3.5,
-        actionEn:
-          "takes two slow cautious footsteps down a peeling-paint vintage hallway while tilting the left-hand chat phone briefly toward the chest lens and sweeping the right-hand flashlight onto Room 404's brass plate",
-        actionZh:
-          "在墙皮斑驳的复古走廊缓慢迈出两步，左手微倾副机屏幕确认直播信号正常，右手强光手电筒精准打在尽头404铜牌木门上",
-        eyeLineEn: "first-person POV tilts slightly toward left-hand phone glow then locks onto the door ahead",
-        eyeLineZh: "第一人称镜头微低瞥一眼左手副机亮光，随即抬起锁死前方木门",
-        cameraEn: "16mm ultra-wide first-person chest-cam POV with authentic breathing sway and crisp f/5.6 depth",
-        cameraZh: "16mm超广角第一人称运动直播机位，带真实呼吸起伏与脚步微震",
-        hailuoTag: "[Push in]",
-        sfxCue: "chime",
-        sfx: "空旷走廊脚步回声 + 呼吸收音 + 弹幕提示轻响",
-        caption: "Chat told me to check the 4th floor... nobody's here right?",
-        hudPopup: "join_toast"
-      },
-      {
-        role: "Proof / 停步回应弹幕质疑",
-        durationSec: 4.0,
-        actionEn:
-          "pauses outside the wooden door and waves the right hand openly through the flashlight beam in front of the lens to prove there are no hidden wires",
-        actionZh:
-          "停在木门两米外，伸出右手在镜头前穿过手电筒光束晃动示意，向直播间证明现场绝无剧本机关",
-        eyeLineEn: "visible right hand gestures directly in front of the 16mm POV lens",
-        eyeLineZh: "右手直接在16mm第一视角镜头前比划互动",
-        cameraEn: "16mm first-person POV stationary with subtle heartbeat micro-sway",
-        cameraZh: "16mm第一视角驻足构图，保留细微手持呼吸感",
-        hailuoTag: "[Static shot]",
-        sfxCue: "clack",
-        sfx: "衣物摩擦声 + 压低声音耳语收音",
-        caption: "See? Zero strings, door is bolted from outside.",
-        hudPopup: "qa_pinned"
-      },
-      {
-        role: "Twist / 门缝自开与壁灯闪烁",
-        durationSec: 4.0,
-        actionEn:
-          "the overhead corridor bulb flickers twice and the heavy wooden door creaks open 15 centimeters by itself while the right-hand flashlight beam trembles violently",
-        actionZh:
-          "头顶走廊廊灯突然闪烁两下，沉重木门无风自动吱呀推开15厘米黑缝，画面右下右手持握的手电筒光斑剧烈颤抖",
-        eyeLineEn: "POV freezes dead on the widening dark door gap as left hand clutches phone tighter",
-        eyeLineZh: "第一视角死死定格在缓缓张开的门缝黑影，左手猛地攥紧副机",
-        cameraEn: "16mm first-person POV stepping half a pace backward with startled jolt",
-        cameraZh: "16mm第一视角倒退半步产生急促惊吓顿挫感",
-        hailuoTag: "[Pull out, Shake]",
-        sfxCue: "buzz",
-        sfx: "电流滋啦闪灯声 + 老旧门轴刺耳吱呀声",
-        caption: "WAIT DID YOU GUYS HEAR THAT?!",
-        hudPopup: "gift_combo"
-      },
-      {
-        role: "Payoff / 掉头狂奔手电乱晃",
-        durationSec: 3.5,
-        actionEn:
-          "whips 180 degrees around toward the stairwell exit in one urgent pivot as both hands pump into the lower frame sprinting out",
-        actionZh:
-          "第一视角猛地180度急转身朝安全出口楼梯间冲刺，双手交替甩入画面下沿伴随手电筒光束上下剧烈扫动",
-        eyeLineEn: "urgent POV whip-pan locking onto bright exit sign ahead",
-        eyeLineZh: "急促甩镜锁定前方绿色安全出口亮光",
-        cameraEn: "16mm action-cam sprint POV with authentic running bob",
-        cameraZh: "16mm运动相机冲刺第一视角，真实跑步颠簸收尾",
-        hailuoTag: "[Pan right, Shake]",
-        sfxCue: "siren",
-        sfx: "急促冲刺脚步声 + 麦克风风噪破音",
-        caption: "NOPE STREAM OVER WE ARE LEAVING!!",
-        hudPopup: "gift_combo_peak"
-      }
-    ]
-  },
-
-  "late-night-study-webcam": {
-    slug: "late_night_study_webcam",
-    category: "general-ai-video",
-    titleZh: "深夜赶工固定摄像头橘猫踩键盘（陪伴慢直播反转）",
-    titleEn: "Late-Night Desk Webcam Study Stream Tabby Cat Chaos",
-    style: "realistic-irl",
+  "tux-ferris-code-webcam": {
+    slug: "tux_ferris_code_webcam",
+    category: "mascot-and-opensource-ip",
+    titleZh: "开源吉祥物深夜敲代码直播：Linux 企鹅 Tux 与 Rust 螃蟹踩回车（开源 IP）",
+    titleEn: "Open-Source Mascot Deploy Stream: Linux Tux & Rust Ferris Crab",
+    style: "opensource-mascot",
     rig: "desktop-webcam",
     lighting: "warm-desk-lamp",
     platform: "x",
-    host: "dev_mika",
+    host: "@tux_kernel",
     backdrop: "study_room",
     subjectEn:
-      "a photorealistic creator in oversized glasses and a charcoal hoodie seated at a warm-lit study desk with a glowing mechanical keyboard, left boom mic, and cyan LED shelf rim light behind",
+      "plump satin-matte Linux Tux penguin mascot (glossy obsidian-black feathers, crisp snow-white belly, golden-orange contoured beak, purple-cyan RGB studio headphones) seated at a warm-lit developer desk with a recessed-keycap RGB mechanical keyboard, accompanied by CC0 bright-tangerine (#F74C00) Rust Ferris the Crab",
     subjectZh:
-      "戴大框眼镜穿深灰连帽卫衣的写实创作者坐在暖光书桌前，面前摆着背光机械键盘与左置悬臂麦，背后书架透出青色氛围灯带",
+      "圆润呆萌的开源Linux企鹅Tux主播（曜石黑羽绒配雪白圆肚皮、金黄立体扁嘴、头戴紫青双色RGB监听大耳机）坐在摆着背光机械键盘与双联代码屏的深夜书桌前，身旁藏着亮橙色(#F74C00)CC0开源吉祥物Rust小螃蟹Ferris",
     shots: [
       {
-        role: "Hook / 深夜陪伴读弹幕打卡",
+        role: "Hook / 企鹅Tux深夜敲内核读弹幕",
         durationSec: 3.5,
         actionEn:
-          "types steadily on the glowing mechanical keyboard, then flicks eyes 15° right to read a viewer message and gives a quiet encouraging thumbs-up to the 0° monitor-top webcam",
+          "Tux types briskly on the glowing RGB mechanical keyboard with both black flippers, glances 15° right at chat, and gives a cheerful flipper salute to the 0° monitor-top webcam",
         actionZh:
-          "双手在背光机械键盘上专注敲字，视线向右侧15°副屏扫过一条弹幕后，对着显示器上方0°摄像头安静比出大拇指回应",
-        eyeLineEn: "clean 15° chat-monitor read shifting to warm 0° webcam eye-contact",
-        eyeLineZh: "标准15°偏轴读弹幕后切回0°主摄像头对视点头",
-        cameraEn: "Locked 24mm monitor-top webcam at 6° downward tilt, deep room focus",
-        cameraZh: "锁死在显示器顶端的24mm广角摄像头（6°微俯拍，背景书架清晰）",
+          "戴耳机的企鹅Tux双翅飞快敲击RGB背光机械键盘，眼神偏15°扫过一条弹幕后，对着显示器上方0°摄像头帅气拍翅敬礼",
+        eyeLineEn: "15° chat-monitor read shifting cleanly to bright 0° webcam eye-contact",
+        eyeLineZh: "15°扫副屏弹幕后切回0°主摄像头圆环眼神光对视",
+        cameraEn: "Locked 24mm monitor-top webcam at 6° downward tilt, cyan shelf rim-light behind",
+        cameraZh: "锁死在显示器顶端的24mm广角摄像头，背景书架透出极客青色灯带",
         hailuoTag: "[Static shot]",
         sfxCue: "clack",
-        sfx: "清脆机械键盘麻将音 + 深夜安静底噪",
-        caption: "2:00 AM co-working stream — finishing the final slide deck",
+        sfx: "清脆青轴机械键盘麻将音 + 深夜主机低鸣",
+        caption: "2:00 AM kernel stream — running final checks before Friday freeze",
         hudPopup: "join_toast"
       },
       {
-        role: "Proof / 举马克杯镜头前叹气",
+        role: "Proof / 企鹅举马克杯·小螃蟹偷探头",
         durationSec: 4.0,
         actionEn:
-          "raises a ceramic coffee mug toward the webcam in a sleepy toast while behind the chair a ginger tabby cat's ears quietly pop above the desk edge",
+          "Tux lifts a white coffee mug toward the 0° webcam in a sleepy toast while bright-orange Rust Ferris the Crab quietly pops its stalk-eyes and cute claws up beside the mug",
         actionZh:
-          "略显困倦地举起陶瓷咖啡杯朝摄像头隔空碰杯，而书桌右后方一对橘猫耳朵悄无声息探出桌沿",
-        eyeLineEn: "host looks 0° at webcam, completely unaware of the cat ears behind; chat notices first",
-        eyeLineZh: "主播0°直视镜头喝咖啡浑然不觉，戏剧反差让弹幕率先发现猫耳朵",
-        cameraEn: "Identical locked 24mm monitor-top webcam frame",
-        cameraZh: "保持完全一致的24mm固定显示器机位",
+          "企鹅Tux举起白色咖啡马克杯朝0°镜头隔空干杯，而书桌右侧亮橙色小螃蟹Ferris悄悄探出两只圆眼睛与小钳子（弹幕疯狂预警）",
+        eyeLineEn: "Tux looks 0° at webcam unaware as Ferris's glossy eyes peek at the glowing Enter key",
+        eyeLineZh: "Tux看0°镜头浑然不觉，小螃蟹Ferris圆眼直勾勾盯上发光回车键",
+        cameraEn: "Identical locked 24mm monitor-top webcam framing",
+        cameraZh: "完全一致的24mm固定显示器机位展现戏剧反差",
         hailuoTag: "[Static shot]",
         sfxCue: "chime",
-        sfx: "轻放瓷杯声 + 细微猫咪呼噜声",
-        caption: "One last cup of coffee and we deploy...",
+        sfx: "轻举瓷杯声 + 小螃蟹咔嗒碎步声",
+        caption: "Just one sip of coffee, definitely NOT deploying on Friday night...",
         hudPopup: "join_toast"
       },
       {
-        role: "Twist / 橘猫飞扑一脚踩发送",
+        role: "Twist / 小螃蟹飞扑一钳子砸下回车",
         durationSec: 4.0,
         actionEn:
-          "the plump ginger tabby cat leaps squarely onto the glowing mechanical keyboard, scattering sticky notes and pressing Enter with both front paws",
+          "orange Ferris the Crab scuttle-leaps squarely onto the glowing mechanical keyboard, slamming both orange claws onto the Enter key as Tux's eyes widen in horror",
         actionZh:
-          "圆润橘猫猛地一跃精准降落在背光机械键盘正中央，震飞两张便利贴并两只猫爪结结实实踩下回车键",
-        eyeLineEn: "host's glasses reflect bright screen flash as eyes widen at the keyboard",
-        eyeLineZh: "镜片映出屏幕弹窗白光，主播瞳孔瞬间放大低头盯向猫爪",
-        cameraEn: "Locked monitor-top webcam shaking briefly from the cat landing on the desk",
-        cameraZh: "显示器摄像头因橘猫砸中桌面产生真实上下微震",
+          "亮橙色小螃蟹Ferris横着腾空一跃精准降落在机械键盘中央，两只橙色小蟹钳结结实实砸下回车键，Tux双眼瞬间瞪成铜铃",
+        eyeLineEn: "screen deploy flash illuminates Tux's wide shocked eyes staring down at Ferris",
+        eyeLineZh: "终端强制上线白光映亮企鹅Tux震惊放大的双眼",
+        cameraEn: "Locked monitor-top webcam jolting briefly from Ferris landing on the desk",
+        cameraZh: "24mm摄像头随小螃蟹落地产生真实桌面微震",
         hailuoTag: "[Shake, Static shot]",
         sfxCue: "drop",
-        sfx: "猫咪落地闷响 + 键盘乱按连响 + 系统发送提示音",
-        caption: "NO WAIT THAT WAS THE PRODUCTION BRANCH—",
+        sfx: "蟹壳落地咔哒声 + 回车重击音 + 服务器警报叮声",
+        caption: "FERRIS NO!! THAT WAS `git push --force origin main`!!",
         hudPopup: "gift_combo"
       },
       {
-        role: "Payoff / 人猫同步盯摄像头社死",
+        role: "Payoff / 企鹅与小螃蟹同步盯镜头社死",
         durationSec: 3.5,
         actionEn:
-          "both the frozen creator with hands on head and the sitting ginger cat slowly look straight up into the 0° monitor-top webcam together",
+          "Tux holds both flippers on its head while orange Ferris sits innocently on the keyboard waving a tiny claw—both staring straight up into the 0° webcam together",
         actionZh:
-          "双手抱头石化的主播与端坐在键盘上的橘猫同步缓慢抬头，一齐0°死死盯住显示器顶端的直播摄像头",
-        eyeLineEn: "synchronized 0° direct lens stare from both human host and tabby cat",
-        eyeLineZh: "一人一猫双双0°直视主摄像头定格",
-        cameraEn: "Locked 24mm monitor-top webcam frame",
-        cameraZh: "24mm固定桌面摄像头定格收尾",
+          "双翅抱头石化的企鹅Tux与端坐在键盘上无辜挥小钳子的橙色螃蟹Ferris同步抬头，齐刷刷0°死死盯住显示器顶端的摄像头",
+        eyeLineEn: "synchronized 0° direct webcam stare from both Linux Tux and Rust Ferris",
+        eyeLineZh: "一企鹅一螃蟹同步0°凝视主摄像头定格成开源名画",
+        cameraEn: "Locked 24mm monitor-top webcam payoff",
+        cameraZh: "固定24mm桌面机位神同步定格收尾",
         hailuoTag: "[Static shot]",
         sfxCue: "win",
-        sfx: "无辜猫叫一声 (Meow~) + 满屏飘心音效",
-        caption: "Chat... please tell me nobody clipped that.",
+        sfx: "螃蟹无辜夹钳咔嚓声 + 满屏六色飘心音效",
+        caption: "Rewrite it in Rust they said... chat please don't clip this 💀",
         hudPopup: "gift_combo_peak"
       }
     ]
   },
 
-  "wuxia-sword-flight-live": {
-    slug: "wuxia_sword_flight_live",
-    category: "general-ai-video",
-    titleZh: "仙侠御剑飞行早高峰户外直播（任意架空剧情转直播）",
-    titleEn: "Wuxia Flying-Sword Cloud Commute Selfie Live (Genre Plot -> Live POV)",
-    style: "cinematic-genre-adapt",
-    rig: "handheld-selfie-irl",
-    lighting: "daylight-outdoor-autoexp",
-    platform: "douyin",
-    host: "青云小师兄",
-    backdrop: "cloud_sea",
+  "godot-bot-unboxing-af": {
+    slug: "godot_bot_unboxing_af",
+    category: "mascot-and-opensource-ip",
+    titleZh: "开源蓝齿轮机器人微距托底开箱弹飞直播（Godot 机器人风）",
+    titleEn: "Open-Source Blue Gear-Bot [AF-C] Mystery Box Unboxing Live",
+    style: "opensource-mascot",
+    rig: "overhead-showcase-rig",
+    lighting: "clean-beauty-softbox",
+    platform: "kuaishou",
+    host: "GodoBot",
+    backdrop: "unboxing_desk",
     subjectEn:
-      "a windswept young wuxia swordsman in flowing azure-and-white robes standing atop a hovering jade-bronze flying sword high above a golden sea of clouds, extending right arm to hold a glowing jade-tablet selfie cam at 18mm ultra-wide angle",
+      "an endearing MIT open-source-inspired cobalt-blue (#478CBF) chamfered gear-head robot mascot streamer ('GodoBot') with three chunky top gear cogs, glowing circular white LED eyes, a segmented white mouth-bar, and articulated white-and-blue studio arms seated behind a clean desk with a locked left boom mic",
     subjectZh:
-      "身穿青白流云道袍的年轻剑修脚踏悬浮青铜古剑穿梭于金色云海之上，右臂伸直一臂距离举着发光玉简自拍法器呈18mm超广角直拍",
+      "讨喜的MIT开源风钴蓝色(#478CBF)倒角齿轮机器人主播「GodoBot」（头顶三枚圆润机械齿、发光圆形白环LED眼、白色分段机械嘴条、蓝白拼色圆角机械臂），端坐在带左置悬臂麦的高显色测评直播台后",
     shots: [
       {
-        role: "Hook / 云海早高峰开播吐槽",
+        role: "Hook / 齿轮机器人敲盒开播测评",
         durationSec: 3.5,
         actionEn:
-          "holds robe hair ribbon against strong high-altitude wind while shouting cheerfully into the 0° held jade selfie lens as sunlit mountain peaks whip past below",
+          "GodoBot taps a sealed brushed-silver mystery gadget cube twice with its rounded blue-and-white mechanical hand and tilts its gear-head cheerfully toward the 35mm lens",
         actionZh:
-          "左手按住被高空罡风吹乱的发带，对着一臂外0°玉简前置镜头大声喊话吐槽御剑早高峰，脚下金顶群峰飞速掠过",
-        eyeLineEn: "0° direct lens grin with windswept hair across forehead",
-        eyeLineZh: "迎风眯眼0°直视手持自拍法器镜头",
-        cameraEn: "18mm ultra-wide arm's-length selfie POV tilted slightly down to show cloud sea",
-        cameraZh: "18mm超广角一臂自拍微俯视角，完整带入脚下翻涌云海",
-        hailuoTag: "[Pull out, Shake]",
-        sfxCue: "chime",
-        sfx: "高空呼啸风噪收音 + 剑鸣嗡音 + 开播叮声",
-        caption: "御剑直播间家人们早！今天三环剑道又堵了！",
+          "蓝色齿轮机器人用圆角蓝白机械手轻敲两下桌面密封银色机关盲盒，歪起齿轮脑袋对着35mm桌面镜头闪烁开心LED圆眼",
+        eyeLineEn: "glowing LED eyes lock 0° into lens then flick 15° to side comment tablet",
+        eyeLineZh: "发光LED圆眼0°直视主镜头互动，随后偏15°扫一眼平板弹幕",
+        cameraEn: "Locked 35mm slightly high-angle desk-clamp camera, crisp f/4 studio softbox clarity",
+        cameraZh: "固定35mm微俯角桌面夹持直播机位，双柔光箱通透高画质",
+        hailuoTag: "[Static shot]",
+        sfxCue: "clack",
+        sfx: "清脆金属敲盒声 + 机器人欢快电子滴声",
+        caption: "老铁们久等啦！今天实测全网最神秘的开源硬件盲盒！",
         hudPopup: "join_toast"
       },
       {
-        role: "Proof / 下摇镜头展示脚下飞剑",
+        role: "Proof / 机械手掌托底触发AF-C微距锁焦",
         durationSec: 4.0,
         actionEn:
-          "tilts the held selfie cam downward to show embroidered boots balanced on the glowing rune-carved flying sword blade skimming a rainbow cloud bank",
+          "holds the metallic gadget cube 18cm from the 35mm lens with its flat white mechanical left palm behind it so continuous autofocus locks sharply onto the red top button",
         actionZh:
-          "手腕下压将自拍镜头摇向脚底，怼近展示靴底稳稳踩着的符文发光飞剑剑身正贴着彩虹云层掠过",
-        eyeLineEn: "camera tilts down from face to boots and sword runes, then tilts back up to 0° wink",
-        eyeLineZh: "镜头由脸部实拍下摇至脚底剑身再摇回0°眨眼自证",
-        cameraEn: "Continuous handheld 18mm selfie tilt-down and recovery with sunlit lens auto-exposure",
-        cameraZh: "手持前置一臂机位俯仰实拍，穿过云层阳光产生真实自动曝光收缩",
-        hailuoTag: "[Tilt down]",
-        sfxCue: "boing",
-        sfx: "清越破空剑气声 + 衣袂猎猎风声",
-        caption: "新换的二阶青霜剑，百公里仅耗两块灵石！",
+          "右机械臂将银色盲盒递到距镜头18厘米处，左机械平掌稳稳立在盒子后方做网红托底对焦手势，触发[AF-C]秒锁盒顶红钮",
+        eyeLineEn: "peeks glowing LED eyes around the held cube into 0° lens to verify focus",
+        eyeLineZh: "从前景金属盒旁探出蓝色齿轮头0°确认微距合焦",
+        cameraEn: "Locked 35mm desk-clamp shot with smooth continuous AF-C focus pull onto foreground cube",
+        cameraZh: "固定桌面机位平滑拉近微距焦点锁死前景机关盒",
+        hailuoTag: "[Push in]",
+        sfxCue: "chime",
+        sfx: "自动对焦马达合焦音 + 伺服关节轻响",
+        caption: "专业机械手掌托底！这铝合金倒角细节够顶吧？",
         hudPopup: "commerce_card"
       },
       {
-        role: "Twist / 仙鹤超车抢镜惊险颠簸",
+        role: "Twist / 弹簧金星玩偶炸开撞歪麦杆",
         durationSec: 4.0,
         actionEn:
-          "a giant white spirit crane swoops right behind the swordsman's shoulder photobombing the selfie frame and buffeting the flying sword with a gust that makes the host wobble",
+          "presses the red button on the desk and a glowing golden star-slime mascot rockets upward on a coil spring, bumping the boom mic and jolting GodoBot backward in its chair",
         actionZh:
-          "一只巨大白羽仙鹤突然从剑修右肩后方贴脸超车闯入自拍画面，翅膀卷起的气流震得脚下飞剑左右摇晃、主播险些站不稳",
-        eyeLineEn: "glances at selfie screen spotting the crane behind, then whips head back in shock",
-        eyeLineZh: "从自拍屏幕里瞥见身后仙鹤贴脸，猛扭头惊呼稳住身形",
-        cameraEn: "18mm handheld selfie frame jolting 12° with turbulence roll",
-        cameraZh: "18mm手持前置画面随气流颠簸产生12°真实倾斜晃动",
-        hailuoTag: "[Shake, Pan left]",
-        sfxCue: "siren",
-        sfx: "清亮鹤唳声 + 翅膀扑扇强风声",
-        caption: "卧槽哪门派的仙鹤？！变道不打转向符啊！",
+          "放回桌面按下红钮瞬间，盒内发光金色星星团子乘着弹簧猛窜升空擦碰悬臂麦，吓得齿轮机器人LED眼变成大圆圈往后仰倒",
+        eyeLineEn: "wide ring-LED eyes track the upward pop then snap 0° to camera in shock",
+        eyeLineZh: "LED眼瞬间缩成震惊圆环追随弹起金星，随即猛看0°镜头",
+        cameraEn: "Locked desk-clamp camera with authentic brief desk-thump micro-shake",
+        cameraZh: "固定桌面支架伴随弹簧炸开瞬间的真实高频微震",
+        hailuoTag: "[Shake, Static shot]",
+        sfxCue: "boing",
+        sfx: "强力弹簧嘭声 + 电子惊呼哔哔声",
+        caption: "警报！！弹射初速度超标！！差点把芯片吓掉线！",
         hudPopup: "gift_combo"
       },
       {
-        role: "Payoff / 发髻吹歪看弹幕破防",
+        role: "Payoff / 弯弯LED笑眼指弹幕求安慰",
         durationSec: 3.5,
         actionEn:
-          "regains balance on the hovering sword with crooked hair-bun and stares deadpan into the 0° selfie lens while smoothing messy bangs",
+          "GodoBot cradles the bouncy golden star mascot on the desk as its LED eyes turn into happy '^_^' arcs while pointing right mechanical hand at the 15° chat screen",
         actionZh:
-          "重新稳住悬停飞剑但头顶道冠已被吹歪，一边用左手扒拉凌乱刘海一边生无可恋0°盯住自拍屏幕满屏哈哈弹幕",
-        eyeLineEn: "8° downward read of laughing danmaku then deadpan 0° lens stare",
-        eyeLineZh: "低头扫一眼满屏嘲笑弹幕，抬眼0°死鱼眼凝视镜头",
-        cameraEn: "Stabilized arm's-length 18mm cloud-sea selfie shot",
-        cameraZh: "恢复平稳的云海一臂超广角自拍构图",
+          "齿轮机器人按住Q弹金色星星玩偶，LED眼切换成弯弯开心弧线(^_^)，抬起右机械手指着侧方15°刷满666的弹幕屏互动",
+        eyeLineEn: "15° chat-screen laugh returning to warm 0° webcam wave",
+        eyeLineZh: "15°看满屏老铁弹幕乐开花，转回0°朝镜头挥手",
+        cameraEn: "Locked 35mm studio desk framing matching Shot 1",
+        cameraZh: "固定35mm明亮直播台构图完美回扣开场",
         hailuoTag: "[Static shot]",
         sfxCue: "win",
-        sfx: "乌鸦飞过音效 + 满屏礼物连击叮声",
-        caption: "扣『剑修科目三』的道友踢出直播间了啊！",
+        sfx: "治愈电子合成笑声 + 黄金穿云箭连击音",
+        caption: "刷『机器人吓出BUG』的老铁点个关注不过分吧！",
+        hudPopup: "gift_combo_peak"
+      }
+    ]
+  },
+
+  "voxel-wuxia-sword-live": {
+    slug: "voxel_wuxia_sword_live",
+    category: "mascot-and-opensource-ip",
+    titleZh: "体素像素风剑修御剑早高峰户外自拍（Minecraft 体素 × 仙侠跨题材）",
+    titleEn: "Voxel 8x8x8 Wuxia Flying-Sword Cloud Commute Selfie Live",
+    style: "voxel-sandbox",
+    rig: "handheld-selfie-irl",
+    lighting: "daylight-outdoor-autoexp",
+    platform: "douyin",
+    host: "青云像素剑修",
+    backdrop: "cloud_sea",
+    subjectEn:
+      "a crisp Minecraft-style 8x8x8 cubic voxel wuxia swordsman (sharp 90-degree 1:1:1 head with unfiltered 8x8 pixel face, Fresh-Animations sliding pixel eyes, +0.5px stepped 3D pixel dark hair & cyan jade crown, 8x12x4 azure-white robe torso, flat 4x4 fingerless square pixel hands) riding a stepped 16x16x1 glowing cyan rune sword above cubic clouds while holding an 18mm pixel jade-slip selfie cam",
+    subjectZh:
+      "棱角分明的8x8x8体素像素风仙侠剑修（直角立方头配清晰邻近采样8x8像素五官与灵动像素眼、+0.5px立体像素黑发与青玉道冠、8x12x4青白像素道袍躯干、无手指4x4平头像素方手），脚踏16x16x1阶梯像素发光青霜飞剑穿梭在方块云海之上，右臂举像素玉简呈18mm超广角自拍",
+    shots: [
+      {
+        role: "Hook / 方块云海早高峰开播吐槽",
+        durationSec: 3.5,
+        actionEn:
+          "balances atop the hovering pixel rune sword above golden-white cubic cloud blocks while raising left 4x4 square block hand to greet the 0° held jade selfie lens",
+        actionZh:
+          "稳稳踩在悬浮像素符文飞剑上掠过金白方块云海，举起左侧4x4平头像素方手对着一臂外0°玉简前置镜头大声打招呼吐槽早高峰",
+        eyeLineEn: "expressive 2x1 pixel eyes lock 0° into the held selfie lens",
+        eyeLineZh: "灵动像素双眸0°直视手持玉简自拍镜头",
+        cameraEn: "18mm ultra-wide arm's-length voxel selfie POV showing cubic cloud sea below",
+        cameraZh: "18mm超广角一臂像素自拍微俯视角，完整收入脚下方块云海",
+        hailuoTag: "[Pull out, Shake]",
+        sfxCue: "chime",
+        sfx: "像素风清脆提示音 + 高空呼啸风声 + 飞剑蜂鸣",
+        caption: "御剑直播间家人们早！今天三环方块剑道又堵麻了！",
+        hudPopup: "join_toast"
+      },
+      {
+        role: "Proof / 下摇展示16x16x1阶梯像素飞剑",
+        durationSec: 4.0,
+        actionEn:
+          "tilts the held selfie cam slightly downward to showcase his pixel boots balanced on the glowing 16x16x1 stepped cyan-and-gold rune sword skimming cubic clouds",
+        actionZh:
+          "手腕下倾展示双脚稳稳立在16x16x1阶梯边缘自发光青金符文飞剑上，剑气划开下方层叠方块白云",
+        eyeLineEn: "camera tilts down to show glowing pixel sword underfoot while keeping 0° eye-contact with the selfie lens",
+        eyeLineZh: "镜头下倾实拍脚下发光像素剑身，人物稳居安全区内0°直视镜头自证",
+        cameraEn: "Continuous handheld 18mm selfie tilt with BSL warm sunlight & emissive cyan sword glow",
+        cameraZh: "手持前置一臂机位配合BSL暖阳轮廓光与青色方块自发光",
+        hailuoTag: "[Tilt down]",
+        sfxCue: "boing",
+        sfx: "清越像素破空剑鸣声 + 方块气流声",
+        caption: "新锻造的附魔青霜剑，百公里仅耗两颗绿宝石！",
+        hudPopup: "commerce_card"
+      },
+      {
+        role: "Twist / 体素丹顶白鹤贴脸超车抢镜",
+        durationSec: 4.0,
+        actionEn:
+          "a cubic voxel red-crowned white spirit crane swoops right behind the swordsman's right shoulder photobombing the selfie frame and tilting the sword 12 degrees in turbulence",
+        actionZh:
+          "一只立体像素风丹顶白鹤突然从剑修右肩后方贴脸超车闯入自拍画面，拍动的方块白翼卷起乱流震得飞剑倾斜12度",
+        eyeLineEn: "spots the voxel crane in the 0° selfie screen as 8x8 pixel eyes widen in shock",
+        eyeLineZh: "从自拍屏瞥见身后像素丹顶鹤贴脸，8x8像素眼瞬间放大震惊",
+        cameraEn: "18mm handheld selfie frame rolling 12° with wing-gust turbulence shake",
+        cameraZh: "18mm手持前置画面随仙鹤气流产生12°真实颠簸倾斜",
+        hailuoTag: "[Shake, Pan left]",
+        sfxCue: "siren",
+        sfx: "清亮鹤唳声 + 方块翅膀扑扇强风声",
+        caption: "卧槽哪位长老放养的像素仙鹤？！超车不打转向灯啊！",
+        hudPopup: "gift_combo"
+      },
+      {
+        role: "Payoff / 像素道冠吹歪死鱼眼盯弹幕",
+        durationSec: 3.5,
+        actionEn:
+          "steadies the hovering rune sword with his 3D pixel jade hair-crown knocked crooked and stares deadpan (-_-) into the 0° selfie lens as chat spams laughs",
+        actionZh:
+          "重新稳住悬停像素飞剑但头顶立体青玉道冠已被吹歪，顶着歪冠切换为平面像素死鱼眼(-_-)0°凝视刷屏哈哈弹幕",
+        eyeLineEn: "8° downward read of laughing danmaku locking into deadpan 0° pixel stare",
+        eyeLineZh: "下瞥一眼满屏哈哈弹幕后定格0°无语像素死鱼眼",
+        cameraEn: "Stabilized arm's-length 18mm voxel cloud-sea selfie shot",
+        cameraZh: "恢复平稳的方块云海超广角自拍收尾",
+        hailuoTag: "[Static shot]",
+        sfxCue: "win",
+        sfx: "经验球清脆叮声 + 满屏礼物连击音效",
+        caption: "刷『方块御剑科目三』的道友踢出宗门了啊！",
         hudPopup: "gift_combo_peak"
       }
     ]
@@ -822,12 +822,14 @@ export function inferLivestreamConfigFromPlot(plotText = "", overrides = {}) {
   let style = overrides.style && STYLE_ADAPTERS[overrides.style] ? overrides.style : "";
   if (!style) {
     if (/roblox|\br6\b|\br15\b|方块小人|obby|doors|bloxy/i.test(p)) style = "roblox-blocky";
-    else if (/minecraft|voxel|我的世界|体素|苦力怕|红石/i.test(p)) style = "voxel-sandbox";
+    else if (/duolingo|多邻国|绿鸟|猫头鹰|打卡|连胜|owl|streak/i.test(p)) style = "duolingo-mascot";
+    else if (/\btux\b|\bferris\b|\bgodot\b|开源|企鹅|小螃蟹|齿轮机器人|linux|rust/i.test(p)) style = "opensource-mascot";
+    else if (/minecraft|voxel|我的世界|体素|像素|苦力怕|红石/i.test(p)) style = "voxel-sandbox";
     else if (/vtuber|虚拟主播|live2d|二次元|动漫/i.test(p)) style = "anime-vtuber";
     else if (/盲盒|潮玩|黏土|皮克斯|vinyl|chibi/i.test(p)) style = "stylized-3d";
     else if (/仙侠|御剑|古装|武侠|骑士|巨龙|太空|赛博|末日|魔法|wuxia|medieval|dragon|cyberpunk|spaceship/i.test(p))
       style = "cinematic-genre-adapt";
-    else style = "realistic-irl";
+    else style = "duolingo-mascot";
   }
 
   let rig = overrides.rig && RIG_PROFILES[overrides.rig] ? overrides.rig : "";
@@ -1057,7 +1059,7 @@ export function compileStoryboard(options = {}) {
   } else if (options.plot) {
     base = translatePlotToLivestreamSpec(options.plot, options);
   } else {
-    const tplKey = TEMPLATES[options.template] ? options.template : "irl-night-market-selfie";
+    const tplKey = TEMPLATES[options.template] ? options.template : "duolingo-owl-streak-cam";
     base = structuredClone(TEMPLATES[tplKey]);
   }
 
@@ -1225,7 +1227,7 @@ export function formatStoryboardMarkdown(plan, lang = "en") {
 
 function parseArgs(argv) {
   const opts = {
-    template: "irl-night-market-selfie",
+    template: "duolingo-owl-streak-cam",
     spec: "",
     plot: "",
     style: "",
@@ -1274,17 +1276,17 @@ Compile any visual style and storyline into a 9:16 Livestream POV storyboard, cl
 and multi-platform HUD timeline (Douyin, Kuaishou, Instagram Live, X Live, TikTok Live).
 
 Built-in Templates:
-  General / Cross-Genre AI Video:
-    irl-night-market-selfie | desk-unboxing-autofocus | midnight-corridor-fpv-live |
-    late-night-study-webcam | wuxia-sword-flight-live
-  Roblox Livestream POV:
-    roblox-obby-rage-pip    | roblox-doors-irl-selfie | roblox-pet-hatch-pk
+  Duolingo / Open-Source Mascot / Voxel Styles:
+    duolingo-owl-streak-cam | duolingo-chill-night-market | tux-ferris-code-webcam |
+    godot-bot-unboxing-af   | voxel-wuxia-sword-live
+  Roblox Blocky Livestream POV:
+    roblox-obby-rage-pip    | roblox-doors-irl-selfie     | roblox-pet-hatch-pk
 
 Options:
   --plot <text>       Translate any freeform Chinese/English plot into a 4/8-shot livestream storyboard
-  --template <id>     Built-in template ID (default: irl-night-market-selfie)
+  --template <id>     Built-in template ID (default: duolingo-owl-streak-cam)
   --spec <file>       Custom declarative episode spec JSON
-  --style <id>        Style override: realistic-irl | roblox-blocky | anime-vtuber | stylized-3d | voxel-sandbox | cinematic-genre-adapt
+  --style <id>        Style override: roblox-blocky | duolingo-mascot | opensource-mascot | voxel-sandbox | stylized-3d | anime-vtuber | cinematic-genre-adapt | realistic-irl
   --rig <id>          Rig override: desktop-webcam | handheld-selfie-irl | pip-facecam-rig | overhead-showcase-rig | chest-head-pov | pk-cohost-split | cctv-obs-fixed | drone-follow-live
   --platform <id>     Post-HUD preset: douyin | kuaishou | instagram | x | tiktok | clean
   --duration <sec>    Target duration: 15 (4 shots) | 30 (8 shots) | 45 (12 shots)

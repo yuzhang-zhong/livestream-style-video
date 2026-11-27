@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.0.0
+
+- Replaced all uncanny human-mannequin sample characters with charismatic, non-uncanny **Duolingo-inspired geometric mascots & flat-3D casts** (`LingoOwl`, `Lila`), **Open-Source Mascot IPs** (`Linux Tux`, `CC0 Rust Ferris the Crab`, `MIT Godot-inspired Gear-Bot`), **Crisp `8×8×8` Nearest-Neighbor Voxel Wuxia**, and **Sculpted-UGC Roblox R6** (`3D bangs`, `pigtails`, `backwards cap`, `Speed Coil`, `hoodie pockets`).
+- Expanded orthogonal visual style matrix to `8 Rigs × 8 Styles` (`duolingo-mascot`, `opensource-mascot`, `roblox-blocky`, `voxel-sandbox`, `stylized-3d`, `anime-vtuber`, `cinematic-genre-adapt`, `realistic-irl`) with dedicated anti-drift protections in `scripts/drift_check.mjs`.
+- Upgraded `scripts/render_preview.mjs` & `scripts/compose_hud.py` to HD rendering: soft shadows, 2-tap ambient occlusion, procedural hotel/night-market/wood floors, `540×960` vector HUD rasterization, `720×1280` (720p) `crf 19` H.264 MP4 output, and 2-pass `ffmpeg palettegen + paletteuse` 256-color GIFs.
+- Redesigned `platform_hud_atlas` and `camera_rigs_atlas` into large `3×2` (`360×640` per card) high-contrast layouts so every HUD pill, danmaku comment, and popup is effortlessly readable directly inside GitHub's README width.
+
 ## 1.1.0
 
 - Added bespoke plot-reactive bilingual danmaku streams, commerce item titles, and Q&A questions across all 8 sample packages, 5-platform HUD atlas, and 6-rig camera atlas.
